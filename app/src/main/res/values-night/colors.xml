@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Brand Colors (Dark Mode) -->
+    <color name="primary">#818CF8</color>
+    <color name="primary_dark">#6366F1</color>
+    <color name="primary_light">#312E81</color>
+    <color name="primary_container">#3730A3</color>
+    <color name="on_primary">#0F172A</color>
+    <color name="on_primary_container">#EEF2FF</color>
+
+    <color name="secondary">#2DD4BF</color>
+    <color name="secondary_dark">#14B8A6</color>
+    <color name="secondary_light">#134E4A</color>
+    <color name="on_secondary">#0F172A</color>
+
+    <!-- UI Backgrounds and Surfaces -->
+    <color name="background">#0F172A</color>
+    <color name="surface">#1E293B</color>
+    <color name="surface_variant">#334155</color>
+    <color name="card_background">#1E293B</color>
+    <color name="card_stroke">#334155</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_tertiary">#64748B</color>
+
+    <!-- Quiz Status Colors -->
+    <color name="correct_green">#22C55E</color>
+    <color name="correct_green_light">#14532D</color>
+    <color name="correct_green_stroke">#16A34A</color>
+
+    <color name="incorrect_red">#EF4444</color>
+    <color name="incorrect_red_light">#7F1D1D</color>
+    <color name="incorrect_red_stroke">#DC2626</color>
+
+    <color name="warning_amber">#F59E0B</color>
+    <color name="warning_amber_light">#78350F</color>
+
+    <color name="info_blue">#38BDF8</color>
+    <color name="info_blue_light">#0C4A6E</color>
+
+    <color name="purple">#A855F7</color>
+    <color name="purple_light">#581C87</color>
+
+    <!-- System Overrides -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>

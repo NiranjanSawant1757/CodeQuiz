@@ -160,10 +160,12 @@ public class QuizAttemptRepository {
         DashboardStats stats = new DashboardStats();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // 1. Total quizzes, total questions, avg percentage, max percentage
+        // 1. Total quizzes, total questions, correct/incorrect, avg percentage, max percentage
         String summarySql = "SELECT COUNT(*), COALESCE(SUM(" + DatabaseHelper.COL_ATTEMPT_TOTAL_QUESTIONS + "), 0), "
                 + "COALESCE(AVG(" + DatabaseHelper.COL_ATTEMPT_PERCENTAGE + "), 0), "
-                + "COALESCE(MAX(" + DatabaseHelper.COL_ATTEMPT_PERCENTAGE + "), 0) "
+                + "COALESCE(MAX(" + DatabaseHelper.COL_ATTEMPT_PERCENTAGE + "), 0), "
+                + "COALESCE(SUM(" + DatabaseHelper.COL_ATTEMPT_CORRECT_ANSWERS + "), 0), "
+                + "COALESCE(SUM(" + DatabaseHelper.COL_ATTEMPT_INCORRECT_ANSWERS + "), 0) "
                 + "FROM " + DatabaseHelper.TABLE_QUIZ_ATTEMPTS
                 + " WHERE " + DatabaseHelper.COL_ATTEMPT_USER_ID + " = ?";
 
@@ -171,16 +173,56 @@ public class QuizAttemptRepository {
         try {
             cursor = db.rawQuery(summarySql, new String[]{String.valueOf(userId)});
             if (cursor != null && cursor.moveToFirst()) {
-                stats.setTotalQuizzes(cursor.getInt(0));
-                stats.setTotalQuestions(cursor.getInt(1));
-                stats.setAverageScore(Math.round(cursor.getDouble(2) * 10.0) / 10.0);
-                stats.setHighestScore(Math.round(cursor.getDouble(3) * 10.0) / 10.0);
+                int totalQz = cursor.getInt(0);
+                int totalQs = cursor.getInt(1);
+                double avgPct = Math.round(cursor.getDouble(2) * 10.0) / 10.0;
+                double maxPct = Math.round(cursor.getDouble(3) * 10.0) / 10.0;
+                int correctAns = cursor.getInt(4);
+                int incorrectAns = cursor.getInt(5);
+
+                stats.setTotalQuizzes(totalQz);
+                stats.setTotalQuestions(totalQs);
+                stats.setAverageScore(avgPct);
+                stats.setHighestScore(maxPct);
+                stats.setTotalCorrectAnswers(correctAns);
+                stats.setTotalIncorrectAnswers(incorrectAns);
+
+                if (totalQs > 0) {
+                    double accuracy = Math.round(((double) correctAns / totalQs) * 1000.0) / 10.0;
+                    stats.setOverallAccuracy(accuracy);
+                } else {
+                    stats.setOverallAccuracy(0.0);
+                }
             }
         } finally {
             if (cursor != null) cursor.close();
         }
 
-        // 2. Category performances
+        // 2. Difficulty Breakdown
+        String diffSql = "SELECT " + DatabaseHelper.COL_ATTEMPT_DIFFICULTY + ", COUNT(*), "
+                + "AVG(" + DatabaseHelper.COL_ATTEMPT_PERCENTAGE + ") "
+                + "FROM " + DatabaseHelper.TABLE_QUIZ_ATTEMPTS
+                + " WHERE " + DatabaseHelper.COL_ATTEMPT_USER_ID + " = ? "
+                + "GROUP BY " + DatabaseHelper.COL_ATTEMPT_DIFFICULTY;
+
+        StringBuilder diffSummary = new StringBuilder();
+        try {
+            cursor = db.rawQuery(diffSql, new String[]{String.valueOf(userId)});
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    String diffName = cursor.getString(0);
+                    int dCount = cursor.getInt(1);
+                    double dAvg = Math.round(cursor.getDouble(2) * 10.0) / 10.0;
+                    if (diffSummary.length() > 0) diffSummary.append("  •  ");
+                    diffSummary.append(diffName).append(": ").append((int) dAvg).append("% (").append(dCount).append(" attempts)");
+                } while (cursor.moveToNext());
+            }
+        } finally {
+            if (cursor != null) cursor.close();
+        }
+        stats.setDifficultyProgressSummary(diffSummary.length() > 0 ? diffSummary.toString() : "No difficulty attempts yet");
+
+        // 3. Category performances
         List<CategoryPerformance> categoryPerformances = new ArrayList<>();
         String catSql = "SELECT " + DatabaseHelper.COL_ATTEMPT_CATEGORY + ", COUNT(*), "
                 + "AVG(" + DatabaseHelper.COL_ATTEMPT_PERCENTAGE + "), "

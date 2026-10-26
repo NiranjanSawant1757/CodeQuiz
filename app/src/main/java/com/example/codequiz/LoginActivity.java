@@ -39,6 +39,24 @@ public class LoginActivity extends AppCompatActivity {
 
         initViews();
         setupListeners();
+        checkPrefillUsername(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        checkPrefillUsername(intent);
+    }
+
+    private void checkPrefillUsername(Intent intent) {
+        if (intent != null && intent.hasExtra("PREFILL_USERNAME")) {
+            String username = intent.getStringExtra("PREFILL_USERNAME");
+            if (username != null && !username.isEmpty()) {
+                etEmailOrUsername.setText(username);
+                etPassword.requestFocus();
+            }
+        }
     }
 
     private void initViews() {

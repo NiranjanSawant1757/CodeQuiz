@@ -113,8 +113,20 @@ public class QuizActivity extends AppCompatActivity {
             timeRemainingMillis = savedInstanceState.getLong(KEY_TIME_REMAINING, 0);
             quizStartTime = savedInstanceState.getLong(KEY_START_TIME, System.currentTimeMillis());
         } else {
-            // New quiz session
-            questions = QuestionBank.getQuizQuestions(categoryName, difficulty, requestedCount);
+            // Check if pre-generated AI or offline cached questions were passed via Intent
+            if (getIntent().hasExtra(AppConstants.EXTRA_QUESTIONS)) {
+                Serializable serializable = getIntent().getSerializableExtra(AppConstants.EXTRA_QUESTIONS);
+                if (serializable instanceof List) {
+                    //noinspection unchecked
+                    questions = (List<Question>) serializable;
+                }
+            }
+
+            // Fallback to static QuestionBank if no pre-generated questions provided
+            if (questions == null || questions.isEmpty()) {
+                questions = QuestionBank.getQuizQuestions(categoryName, difficulty, requestedCount);
+            }
+
             selectedAnswers = new String[questions.size()];
             quizStartTime = System.currentTimeMillis();
 

@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "codequiz.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static DatabaseHelper instance;
 
@@ -48,6 +48,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_ANS_EXPLANATION = "explanation";
     public static final String COL_ANS_IS_CORRECT = "is_correct";
     public static final String COL_ANS_QUESTION_ORDER = "question_order";
+
+    // Table: saved_questions (AI and locally cached questions)
+    public static final String TABLE_SAVED_QUESTIONS = "saved_questions";
+    public static final String COL_Q_ID = "id";
+    public static final String COL_Q_SUBJECT = "subject";
+    public static final String COL_Q_DIFFICULTY = "difficulty";
+    public static final String COL_Q_TEXT = "question_text";
+    public static final String COL_Q_OPTIONS_JSON = "options_json";
+    public static final String COL_Q_CORRECT = "correct_answer";
+    public static final String COL_Q_EXPLANATION = "explanation";
+    public static final String COL_Q_CREATED_AT = "created_at";
+    public static final String COL_Q_SOURCE = "source";
 
     public static synchronized DatabaseHelper getInstance(Context context) {
         if (instance == null) {
@@ -113,21 +125,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + TABLE_QUIZ_ATTEMPTS + "(" + COL_ATTEMPT_ID + ") ON DELETE CASCADE"
                 + ");";
 
+        // Create saved_questions table
+        String createSavedQuestionsTable = "CREATE TABLE " + TABLE_SAVED_QUESTIONS + " ("
+                + COL_Q_ID + " TEXT PRIMARY KEY, "
+                + COL_Q_SUBJECT + " TEXT NOT NULL, "
+                + COL_Q_DIFFICULTY + " TEXT NOT NULL, "
+                + COL_Q_TEXT + " TEXT NOT NULL UNIQUE, "
+                + COL_Q_OPTIONS_JSON + " TEXT NOT NULL, "
+                + COL_Q_CORRECT + " TEXT NOT NULL, "
+                + COL_Q_EXPLANATION + " TEXT, "
+                + COL_Q_CREATED_AT + " INTEGER NOT NULL, "
+                + COL_Q_SOURCE + " TEXT DEFAULT 'AI'"
+                + ");";
+
         db.execSQL(createUsersTable);
         db.execSQL(createAttemptsTable);
         db.execSQL(createAttemptAnswersTable);
+        db.execSQL(createSavedQuestionsTable);
 
         // Create indexes for efficient querying
         db.execSQL("CREATE INDEX idx_attempts_user_id ON " + TABLE_QUIZ_ATTEMPTS + " (" + COL_ATTEMPT_USER_ID + ");");
         db.execSQL("CREATE INDEX idx_attempts_category ON " + TABLE_QUIZ_ATTEMPTS + " (" + COL_ATTEMPT_CATEGORY + ");");
         db.execSQL("CREATE INDEX idx_answers_attempt_id ON " + TABLE_ATTEMPT_ANSWERS + " (" + COL_ANS_ATTEMPT_ID + ");");
+        db.execSQL("CREATE INDEX idx_saved_questions_subject ON " + TABLE_SAVED_QUESTIONS + " (" + COL_Q_SUBJECT + ");");
+        db.execSQL("CREATE INDEX idx_saved_questions_difficulty ON " + TABLE_SAVED_QUESTIONS + " (" + COL_Q_DIFFICULTY + ");");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Preserves existing data across schema updates
         if (oldVersion < 2) {
-            // Future schema additions will execute ALTER TABLE here without dropping tables
+            String createSavedQuestionsTable = "CREATE TABLE IF NOT EXISTS " + TABLE_SAVED_QUESTIONS + " ("
+                    + COL_Q_ID + " TEXT PRIMARY KEY, "
+                    + COL_Q_SUBJECT + " TEXT NOT NULL, "
+                    + COL_Q_DIFFICULTY + " TEXT NOT NULL, "
+                    + COL_Q_TEXT + " TEXT NOT NULL UNIQUE, "
+                    + COL_Q_OPTIONS_JSON + " TEXT NOT NULL, "
+                    + COL_Q_CORRECT + " TEXT NOT NULL, "
+                    + COL_Q_EXPLANATION + " TEXT, "
+                    + COL_Q_CREATED_AT + " INTEGER NOT NULL, "
+                    + COL_Q_SOURCE + " TEXT DEFAULT 'AI'"
+                    + ");";
+            db.execSQL(createSavedQuestionsTable);
+            db.execSQL("CREATE INDEX IF NOT EXISTS idx_saved_questions_subject ON " + TABLE_SAVED_QUESTIONS + " (" + COL_Q_SUBJECT + ");");
+            db.execSQL("CREATE INDEX IF NOT EXISTS idx_saved_questions_difficulty ON " + TABLE_SAVED_QUESTIONS + " (" + COL_Q_DIFFICULTY + ");");
         }
     }
 }

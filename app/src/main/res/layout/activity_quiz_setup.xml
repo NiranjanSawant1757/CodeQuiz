@@ -220,9 +220,9 @@
                     android:gravity="center"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"
-                    android:text="Easy"
+                    android:text="Beginner"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -238,9 +238,9 @@
                     android:gravity="center"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"
-                    android:text="Medium"
+                    android:text="Intermediate"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -256,9 +256,9 @@
                     android:gravity="center"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"
-                    android:text="Hard"
+                    android:text="Advanced"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -275,7 +275,7 @@
                     android:paddingBottom="12dp"
                     android:text="Mixed"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -350,22 +350,128 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Start Quiz Button -->
+            <!-- AI Status & Cache Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAiInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="14dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="AI Question Generator"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvAiNetworkBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_rounded"
+                            android:paddingStart="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="3dp"
+                            android:text="Checking..."
+                            android:textColor="@color/primary"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSavedQuestionsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="SQLite Cache: 0 questions available offline"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Loading Indicator for AI Generation -->
+            <LinearLayout
+                android:id="@+id/layoutAiLoading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/pbAiLoading"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:indeterminateTint="@color/primary" />
+
+                <TextView
+                    android:id="@+id/tvAiLoadingStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Connecting to AI backend and generating MCQs..."
+                    android:textColor="@color/primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Generate AI Quiz Button (Primary action) -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnStartQuizNow"
+                android:id="@+id/btnStartAiQuiz"
                 style="@style/Widget.Material3.Button"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/primary"
-                android:text="Start Quiz"
+                android:text="Generate AI Quiz"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_ai_sparkle"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white" />
+
+            <!-- Built-in Static Bank Button (Secondary action) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartQuizNow"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Start Built-in Quiz"
+                android:textColor="@color/primary"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:cornerRadius="12dp"
                 app:icon="@drawable/ic_arrow_forward"
                 app:iconGravity="textEnd"
-                app:iconTint="@color/white" />
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp" />
 
         </LinearLayout>
 

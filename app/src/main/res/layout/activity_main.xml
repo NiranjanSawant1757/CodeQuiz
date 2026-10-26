@@ -22,7 +22,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:contentDescription="CodeQuiz Logo"
-            android:src="@drawable/ic_quiz" />
+            android:src="@drawable/app_logo" />
 
         <TextView
             android:id="@+id/tvAppName"

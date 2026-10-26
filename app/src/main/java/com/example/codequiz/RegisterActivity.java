@@ -140,11 +140,11 @@ public class RegisterActivity extends AppCompatActivity {
                 btnRegister.setText("Register");
 
                 if (userId != -1) {
-                    sessionManager.createLoginSession(userId, username, email, fullName);
-                    Toast.makeText(RegisterActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Account created successfully! Please login.", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    intent.putExtra("PREFILL_USERNAME", username);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     finish();
                 } else {

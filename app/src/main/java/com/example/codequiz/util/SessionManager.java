@@ -17,6 +17,7 @@ public class SessionManager {
     private static final String KEY_TIMER_ENABLED = "pref_timer_enabled";
     private static final String KEY_TIMER_SECONDS = "pref_timer_seconds";
     private static final String KEY_THEME_MODE = "pref_theme_mode";
+    private static final String KEY_BACKEND_URL = "pref_backend_url";
 
     private final SharedPreferences prefs;
     private final SharedPreferences.Editor editor;
@@ -111,5 +112,14 @@ public class SessionManager {
     public void applyStoredTheme() {
         int mode = getThemeMode();
         AppCompatDelegate.setDefaultNightMode(mode);
+    }
+
+    public String getBackendUrl() {
+        return prefs.getString(KEY_BACKEND_URL, AppConstants.DEFAULT_BACKEND_URL);
+    }
+
+    public void setBackendUrl(String url) {
+        editor.putString(KEY_BACKEND_URL, url != null ? url.trim() : AppConstants.DEFAULT_BACKEND_URL);
+        editor.apply();
     }
 }

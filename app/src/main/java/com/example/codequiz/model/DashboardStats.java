@@ -6,12 +6,16 @@ import java.util.List;
 public class DashboardStats implements Serializable {
     private int totalQuizzes;
     private int totalQuestions;
+    private int totalCorrectAnswers;
+    private int totalIncorrectAnswers;
+    private double overallAccuracy;
     private double averageScore;
     private double highestScore;
     private String strongestCategory;
     private String categoryNeedingImprovement;
     private String recentImprovementText;
     private double recentImprovementPoints;
+    private String difficultyProgressSummary;
     private List<CategoryPerformance> categoryPerformances;
     private List<QuizAttempt> recentAttempts;
 
@@ -32,6 +36,30 @@ public class DashboardStats implements Serializable {
 
     public void setTotalQuestions(int totalQuestions) {
         this.totalQuestions = totalQuestions;
+    }
+
+    public int getTotalCorrectAnswers() {
+        return totalCorrectAnswers;
+    }
+
+    public void setTotalCorrectAnswers(int totalCorrectAnswers) {
+        this.totalCorrectAnswers = totalCorrectAnswers;
+    }
+
+    public int getTotalIncorrectAnswers() {
+        return totalIncorrectAnswers;
+    }
+
+    public void setTotalIncorrectAnswers(int totalIncorrectAnswers) {
+        this.totalIncorrectAnswers = totalIncorrectAnswers;
+    }
+
+    public double getOverallAccuracy() {
+        return overallAccuracy;
+    }
+
+    public void setOverallAccuracy(double overallAccuracy) {
+        this.overallAccuracy = overallAccuracy;
     }
 
     public double getAverageScore() {
@@ -80,6 +108,14 @@ public class DashboardStats implements Serializable {
 
     public void setRecentImprovementPoints(double recentImprovementPoints) {
         this.recentImprovementPoints = recentImprovementPoints;
+    }
+
+    public String getDifficultyProgressSummary() {
+        return difficultyProgressSummary;
+    }
+
+    public void setDifficultyProgressSummary(String difficultyProgressSummary) {
+        this.difficultyProgressSummary = difficultyProgressSummary;
     }
 
     public List<CategoryPerformance> getCategoryPerformances() {

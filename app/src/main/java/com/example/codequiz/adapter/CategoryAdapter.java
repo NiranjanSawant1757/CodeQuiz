@@ -41,7 +41,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         QuizCategory category = categories.get(position);
         holder.tvName.setText(category.getName());
         holder.tvDesc.setText(category.getDescription());
-        holder.tvQuestionCount.setText(category.getQuestionCount() + " Questions Available");
         holder.ivIcon.setImageResource(category.getIconResId());
 
         View.OnClickListener clickAction = v -> {
@@ -63,7 +62,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         ImageView ivIcon;
         TextView tvName;
         TextView tvDesc;
-        TextView tvQuestionCount;
         MaterialButton btnStartQuiz;
 
         public CategoryViewHolder(@NonNull View itemView) {
@@ -71,7 +69,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             ivIcon = itemView.findViewById(R.id.ivCategoryIcon);
             tvName = itemView.findViewById(R.id.tvCategoryName);
             tvDesc = itemView.findViewById(R.id.tvCategoryDesc);
-            tvQuestionCount = itemView.findViewById(R.id.tvQuestionCount);
             btnStartQuiz = itemView.findViewById(R.id.btnStartQuiz);
         }
     }

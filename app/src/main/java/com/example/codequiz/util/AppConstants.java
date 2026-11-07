@@ -9,7 +9,6 @@ public class AppConstants {
     public static final String EXTRA_TIMER_ENABLED = "extra_timer_enabled";
     public static final String EXTRA_ATTEMPT_ID = "extra_attempt_id";
     public static final String EXTRA_QUESTIONS = "extra_questions";
-    public static final String EXTRA_IS_AI = "extra_is_ai";
 
     // Difficulty Options
     public static final String DIFFICULTY_BEGINNER = "Beginner";
@@ -40,7 +39,4 @@ public class AppConstants {
 
     // Default Timer: 45 seconds per question
     public static final int DEFAULT_SECONDS_PER_QUESTION = 45;
-
-    // Backend Server URL (10.0.2.2 connects to host from Android Emulator)
-    public static final String DEFAULT_BACKEND_URL = "http://10.0.2.2:8000";
 }

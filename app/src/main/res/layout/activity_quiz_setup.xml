@@ -3,22 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="10dp"
     android:background="@color/background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/surface"
-        app:elevation="1dp">
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarSetup"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/text_primary"
             app:title="Quiz Configuration"
             app:titleTextColor="@color/text_primary" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,8 +43,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/card_background"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
                 app:strokeColor="@color/card_stroke"
                 app:strokeWidth="1dp">
 
@@ -48,14 +53,26 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="18dp">
 
-                    <ImageView
-                        android:id="@+id/ivSetupCatIcon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:contentDescription="Category Icon"
-                        android:src="@drawable/ic_cat_java" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        app:cardBackgroundColor="@color/surface_variant"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/card_stroke"
+                        app:strokeWidth="1dp">
+
+                        <ImageView
+                            android:id="@+id/ivSetupCatIcon"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Category Icon"
+                            android:src="@drawable/ic_cat_java" />
+
+                    </com.google.android.material.card.MaterialCardView>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -68,6 +85,7 @@
                             android:id="@+id/tvSetupCatName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:letterSpacing="-0.01"
                             android:text="Java Programming"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
@@ -80,7 +98,7 @@
                             android:layout_marginTop="2dp"
                             android:text="Total 50 questions in question bank"
                             android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
+                            android:textSize="13sp" />
 
                     </LinearLayout>
 
@@ -92,7 +110,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="26dp"
+                android:letterSpacing="-0.01"
                 android:text="Select Number of Questions"
                 android:textColor="@color/text_primary"
                 android:textSize="16sp"
@@ -104,12 +123,12 @@
                 android:layout_marginTop="2dp"
                 android:text="Choose how many questions to attempt in this quiz:"
                 android:textColor="@color/text_secondary"
-                android:textSize="12sp" />
+                android:textSize="13sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="14dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -126,7 +145,7 @@
                     android:paddingBottom="12dp"
                     android:text="10 Qs"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -144,7 +163,7 @@
                     android:paddingBottom="12dp"
                     android:text="20 Qs"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -162,7 +181,7 @@
                     android:paddingBottom="12dp"
                     android:text="30 Qs"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -179,7 +198,7 @@
                     android:paddingBottom="12dp"
                     android:text="50 Qs"
                     android:textColor="@color/text_primary"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -188,7 +207,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="26dp"
+                android:letterSpacing="-0.01"
                 android:text="Select Difficulty"
                 android:textColor="@color/text_primary"
                 android:textSize="16sp"
@@ -200,12 +220,12 @@
                 android:layout_marginTop="2dp"
                 android:text="Filter questions by skill level:"
                 android:textColor="@color/text_secondary"
-                android:textSize="12sp" />
+                android:textSize="13sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="14dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -222,7 +242,7 @@
                     android:paddingBottom="12dp"
                     android:text="Beginner"
                     android:textColor="@color/text_primary"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -258,7 +278,7 @@
                     android:paddingBottom="12dp"
                     android:text="Advanced"
                     android:textColor="@color/text_primary"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -275,7 +295,7 @@
                     android:paddingBottom="12dp"
                     android:text="Mixed"
                     android:textColor="@color/white"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -285,21 +305,22 @@
                 android:id="@+id/tvAvailableStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="18dp"
                 android:background="@drawable/bg_badge_rounded"
-                android:padding="12dp"
-                android:text="50 eligible questions available. Ready to start."
+                android:padding="14dp"
                 android:textColor="@color/primary"
                 android:textSize="13sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <!-- Timer Toggle Switch -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
                 app:cardBackgroundColor="@color/card_background"
-                app:cardCornerRadius="14dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
                 app:strokeColor="@color/card_stroke"
                 app:strokeWidth="1dp">
 
@@ -308,17 +329,27 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="18dp">
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_timer" />
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_dialog_icon_circle"
+                        android:backgroundTint="@color/primary_light">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Timer"
+                            android:src="@drawable/ic_timer"
+                            app:tint="@color/primary" />
+                    </FrameLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="14dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -327,13 +358,13 @@
                             android:layout_height="wrap_content"
                             android:text="Countdown Timer"
                             android:textColor="@color/text_primary"
-                            android:textSize="14sp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="1dp"
+                            android:layout_marginTop="2dp"
                             android:text="Enables 45 seconds per question"
                             android:textColor="@color/text_secondary"
                             android:textSize="12sp" />
@@ -350,128 +381,22 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- AI Status & Cache Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardAiInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardBackgroundColor="@color/surface"
-                app:cardCornerRadius="14dp"
-                app:strokeColor="@color/card_stroke"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="14dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="AI Question Generator"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tvAiNetworkBadge"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_badge_rounded"
-                            android:paddingStart="8dp"
-                            android:paddingTop="3dp"
-                            android:paddingEnd="8dp"
-                            android:paddingBottom="3dp"
-                            android:text="Checking..."
-                            android:textColor="@color/primary"
-                            android:textSize="11sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tvSavedQuestionsCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="SQLite Cache: 0 questions available offline"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Loading Indicator for AI Generation -->
-            <LinearLayout
-                android:id="@+id/layoutAiLoading"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <ProgressBar
-                    android:id="@+id/pbAiLoading"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:indeterminateTint="@color/primary" />
-
-                <TextView
-                    android:id="@+id/tvAiLoadingStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Connecting to AI backend and generating MCQs..."
-                    android:textColor="@color/primary"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <!-- Generate AI Quiz Button (Primary action) -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnStartAiQuiz"
-                style="@style/Widget.Material3.Button"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/primary"
-                android:text="Generate AI Quiz"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:cornerRadius="12dp"
-                app:icon="@drawable/ic_ai_sparkle"
-                app:iconGravity="textStart"
-                app:iconTint="@color/white" />
-
-            <!-- Built-in Static Bank Button (Secondary action) -->
+            <!-- Start Quiz Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnStartQuizNow"
-                style="@style/Widget.Material3.Button.OutlinedButton"
+                style="@style/Widget.CodeQuiz.Button"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:text="Start Built-in Quiz"
-                android:textColor="@color/primary"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:cornerRadius="12dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/primary"
+                android:text="Start Quiz"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:cornerRadius="14dp"
                 app:icon="@drawable/ic_arrow_forward"
                 app:iconGravity="textEnd"
-                app:strokeColor="@color/primary"
-                app:strokeWidth="1dp" />
+                app:iconTint="@color/white" />
 
         </LinearLayout>
 

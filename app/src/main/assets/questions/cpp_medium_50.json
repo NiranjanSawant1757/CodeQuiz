@@ -1,0 +1,761 @@
+{
+  "subject": "C++",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 50,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 51,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Function overloading and default arguments",
+      "question": "Which of the following function pairs will cause a compilation error due to ambiguous overloading when called with `foo(5)`?",
+      "options": {
+        "A": "void foo(int x); and void foo(double x);",
+        "B": "void foo(int x); and void foo(int x, int y = 10);",
+        "C": "void foo(int x); and void foo(std::string x);",
+        "D": "void foo(int x); and void foo(int x, int y);"
+      },
+      "correctAnswer": "B",
+      "explanation": "Calling foo(5) is ambiguous because it matches both void foo(int) and void foo(int, int = 10)."
+    },
+    {
+      "id": 52,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Constructors, destructors, and object lifetime",
+      "question": "What is an initializer list in a C++ constructor used for?",
+      "options": {
+        "A": "To initialize member variables directly before the constructor body executes",
+        "B": "To allocate memory for objects",
+        "C": "To initialize local variables inside methods",
+        "D": "To call destructors automatically"
+      },
+      "correctAnswer": "A",
+      "explanation": "Constructor member initializer lists initialize class data members directly prior to constructor body execution."
+    },
+    {
+      "id": 53,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Inheritance and polymorphism",
+      "question": "What is dynamic dispatch in C++?",
+      "options": {
+        "A": "Resolving function calls at compile time",
+        "B": "Resolving virtual function calls at runtime based on the actual object type",
+        "C": "Allocating memory dynamically for classes",
+        "D": "Overloading operators at runtime"
+      },
+      "correctAnswer": "B",
+      "explanation": "Dynamic dispatch resolves polymorphic virtual function calls at runtime via vtable mechanism."
+    },
+    {
+      "id": 54,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Virtual functions",
+      "question": "What is the primary function of the vptr (virtual pointer) in C++ objects with virtual functions?",
+      "options": {
+        "A": "Points to heap memory allocated for class",
+        "B": "Points to the Virtual Method Table (vtable) for the object's class",
+        "C": "Points to base class instance",
+        "D": "Points to the constructor function"
+      },
+      "correctAnswer": "B",
+      "explanation": "Objects of classes with virtual functions contain a hidden pointer (vptr) pointing to the class's vtable."
+    },
+    {
+      "id": 55,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Copy constructors and assignment operators",
+      "question": "When is a copy constructor invoked in C++?",
+      "options": {
+        "A": "When an object is initialized with another object of the same class",
+        "B": "When an object is passed by value to a function",
+        "C": "When a function returns an object by value",
+        "D": "All of the above"
+      },
+      "correctAnswer": "D",
+      "explanation": "Copy constructors are called when initializing an object from another instance, passing by value, or returning by value."
+    },
+    {
+      "id": 56,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Templates and generic programming",
+      "question": "What is the correct syntax to declare a generic function template in C++?",
+      "options": {
+        "A": "template <typename T> T maxVal(T a, T b);",
+        "B": "generic <class T> T maxVal(T a, T b);",
+        "C": "template <T> T maxVal(T a, T b);",
+        "D": "type <template T> T maxVal(T a, T b);"
+      },
+      "correctAnswer": "A",
+      "explanation": "'template <typename T>' or 'template <class T>' declares a function template."
+    },
+    {
+      "id": 57,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Exception handling",
+      "question": "What happens if an exception is thrown in C++ but not caught by any matching catch block in the call stack?",
+      "options": {
+        "A": "The exception is ignored silently",
+        "B": "std::terminate() is called automatically, ending execution",
+        "C": "The program retries execution",
+        "D": "Compilation fails"
+      },
+      "correctAnswer": "B",
+      "explanation": "Uncaught exceptions cause the runtime to call std::terminate() (which calls std::abort())."
+    },
+    {
+      "id": 58,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "STL containers (vector, list, deque, set, map, unordered_map)",
+      "question": "What is the underlying data structure and search time complexity of std::map in standard C++?",
+      "options": {
+        "A": "Hash table with O(1) time",
+        "B": "Red-Black Tree (balanced BST) with O(log N) time",
+        "C": "Dynamic Array with O(N) time",
+        "D": "Linked List with O(N) time"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::map is typically implemented as a self-balancing Red-Black tree providing logarithmic O(log N) operations."
+    },
+    {
+      "id": 59,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "STL containers (vector, list, deque, set, map, unordered_map)",
+      "question": "What is the difference between std::map and std::unordered_map?",
+      "options": {
+        "A": "std::map is sorted O(log N); std::unordered_map is hash-based O(1) average time",
+        "B": "std::map uses hashing; std::unordered_map uses BST",
+        "C": "std::unordered_map allows duplicate keys; std::map does not",
+        "D": "There is no difference"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::map maintains sorted keys using trees (O(log N)), whereas std::unordered_map uses hash tables (O(1) average)."
+    },
+    {
+      "id": 60,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Lambda expressions",
+      "question": "In C++11 lambda `[=](int x) { return x + a; }`, what does `[=]` signify?",
+      "options": {
+        "A": "Capture all outer local variables by value",
+        "B": "Capture all outer local variables by reference",
+        "C": "No variables captured",
+        "D": "Capture 'this' pointer only"
+      },
+      "correctAnswer": "A",
+      "explanation": "The [=] capture default captures outer local variables used in the lambda body by value."
+    },
+    {
+      "id": 61,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Lambda expressions",
+      "question": "In C++ lambda `[&](int x) { return x + a; }`, what does `[&]` signify?",
+      "options": {
+        "A": "Capture outer variables by value",
+        "B": "Capture outer variables by reference",
+        "C": "Compare references",
+        "D": "Address-of operator"
+      },
+      "correctAnswer": "B",
+      "explanation": "The [&] capture default captures outer variables by reference."
+    },
+    {
+      "id": 62,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "File handling and streams",
+      "question": "Which standard stream class is used for reading input from a file in C++?",
+      "options": {
+        "A": "std::ofstream",
+        "B": "std::ifstream",
+        "C": "std::fstream",
+        "D": "std::stringstream"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::ifstream (input file stream) is used for reading files."
+    },
+    {
+      "id": 63,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Recursion and algorithm complexity",
+      "question": "What is the worst-case time complexity of Quick Sort algorithm?",
+      "options": {
+        "A": "O(N log N)",
+        "B": "O(N)",
+        "C": "O(N^2)",
+        "D": "O(1)"
+      },
+      "correctAnswer": "C",
+      "explanation": "Quick sort degrades to O(N^2) in worst-case scenarios when pivot selection is unbalanced."
+    },
+    {
+      "id": 64,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Operator overloading",
+      "question": "Which of the following C++ operators CANNOT be overloaded?",
+      "options": {
+        "A": "+",
+        "B": ":: (Scope Resolution)",
+        "C": "[]",
+        "D": "()"
+      },
+      "correctAnswer": "B",
+      "explanation": "The scope resolution operator ::, member access operator ., direct pointer-to-member .*, and ternary operator ?: cannot be overloaded."
+    },
+    {
+      "id": 65,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Operator overloading",
+      "question": "When overloading operator+ as a non-member friend function taking two parameters (A, B), what is the correct declaration?",
+      "options": {
+        "A": "friend MyClass operator+(const MyClass& a, const MyClass& b);",
+        "B": "friend MyClass operator+(const MyClass& a);",
+        "C": "MyClass operator+(MyClass b);",
+        "D": "friend void operator+();"
+      },
+      "correctAnswer": "A",
+      "explanation": "A non-member binary operator overload takes two arguments corresponding to left and right operands."
+    },
+    {
+      "id": 66,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Iterators and algorithms",
+      "question": "Which algorithm header function searches for a value in a sorted range using binary search?",
+      "options": {
+        "A": "std::find",
+        "B": "std::binary_search",
+        "C": "std::search",
+        "D": "std::lower_bound"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::binary_search checks if an element exists in a sorted range in O(log N) time."
+    },
+    {
+      "id": 67,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Stack, queue, linked list, and tree fundamentals",
+      "question": "Which STL container adapter implements First-In, First-Out (FIFO) behavior?",
+      "options": {
+        "A": "std::stack",
+        "B": "std::queue",
+        "C": "std::priority_queue",
+        "D": "std::vector"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::queue provides FIFO (First-In, First-Out) operations."
+    },
+    {
+      "id": 68,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Predicting moderately complex code output",
+      "question": "What is the output of the following C++ program?\n\n#include <iostream>\nclass Test {\npublic:\n    static int count;\n    Test() { count++; }\n};\nint Test::count = 0;\nint main() {\n    Test t1, t2, t3;\n    std::cout << Test::count;\n    return 0;\n}",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "3",
+        "D": "Compilation Error"
+      },
+      "correctAnswer": "C",
+      "explanation": "Test::count is incremented by each constructor call. Creating 3 objects sets count to 3."
+    },
+    {
+      "id": 69,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Debugging common errors",
+      "question": "What is a dangling pointer in C++?",
+      "options": {
+        "A": "A pointer assigned to nullptr",
+        "B": "A pointer pointing to a memory location that has been deallocated",
+        "C": "An uninitialized reference",
+        "D": "A smart pointer"
+      },
+      "correctAnswer": "B",
+      "explanation": "A dangling pointer stores the memory address of an object that has been freed or destroyed."
+    },
+    {
+      "id": 70,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Debugging common errors",
+      "question": "What happens if you call `delete` on a pointer allocated with `new[]`?",
+      "options": {
+        "A": "Only the first element's destructor is called; undefined behavior occurs",
+        "B": "All destructors are called automatically",
+        "C": "Compilation Error",
+        "D": "Memory leak without side effects"
+      },
+      "correctAnswer": "A",
+      "explanation": "Mismatching new[] with scalar delete causes undefined behavior (destructors for array elements 1..N-1 are skipped)."
+    },
+    {
+      "id": 71,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Object-oriented programming",
+      "question": "What is an abstract class in C++?",
+      "options": {
+        "A": "A class with no member variables",
+        "B": "A class containing at least one pure virtual function",
+        "C": "A class marked with keyword 'abstract'",
+        "D": "A class that cannot have subclasses"
+      },
+      "correctAnswer": "B",
+      "explanation": "A class with at least one pure virtual function (virtual void foo() = 0;) is abstract and cannot be instantiated."
+    },
+    {
+      "id": 72,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Function overriding and overloading",
+      "question": "Which keyword in C++11 explicitly specifies that a member function is intended to override a base class virtual function?",
+      "options": {
+        "A": "override",
+        "B": "overload",
+        "C": "virtual",
+        "D": "redefine"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'override' specifier verifies that a function overrides a base class virtual method at compile time."
+    },
+    {
+      "id": 73,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Function overriding and overloading",
+      "question": "Which specifier in C++11 prevents a virtual function from being overridden in derived classes?",
+      "options": {
+        "A": "sealed",
+        "B": "final",
+        "C": "const",
+        "D": "static"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'final' specifier prevents further overriding of a virtual function or inheritance of a class."
+    },
+    {
+      "id": 74,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Smart pointers",
+      "question": "Which smart pointer in C++11 owns an object uniquely and prevents copy assignment?",
+      "options": {
+        "A": "std::shared_ptr",
+        "B": "std::unique_ptr",
+        "C": "std::weak_ptr",
+        "D": "std::auto_ptr"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::unique_ptr represents exclusive ownership; it cannot be copied, only moved."
+    },
+    {
+      "id": 75,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Smart pointers",
+      "question": "Which smart pointer is used to break cyclic reference dependencies created by std::shared_ptr?",
+      "options": {
+        "A": "std::unique_ptr",
+        "B": "std::weak_ptr",
+        "C": "std::scoped_ptr",
+        "D": "std::auto_ptr"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::weak_ptr holds a non-owning reference to an object managed by std::shared_ptr without incrementing reference count."
+    },
+    {
+      "id": 76,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Const correctness",
+      "question": "What does a 'const' qualifier after a member function signature specify?\n`void display() const;`",
+      "options": {
+        "A": "The function returns a constant value",
+        "B": "The function cannot modify non-mutable data members of the object",
+        "C": "The function cannot be called on const objects",
+        "D": "The function is static"
+      },
+      "correctAnswer": "B",
+      "explanation": "Const member functions promise not to alter non-mutable member variables of the calling object."
+    },
+    {
+      "id": 77,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Const correctness",
+      "question": "Which keyword allows a class member variable to be modified inside a const member function?",
+      "options": {
+        "A": "volatile",
+        "B": "mutable",
+        "C": "extern",
+        "D": "static"
+      },
+      "correctAnswer": "B",
+      "explanation": "Members declared 'mutable' can be modified even within const member functions."
+    },
+    {
+      "id": 78,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Pure virtual functions",
+      "question": "What is the correct syntax to declare a pure virtual function in C++?",
+      "options": {
+        "A": "virtual void draw() = 0;",
+        "B": "pure virtual void draw();",
+        "C": "virtual void draw() = null;",
+        "D": "abstract void draw();"
+      },
+      "correctAnswer": "A",
+      "explanation": "'virtual ReturnType FunctionName() = 0;' declares a pure virtual function."
+    },
+    {
+      "id": 79,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Copy constructors and assignment operators",
+      "question": "What is shallow copy versus deep copy in classes managing dynamic memory?",
+      "options": {
+        "A": "Shallow copy copies pointers directly (sharing memory); deep copy allocates new memory and copies contents",
+        "B": "Deep copy copies pointers; shallow copy allocates memory",
+        "C": "Shallow copy is for references; deep copy is for pointers",
+        "D": "There is no difference"
+      },
+      "correctAnswer": "A",
+      "explanation": "Shallow copying duplicates raw pointer addresses leading to shared state; deep copying creates distinct heap resources."
+    },
+    {
+      "id": 80,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "STL containers",
+      "question": "Which STL container provides constant time O(1) insertions/deletions at both ends?",
+      "options": {
+        "A": "std::vector",
+        "B": "std::deque",
+        "C": "std::set",
+        "D": "std::array"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::deque (double-ended queue) supports O(1) push and pop at both head and tail."
+    },
+    {
+      "id": 81,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Pointers and references",
+      "question": "What is the output of the following program?\n\n#include <iostream>\nint main() {\n    int a = 10, b = 20;\n    int &ref = a;\n    ref = b;\n    std::cout << a << \" \" << b;\n    return 0;\n}",
+      "options": {
+        "A": "10 20",
+        "B": "20 20",
+        "C": "10 10",
+        "D": "Compilation Error"
+      },
+      "correctAnswer": "B",
+      "explanation": "ref is an alias for 'a'. Assigning ref = b assigns 20 to 'a', leaving a=20 and b=20."
+    },
+    {
+      "id": 82,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Exception handling",
+      "question": "Which standard exception class in <stdexcept> is thrown when memory allocation fails with `new`?",
+      "options": {
+        "A": "std::bad_alloc",
+        "B": "std::out_of_range",
+        "C": "std::invalid_argument",
+        "D": "std::runtime_error"
+      },
+      "correctAnswer": "A",
+      "explanation": "When dynamic memory allocation fails, operator new throws std::bad_alloc."
+    },
+    {
+      "id": 83,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Iterators and algorithms",
+      "question": "What is the result of calling std::advance(it, 3) on an iterator 'it'?",
+      "options": {
+        "A": "Increments iterator 'it' by 3 positions",
+        "B": "Returns a new iterator 3 positions ahead without modifying 'it'",
+        "C": "Sorts 3 elements",
+        "D": "Deletes 3 elements"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::advance modifies the passed iterator in-place by advancing it N steps."
+    },
+    {
+      "id": 84,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Type casting in C++",
+      "question": "Which C++ casting operator is used for safe downcasting in polymorphic class hierarchies at runtime?",
+      "options": {
+        "A": "static_cast",
+        "B": "dynamic_cast",
+        "C": "reinterpret_cast",
+        "D": "const_cast"
+      },
+      "correctAnswer": "B",
+      "explanation": "dynamic_cast safely converts pointers/references within class hierarchies using RTTI."
+    },
+    {
+      "id": 85,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Type casting in C++",
+      "question": "Which casting operator removes const or volatile qualifiers from a variable?",
+      "options": {
+        "A": "static_cast",
+        "B": "const_cast",
+        "C": "reinterpret_cast",
+        "D": "dynamic_cast"
+      },
+      "correctAnswer": "B",
+      "explanation": "const_cast is explicitly designed to cast away constness or volatility."
+    },
+    {
+      "id": 86,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Recursion and algorithms",
+      "question": "What is the space complexity of a recursive implementation of depth N due to call stack memory?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(N)",
+        "C": "O(N^2)",
+        "D": "O(log N)"
+      },
+      "correctAnswer": "B",
+      "explanation": "Recursion of depth N allocates N stack frames, consuming O(N) auxiliary space."
+    },
+    {
+      "id": 87,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Searching and sorting",
+      "question": "What is the average time complexity of Merge Sort?",
+      "options": {
+        "A": "O(N log N)",
+        "B": "O(N^2)",
+        "C": "O(N)",
+        "D": "O(log N)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Merge sort guarantees O(N log N) time complexity in best, average, and worst cases."
+    },
+    {
+      "id": 88,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "RAII and resource management",
+      "question": "What does RAII stand for in C++ core software engineering?",
+      "options": {
+        "A": "Resource Allocation Is Immediate",
+        "B": "Resource Acquisition Is Initialization",
+        "C": "Runtime Array Invalidation Initialization",
+        "D": "Reference Allocation In Inheritance"
+      },
+      "correctAnswer": "B",
+      "explanation": "RAII (Resource Acquisition Is Initialization) ties resource lifetime to object scope/destruction."
+    },
+    {
+      "id": 89,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Modern C++ features",
+      "question": "What is the purpose of `std::move` from <utility> in C++11?",
+      "options": {
+        "A": "Physically moves memory bytes across RAM",
+        "B": "Unconditionally casts an lvalue to an rvalue reference, enabling move semantics",
+        "C": "Copies an object asynchronously",
+        "D": "Deletes an object"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::move casts an expression to an rvalue reference (T&&) allowing resource transfer."
+    },
+    {
+      "id": 90,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Templates and generic programming",
+      "question": "What is template specialization in C++?",
+      "options": {
+        "A": "Providing a custom implementation of a template for a specific data type",
+        "B": "Restricting templates to numeric types",
+        "C": "Compiling templates faster",
+        "D": "Inheriting from template classes"
+      },
+      "correctAnswer": "A",
+      "explanation": "Template specialization defines tailored implementations for specific template argument types."
+    },
+    {
+      "id": 91,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Stack, queue, linked list, and tree fundamentals",
+      "question": "In a Binary Search Tree (BST), which traversal visits nodes in ascending sorted order?",
+      "options": {
+        "A": "Pre-order traversal",
+        "B": "In-order traversal",
+        "C": "Post-order traversal",
+        "D": "Level-order traversal"
+      },
+      "correctAnswer": "B",
+      "explanation": "In-order traversal (Left, Root, Right) processes BST nodes in sorted ascending order."
+    },
+    {
+      "id": 92,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "File handling and streams",
+      "question": "What method is used to close an open file stream in C++?",
+      "options": {
+        "A": "file.end()",
+        "B": "file.close()",
+        "C": "file.exit()",
+        "D": "file.stop()"
+      },
+      "correctAnswer": "B",
+      "explanation": "close() flushes stream buffers and detaches the stream from the file."
+    },
+    {
+      "id": 93,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Predicting moderately complex code output",
+      "question": "What is the output of the following program?\n\n#include <iostream>\nint main() {\n    int arr[] = {10, 20, 30};\n    int *p = arr;\n    std::cout << *p++;\n    return 0;\n}",
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "30",
+        "D": "Compilation Error"
+      },
+      "correctAnswer": "A",
+      "explanation": "*p++ dereferences current pointer p (10) and then increments pointer p to point to 20."
+    },
+    {
+      "id": 94,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Header files and namespaces",
+      "question": "How do you define a custom namespace named 'Physics' in C++?",
+      "options": {
+        "A": "namespace Physics { /* ... */ }",
+        "B": "package Physics { /* ... */ }",
+        "C": "using Physics { /* ... */ }",
+        "D": "module Physics { /* ... */ }"
+      },
+      "correctAnswer": "A",
+      "explanation": "'namespace Physics { ... }' defines a scoped namespace."
+    },
+    {
+      "id": 95,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Modern C++ features",
+      "question": "What is `constexpr` introduced in C++11?",
+      "options": {
+        "A": "Specifies that expression/function can be evaluated at compile time",
+        "B": "Makes variable constant at runtime only",
+        "C": "Forces dynamic thread evaluation",
+        "D": "Deprecates const"
+      },
+      "correctAnswer": "A",
+      "explanation": "constexpr guarantees compile-time evaluation for constant expressions and functions."
+    },
+    {
+      "id": 96,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Debugging common errors",
+      "question": "What type of error is caused by accessing `vec[10]` on std::vector `vec` of size 5 using `vec.at(10)`?",
+      "options": {
+        "A": "Throws std::out_of_range exception",
+        "B": "Silent memory corruption",
+        "C": "Compilation error",
+        "D": "Returns 0"
+      },
+      "correctAnswer": "A",
+      "explanation": "The at() method performs bounds checking and throws std::out_of_range on invalid index access."
+    },
+    {
+      "id": 97,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "STL containers",
+      "question": "Which method removes the last element of std::vector in C++?",
+      "options": {
+        "A": "v.pop_back()",
+        "B": "v.remove_last()",
+        "C": "v.erase_back()",
+        "D": "v.delete_end()"
+      },
+      "correctAnswer": "A",
+      "explanation": "pop_back() removes the last element and decreases vector size by 1."
+    },
+    {
+      "id": 98,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Destructors and object lifetime",
+      "question": "In what order are object destructors called relative to their constructor invocation order in automatic scope?",
+      "options": {
+        "A": "Same order (FIFO)",
+        "B": "Reverse order (LIFO)",
+        "C": "Random order",
+        "D": "Alphabetical order"
+      },
+      "correctAnswer": "B",
+      "explanation": "Objects on the stack are destroyed in strict reverse order of construction (LIFO)."
+    },
+    {
+      "id": 99,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Inheritance",
+      "question": "Can a derived class access private members of its base class directly?",
+      "options": {
+        "A": "Yes",
+        "B": "No, private base members are inaccessible to derived classes directly",
+        "C": "Only if using public inheritance",
+        "D": "Only with scope resolution"
+      },
+      "correctAnswer": "B",
+      "explanation": "Private members of a base class are preserved private and inaccessible directly by derived classes."
+    },
+    {
+      "id": 100,
+      "subject": "C++",
+      "difficulty": "Medium",
+      "topic": "Classes and objects",
+      "question": "What is 'this' pointer in C++ member functions?",
+      "options": {
+        "A": "A pointer to the current object instance calling the non-static member function",
+        "B": "A reference to base class",
+        "C": "A static class pointer",
+        "D": "A global runtime pointer"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'this' pointer is an implicit parameter passed to non-static member functions pointing to the invoking object."
+    }
+  ]
+}

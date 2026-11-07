@@ -87,13 +87,31 @@ public class QuestionBank {
             return all.size();
         }
 
+        String targetDiff = normalizeDifficulty(difficulty);
         int count = 0;
         for (Question q : all) {
-            if (q.getDifficulty().equalsIgnoreCase(difficulty)) {
+            if (normalizeDifficulty(q.getDifficulty()).equalsIgnoreCase(targetDiff)) {
                 count++;
             }
         }
         return count;
+    }
+
+    /**
+     * Normalizes difficulty string across aliases (Beginner <-> Easy, Intermediate <-> Medium, Advanced <-> Hard).
+     */
+    public static String normalizeDifficulty(String diff) {
+        if (diff == null) return "";
+        if (diff.equalsIgnoreCase(AppConstants.DIFFICULTY_BEGINNER) || diff.equalsIgnoreCase(AppConstants.DIFFICULTY_EASY)) {
+            return AppConstants.DIFFICULTY_EASY;
+        }
+        if (diff.equalsIgnoreCase(AppConstants.DIFFICULTY_INTERMEDIATE) || diff.equalsIgnoreCase(AppConstants.DIFFICULTY_MEDIUM)) {
+            return AppConstants.DIFFICULTY_MEDIUM;
+        }
+        if (diff.equalsIgnoreCase(AppConstants.DIFFICULTY_ADVANCED) || diff.equalsIgnoreCase(AppConstants.DIFFICULTY_HARD)) {
+            return AppConstants.DIFFICULTY_HARD;
+        }
+        return diff;
     }
 
     /**
@@ -106,9 +124,10 @@ public class QuestionBank {
 
         List<Question> pool = new ArrayList<>();
         boolean isMixed = difficulty == null || difficulty.equalsIgnoreCase(AppConstants.DIFFICULTY_MIXED);
+        String targetDiff = normalizeDifficulty(difficulty);
 
         for (Question q : source) {
-            if (isMixed || q.getDifficulty().equalsIgnoreCase(difficulty)) {
+            if (isMixed || normalizeDifficulty(q.getDifficulty()).equalsIgnoreCase(targetDiff)) {
                 pool.add(q);
             }
         }

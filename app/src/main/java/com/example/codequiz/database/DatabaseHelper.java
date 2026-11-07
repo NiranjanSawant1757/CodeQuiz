@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "codequiz.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     private static DatabaseHelper instance;
 
@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_USER_USERNAME = "username";
     public static final String COL_USER_PASSWORD_HASH = "password_hash";
     public static final String COL_USER_PASSWORD_SALT = "password_salt";
+    public static final String COL_USER_PROFILE_IMAGE = "profile_image";
     public static final String COL_USER_CREATED_AT = "created_at";
 
     // Table: quiz_attempts
@@ -88,6 +89,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + COL_USER_USERNAME + " TEXT NOT NULL UNIQUE, "
                 + COL_USER_PASSWORD_HASH + " TEXT NOT NULL, "
                 + COL_USER_PASSWORD_SALT + " TEXT NOT NULL, "
+                + COL_USER_PROFILE_IMAGE + " TEXT, "
                 + COL_USER_CREATED_AT + " INTEGER NOT NULL"
                 + ");";
 
@@ -169,6 +171,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL(createSavedQuestionsTable);
             db.execSQL("CREATE INDEX IF NOT EXISTS idx_saved_questions_subject ON " + TABLE_SAVED_QUESTIONS + " (" + COL_Q_SUBJECT + ");");
             db.execSQL("CREATE INDEX IF NOT EXISTS idx_saved_questions_difficulty ON " + TABLE_SAVED_QUESTIONS + " (" + COL_Q_DIFFICULTY + ");");
+        }
+
+        if (oldVersion < 3) {
+            try {
+                db.execSQL("ALTER TABLE " + TABLE_USERS + " ADD COLUMN " + COL_USER_PROFILE_IMAGE + " TEXT;");
+            } catch (Exception ignored) {
+            }
+        }
+    }
+
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        try {
+            db.execSQL("ALTER TABLE " + TABLE_USERS + " ADD COLUMN " + COL_USER_PROFILE_IMAGE + " TEXT;");
+        } catch (Exception ignored) {
         }
     }
 }

@@ -1,0 +1,761 @@
+{
+  "subject": "C",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 50
+  },
+  "questions": [
+    {
+      "id": 101,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Complex pointer expressions",
+      "question": "In C, what does the declaration int (*(*fp)(int))[5]; represent?",
+      "options": {
+        "A": "A function taking int and returning array of 5 pointers",
+        "B": "A pointer to a function taking an int argument and returning a pointer to an array of 5 integers",
+        "C": "An array of 5 function pointers",
+        "D": "Invalid syntax"
+      },
+      "correctAnswer": "B",
+      "explanation": "Reading right-left rule: fp is a pointer (*) to a function (int) returning a pointer (*) to an array [5] of int."
+    },
+    {
+      "id": 102,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Pointer-to-pointer operations",
+      "question": "What is the output of the following C program?\n\n#include <stdio.h>\nvoid modify(int **pp) {\n    static int val = 50;\n    *pp = &val;\n}\nint main(void) {\n    int x = 10;\n    int *p = &x;\n    modify(&p);\n    printf(\"%d\", *p);\n    return 0;\n}",
+      "options": {
+        "A": "10",
+        "B": "50",
+        "C": "Garbage value",
+        "D": "Compilation error"
+      },
+      "correctAnswer": "B",
+      "explanation": "modify accepts address of pointer &p. *pp = &val updates p in main to point to static variable val (50)."
+    },
+    {
+      "id": 103,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Function pointers",
+      "question": "How do you declare a function pointer named 'func' that points to a function taking two double parameters and returning an int?",
+      "options": {
+        "A": "int *func(double, double);",
+        "B": "int (*func)(double, double);",
+        "C": "int (func*)(double, double);",
+        "D": "double (*func)(int, int);"
+      },
+      "correctAnswer": "B",
+      "explanation": "int (*func)(double, double); correctly declares a function pointer. Without parentheses, int *func(...) declares a function returning an int pointer."
+    },
+    {
+      "id": 104,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced array and pointer relationships",
+      "question": "Given int arr[3][4]; what is the data type of the expression 'arr' when decayed in an expression?",
+      "options": {
+        "A": "int**",
+        "B": "int (*)[4]",
+        "C": "int*",
+        "D": "int[12]"
+      },
+      "correctAnswer": "B",
+      "explanation": "When a 2D array decays, it yields a pointer to its first row element, which has type pointer-to-array-of-4-ints: int (*)[4]."
+    },
+    {
+      "id": 105,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Structure padding and alignment",
+      "question": "Assuming a standard 64-bit ABI with 4-byte int alignment and 8-byte double alignment, what is sizeof(struct Data) for struct Data { char c; int i; double d; };?",
+      "options": {
+        "A": "13",
+        "B": "16",
+        "C": "24",
+        "D": "20"
+      },
+      "correctAnswer": "B",
+      "explanation": "char c (1 byte) + 3 padding bytes -> int i (4 bytes at offset 4) -> double d (8 bytes at offset 8). Total size = 16 bytes."
+    },
+    {
+      "id": 106,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced macros and preprocessing",
+      "question": "What is the function of token-pasting operator ## in C preprocessor macro #define CONCAT(a, b) a ## b?",
+      "options": {
+        "A": "Concatenates two strings",
+        "B": "Merges two tokens a and b into a single syntactical token during preprocessing",
+        "C": "Performs bitwise OR",
+        "D": "Compares tokens a and b"
+      },
+      "correctAnswer": "B",
+      "explanation": "The ## operator pastes tokens together. CONCAT(var, 1) expands to the token var1."
+    },
+    {
+      "id": 107,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Dynamic memory management and memory leaks",
+      "question": "What constitutes a memory leak when using realloc() like ptr = realloc(ptr, new_size);?",
+      "options": {
+        "A": "realloc always leaks memory",
+        "B": "If realloc fails and returns NULL, assigning back to 'ptr' overwrites the original address, losing the reference to original block",
+        "C": "realloc frees original block twice",
+        "D": "Memory leaks only occur with calloc"
+      },
+      "correctAnswer": "B",
+      "explanation": "Overwriting original pointer with NULL on realloc failure causes reference loss to original memory block, leaking it."
+    },
+    {
+      "id": 108,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Undefined behavior and sequence-related pitfalls",
+      "question": "What is the result of evaluating expression i = i++ + 1; in C17?",
+      "options": {
+        "A": "i increments by 2",
+        "B": "i increments by 1",
+        "C": "Undefined Behavior due to unsequenced side effect and value computation on 'i'",
+        "D": "Compilation error"
+      },
+      "correctAnswer": "B",
+      "explanation": "In C11/C17 standard rules, modifying a scalar object more than once without intermediate sequence points yields Undefined Behavior."
+    },
+    {
+      "id": 109,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Strict aliasing and effective type fundamentals",
+      "question": "What is the Strict Aliasing Rule in C compiler optimization?",
+      "options": {
+        "A": "Pointers of different types cannot point to same memory address unless one is char* or void*",
+        "B": "Compiler assumes pointers of incompatible types do not alias the same memory location, enabling optimization",
+        "C": "Restricts pointer comparison",
+        "D": "Forces explicit dynamic casting"
+      },
+      "correctAnswer": "B",
+      "explanation": "Strict aliasing allows compilers to assume pointers to incompatible types do not refer to the same memory object."
+    },
+    {
+      "id": 110,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Recursion and algorithm analysis",
+      "question": "What is the worst-case space complexity of recursive implementation of Depth-First Search (DFS) on a graph with V vertices due to call stack?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(V)",
+        "C": "O(V^2)",
+        "D": "O(E log V)"
+      },
+      "correctAnswer": "B",
+      "explanation": "In worst case (path graph), call stack recursion depth reaches O(V) frames."
+    },
+    {
+      "id": 111,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Linked lists, stacks, queues",
+      "question": "In Floyd's Cycle Detection Algorithm (Tortoise and Hare) on a linked list, why are cycle detected when fast pointer moves 2 steps and slow moves 1 step?",
+      "options": {
+        "A": "Fast pointer resets to head",
+        "B": "Relative distance between fast and slow pointers decreases by 1 in each loop iteration inside cycle",
+        "C": "Slow pointer stops at cycle entry",
+        "D": "List size is halved"
+      },
+      "correctAnswer": "B",
+      "explanation": "In a cycle, the loop gap shrinks by (2-1)=1 node per iteration, guaranteeing convergence without infinite loop."
+    },
+    {
+      "id": 112,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Bit manipulation",
+      "question": "What operation does expression x & (x - 1) perform on a non-zero integer x?",
+      "options": {
+        "A": "Multiplies x by 2",
+        "B": "Clears the lowest set bit (rightmost 1-bit) in x",
+        "C": "Toggles all bits of x",
+        "D": "Sets the highest bit"
+      },
+      "correctAnswer": "B",
+      "explanation": "x & (x - 1) turns off the lowest set bit of x. It is frequently used to check if x is a power of 2 (x & (x - 1) == 0)."
+    },
+    {
+      "id": 113,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "File I/O edge cases",
+      "question": "Why should file reading loops check feof() AFTER a read operation (like fread or fgetc) rather than in loop condition while(!feof(fp))?",
+      "options": {
+        "A": "feof() closes file stream",
+        "B": "feof() returns true only AFTER an attempted read past EOF fails, causing an extra loop iteration if checked first",
+        "C": "feof() works only for text files",
+        "D": "feof() resets file error indicator"
+      },
+      "correctAnswer": "B",
+      "explanation": "feof() is set only after a read operation attempts to read past EOF. Checking before reading processes the last byte twice."
+    },
+    {
+      "id": 114,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Compilation, linking, and memory-layout fundamentals",
+      "question": "In executable memory layout (ELF), where are uninitialized global and static variables stored?",
+      "options": {
+        "A": "Text segment",
+        "B": "BSS (Block Started by Symbol) segment",
+        "C": "Stack segment",
+        "D": "Heap segment"
+      },
+      "correctAnswer": "B",
+      "explanation": "Uninitialized global/static variables are placed in BSS segment and initialized to zero by operating system at launch."
+    },
+    {
+      "id": 115,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced code-output and debugging problems",
+      "question": "What is the output of the following C code?\n\n#include <stdio.h>\nint main(void) {\n    int a[] = {1, 2, 3, 4, 5};\n    int *p = (int*)(&a + 1);\n    printf(\"%d\", *(p - 1));\n    return 0;\n}",
+      "options": {
+        "A": "1",
+        "B": "5",
+        "C": "Garbage value",
+        "D": "Compilation error"
+      },
+      "correctAnswer": "B",
+      "explanation": "&a has type pointer-to-array int(*)[5]. &a + 1 moves pointer past the entire array. Casting to int* and (p-1) points to a[4] = 5."
+    },
+    {
+      "id": 116,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Bit manipulation",
+      "question": "What is the value of expression (1U << 31) on 32-bit two's complement system?",
+      "options": {
+        "A": "2147483647",
+        "B": "-2147483648 (represented as INT_MIN)",
+        "C": "0",
+        "D": "Undefined"
+      },
+      "correctAnswer": "B",
+      "explanation": "Shifting 1U into 31st position sets the sign bit, representing 0x80000000 (-2147483648 in signed 32-bit context)."
+    },
+    {
+      "id": 117,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Function pointers",
+      "question": "Given int add(int a, int b) { return a + b; }, what is the correct syntax to invoke this function via function pointer fp?",
+      "options": {
+        "A": "fp(a, b) or (*fp)(a, b)",
+        "B": "&fp(a, b)",
+        "C": "fp->(a, b)",
+        "D": "call fp(a, b)"
+      },
+      "correctAnswer": "A",
+      "explanation": "In C, calling function pointer can use either explicit dereference (*fp)(a, b) or implicit syntax fp(a, b)."
+    },
+    {
+      "id": 118,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced array and pointer relationships",
+      "question": "What does the expression 2[arr] evaluate to where arr is an array of integers?",
+      "options": {
+        "A": "Compilation Error",
+        "B": "arr[2] because a[b] is *(a + b) and addition is commutative",
+        "C": "Address of 2nd element",
+        "D": "Garbage value"
+      },
+      "correctAnswer": "B",
+      "explanation": "In C, arr[2] is defined as *(arr + 2). Due to commutative property of addition, *(2 + arr) is 2[arr]."
+    },
+    {
+      "id": 119,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Undefined behavior and common programming errors",
+      "question": "What happens if you dereference a pointer converted from an unaligned memory address on strict alignment architectures?",
+      "options": {
+        "A": "Compiler fixes alignment",
+        "B": "Bus Error / Alignment Fault leading to crash",
+        "C": "Returns 0",
+        "D": "Normal execution"
+      },
+      "correctAnswer": "B",
+      "explanation": "Accessing misaligned addresses on hardware requiring strict alignment triggers a bus error or hardware fault exception."
+    },
+    {
+      "id": 120,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Compilation, linking, and memory-layout fundamentals",
+      "question": "Where are local auto variables allocated during function calls?",
+      "options": {
+        "A": "Heap",
+        "B": "BSS Segment",
+        "C": "Call Stack",
+        "D": "Data Segment"
+      },
+      "correctAnswer": "C",
+      "explanation": "Local variables with automatic storage duration are allocated on the active execution call stack frame."
+    },
+    {
+      "id": 121,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced macros and preprocessing",
+      "question": "What is the output of macro expansion for:\n#define PRINT(x) printf(#x \" = %d\\n\", x)\nint val = 10; PRINT(val);",
+      "options": {
+        "A": "val = 10",
+        "B": "\"val\" = 10",
+        "C": "10 = 10",
+        "D": "PRINT(10)"
+      },
+      "correctAnswer": "A",
+      "explanation": "#x stringifies 'val' to \"val\". String literal concatenation joins \"val\" and \" = %d\\n\" into \"val = %d\\n\", printing 'val = 10'."
+    },
+    {
+      "id": 122,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Complex pointer expressions",
+      "question": "What does char (*a[10])(int) declare?",
+      "options": {
+        "A": "A function returning array of 10 char pointers",
+        "B": "An array of 10 function pointers, each pointing to a function taking int and returning char",
+        "C": "Pointer to 10 chars",
+        "D": "Invalid declaration"
+      },
+      "correctAnswer": "B",
+      "explanation": "a[10] is an array of 10 pointers (*) to functions taking (int) parameter and returning char."
+    },
+    {
+      "id": 123,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Structure padding and alignment",
+      "question": "What attribute or pragma is used in GCC/Clang to disable structure padding?",
+      "options": {
+        "A": "__attribute__((packed)) or #pragma pack(1)",
+        "B": "__attribute__((aligned))",
+        "C": "#pragma nopad",
+        "D": "volatile struct"
+      },
+      "correctAnswer": "A",
+      "explanation": "__attribute__((packed)) forces the compiler to minimize space without inserting padding alignment bytes."
+    },
+    {
+      "id": 124,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Dynamic memory management",
+      "question": "Which function in C11 aligned dynamic memory allocation allocates 'size' bytes whose address is a multiple of 'alignment'?",
+      "options": {
+        "A": "aligned_alloc()",
+        "B": "malloc_aligned()",
+        "C": "memalign()",
+        "D": "posix_memalign()"
+      },
+      "correctAnswer": "A",
+      "explanation": "C11 standard introduced aligned_alloc(alignment, size) in <stdlib.h> for aligned dynamic memory allocation."
+    },
+    {
+      "id": 125,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Recursion and algorithm analysis",
+      "question": "What is the time complexity of solving the Tower of Hanoi problem for N disks?",
+      "options": {
+        "A": "O(N^2)",
+        "B": "O(2^N)",
+        "C": "O(N log N)",
+        "D": "O(N!)"
+      },
+      "correctAnswer": "B",
+      "explanation": "Tower of Hanoi recurrence T(N) = 2T(N-1) + 1 yields exponential time complexity O(2^N)."
+    },
+    {
+      "id": 126,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Bit manipulation",
+      "question": "How do you swap two integer variables x and y without using a temporary variable via bitwise operations?",
+      "options": {
+        "A": "x = x ^ y; y = x ^ y; x = x ^ y;",
+        "B": "x = x & y; y = x & y; x = x & y;",
+        "C": "x = x | y; y = x | y; x = x | y;",
+        "D": "x = ~x; y = ~y;"
+      },
+      "correctAnswer": "A",
+      "explanation": "The XOR swap algorithm uses three XOR operations to exchange values without extra memory."
+    },
+    {
+      "id": 127,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Undefined behavior and sequence-related pitfalls",
+      "question": "In C, what is the sequence point guarantee of logical AND (&&) operator?",
+      "options": {
+        "A": "No sequence point",
+        "B": "Left operand is fully evaluated and side effects applied before right operand is evaluated (short-circuiting)",
+        "C": "Right operand evaluates first",
+        "D": "Both evaluate concurrently"
+      },
+      "correctAnswer": "B",
+      "explanation": "The && operator introduces a sequence point after evaluating left operand, guaranteeing left-to-right evaluation and short-circuiting."
+    },
+    {
+      "id": 128,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Memory management and debugging",
+      "question": "What is a Stack Overflow error caused by in C program execution?",
+      "options": {
+        "A": "Allocating too much memory via malloc",
+        "B": "Exceeding available stack memory limits, usually due to infinite recursion or huge stack arrays",
+        "C": "Freeing unallocated memory",
+        "D": "Dereferencing NULL pointer"
+      },
+      "correctAnswer": "B",
+      "explanation": "Stack overflow occurs when call stack memory limit is exceeded by excessive stack allocation or deep recursion."
+    },
+    {
+      "id": 129,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Linked lists, stacks, queues",
+      "question": "In a circular queue implemented using array of size N, what is the formula for next index after 'rear'?",
+      "options": {
+        "A": "(rear + 1) % N",
+        "B": "rear + 1",
+        "C": "(rear - 1) % N",
+        "D": "rear % N"
+      },
+      "correctAnswer": "A",
+      "explanation": "Modulo arithmetic (rear + 1) % N wraps index back to 0 when reaching array end."
+    },
+    {
+      "id": 130,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Type conversion and type casting",
+      "question": "What happens when a negative signed integer is converted to an unsigned integer type of same width in C?",
+      "options": {
+        "A": "Runtime Exception",
+        "B": "Value is converted by adding 2^N (where N is bit width), resulting in large positive integer",
+        "C": "Value becomes 0",
+        "D": "Value remains negative"
+      },
+      "correctAnswer": "B",
+      "explanation": "Converting negative signed to unsigned performs modular reduction modulo 2^N in accordance with C standard binary representation."
+    },
+    {
+      "id": 131,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Searching and sorting algorithms",
+      "question": "What is the average time complexity of Heap Sort?",
+      "options": {
+        "A": "O(N^2)",
+        "B": "O(N log N)",
+        "C": "O(N)",
+        "D": "O(log N)"
+      },
+      "correctAnswer": "B",
+      "explanation": "Heap sort maintains heap structure and performs N extractions taking O(N log N) time in all cases."
+    },
+    {
+      "id": 132,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Function pointers",
+      "question": "Which standard library function uses function pointers for custom sorting comparison callback?",
+      "options": {
+        "A": "qsort()",
+        "B": "bsearch()",
+        "C": "Both qsort() and bsearch()",
+        "D": "sort()"
+      },
+      "correctAnswer": "C",
+      "explanation": "Both qsort() and bsearch() accept comparator function pointers int (*compar)(const void*, const void*)."
+    },
+    {
+      "id": 133,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "File I/O edge cases",
+      "question": "What is the purpose of fflush(stdout) in C?",
+      "options": {
+        "A": "Clears input buffer",
+        "B": "Forces immediate flushing of stdout output stream buffer to terminal/destination",
+        "C": "Closes stdout file handle",
+        "D": "Resets stdout position"
+      },
+      "correctAnswer": "B",
+      "explanation": "fflush(stdout) forces buffered pending output bytes to be written immediately to output file/device."
+    },
+    {
+      "id": 134,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Command-line arguments",
+      "question": "What is guaranteed about argv[argc] in standard C main signature?",
+      "options": {
+        "A": "Contains program name",
+        "B": "It is strictly a NULL pointer",
+        "C": "Contains empty string",
+        "D": "It is undefined"
+      },
+      "correctAnswer": "B",
+      "explanation": "The C standard mandates that argv[argc] must be a NULL pointer."
+    },
+    {
+      "id": 135,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Strict aliasing and effective type fundamentals",
+      "question": "Which pointer type is explicitly permitted by C standard to alias any object type without violating strict aliasing?",
+      "options": {
+        "A": "int*",
+        "B": "char* (and unsigned char*)",
+        "C": "float*",
+        "D": "void**"
+      },
+      "correctAnswer": "B",
+      "explanation": "Character types (char*, unsigned char*) are special target types allowed to inspect/alias raw bytes of any object."
+    },
+    {
+      "id": 136,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Variadic functions",
+      "question": "Which header file provides macros va_start, va_arg, and va_end for handling variadic functions in C?",
+      "options": {
+        "A": "<stdarg.h>",
+        "B": "<varargs.h>",
+        "C": "<stdlib.h>",
+        "D": "<stdio.h>"
+      },
+      "correctAnswer": "A",
+      "explanation": "<stdarg.h> defines macros to step through variable argument lists in C variadic functions."
+    },
+    {
+      "id": 137,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Pointers and pointer arithmetic",
+      "question": "What is the result of subtracting two pointers pointing to elements of the same array in C (p2 - p1)?",
+      "options": {
+        "A": "Difference in bytes",
+        "B": "Difference in number of array elements between them (ptrdiff_t)",
+        "C": "Sum of addresses",
+        "D": "Undefined behavior"
+      },
+      "correctAnswer": "B",
+      "explanation": "Pointer subtraction returns the element index difference between pointers as signed integer type ptrdiff_t."
+    },
+    {
+      "id": 138,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Storage classes and scope",
+      "question": "What is thread_local (or _Thread_local in C11) storage class specifier used for?",
+      "options": {
+        "A": "Making variable global across all threads",
+        "B": "Giving variable thread storage duration where each thread has its own distinct instance",
+        "C": "Locking thread execution",
+        "D": "Disabling multi-threading"
+      },
+      "correctAnswer": "B",
+      "explanation": "_Thread_local creates thread-specific storage instances isolated per execution thread."
+    },
+    {
+      "id": 139,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Structures and unions",
+      "question": "What is a flexible array member in a C structure (C99 feature)?",
+      "options": {
+        "A": "An array with negative size",
+        "B": "An array of unsized length char arr[] as last member of struct used for dynamic allocation payloads",
+        "C": "An array converted to pointer",
+        "D": "A pointer member"
+      },
+      "correctAnswer": "B",
+      "explanation": "Flexible array members allow a structure's last member to have incomplete array type [] for variable-sized heap allocations."
+    },
+    {
+      "id": 140,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Undefined behavior and sequence-related pitfalls",
+      "question": "What is the result of accessing uninitialized local variable with automatic storage duration in C?",
+      "options": {
+        "A": "Guaranteed to be 0",
+        "B": "Undefined Behavior (contains indeterminate garbage value)",
+        "C": "Compilation error",
+        "D": "Null pointer error"
+      },
+      "correctAnswer": "B",
+      "explanation": "Reading uninitialized automatic variables yields indeterminate values, causing undefined behavior."
+    },
+    {
+      "id": 141,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Bit manipulation",
+      "question": "How do you clear (set to 0) the k-th bit of an integer n (0-indexed)?",
+      "options": {
+        "A": "n = n & ~(1 << k)",
+        "B": "n = n | (1 << k)",
+        "C": "n = n ^ (1 << k)",
+        "D": "n = n >> k"
+      },
+      "correctAnswer": "A",
+      "explanation": "Bitwise AND with bitwise NOT mask ~(1 << k) clears the k-th bit while preserving all other bits."
+    },
+    {
+      "id": 142,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Compilation, linking, and memory-layout fundamentals",
+      "question": "What is the purpose of the 'const' qualifier on a variable declaration?",
+      "options": {
+        "A": "Makes variable volatile",
+        "B": "Informs compiler that variable value cannot be modified after initialization",
+        "C": "Allocates memory in stack",
+        "D": "Increases execution speed by 2x"
+      },
+      "correctAnswer": "B",
+      "explanation": "'const' specifies read-only immutability for the qualified object."
+    },
+    {
+      "id": 143,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Recursion and algorithm analysis",
+      "question": "What is the average time complexity of searching in a balanced Binary Search Tree (BST)?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(log N)",
+        "C": "O(N)",
+        "D": "O(N log N)"
+      },
+      "correctAnswer": "B",
+      "explanation": "A balanced BST halves search space at each tree level, yielding logarithmic O(log N) search time."
+    },
+    {
+      "id": 144,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Linked lists, stacks, queues",
+      "question": "What is a major advantage of a Doubly Linked List over a Singly Linked List?",
+      "options": {
+        "A": "Uses less memory",
+        "B": "Allows bidirectional traversal (forward and backward) and O(1) deletion of given node pointer",
+        "C": "Faster array access",
+        "D": "Automatic sorting"
+      },
+      "correctAnswer": "B",
+      "explanation": "Doubly linked lists store previous node pointers, enabling reverse traversal and constant-time node removal."
+    },
+    {
+      "id": 145,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Signal handling",
+      "question": "Which standard header file provides signal handling functions like signal() and raise() in C?",
+      "options": {
+        "A": "<signal.h>",
+        "B": "<sys/signal.h>",
+        "C": "<interrupt.h>",
+        "D": "<stdlib.h>"
+      },
+      "correctAnswer": "A",
+      "explanation": "<signal.h> contains facility definitions for handling asynchronous signal conditions in C."
+    },
+    {
+      "id": 146,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Volatile qualifier",
+      "question": "What does the 'volatile' keyword inform the C compiler?",
+      "options": {
+        "A": "Variable should be stored in GPU memory",
+        "B": "Variable value may be modified by hardware or external threads, preventing compiler caching in registers",
+        "C": "Variable is constant",
+        "D": "Variable causes memory leaks"
+      },
+      "correctAnswer": "B",
+      "explanation": "'volatile' prevents compiler optimizations that cache values in registers or reorder accesses to memory."
+    },
+    {
+      "id": 147,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced code-output and debugging problems",
+      "question": "What is printed by printf(\"%d\", sizeof('a')) in standard C (unlike C++)?",
+      "options": {
+        "A": "1",
+        "B": "Size of int (typically 4 bytes)",
+        "C": "2",
+        "D": "Undefined"
+      },
+      "correctAnswer": "B",
+      "explanation": "In C, character constants like 'a' have type 'int' (sizeof('a') == sizeof(int)), whereas in C++ they have type 'char'."
+    },
+    {
+      "id": 148,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Bit manipulation",
+      "question": "What is the result of expression (n & -n) for integer n?",
+      "options": {
+        "A": "Isolates the lowest set bit of n",
+        "B": "Negates n",
+        "C": "Clears all bits",
+        "D": "Swaps high and low bytes"
+      },
+      "correctAnswer": "A",
+      "explanation": "In two's complement, (n & -n) isolates and extracts the rightmost lowest 1-bit of n."
+    },
+    {
+      "id": 149,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Memory management and debugging",
+      "question": "What does the static analysis tool 'cppcheck' do for C applications?",
+      "options": {
+        "A": "Compiles code to object files",
+        "B": "Inspects source code without execution to identify bugs, memory leaks, and undefined behavior",
+        "C": "Measures code execution speed",
+        "D": "Formats source code"
+      },
+      "correctAnswer": "B",
+      "explanation": "Cppcheck is a static code analysis tool that analyzes C/C++ source code for potential bugs and security vulnerabilities without running the binary."
+    },
+    {
+      "id": 150,
+      "subject": "C",
+      "difficulty": "Hard",
+      "topic": "Standard C features",
+      "question": "What feature was introduced in C11 standard for type-generic macro expressions?",
+      "options": {
+        "A": "_Generic keyword",
+        "B": "auto keyword",
+        "C": "template keyword",
+        "D": "typeof keyword"
+      },
+      "correctAnswer": "A",
+      "explanation": "C11 introduced the _Generic keyword, enabling selection of expressions based on argument type at compile time."
+    }
+  ]
+}

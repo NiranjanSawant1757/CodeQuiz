@@ -4,12 +4,12 @@
     android:id="@+id/cardHistoryItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="12dp"
     app:cardBackgroundColor="@color/card_background"
-    app:cardCornerRadius="14dp"
-    app:cardElevation="1dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="0dp"
     app:strokeColor="@color/card_stroke"
     app:strokeWidth="1dp">
 
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="14dp">
+        android:padding="18dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,6 +35,7 @@
                     android:id="@+id/tvHistoryCategory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:letterSpacing="-0.01"
                     android:text="Python"
                     android:textColor="@color/text_primary"
                     android:textSize="16sp"
@@ -44,7 +45,7 @@
                     android:id="@+id/tvHistoryDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="3dp"
                     android:text="Oct 23, 2026 • 02:45 PM"
                     android:textColor="@color/text_secondary"
                     android:textSize="12sp" />
@@ -56,9 +57,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_badge_rounded"
+                android:letterSpacing="-0.01"
+                android:paddingStart="12dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="5dp"
                 android:text="85%"
                 android:textColor="@color/primary"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -66,9 +72,9 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/card_stroke" />
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/divider" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,37 +104,36 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="14dp"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnViewResult"
-                style="@style/Widget.Material3.Button.OutlinedButton"
+                style="@style/Widget.CodeQuiz.Button"
                 android:layout_width="0dp"
-                android:layout_height="38dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
+                android:backgroundTint="@color/surface_variant"
                 android:text="View Result"
+                android:textColor="@color/text_primary"
                 android:textSize="12sp"
-                app:cornerRadius="8dp"
-                app:strokeColor="@color/primary" />
+                app:cornerRadius="10dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnReviewAnswers"
-                style="@style/Widget.Material3.Button.TonalButton"
+                style="@style/Widget.CodeQuiz.Button"
                 android:layout_width="0dp"
-                android:layout_height="38dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="6dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/primary_light"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
                 android:text="Review Answers"
                 android:textColor="@color/primary"
                 android:textSize="12sp"
-                app:cornerRadius="8dp" />
+                app:cornerRadius="10dp" />
 
         </LinearLayout>
 

@@ -1,0 +1,761 @@
+{
+  "subject": "HTML",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 50
+  },
+  "questions": [
+    {
+      "id": 101,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "HTML parsing and browser behavior",
+      "question": "How does an HTML parser handle script tags without `async` or `defer` encountered during parsing?",
+      "options": {
+        "A": "Parsing halts completely, script is fetched and executed immediately before HTML parsing resumes",
+        "B": "Script is downloaded in background while HTML parsing continues unaffected",
+        "C": "Script execution is postponed to idle time",
+        "D": "Parser converts script to WebWorker thread"
+      },
+      "correctAnswer": "A",
+      "explanation": "Synchronous script tags block the HTML parser completely until the script is downloaded and executed."
+    },
+    {
+      "id": 102,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "HTML parsing and browser behavior",
+      "question": "What is the DOM tree construction result when the parser encounters a missing closing tag like `<p>First <p>Second`?",
+      "options": {
+        "A": "The browser automatically closes the first <p> element before opening the second <p> element",
+        "B": "The second <p> is nested inside the first <p>",
+        "C": "Parser throws syntax exception and stops rendering",
+        "D": "Both paragraphs merge into single node"
+      },
+      "correctAnswer": "A",
+      "explanation": "Under HTML parsing rules, <p> elements cannot contain block-level elements or nested <p> tags; the first <p> implicitly closes."
+    },
+    {
+      "id": 103,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Security fundamentals",
+      "question": "What severe security vulnerability occurs when raw, unsanitized user inputs are injected directly into HTML DOM via `innerHTML`?",
+      "options": {
+        "A": "Cross-Site Scripting (XSS)",
+        "B": "Cross-Site Request Forgery (CSRF)",
+        "C": "SQL Injection",
+        "D": "Server-Side Template Injection"
+      },
+      "correctAnswer": "A",
+      "explanation": "Inserting unescaped user string payloads into innerHTML allows attackers to inject malicious scripts (XSS)."
+    },
+    {
+      "id": 104,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Security fundamentals",
+      "question": "Which HTTP security header configured in web servers restricts resource origin domains for scripts, styles, and images?",
+      "options": {
+        "A": "Content-Security-Policy (CSP)",
+        "B": "X-Frame-Options",
+        "C": "Strict-Transport-Security",
+        "D": "X-Content-Type-Options"
+      },
+      "correctAnswer": "A",
+      "explanation": "Content-Security-Policy (CSP) headers mitigate XSS and data injection by specifying permitted content origins."
+    },
+    {
+      "id": 105,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Security fundamentals",
+      "question": "Which attribute on `<iframe>` sandboxes and restricts iframe privileges like form submission, script execution, or top-navigation?",
+      "options": {
+        "A": "sandbox",
+        "B": "security",
+        "C": "restrict",
+        "D": "policy"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'sandbox' attribute enforces security restrictions on iframe content (e.g., sandbox=\"allow-scripts\")."
+    },
+    {
+      "id": 106,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "What is the difference between `display: none`, `visibility: hidden`, and `aria-hidden=\"true\"` regarding screen readers?",
+      "options": {
+        "A": "`display: none` and `visibility: hidden` hide content from both DOM rendering and screen readers; `aria-hidden=\"true\"` hides content only from screen readers while keeping visual rendering intact",
+        "B": "`aria-hidden` visually hides elements from screen",
+        "C": "`visibility: hidden` is read aloud by screen readers",
+        "D": "They perform identical functions"
+      },
+      "correctAnswer": "A",
+      "explanation": "display:none/visibility:hidden hide visually and from accessibility tree; aria-hidden=\"true\" hides exclusively from accessibility tree."
+    },
+    {
+      "id": 107,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "When an HTML form contains invalid input controls upon user submission, what DOM event is fired on the invalid controls?",
+      "options": {
+        "A": "invalid",
+        "B": "error",
+        "C": "validationerror",
+        "D": "abort"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'invalid' event fires on each invalid form element when form constraint validation fails upon submission."
+    },
+    {
+      "id": 108,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which boolean attribute on <form> disables native browser HTML validation checks during submission?",
+      "options": {
+        "A": "novalidate",
+        "B": "bypass",
+        "C": "nocheck",
+        "D": "disable-validation"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'novalidate' attribute on <form> bypasses standard browser field constraints during submission."
+    },
+    {
+      "id": 109,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which attribute on a submit button overrides the parent form's `action` attribute when clicked?",
+      "options": {
+        "A": "formaction",
+        "B": "targetaction",
+        "C": "override-action",
+        "D": "submit-to"
+      },
+      "correctAnswer": "A",
+      "explanation": "'formaction' overrides the default form action URI specifically for that submit button click."
+    },
+    {
+      "id": 110,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which attribute on a submit button overrides the parent form's `method` attribute?",
+      "options": {
+        "A": "formmethod",
+        "B": "methodoverride",
+        "C": "form-type",
+        "D": "httpmethod"
+      },
+      "correctAnswer": "A",
+      "explanation": "'formmethod' overrides the default HTTP submission method (GET/POST) for that specific submit button."
+    },
+    {
+      "id": 111,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "DOM structure and element relationships",
+      "question": "What is the content model specification for the HTML5 `<template>` element?",
+      "options": {
+        "A": "Its contents are parsed into a DocumentFragment, stored in inert state, and not rendered in DOM until cloned via JavaScript",
+        "B": "Its contents render immediately on screen with opacity 0.5",
+        "C": "It operates as an external iframe",
+        "D": "It compiles to WebAssembly"
+      },
+      "correctAnswer": "A",
+      "explanation": "<template> holds inert HTML markup parsed into a DocumentFragment that does not execute or render until instantiated by JS."
+    },
+    {
+      "id": 112,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "HTML parsing and browser behavior",
+      "question": "What happens when the browser parser encounters `<script>` inside `<head>` with `type=\"module\"`?",
+      "options": {
+        "A": "It automatically behaves as if `defer` were specified, executing after DOM parsing completes",
+        "B": "It blocks parsing synchronously like standard script",
+        "C": "It fails to execute without async attribute",
+        "D": "It executes in parallel with head styling"
+      },
+      "correctAnswer": "A",
+      "explanation": "ES modules (`type=\"module\"`) are automatically deferred by default in modern browsers."
+    },
+    {
+      "id": 113,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "HTML parsing and browser behavior",
+      "question": "What is Quirks Mode in browser HTML rendering?",
+      "options": {
+        "A": "A legacy emulation mode triggered by missing or invalid <!DOCTYPE> declarations",
+        "B": "A special developer debugging mode in Chrome",
+        "C": "An experimental HTML6 parsing mode",
+        "D": "A mobile rendering engine flag"
+      },
+      "correctAnswer": "A",
+      "explanation": "Missing doctype triggers Quirks Mode where browser emulates non-standard legacy browser layout bugs."
+    },
+    {
+      "id": 114,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which HTML5 tag is used to draw dynamic graphics, charts, or game animations via JavaScript rendering context?",
+      "options": {
+        "A": "<canvas>",
+        "B": "<svg>",
+        "C": "<graphic>",
+        "D": "<draw>"
+      },
+      "correctAnswer": "A",
+      "explanation": "<canvas> provides a bitmap resolution-dependent surface renderable via 2D/WebGL JavaScript contexts."
+    },
+    {
+      "id": 115,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Audio, video, and embedded content",
+      "question": "What is the key technical difference between `<canvas>` and `<svg>` elements in HTML?",
+      "options": {
+        "A": "<canvas> is raster/bitmap pixel-based drawn via JS; <svg> is vector-based XML tree integrated into DOM",
+        "B": "<canvas> is vector-based; <svg> is pixel-based",
+        "C": "<svg> cannot be styled with CSS",
+        "D": "<canvas> elements scale infinitely without pixelation"
+      },
+      "correctAnswer": "A",
+      "explanation": "Canvas is a pixel raster surface (immediate mode), while SVG is a DOM-accessible vector graph (retained mode)."
+    },
+    {
+      "id": 116,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Metadata and SEO fundamentals",
+      "question": "What is the primary function of Open Graph meta tags (e.g., `<meta property=\"og:title\" content=\"...\">`)?",
+      "options": {
+        "A": "To specify rich preview cards (title, image, description) when links are shared on social media platforms",
+        "B": "To index site content faster on Google Search",
+        "C": "To configure web graphics rendering",
+        "D": "To handle local language translations"
+      },
+      "correctAnswer": "A",
+      "explanation": "Open Graph protocol tags format rich snippets/preview cards for social media link shares."
+    },
+    {
+      "id": 117,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "Which ARIA attribute creates a dynamic live region where content updates are announced immediately by screen readers without losing focus?",
+      "options": {
+        "A": "aria-live=\"polite\"",
+        "B": "aria-update=\"fast\"",
+        "C": "aria-alert=\"true\"",
+        "D": "aria-announce=\"yes\""
+      },
+      "correctAnswer": "A",
+      "explanation": "aria-live=\"polite\" or \"assertive\" instructs screen readers to announce dynamic content updates."
+    },
+    {
+      "id": 118,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "What is the difference between `aria-live=\"polite\"` and `aria-live=\"assertive\"`?",
+      "options": {
+        "A": "`polite` waits until user is idle before announcing; `assertive` interrupts current speech immediately to announce updates",
+        "B": "`polite` plays a sound effect",
+        "C": "`assertive` logs errors to console",
+        "D": "There is no difference"
+      },
+      "correctAnswer": "A",
+      "explanation": "'polite' announces updates at natural speech pauses, whereas 'assertive' interrupts ongoing screen reader output immediately."
+    },
+    {
+      "id": 119,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Global attributes and data-* attributes",
+      "question": "Which HTML attribute provides native drag-and-drop capabilities to HTML elements?",
+      "options": {
+        "A": "draggable=\"true\"",
+        "B": "drag=\"enabled\"",
+        "C": "movable=\"true\"",
+        "D": "allow-drag=\"true\""
+      },
+      "correctAnswer": "A",
+      "explanation": "The global 'draggable=\"true\"' attribute enables native browser drag-and-drop interactions."
+    },
+    {
+      "id": 120,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Security fundamentals",
+      "question": "What security attribute combination on anchor tag `<a>` prevents target pages from performing reverse tabnabbing attacks when opening external links in new tabs?",
+      "options": {
+        "A": "target=\"_blank\" rel=\"noopener noreferrer\"",
+        "B": "target=\"_new\" security=\"high\"",
+        "C": "rel=\"secure\"",
+        "D": "type=\"external\""
+      },
+      "correctAnswer": "A",
+      "explanation": "Combining target=\"_blank\" with rel=\"noopener noreferrer\" protects against parent window hijacking."
+    },
+    {
+      "id": 121,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Security fundamentals",
+      "question": "Which iframe attribute value explicitly blocks embedded cross-origin content from executing scripts?",
+      "options": {
+        "A": "Omitting 'allow-scripts' from the sandbox attribute list",
+        "B": "sandbox=\"scripts-off\"",
+        "C": "noscript=\"true\"",
+        "D": "script-policy=\"deny\""
+      },
+      "correctAnswer": "A",
+      "explanation": "If `sandbox` attribute is present on an iframe without 'allow-scripts', script execution is strictly disabled."
+    },
+    {
+      "id": 122,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "HTML parsing and browser behavior",
+      "question": "What does the browser Speculative Preloader do during HTML parsing?",
+      "options": {
+        "A": "Scans document ahead for external resources (images, scripts, CSS) and initiates network requests while main parser is blocked",
+        "B": "Pre-renders entire page in background memory",
+        "C": "Executes JavaScript off main thread",
+        "D": "Compiles CSS to native code"
+      },
+      "correctAnswer": "A",
+      "explanation": "Speculative preloaders parse document raw streams ahead to fetch external files concurrently while main thread executes scripts."
+    },
+    {
+      "id": 123,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "HTML entities and character encoding",
+      "question": "Why must raw `<`, `>`, and `&` characters be escaped as entities in HTML body text and attributes?",
+      "options": {
+        "A": "To prevent browser parser ambiguity between actual markup tags/entities and plain text values",
+        "B": "To decrease network packet size",
+        "C": "To enforce UTF-16 character width",
+        "D": "To allow CSS styling"
+      },
+      "correctAnswer": "A",
+      "explanation": "Unescaped markup syntax characters cause parsing ambiguity or potential security injection bugs."
+    },
+    {
+      "id": 124,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "What is the behavior of input attribute `autofocus` on a page with multiple elements having `autofocus`?",
+      "options": {
+        "A": "The first element with autofocus in document order receives focus (or behavior is implementation-dependent)",
+        "B": "All elements focus simultaneously",
+        "C": "Throws a JavaScript runtime error",
+        "D": "Page scrolling disables focus"
+      },
+      "correctAnswer": "A",
+      "explanation": "Only one element gets focus; browsers focus the first element in DOM tree containing the autofocus attribute."
+    },
+    {
+      "id": 125,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which pseudoclass matches form controls whose values fulfill all validation constraint requirements?",
+      "options": {
+        "A": ":valid",
+        "B": ":checked",
+        "C": ":success",
+        "D": ":approved"
+      },
+      "correctAnswer": "A",
+      "explanation": "The CSS :valid pseudo-class targets form elements whose current value passes validation."
+    },
+    {
+      "id": 126,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which pseudoclass matches form controls whose values fail validation constraints?",
+      "options": {
+        "A": ":invalid",
+        "B": ":error",
+        "C": ":failed",
+        "D": ":bad-input"
+      },
+      "correctAnswer": "A",
+      "explanation": "The CSS :invalid pseudo-class targets form elements whose values fail constraint checks."
+    },
+    {
+      "id": 127,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Common HTML errors and debugging",
+      "question": "What is the consequence of leaving an unclosed `<table>` tag in an HTML document?",
+      "options": {
+        "A": "The browser attempts auto-closing at document end, but page layout below table may be corrupted or corrupted inside table tree",
+        "B": "Browser halts rendering instantly",
+        "C": "DOM throws null pointer exception",
+        "D": "Table renders off-screen"
+      },
+      "correctAnswer": "A",
+      "explanation": "Unclosed table tags disrupt browser parent-child tree construction, swallowing subsequent content into table scope."
+    },
+    {
+      "id": 128,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Script and stylesheet integration",
+      "question": "What happens if both `async` and `defer` attributes are placed on a standard non-module `<script async defer src=\"...\">` in modern browsers?",
+      "options": {
+        "A": "`async` takes precedence; if browser supports `async`, it acts asynchronously",
+        "B": "`defer` overrides `async`",
+        "C": "Script fails to load",
+        "D": "Script loads twice"
+      },
+      "correctAnswer": "A",
+      "explanation": "Modern browsers supporting `async` ignore `defer` when both attributes are present on legacy scripts."
+    },
+    {
+      "id": 129,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which element is used inside `<video>` or `<audio>` to provide subtitle/caption track files (.vtt format)?",
+      "options": {
+        "A": "<track>",
+        "B": "<caption >",
+        "C": "<subtitle>",
+        "D": "<text>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <track> tag provides WebVTT timed text tracks for subtitles or captions."
+    },
+    {
+      "id": 130,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "DOM structure and element relationships",
+      "question": "Which method on HTML element allows programmatically checking if input satisfies constraints without submitting form?",
+      "options": {
+        "A": "checkValidity()",
+        "B": "validate()",
+        "C": "isCorrect()",
+        "D": "verify()"
+      },
+      "correctAnswer": "A",
+      "explanation": "checkValidity() returns true if element matches validation constraints, firing 'invalid' event if false."
+    },
+    {
+      "id": 131,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "DOM structure and element relationships",
+      "question": "Which method on HTML form control sets a custom validation error message string?",
+      "options": {
+        "A": "setCustomValidity(\"message\")",
+        "B": "setErrorMessage(\"message\")",
+        "C": "setError(\"message\")",
+        "D": "customError(\"message\")"
+      },
+      "correctAnswer": "A",
+      "explanation": "setCustomValidity(\"msg\") sets custom validation error text, rendering input invalid if string is non-empty."
+    },
+    {
+      "id": 132,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "What ARIA role should be assigned to a custom clickable `<div>` functioning as a button to ensure screen reader accessibility?",
+      "options": {
+        "A": "role=\"button\"",
+        "B": "role=\"click\"",
+        "C": "role=\"input\"",
+        "D": "role=\"action\""
+      },
+      "correctAnswer": "A",
+      "explanation": "role=\"button\" informs screen readers that a element acts as an interactive button control."
+    },
+    {
+      "id": 133,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "If you assign `role=\"button\"` to a `<div>`, what keyboard interaction must you manually implement via JavaScript?",
+      "options": {
+        "A": "Handling Enter and Space keypress events to trigger action",
+        "B": "Arrow key scrolling",
+        "C": "Tab key jumping",
+        "D": "Escape key clearing"
+      },
+      "correctAnswer": "A",
+      "explanation": "Native <button> handles Enter/Space keys automatically; ARIA role=\"button\" requires manual keydown event handlers for Space/Enter."
+    },
+    {
+      "id": 134,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which attribute on `<img>` element allows browsers to defer image loading until user scrolls near it?",
+      "options": {
+        "A": "loading=\"lazy\"",
+        "B": "defer=\"true\"",
+        "C": "async=\"true\"",
+        "D": "render=\"scroll\""
+      },
+      "correctAnswer": "A",
+      "explanation": "loading=\"lazy\" defers image downloading until it approaches the visible viewport threshold."
+    },
+    {
+      "id": 135,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which image attributes `srcset` and `sizes` serve what primary optimization purpose?",
+      "options": {
+        "A": "Allowing browser to select optimal image resolution asset based on device pixel ratio and screen width",
+        "B": "Creating CSS image filters",
+        "C": "Lazy loading images",
+        "D": "Rotating images responsive layout"
+      },
+      "correctAnswer": "A",
+      "explanation": "srcset and sizes provide resolution switching capabilities for responsive image asset delivery."
+    },
+    {
+      "id": 136,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Metadata and SEO fundamentals",
+      "question": "What is the function of `<meta name=\"theme-color\" content=\"#317EFB\">` tag?",
+      "options": {
+        "A": "Sets background accent color of mobile browser toolbar / UI frame",
+        "B": "Sets CSS body background color",
+        "C": "Applies dark mode globally",
+        "D": "Configures web manifest primary font"
+      },
+      "correctAnswer": "A",
+      "explanation": "theme-color sets the surrounding browser interface/toolbar color on mobile OS browsers."
+    },
+    {
+      "id": 137,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Metadata and SEO fundamentals",
+      "question": "Which tag links a Web Application Manifest JSON file to an HTML document for Progressive Web Apps (PWA)?",
+      "options": {
+        "A": "<link rel=\"manifest\" href=\"manifest.json\">",
+        "B": "<meta name=\"pwa\" content=\"manifest.json\">",
+        "C": "<script src=\"manifest.json\">",
+        "D": "<app-manifest src=\"manifest.json\">"
+      },
+      "correctAnswer": "A",
+      "explanation": "<link rel=\"manifest\"> links web app manifests specifying PWA icons, orientation, and launch modes."
+    },
+    {
+      "id": 138,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "HTML parsing and browser behavior",
+      "question": "What is Document Fragment in JavaScript / DOM processing?",
+      "options": {
+        "A": "A lightweight, minimal document object that stores DOM nodes off-screen without triggering layout reflows when modified",
+        "B": "A broken HTML tag",
+        "C": "A portion of CSS file",
+        "D": "An unparsed JSON string"
+      },
+      "correctAnswer": "A",
+      "explanation": "DocumentFragment holds off-screen DOM nodes, allowing batch mutations without triggering multiple page layout reflows."
+    },
+    {
+      "id": 139,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which tag is appropriate for wrapping fine print, disclaimer notes, or legal restrictions in HTML5?",
+      "options": {
+        "A": "<small>",
+        "B": "<sub>",
+        "C": "<footer>",
+        "D": "<caption >"
+      },
+      "correctAnswer": "A",
+      "explanation": "In HTML5, <small> represents side-comments and small print like legal or copyright text."
+    },
+    {
+      "id": 140,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which tag represents machine-readable variable names or programmatic constants in text?",
+      "options": {
+        "A": "<var>",
+        "B": "<code>",
+        "C": "<samp>",
+        "D": "<kbd>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <var> tag defines variable names in mathematical expressions or programming contexts."
+    },
+    {
+      "id": 141,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which element represents sample output from a computer program or system?",
+      "options": {
+        "A": "<samp>",
+        "B": "<code>",
+        "C": "<var>",
+        "D": "<output>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <samp> tag represents sample output from a computer program or terminal."
+    },
+    {
+      "id": 142,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which tag represents result calculation output of user form actions in HTML5?",
+      "options": {
+        "A": "<output>",
+        "B": "<result>",
+        "C": "<calc>",
+        "D": "<value>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <output> tag represents the result of a calculation or script computation."
+    },
+    {
+      "id": 143,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Security fundamentals",
+      "question": "What is the danger of using `document.write()` in client-side scripts after page parsing has finished?",
+      "options": {
+        "A": "It completely overwrites existing document content, destroying current DOM and triggering security warnings",
+        "B": "It throws an uncaught syntax error",
+        "C": "It creates duplicate body elements",
+        "D": "It corrupts CSS styling"
+      },
+      "correctAnswer": "A",
+      "explanation": "Calling document.write() post-load completely clears existing document DOM tree."
+    },
+    {
+      "id": 144,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Security fundamentals",
+      "question": "How does Subresource Integrity (SRI) `<script src=\"...\" integrity=\"sha384-...\">` protect websites?",
+      "options": {
+        "A": "Verifies that fetched foreign CDN files match cryptographic hash, blocking compromised altered scripts",
+        "B": "Encrypts script transmitted over wire",
+        "C": "Prevents cross-origin script execution",
+        "D": "Minifies script automatic loading"
+      },
+      "correctAnswer": "A",
+      "explanation": "SRI allows browsers to verify cryptographic hash signatures of CDN files, guarding against tampered resources."
+    },
+    {
+      "id": 145,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which attribute on form text input disables browser auto-complete history suggestions?",
+      "options": {
+        "A": "autocomplete=\"off\"",
+        "B": "autosuggest=\"false\"",
+        "C": "history=\"none\"",
+        "D": "remember=\"false\""
+      },
+      "correctAnswer": "A",
+      "explanation": "autocomplete=\"off\" instructs browsers not to display previously stored autocomplete suggestions for the field."
+    },
+    {
+      "id": 146,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Global attributes and data-* attributes",
+      "question": "Which attribute controls spell-checking behavior for input fields or editable elements?",
+      "options": {
+        "A": "spellcheck=\"true|false\"",
+        "B": "autocorrect=\"on|off\"",
+        "C": "grammar=\"true|false\"",
+        "D": "check-spelling=\"bool\""
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'spellcheck' attribute enables or disables native browser spell checking on editable elements."
+    },
+    {
+      "id": 147,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Global attributes and data-* attributes",
+      "question": "What does the global attribute `hidden` do when placed on an HTML element (`<div hidden>`)?",
+      "options": {
+        "A": "Indicates element is not yet or no longer relevant, applying CSS display: none by default",
+        "B": "Sets opacity to 0 keeping layout space",
+        "C": "Disables element interactivity only",
+        "D": "Hides element from screen readers only"
+      },
+      "correctAnswer": "A",
+      "explanation": "The boolean 'hidden' attribute marks content as irrelevant; browsers hide it visually using display: none rule."
+    },
+    {
+      "id": 148,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "HTML parsing and browser behavior",
+      "question": "What is the effect of placing CSS `<link rel=\"stylesheet\">` inside `<body>` instead of `<head>`?",
+      "options": {
+        "A": "Triggers Flash of Unstyled Content (FOUC) and render blocking during parsing",
+        "B": "Causes immediate syntax error",
+        "C": "Styles are completely ignored",
+        "D": "CSS loads faster"
+      },
+      "correctAnswer": "A",
+      "explanation": "Stylesheets in <body> block progressive rendering or cause Flash of Unstyled Content (FOUC)."
+    },
+    {
+      "id": 149,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "Which ARIA attribute explicitly establishes relationship where one element labels another element?",
+      "options": {
+        "A": "aria-labelledby",
+        "B": "aria-label",
+        "C": "aria-describedby",
+        "D": "aria-for"
+      },
+      "correctAnswer": "A",
+      "explanation": "aria-labelledby references element ID(s) containing text that serves as target element label."
+    },
+    {
+      "id": 150,
+      "subject": "HTML",
+      "difficulty": "Hard",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "Which ARIA attribute connects an element to extended descriptive text (e.g. tooltip or help section)?",
+      "options": {
+        "A": "aria-describedby",
+        "B": "aria-labelledby",
+        "C": "aria-help",
+        "D": "aria-details"
+      },
+      "correctAnswer": "A",
+      "explanation": "aria-describedby references ID(s) of elements offering expanded descriptions or instructions."
+    }
+  ]
+}

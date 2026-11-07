@@ -71,6 +71,10 @@ public class UserRepository {
                     user.setUsername(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_USER_USERNAME)));
                     user.setPasswordHash(storedHash);
                     user.setPasswordSalt(storedSalt);
+                    int profileCol = cursor.getColumnIndex(DatabaseHelper.COL_USER_PROFILE_IMAGE);
+                    if (profileCol != -1) {
+                        user.setProfileImage(cursor.getString(profileCol));
+                    }
                     user.setCreatedAt(cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_USER_CREATED_AT)));
                     return user;
                 }
@@ -125,6 +129,10 @@ public class UserRepository {
                 user.setFullName(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_USER_FULL_NAME)));
                 user.setEmail(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_USER_EMAIL)));
                 user.setUsername(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_USER_USERNAME)));
+                int profileCol = cursor.getColumnIndex(DatabaseHelper.COL_USER_PROFILE_IMAGE);
+                if (profileCol != -1) {
+                    user.setProfileImage(cursor.getString(profileCol));
+                }
                 user.setCreatedAt(cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_USER_CREATED_AT)));
                 return user;
             }
@@ -143,6 +151,33 @@ public class UserRepository {
         int rows = db.update(DatabaseHelper.TABLE_USERS, values,
                 DatabaseHelper.COL_USER_ID + " = ?", new String[]{String.valueOf(userId)});
         return rows > 0;
+    }
+
+    public boolean updateProfileImage(long userId, String imagePath) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DatabaseHelper.COL_USER_PROFILE_IMAGE, imagePath);
+        int rows = db.update(DatabaseHelper.TABLE_USERS, values,
+                DatabaseHelper.COL_USER_ID + " = ?", new String[]{String.valueOf(userId)});
+        return rows > 0;
+    }
+
+    public String getProfileImage(long userId) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            cursor = db.rawQuery("SELECT " + DatabaseHelper.COL_USER_PROFILE_IMAGE + " FROM " + DatabaseHelper.TABLE_USERS
+                    + " WHERE " + DatabaseHelper.COL_USER_ID + " = ? LIMIT 1", new String[]{String.valueOf(userId)});
+            if (cursor != null && cursor.moveToFirst()) {
+                return cursor.getString(0);
+            }
+        } catch (Exception ignored) {
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+        return null;
     }
 
     public boolean changePassword(long userId, String oldPassword, String newPassword) {

@@ -1,0 +1,761 @@
+{
+  "subject": "HTML",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 50,
+    "medium": 0,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 1,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "HTML introduction, syntax, and document structure",
+      "question": "What does HTML stand for?",
+      "options": {
+        "A": "Hyper Text Markup Language",
+        "B": "High Text Machine Language",
+        "C": "Hyper Transfer Text Language",
+        "D": "Hyper Tool Markup Language"
+      },
+      "correctAnswer": "A",
+      "explanation": "HTML stands for Hyper Text Markup Language, the standard markup language for documents designed to be displayed in a web browser."
+    },
+    {
+      "id": 2,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "HTML introduction, syntax, and document structure",
+      "question": "Which declaration is mandatory at the top of an HTML5 document?",
+      "options": {
+        "A": "<!DOCTYPE html>",
+        "B": "<doctype html5>",
+        "C": "<?xml version=\"1.0\"?>",
+        "D": "<html version=\"5\">"
+      },
+      "correctAnswer": "A",
+      "explanation": "<!DOCTYPE html> instructs the browser to parse the document using the standard HTML5 rendering engine."
+    },
+    {
+      "id": 3,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "HTML introduction, syntax, and document structure",
+      "question": "Which HTML tag is the root element of an HTML page?",
+      "options": {
+        "A": "<head>",
+        "B": "<body>",
+        "C": "<html>",
+        "D": "<main>"
+      },
+      "correctAnswer": "C",
+      "explanation": "The <html> element encapsulates all content and sub-elements on an HTML document."
+    },
+    {
+      "id": 4,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which HTML tag defines the most important or top-level heading?",
+      "options": {
+        "A": "<h6>",
+        "B": "<h1>",
+        "C": "<head>",
+        "D": "<heading>"
+      },
+      "correctAnswer": "B",
+      "explanation": "<h1> defines the highest level heading in HTML document hierarchy."
+    },
+    {
+      "id": 5,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which HTML element is used to define a paragraph?",
+      "options": {
+        "A": "<p>",
+        "B": "<para>",
+        "C": "<pg>",
+        "D": "<text>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <p> element represents a paragraph of text."
+    },
+    {
+      "id": 6,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which element is used to insert a line break without starting a new paragraph?",
+      "options": {
+        "A": "<lb>",
+        "B": "<br>",
+        "C": "<break>",
+        "D": "<hr>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <br> element produces a line break in text (an inline newline)."
+    },
+    {
+      "id": 7,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which attribute specifies the URL of the page the link goes to in an <a> tag?",
+      "options": {
+        "A": "src",
+        "B": "href",
+        "C": "link",
+        "D": "target"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'href' attribute specifies the hyperlink target URL."
+    },
+    {
+      "id": 8,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which attribute of the <img> tag specifies an alternate text if the image cannot be displayed?",
+      "options": {
+        "A": "title",
+        "B": "src",
+        "C": "alt",
+        "D": "desc"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'alt' attribute provides alternative text for accessibility and broken image fallback."
+    },
+    {
+      "id": 9,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which HTML tag is used to create an ordered (numbered) list?",
+      "options": {
+        "A": "<ul>",
+        "B": "<ol>",
+        "C": "<li>",
+        "D": "<dl>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <ol> element creates an ordered list of items."
+    },
+    {
+      "id": 10,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which HTML tag is used to create an unordered (bulleted) list?",
+      "options": {
+        "A": "<ul>",
+        "B": "<ol>",
+        "C": "<list>",
+        "D": "<dl>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <ul> element creates an unordered list."
+    },
+    {
+      "id": 11,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which tag defines an individual list item inside <ul> or <ol>?",
+      "options": {
+        "A": "<item>",
+        "B": "<li>",
+        "C": "<list>",
+        "D": "<it>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <li> tag represents an individual item inside a list."
+    },
+    {
+      "id": 12,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which tag is used to define a table row in HTML?",
+      "options": {
+        "A": "<td>",
+        "B": "<th>",
+        "C": "<tr>",
+        "D": "<table-row>"
+      },
+      "correctAnswer": "C",
+      "explanation": "The <tr> tag defines a table row containing cells."
+    },
+    {
+      "id": 13,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which tag defines a standard data cell inside an HTML table row?",
+      "options": {
+        "A": "<td>",
+        "B": "<th>",
+        "C": "<tr>",
+        "D": "<cell>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <td> tag defines a standard data cell in a table."
+    },
+    {
+      "id": 14,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which tag defines a header cell in an HTML table, rendering text bold and centered by default?",
+      "options": {
+        "A": "<td>",
+        "B": "<th>",
+        "C": "<head>",
+        "D": "<caption >"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <th> tag defines a header cell in a table."
+    },
+    {
+      "id": 15,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which element is used to create an interactive form for user input?",
+      "options": {
+        "A": "<input>",
+        "B": "<form>",
+        "C": "<field>",
+        "D": "<userform>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <form> element wraps form controls and handles submission behavior."
+    },
+    {
+      "id": 16,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "What is the default 'type' attribute value for an <input> tag if omitted?",
+      "options": {
+        "A": "text",
+        "B": "password",
+        "C": "submit",
+        "D": "button"
+      },
+      "correctAnswer": "A",
+      "explanation": "If type is not specified, an <input> element defaults to type=\"text\"."
+    },
+    {
+      "id": 17,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which input type allows users to select only ONE option from a group?",
+      "options": {
+        "A": "checkbox",
+        "B": "radio",
+        "C": "select",
+        "D": "one"
+      },
+      "correctAnswer": "B",
+      "explanation": "Radio buttons sharing the same 'name' attribute form a group where only one option can be selected."
+    },
+    {
+      "id": 18,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which input type creates a clickable button that submits form data to the server?",
+      "options": {
+        "A": "type=\"submit\"",
+        "B": "type=\"button\"",
+        "C": "type=\"send\"",
+        "D": "type=\"post\""
+      },
+      "correctAnswer": "A",
+      "explanation": "An input with type=\"submit\" submits the enclosing form."
+    },
+    {
+      "id": 19,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which attribute on an <input> field makes it obligatory for the user to fill it before submitting?",
+      "options": {
+        "A": "validate",
+        "B": "mandatory",
+        "C": "required",
+        "D": "important"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'required' boolean attribute prevents form submission if the input field is empty."
+    },
+    {
+      "id": 20,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Block-level and inline elements",
+      "question": "Which tag is a generic container used to group inline elements and text for styling?",
+      "options": {
+        "A": "<div>",
+        "B": "<span>",
+        "C": "<p>",
+        "D": "<section>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <span> tag is a generic inline container that takes up only as much width as necessary."
+    },
+    {
+      "id": 21,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Block-level and inline elements",
+      "question": "Which tag is a generic block-level container used to structure content sections?",
+      "options": {
+        "A": "<span>",
+        "B": "<div>",
+        "C": "<a>",
+        "D": "<b>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <div> tag is a generic block-level container that starts on a new line and spans full width."
+    },
+    {
+      "id": 22,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Elements, tags, and attributes",
+      "question": "Where are metadata and script/style declarations usually placed in an HTML file?",
+      "options": {
+        "A": "<body>",
+        "B": "<head>",
+        "C": "<footer>",
+        "D": "<meta>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <head> section contains document metadata, titles, styles, and external script links."
+    },
+    {
+      "id": 23,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which attribute opens a linked document in a new browser tab or window in an <a> tag?",
+      "options": {
+        "A": "target=\"_blank\"",
+        "B": "target=\"_new\"",
+        "C": "window=\"new\"",
+        "D": "open=\"blank\""
+      },
+      "correctAnswer": "A",
+      "explanation": "target=\"_blank\" forces the browser to open the hyperlink in a new browsing context/tab."
+    },
+    {
+      "id": 24,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which tag is used to draw a horizontal rule (thematic break) in HTML?",
+      "options": {
+        "A": "<line>",
+        "B": "<hr>",
+        "C": "<break>",
+        "D": "<rule>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <hr> tag represents a thematic break between paragraph-level elements."
+    },
+    {
+      "id": 25,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Elements, tags, and attributes",
+      "question": "How do you write a comment in HTML?",
+      "options": {
+        "A": "// This is a comment",
+        "B": "<!-- This is a comment -->",
+        "C": "/* This is a comment */",
+        "D": "' This is a comment"
+      },
+      "correctAnswer": "B",
+      "explanation": "HTML comments start with <!-- and end with -->."
+    },
+    {
+      "id": 26,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Global attributes and data-* attributes",
+      "question": "Which global attribute provides extra advisory information displayed as a tooltip on hover?",
+      "options": {
+        "A": "alt",
+        "B": "title",
+        "C": "tooltip",
+        "D": "hover"
+      },
+      "correctAnswer": "B",
+      "explanation": "The global 'title' attribute shows text as a tooltip when hovering over the element."
+    },
+    {
+      "id": 27,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which element gives text strong importance, displaying it in bold by default?",
+      "options": {
+        "A": "<b>",
+        "B": "<strong>",
+        "C": "<em>",
+        "D": "<mark>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <strong> tag indicates high importance, seriousness, or urgency, rendered bold."
+    },
+    {
+      "id": 28,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which element marks text with stress emphasis, displaying it in italics by default?",
+      "options": {
+        "A": "<i>",
+        "B": "<em>",
+        "C": "<highlight>",
+        "D": "<mark>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <em> element represents stress emphasis, typically displayed in italics."
+    },
+    {
+      "id": 29,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Script and stylesheet integration",
+      "question": "Which HTML tag is used to link an external CSS stylesheet?",
+      "options": {
+        "A": "<style>",
+        "B": "<link>",
+        "C": "<script>",
+        "D": "<css>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <link> element with rel=\"stylesheet\" imports external CSS style files."
+    },
+    {
+      "id": 30,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Script and stylesheet integration",
+      "question": "Which tag is used to embed client-side JavaScript code in an HTML document?",
+      "options": {
+        "A": "<script>",
+        "B": "<js>",
+        "C": "<code >",
+        "D": "<javascript>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <script> tag embeds or references executable JavaScript code."
+    },
+    {
+      "id": 31,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which tag provides a text label for a form control, improving usability and accessibility?",
+      "options": {
+        "A": "<label>",
+        "B": "<caption >",
+        "C": "<text>",
+        "D": "<title>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <label> tag associates textual descriptions with form controls using the 'for' attribute."
+    },
+    {
+      "id": 32,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which attribute in a <label> connects it to the 'id' of its corresponding <input>?",
+      "options": {
+        "A": "to",
+        "B": "for",
+        "C": "input",
+        "D": "target"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'for' attribute on a <label> matches the 'id' attribute of the target input element."
+    },
+    {
+      "id": 33,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which tag creates a multi-line text input field in a form?",
+      "options": {
+        "A": "<input type=\"multiline\">",
+        "B": "<textarea>",
+        "C": "<textfield>",
+        "D": "<input type=\"textarea\">"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <textarea> tag provides a multi-line plain-text editing control."
+    },
+    {
+      "id": 34,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which tag creates a drop-down menu in HTML forms?",
+      "options": {
+        "A": "<select>",
+        "B": "<dropdown>",
+        "C": "<option>",
+        "D": "<list>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <select> element creates a drop-down list of choices."
+    },
+    {
+      "id": 35,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Forms, input types, labels, and validation",
+      "question": "Which tag defines individual choices inside a <select> drop-down list?",
+      "options": {
+        "A": "<choice>",
+        "B": "<option>",
+        "C": "<item>",
+        "D": "<listitem>"
+      },
+      "correctAnswer": "B",
+      "explanation": "<option> elements represent individual options in a <select> menu."
+    },
+    {
+      "id": 36,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Metadata and SEO fundamentals",
+      "question": "Which tag defines the title of the document shown in the browser's tab?",
+      "options": {
+        "A": "<head>",
+        "B": "<title>",
+        "C": "<meta name=\"title\">",
+        "D": "<header>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <title> tag sets the title of the document in browser tabs and search engine results."
+    },
+    {
+      "id": 37,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which tag is used to group body content in an HTML table?",
+      "options": {
+        "A": "<thead>",
+        "B": "<tbody>",
+        "C": "<tfoot>",
+        "D": "<tablebody>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <tbody> tag encapsulates the primary data rows of an HTML table."
+    },
+    {
+      "id": 38,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which attribute merges multiple adjacent columns in an HTML table cell?",
+      "options": {
+        "A": "rowspan",
+        "B": "colspan",
+        "C": "merge",
+        "D": "span"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'colspan' attribute specifies the number of columns a cell should span across."
+    },
+    {
+      "id": 39,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Lists and tables",
+      "question": "Which attribute merges multiple adjacent rows in an HTML table cell?",
+      "options": {
+        "A": "rowspan",
+        "B": "colspan",
+        "C": "merge",
+        "D": "vspan"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'rowspan' attribute specifies the number of rows a cell should span across."
+    },
+    {
+      "id": 40,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "HTML entities and character encoding",
+      "question": "Which HTML entity code represents the copyright symbol (©)?",
+      "options": {
+        "A": "&copy;",
+        "B": "&copyright;",
+        "C": "&#c;",
+        "D": "&cp;"
+      },
+      "correctAnswer": "A",
+      "explanation": "The entity &copy; displays the copyright symbol © in HTML."
+    },
+    {
+      "id": 41,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "HTML entities and character encoding",
+      "question": "Which HTML entity code represents a non-breaking space?",
+      "options": {
+        "A": "&space;",
+        "B": "&nbsp;",
+        "C": "&nbsp",
+        "D": "&break;"
+      },
+      "correctAnswer": "B",
+      "explanation": "The &nbsp; entity represents a non-breaking space character."
+    },
+    {
+      "id": 42,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "id and class attributes",
+      "question": "What is the key difference between the 'id' and 'class' attributes?",
+      "options": {
+        "A": "'id' must be unique per page, whereas 'class' can be reused across multiple elements",
+        "B": "'class' must be unique, 'id' can be repeated",
+        "C": "'id' is only for CSS, 'class' is for JS",
+        "D": "There is no difference"
+      },
+      "correctAnswer": "A",
+      "explanation": "An 'id' must be unique within a document, while a 'class' can be applied to multiple elements."
+    },
+    {
+      "id": 43,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which HTML5 tag is used to embed video content natively without third-party plugins?",
+      "options": {
+        "A": "<media>",
+        "B": "<video>",
+        "C": "<movie>",
+        "D": "<embed>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <video> tag natively embeds video files in HTML pages."
+    },
+    {
+      "id": 44,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which HTML5 tag is used to embed audio content natively?",
+      "options": {
+        "A": "<sound>",
+        "B": "<audio>",
+        "C": "<music>",
+        "D": "<voice>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <audio> tag natively embeds audio streams or files."
+    },
+    {
+      "id": 45,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Global attributes and data-* attributes",
+      "question": "Which global attribute makes an HTML element editable directly by the user on the page?",
+      "options": {
+        "A": "editable=\"true\"",
+        "B": "contenteditable=\"true\"",
+        "C": "modify=\"true\"",
+        "D": "user-editable"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'contenteditable' attribute enables direct user editing of element text."
+    },
+    {
+      "id": 46,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Metadata and SEO fundamentals",
+      "question": "Which <meta> tag setting ensures correct mobile responsive viewport rendering?",
+      "options": {
+        "A": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+        "B": "<meta name=\"screen\" content=\"mobile\">",
+        "C": "<meta name=\"responsive\" content=\"true\">",
+        "D": "<meta name=\"zoom\" content=\"yes\">"
+      },
+      "correctAnswer": "A",
+      "explanation": "The viewport meta tag configures dimensions and scaling on mobile devices."
+    },
+    {
+      "id": 47,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which tag embeds another HTML document inside the current HTML page?",
+      "options": {
+        "A": "<embed>",
+        "B": "<iframe>",
+        "C": "<object>",
+        "D": "<frame>"
+      },
+      "correctAnswer": "B",
+      "explanation": "An <iframe> (inline frame) embeds an external HTML document into the current page."
+    },
+    {
+      "id": 48,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which semantic tag defines introductory content, headers, or navigation for a page/section?",
+      "options": {
+        "A": "<top>",
+        "B": "<header>",
+        "C": "<head>",
+        "D": "<section>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <header> tag contains introductory or navigational elements."
+    },
+    {
+      "id": 49,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which semantic tag defines footer content like copyright, terms, or contact information?",
+      "options": {
+        "A": "<bottom>",
+        "B": "<footer>",
+        "C": "<end>",
+        "D": "<contact>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <footer> tag contains footer information for a document or section."
+    },
+    {
+      "id": 50,
+      "subject": "HTML",
+      "difficulty": "Easy",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which semantic tag represents a section of page content designed for major navigation links?",
+      "options": {
+        "A": "<links>",
+        "B": "<nav>",
+        "C": "<menu>",
+        "D": "<navigation>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <nav> tag encloses major navigation link groups."
+    }
+  ]
+}

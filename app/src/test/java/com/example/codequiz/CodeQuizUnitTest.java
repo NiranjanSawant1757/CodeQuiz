@@ -7,10 +7,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.example.codequiz.data.QuestionBank;
+import com.example.codequiz.model.AchievementLevel;
 import com.example.codequiz.model.AnswerRecord;
 import com.example.codequiz.model.Question;
 import com.example.codequiz.model.QuizAttempt;
 import com.example.codequiz.model.QuizCategory;
+import com.example.codequiz.model.User;
 import com.example.codequiz.util.AppConstants;
 import com.example.codequiz.util.PasswordUtils;
 import com.example.codequiz.util.ValidationUtils;
@@ -167,5 +169,103 @@ public class CodeQuizUnitTest {
         assertEquals(4, restored.getOptions().size());
         assertEquals("Option A", restored.getOptions().get(0));
         assertEquals("Option D", restored.getOptions().get(3));
+    }
+
+    @Test
+    public void testAchievementLevelAccuracyCalculation() {
+        assertEquals(70.0, AchievementLevel.calculateAccuracy(7, 10), 0.001);
+        assertEquals(79.0, AchievementLevel.calculateAccuracy(79, 100), 0.001);
+        assertEquals(80.0, AchievementLevel.calculateAccuracy(8, 10), 0.001);
+        assertEquals(90.0, AchievementLevel.calculateAccuracy(9, 10), 0.001);
+        assertEquals(94.0, AchievementLevel.calculateAccuracy(94, 100), 0.001);
+        assertEquals(95.0, AchievementLevel.calculateAccuracy(95, 100), 0.001);
+        assertEquals(100.0, AchievementLevel.calculateAccuracy(10, 10), 0.001);
+
+        // Safe handling of zero total questions (no division by zero)
+        assertEquals(0.0, AchievementLevel.calculateAccuracy(0, 0), 0.001);
+        assertEquals(0.0, AchievementLevel.calculateAccuracy(5, 0), 0.001);
+    }
+
+    @Test
+    public void testAchievementLevelClassification() {
+        // 70% accuracy + passed = PASS GIF
+        AchievementLevel level70 = AchievementLevel.classify(7, 10);
+        assertEquals(AchievementLevel.PASS, level70);
+        assertEquals("PASS", level70.getBadgeText());
+        assertEquals("Good Job! 🎉", level70.getTitle());
+        assertEquals("Congratulations! You passed the quiz. Keep learning and improving!", level70.getMessage());
+        assertTrue(level70.hasAchievementGif());
+        assertEquals(R.raw.achievement_pass, level70.getGifResId());
+
+        // 79% accuracy + passed = PASS GIF
+        AchievementLevel level79 = AchievementLevel.classify(79, 100);
+        assertEquals(AchievementLevel.PASS, level79);
+        assertTrue(level79.hasAchievementGif());
+        assertEquals(R.raw.achievement_pass, level79.getGifResId());
+
+        // 80% accuracy = INTERMEDIATE GIF
+        AchievementLevel level80 = AchievementLevel.classify(8, 10);
+        assertEquals(AchievementLevel.INTERMEDIATE, level80);
+        assertEquals("INTERMEDIATE", level80.getBadgeText());
+        assertEquals("Excellent Work! 🌟", level80.getTitle());
+        assertEquals("Great performance! You are getting better. Keep it up!", level80.getMessage());
+        assertTrue(level80.hasAchievementGif());
+        assertEquals(R.raw.achievement_intermediate, level80.getGifResId());
+
+        // 90% accuracy = INTERMEDIATE GIF
+        AchievementLevel level90 = AchievementLevel.classify(9, 10);
+        assertEquals(AchievementLevel.INTERMEDIATE, level90);
+        assertTrue(level90.hasAchievementGif());
+        assertEquals(R.raw.achievement_intermediate, level90.getGifResId());
+
+        // 94% accuracy = INTERMEDIATE GIF
+        AchievementLevel level94 = AchievementLevel.classify(94, 100);
+        assertEquals(AchievementLevel.INTERMEDIATE, level94);
+        assertTrue(level94.hasAchievementGif());
+        assertEquals(R.raw.achievement_intermediate, level94.getGifResId());
+
+        // 95% accuracy = BEST GIF
+        AchievementLevel level95 = AchievementLevel.classify(95, 100);
+        assertEquals(AchievementLevel.BEST, level95);
+        assertEquals("BEST", level95.getBadgeText());
+        assertEquals("Outstanding! 🏆", level95.getTitle());
+        assertEquals("Amazing performance! You are a quiz champion!", level95.getMessage());
+        assertTrue(level95.hasAchievementGif());
+        assertEquals(R.raw.achievement_best, level95.getGifResId());
+
+        // 100% accuracy = BEST GIF
+        AchievementLevel level100 = AchievementLevel.classify(10, 10);
+        assertEquals(AchievementLevel.BEST, level100);
+        assertTrue(level100.hasAchievementGif());
+        assertEquals(R.raw.achievement_best, level100.getGifResId());
+
+        // Failed quiz (< 50%) = Existing FAIL screen, no achievement GIF
+        AchievementLevel levelFail40 = AchievementLevel.classify(4, 10);
+        assertEquals(AchievementLevel.FAIL, levelFail40);
+        assertEquals("FAIL", levelFail40.getBadgeText());
+        assertEquals("Needs Improvement 📚", levelFail40.getTitle());
+        assertFalse(levelFail40.hasAchievementGif());
+        assertEquals(0, levelFail40.getGifResId());
+
+        // Zero questions = Handle safely without division by zero
+        AchievementLevel levelZero = AchievementLevel.classify(0, 0);
+        assertEquals(AchievementLevel.FAIL, levelZero);
+        assertFalse(levelZero.hasAchievementGif());
+    }
+
+    @Test
+    public void testUserProfileImageModel() {
+        User user = new User();
+        user.setId(101L);
+        user.setFullName("Developer Name");
+        user.setEmail("dev@example.com");
+        user.setUsername("devuser");
+        user.setProfileImage("/data/user/0/com.example.codequiz/files/profile_photos/user_101.jpg");
+
+        assertEquals("/data/user/0/com.example.codequiz/files/profile_photos/user_101.jpg", user.getProfileImage());
+
+        User fullUser = new User(102L, "Jane Doe", "jane@example.com", "janedoe", "hash", "salt", "/path/to/selfie.jpg", 1000L);
+        assertEquals("/path/to/selfie.jpg", fullUser.getProfileImage());
+        assertEquals("Jane Doe", fullUser.getFullName());
     }
 }

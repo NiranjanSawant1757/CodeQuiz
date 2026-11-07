@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">CodeQuiz</string>
     <string name="app_subtitle">Programming Quiz &amp; Mastery App</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_topics">Topics</string>
+    <string name="nav_history">History</string>
+    <string name="nav_profile">Profile</string>
 </resources>

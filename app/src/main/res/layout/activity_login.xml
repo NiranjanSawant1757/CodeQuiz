@@ -3,44 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="10dp"
     android:background="@color/background"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp">
+        android:paddingStart="24dp"
+        android:paddingTop="36dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="28dp">
 
-        <ImageView
-            android:id="@+id/ivLoginLogo"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginTop="32dp"
-            android:contentDescription="App Logo"
-            android:src="@drawable/app_logo"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLoginLogo"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            app:cardBackgroundColor="@color/surface_variant"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <ImageView
+                android:id="@+id/ivLoginLogo"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:contentDescription="App Logo"
+                android:src="@drawable/app_logo" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tvLoginTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="-0.02"
             android:text="Welcome Back"
             android:textColor="@color/text_primary"
             android:textSize="26sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivLoginLogo" />
+            app:layout_constraintTop_toBottomOf="@id/cardLoginLogo" />
 
         <TextView
             android:id="@+id/tvLoginSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
             android:text="Sign in to resume your programming quizzes"
             android:textColor="@color/text_secondary"
             android:textSize="14sp"
@@ -52,10 +68,10 @@
             android:id="@+id/cardLoginForm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
             app:layout_constraintTop_toBottomOf="@id/tvLoginSubtitle"
             app:strokeColor="@color/card_stroke"
             app:strokeWidth="1dp">
@@ -64,19 +80,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="24dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilEmailOrUsername"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.CodeQuiz.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email or Username"
-                    app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp"
-                    app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp"
-                    app:startIconDrawable="@drawable/ic_profile">
+                    app:startIconDrawable="@drawable/ic_profile"
+                    app:startIconTint="@color/text_secondary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etEmailOrUsername"
@@ -84,22 +97,21 @@
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
-                        android:textColor="@color/text_primary" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilPassword"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.CodeQuiz.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="Password"
-                    app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp"
-                    app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp"
                     app:endIconMode="password_toggle"
-                    app:startIconDrawable="@drawable/ic_settings">
+                    app:endIconTint="@color/text_secondary"
+                    app:startIconDrawable="@drawable/ic_settings"
+                    app:startIconTint="@color/text_secondary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPassword"
@@ -107,21 +119,21 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:textColor="@color/text_primary" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLogin"
-                    style="@style/Widget.Material3.Button"
+                    style="@style/Widget.CodeQuiz.Button"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:layout_marginTop="24dp"
                     android:backgroundTint="@color/primary"
                     android:text="Login"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="10dp" />
+                    android:textSize="15sp"
+                    app:cornerRadius="14dp" />
 
             </LinearLayout>
 
@@ -131,7 +143,7 @@
             android:id="@+id/layoutRegisterLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="32dp"
             android:layout_marginBottom="24dp"
             android:gravity="center"
             android:orientation="horizontal"

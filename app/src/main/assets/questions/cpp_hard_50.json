@@ -1,0 +1,761 @@
+{
+  "subject": "C++",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 50
+  },
+  "questions": [
+    {
+      "id": 101,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Advanced inheritance and virtual dispatch",
+      "question": "Why should a base class destructor almost always be declared `virtual` if the class has virtual functions?",
+      "options": {
+        "A": "To allow private member destruction",
+        "B": "To ensure derived class destructors are called when deleting via base pointer",
+        "C": "To compile faster",
+        "D": "To prevent virtual table creation"
+      },
+      "correctAnswer": "B",
+      "explanation": "Deleting a derived object through a base class pointer without a virtual destructor causes undefined behavior (derived destructor skipped)."
+    },
+    {
+      "id": 102,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Multiple inheritance and diamond inheritance",
+      "question": "How does C++ solve the 'Diamond Problem' (duplicate base subobjects) in multiple inheritance?",
+      "options": {
+        "A": "By using virtual base classes (`class Derived : public virtual Base`)",
+        "B": "By marking destructors explicit",
+        "C": "By using override specifier",
+        "D": "C++ prohibits multiple inheritance"
+      },
+      "correctAnswer": "A",
+      "explanation": "Virtual base classes ensure that only one shared subobject instance of the base class exists in the inheritance hierarchy."
+    },
+    {
+      "id": 103,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Copy and move semantics",
+      "question": "What is the signature of a move constructor for class `Widget` in C++11?",
+      "options": {
+        "A": "Widget(const Widget& other);",
+        "B": "Widget(Widget&& other) noexcept;",
+        "C": "Widget(Widget* other);",
+        "D": "Widget(Widget& other);"
+      },
+      "correctAnswer": "B",
+      "explanation": "Move constructors take an rvalue reference `Widget&&` and should be marked `noexcept` for STL optimization."
+    },
+    {
+      "id": 104,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Rule of Three, Rule of Five, and Rule of Zero",
+      "question": "According to the Rule of Five in modern C++, if a class defines a custom destructor, what four other special member functions should it also explicitly define or default/delete?",
+      "options": {
+        "A": "Copy constructor, copy assignment, move constructor, move assignment",
+        "B": "Default constructor, parameterized constructor, static constructor, friend function",
+        "C": "Virtual function, pure virtual function, override, final",
+        "D": "Getter, setter, toString, print"
+      },
+      "correctAnswer": "A",
+      "explanation": "The Rule of Five covers Destructor, Copy Constructor, Copy Assignment, Move Constructor, and Move Assignment."
+    },
+    {
+      "id": 105,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Smart pointers and ownership semantics",
+      "question": "What happens when `std::make_shared<T>()` is used instead of `std::shared_ptr<T>(new T())`?",
+      "options": {
+        "A": "Allocates object and control block in a single contiguous memory block",
+        "B": "Runs slower but uses less memory",
+        "C": "Prevents move operations",
+        "D": "Allows multiple pointers without reference counting"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::make_shared performs a single memory allocation for both object and control block, improving cache locality and efficiency."
+    },
+    {
+      "id": 106,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Templates and type deduction",
+      "question": "What is SFINAE in C++ template metaprogramming?",
+      "options": {
+        "A": "Substitution Failure Is An Error",
+        "B": "Substitution Failure Is Not An Error",
+        "C": "Static Function Initialization And Evaluation",
+        "D": "Sequential Function Instantiation And Execution"
+      },
+      "correctAnswer": "B",
+      "explanation": "SFINAE (Substitution Failure Is Not An Error) ignores invalid template argument substitutions during overload resolution rather than failing compilation."
+    },
+    {
+      "id": 107,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "STL iterator invalidation",
+      "question": "Which operation on `std::vector<int>` invalidates ALL existing iterators and references to its elements?",
+      "options": {
+        "A": "push_back() when current capacity is exceeded (triggering reallocation)",
+        "B": "Accessing element via operator[]",
+        "C": "Calling v.size()",
+        "D": "Calling v.front()"
+      },
+      "correctAnswer": "A",
+      "explanation": "When vector capacity is exceeded, reallocation moves all elements to new memory, invalidating all outstanding iterators."
+    },
+    {
+      "id": 108,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Lambda captures",
+      "question": "What happens if a lambda captures a local automatic variable by reference `[&x]`, and outlives the lifetime of `x`?",
+      "options": {
+        "A": "The variable is kept alive automatically on heap",
+        "B": "Invoking the lambda results in undefined behavior (dangling reference)",
+        "C": "Compilation Error",
+        "D": "x converts to nullptr"
+      },
+      "correctAnswer": "B",
+      "explanation": "Capturing local variables by reference when the lambda outlives their scope produces dangling references and undefined behavior."
+    },
+    {
+      "id": 109,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Const correctness and reference collapsing",
+      "question": "In C++11 template deduction, what does `T&&` collapse to when instantiated with an lvalue of type `X&`? (Reference Collapsing Rules)",
+      "options": {
+        "A": "X&&",
+        "B": "X&",
+        "C": "X",
+        "D": "const X&"
+      },
+      "correctAnswer": "B",
+      "explanation": "Reference collapsing rules state: & + & -> &, & + && -> &, && + & -> &, && + && -> &&. So X& + && collapses to X&."
+    },
+    {
+      "id": 110,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Undefined behavior and object lifetime",
+      "question": "What is the status of reading an uninitialized local variable of primitive type `int x;` in C++?",
+      "options": {
+        "A": "Guaranteed to be 0",
+        "B": "Undefined Behavior (produces indeterminate value)",
+        "C": "Compilation Error",
+        "D": "Throws std::runtime_error"
+      },
+      "correctAnswer": "B",
+      "explanation": "Reading uninitialized automatic scalar variables yields indeterminate values, causing undefined behavior."
+    },
+    {
+      "id": 111,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Advanced operator overloading",
+      "question": "How do you distinguish between pre-increment `++obj` and post-increment `obj++` when overloading member operators in C++?",
+      "options": {
+        "A": "Post-increment accepts a dummy int parameter: `Type operator++(int);`",
+        "B": "Pre-increment accepts an int parameter",
+        "C": "Using different function names",
+        "D": "Post-increment returns void"
+      },
+      "correctAnswer": "A",
+      "explanation": "The dummy parameter `int` in `operator++(int)` distinguishes post-increment from pre-increment `operator++()`."
+    },
+    {
+      "id": 112,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Exception safety guarantees",
+      "question": "What does the Strong Exception Safety Guarantee mandate for a function in C++?",
+      "options": {
+        "A": "The function never throws exceptions",
+        "B": "If the function throws an exception, program state is rolled back to exactly before the call (commit-or-rollback semantics)",
+        "C": "No memory leaks occur but state may change",
+        "D": "Program terminates safely"
+      },
+      "correctAnswer": "B",
+      "explanation": "The strong exception guarantee ensures that if an exception occurs, object and program state remains completely unchanged."
+    },
+    {
+      "id": 113,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "RAII and resource management",
+      "question": "Why should move constructors and move assignment operators be marked `noexcept`?",
+      "options": {
+        "A": "To allow standard containers like std::vector to safely use move operations during reallocation",
+        "B": "To make them run on GPU",
+        "C": "To disable destructors",
+        "D": "They must not return values"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::vector reallocation uses std::move_if_noexcept; without noexcept, vector falls back to copying for strong exception safety."
+    },
+    {
+      "id": 114,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Advanced virtual dispatch",
+      "question": "What is non-virtual interface (NVI) idiom in C++ software design?",
+      "options": {
+        "A": "Declaring all functions virtual",
+        "B": "Making public base functions non-virtual while delegating to private/protected virtual implementations",
+        "C": "Using templates instead of virtual functions",
+        "D": "Inheriting from abstract structs"
+      },
+      "correctAnswer": "B",
+      "explanation": "NVI idiom exposes public non-virtual interface methods that enforce invariant checks before calling private/protected virtual implementation methods."
+    },
+    {
+      "id": 115,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Smart pointers",
+      "question": "What happens when two `std::shared_ptr` objects are created independently from the same raw pointer `int* raw = new int(10);`?",
+      "options": {
+        "A": "They share the reference counter correctly",
+        "B": "They create two separate control blocks, resulting in double deletion (undefined behavior)",
+        "C": "Compilation Error",
+        "D": "Second shared_ptr becomes nullptr"
+      },
+      "correctAnswer": "B",
+      "explanation": "Creating multiple shared_ptrs from a raw pointer independently creates multiple control blocks leading to double free corruption upon destruction."
+    },
+    {
+      "id": 116,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What is Perfect Forwarding in C++11 and what standard function implements it?",
+      "options": {
+        "A": "Preserving value categories (lvalue/rvalue) of arguments when passing them using `std::forward<T>()` and forwarding references (`T&&`)",
+        "B": "Passing arguments by pointer using `std::move()`",
+        "C": "Forward declaring classes across headers",
+        "D": "Inlining functions at compile time"
+      },
+      "correctAnswer": "A",
+      "explanation": "Perfect forwarding uses universal/forwarding references (`T&&`) and `std::forward<T>()` to preserve parameter lvalueness/rvalueness."
+    },
+    {
+      "id": 117,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Advanced C++ memory layout",
+      "question": "What is memory alignment and structure padding in C++ classes?",
+      "options": {
+        "A": "Inserting unused padding bytes between data members to align variables to architecture memory boundaries",
+        "B": "Sorting class methods alphabetically",
+        "C": "Encapsulating private fields",
+        "D": "Clearing memory to zero"
+      },
+      "correctAnswer": "A",
+      "explanation": "Compilers insert padding bytes between fields to align multi-byte types to CPU word boundaries for efficient bus access."
+    },
+    {
+      "id": 118,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Algorithms and complexity analysis",
+      "question": "What is the average and worst-case time complexity of lookup in `std::unordered_map`?",
+      "options": {
+        "A": "Average O(1), Worst-case O(N)",
+        "B": "Average O(log N), Worst-case O(log N)",
+        "C": "Average O(1), Worst-case O(log N)",
+        "D": "Average O(N), Worst-case O(N^2)"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::unordered_map has average O(1) time complexity, but degrades to O(N) worst-case when high hash collisions occur."
+    },
+    {
+      "id": 119,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What does the `[[nodiscard]]` attribute in C++17 warn the developer about?",
+      "options": {
+        "A": "Function parameter cannot be null",
+        "B": "The return value of the function should not be discarded/ignored by caller",
+        "C": "The function is deprecated",
+        "D": "The function throws exceptions"
+      },
+      "correctAnswer": "B",
+      "explanation": "[[nodiscard]] issues a compiler warning if a function caller discards its return value."
+    },
+    {
+      "id": 120,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Undefined behavior and memory leaks",
+      "question": "What is strict aliasing rule violation in C++?",
+      "options": {
+        "A": "Accessing an object through a pointer of an incompatible type that does not share its effective type (except char/unsigned char)",
+        "B": "Using multiple aliases for namespaces",
+        "C": "Assigning base pointer to derived pointer",
+        "D": "Deleting nullptr"
+      },
+      "correctAnswer": "A",
+      "explanation": "Strict aliasing allows compiler optimizations assuming incompatible type pointers don't alias; violating it yields undefined behavior."
+    },
+    {
+      "id": 121,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What is fold expression introduced in C++17?",
+      "options": {
+        "A": "Compressing array elements into string",
+        "B": "Syntax for reducing variadic template parameter packs over binary operators",
+        "C": "Folding loops into single instruction",
+        "D": "Lambda capture folding"
+      },
+      "correctAnswer": "B",
+      "explanation": "C++17 fold expressions simplify reductions over variadic template parameter packs (e.g., `(... + args)`)."
+    },
+    {
+      "id": 122,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Advanced code-output questions",
+      "question": "What is the output of the following C++ code?\n\n#include <iostream>\nstruct A {\n    virtual void show() { std::cout << \"A\"; }\n};\nstruct B : A {\n    void show() { std::cout << \"B\"; }\n};\nint main() {\n    B b;\n    A a = b;\n    a.show();\n    return 0;\n}",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "AB",
+        "D": "Compilation Error"
+      },
+      "correctAnswer": "A",
+      "explanation": "Assigning derived object 'b' to base object 'a' causes Object Slicing. 'a' is a pure A object, calling A::show()."
+    },
+    {
+      "id": 123,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Templates and type deduction",
+      "question": "What is decltype in C++11?",
+      "options": {
+        "A": "Yields the declared type of an expression/variable at compile time",
+        "B": "Casts variables at runtime",
+        "C": "Declares templates",
+        "D": "Allocates dynamic variables"
+      },
+      "correctAnswer": "A",
+      "explanation": "decltype inspects and yields the precise declared type of an entity or expression at compile time."
+    },
+    {
+      "id": 124,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Smart pointers",
+      "question": "Why does `std::make_unique` not allow custom deleters directly compared to `std::unique_ptr` constructor?",
+      "options": {
+        "A": "Custom deleters change the type signature of std::unique_ptr<T, Deleter>",
+        "B": "make_unique is deprecated",
+        "C": "Custom deleters require shared_ptr",
+        "D": "It is a bug in C++14"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::unique_ptr type parameter incorporates the Deleter type `unique_ptr<T, Deleter>`; custom deleters alter class type."
+    },
+    {
+      "id": 125,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Copy and move constructors",
+      "question": "What is copy elision and Return Value Optimization (RVO)?",
+      "options": {
+        "A": "Compiler optimization technique that eliminates unnecessary copying/moving of objects during return by constructing directly in caller target",
+        "B": "Deleting copy constructors manually",
+        "C": "Converting copy to assignment",
+        "D": "Throwing exceptions on copy"
+      },
+      "correctAnswer": "A",
+      "explanation": "RVO constructs return objects directly inside the caller's memory space, eliding copy/move constructor calls."
+    },
+    {
+      "id": 126,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Advanced operator overloading",
+      "question": "Which member operator overload MUST return a reference to `*this` to support chained assignments `a = b = c;`?",
+      "options": {
+        "A": "Copy assignment operator `Class& operator=(const Class& rhs)`",
+        "B": "Equality operator `bool operator==(const Class& rhs)`",
+        "C": "Destructor `~Class()`",
+        "D": "Plus operator `Class operator+(const Class& rhs)`"
+      },
+      "correctAnswer": "A",
+      "explanation": "Returning `Class&` by reference allows chaining assignment calls `a = (b = c);`."
+    },
+    {
+      "id": 127,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Virtual destructors",
+      "question": "What happens if an abstract class declares a pure virtual destructor `virtual ~Base() = 0;`?",
+      "options": {
+        "A": "The base class destructor must still be provided with a body definition outside class",
+        "B": "Derived classes cannot be instantiated",
+        "C": "Compilation error always",
+        "D": "Destructor is skipped"
+      },
+      "correctAnswer": "A",
+      "explanation": "Base class destructors are always called during derived destruction, so a pure virtual destructor MUST have a definition body."
+    },
+    {
+      "id": 128,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Advanced STL",
+      "question": "What is the time complexity of `std::vector::insert` at an arbitrary iterator position in the middle of a vector?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(N) due to shifting subsequent elements",
+        "C": "O(log N)",
+        "D": "O(N^2)"
+      },
+      "correctAnswer": "B",
+      "explanation": "Inserting in the middle of a vector requires shifting all following elements to the right, taking linear time O(N)."
+    },
+    {
+      "id": 129,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What is structured binding introduced in C++17?",
+      "options": {
+        "A": "Syntax to unpack tuples, pairs, or structs into individual named variables `auto [x, y] = point;`",
+        "B": "Binding socket addresses",
+        "C": "Linking static libraries",
+        "D": "Overloading operators"
+      },
+      "correctAnswer": "A",
+      "explanation": "Structured bindings allow decomposing tuple-like types or structs into discrete local identifiers."
+    },
+    {
+      "id": 130,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What does `std::optional<T>` in C++17 represent?",
+      "options": {
+        "A": "A container that manages a value that may or may not be present",
+        "B": "An optional function parameter",
+        "C": "A dynamic pointer",
+        "D": "A thread handle"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::optional<T> represents a value wrapper that explicitly conveys presence or absence of a value without heap allocation."
+    },
+    {
+      "id": 131,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Algorithms and complexity analysis",
+      "question": "What is the average time complexity of `std::sort` in C++ standard library implementations (Introsort)?",
+      "options": {
+        "A": "O(N log N) worst-case and average guaranteed",
+        "B": "O(N^2)",
+        "C": "O(N)",
+        "D": "O(2^N)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Introsort hybrid (Quick sort + Heap sort fallback + Insertion sort) guarantees O(N log N) worst-case time."
+    },
+    {
+      "id": 132,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What is `std::variant<Types...>` introduced in C++17?",
+      "options": {
+        "A": "A type-safe, discriminative union container holding one value from a set of alternative types",
+        "B": "An untyped void pointer",
+        "C": "A dynamic array",
+        "D": "A polymorphic base class"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::variant is a type-safe union that tracks its active type index."
+    },
+    {
+      "id": 133,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Concurrency and multithreading",
+      "question": "Which standard header file provides multi-threading primitives like `std::thread` in C++11?",
+      "options": {
+        "A": "<thread>",
+        "B": "<pthread.h>",
+        "C": "<concurrent>",
+        "D": "<process>"
+      },
+      "correctAnswer": "A",
+      "explanation": "<thread> declares std::thread class for managing concurrent execution threads."
+    },
+    {
+      "id": 134,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Concurrency and multithreading",
+      "question": "What happens if a `std::thread` object is destroyed while still joinable (without calling `join()` or `detach()`)?",
+      "options": {
+        "A": "std::terminate() is called immediately",
+        "B": "Thread finishes in background safely",
+        "C": "Thread pauses execution",
+        "D": "Memory is leaked without termination"
+      },
+      "correctAnswer": "A",
+      "explanation": "Destroying a joinable thread object calls std::terminate(), ending program execution."
+    },
+    {
+      "id": 135,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Concurrency and multithreading",
+      "question": "Which RAII wrapper class automatically locks a `std::mutex` on construction and unlocks it on destruction?",
+      "options": {
+        "A": "std::lock_guard",
+        "B": "std::thread_lock",
+        "C": "std::mutex_holder",
+        "D": "std::atomic_lock"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::lock_guard provides RAII-style scope locking for std::mutex."
+    },
+    {
+      "id": 136,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What is `std::string_view` introduced in C++17?",
+      "options": {
+        "A": "A non-owning read-only view/reference to a contiguous sequence of characters",
+        "B": "A mutable string buffer",
+        "C": "A thread-safe string",
+        "D": "A null-terminated string converter"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::string_view provides zero-copy read-only access to character sequences without allocation."
+    },
+    {
+      "id": 137,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Constexpr and compile-time evaluation",
+      "question": "Can a `constexpr` function in C++14 contain loops and conditional statements?",
+      "options": {
+        "A": "Yes, C++14 relaxed constexpr restrictions allowing local variables, loops, and branches",
+        "B": "No, constexpr functions can only contain a single return statement",
+        "C": "Only if marked inline",
+        "D": "Only with templates"
+      },
+      "correctAnswer": "A",
+      "explanation": "C++14 expanded constexpr capabilities to allow local variables, loops, if statements, and mutations."
+    },
+    {
+      "id": 138,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Memory management and resource leaks",
+      "question": "What is placement new in C++?",
+      "options": {
+        "A": "Overload of operator new that constructs an object in a pre-allocated memory buffer address: `new (ptr) Type(args)`",
+        "B": "Allocating memory on secondary storage",
+        "C": "Reallocating pointers",
+        "D": "Moving objects across threads"
+      },
+      "correctAnswer": "A",
+      "explanation": "Placement new constructs an object directly into a caller-supplied memory address without allocating heap memory."
+    },
+    {
+      "id": 139,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Undefined behavior",
+      "question": "What occurs when signed integer overflow happens in standard C++ (`int x = INT_MAX + 1;`)?",
+      "options": {
+        "A": "Undefined Behavior",
+        "B": "Wraps around cleanly using two's complement",
+        "C": "Throws std::overflow_error",
+        "D": "Sets value to 0"
+      },
+      "correctAnswer": "A",
+      "explanation": "Signed integer overflow is strictly Undefined Behavior in standard C++ (unlike unsigned integer overflow which wraps)."
+    },
+    {
+      "id": 140,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Undefined behavior",
+      "question": "What is the behavior of unsigned integer overflow in C++ (`unsigned int x = UINT_MAX + 1;`)?",
+      "options": {
+        "A": "Defined behavior: modulo arithmetic reduction (wraps to 0)",
+        "B": "Undefined behavior",
+        "C": "Compilation Error",
+        "D": "Runtime Exception"
+      },
+      "correctAnswer": "A",
+      "explanation": "Unsigned integer arithmetic is defined by C++ standard to obey modular arithmetic (2^N reduction)."
+    },
+    {
+      "id": 141,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Advanced code-output questions",
+      "question": "What is the output of the following C++ code?\n\n#include <iostream>\nint main() {\n    int x = 5;\n    auto f = [x]() mutable { x += 10; return x; };\n    f();\n    std::cout << x;\n    return 0;\n}",
+      "options": {
+        "A": "5",
+        "B": "15",
+        "C": "10",
+        "D": "Compilation Error"
+      },
+      "correctAnswer": "A",
+      "explanation": "The lambda captured 'x' by value. 'mutable' allows modifying internal copy inside lambda, leaving outer x unchanged (5)."
+    },
+    {
+      "id": 142,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Pointers and references",
+      "question": "What is an rvalue reference in C++11 declared with `T&&`?",
+      "options": {
+        "A": "A reference that can bind to temporary objects (rvalues), enabling move semantics",
+        "B": "A double pointer reference",
+        "C": "A pointer to a reference",
+        "D": "A const reference to lvalues only"
+      },
+      "correctAnswer": "A",
+      "explanation": "Rvalue references `T&&` bind to temporary objects, allowing resources to be moved rather than copied."
+    },
+    {
+      "id": 143,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Templates and generic programming",
+      "question": "What is Variadic Template in C++11?",
+      "options": {
+        "A": "A template that can accept a variable number of template arguments using parameter packs `typename... Args`",
+        "B": "A template with variable variable types",
+        "C": "A template for variadic functions only",
+        "D": "A macro template"
+      },
+      "correctAnswer": "A",
+      "explanation": "Variadic templates accept arbitrary numbers of template parameters using parameter pack syntax `typename... Args`."
+    },
+    {
+      "id": 144,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Smart pointers",
+      "question": "What is the difference between `std::shared_ptr` and `std::unique_ptr` memory footprint?",
+      "options": {
+        "A": "std::unique_ptr has zero memory overhead (same size as raw pointer); std::shared_ptr stores extra control block pointer",
+        "B": "std::unique_ptr is twice as large",
+        "C": "std::shared_ptr has no overhead",
+        "D": "Both have identical sizes"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::unique_ptr carries no overhead over a raw pointer, while std::shared_ptr contains two pointers (object pointer + control block pointer)."
+    },
+    {
+      "id": 145,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Copy constructors and move constructors",
+      "question": "What happens if a class defines a move constructor but no copy constructor, and an object is copied?",
+      "options": {
+        "A": "Compilation Error (implicitly generated copy operations are deleted when a move operation is declared)",
+        "B": "Falls back to shallow copy",
+        "C": "Falls back to move constructor",
+        "D": "Runtime Exception"
+      },
+      "correctAnswer": "A",
+      "explanation": "Declaring a move constructor suppresses the automatic generation of copy constructor/assignment operator."
+    },
+    {
+      "id": 146,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What does `typeid` operator return in C++ when RTTI is enabled?",
+      "options": {
+        "A": "A reference to a const `std::type_info` object representing the object's dynamic type",
+        "B": "An integer type code",
+        "C": "A string name directly",
+        "D": "A class pointer"
+      },
+      "correctAnswer": "A",
+      "explanation": "typeid returns a const std::type_info& containing type metadata at runtime."
+    },
+    {
+      "id": 147,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Virtual functions",
+      "question": "Can a constructor be declared `virtual` in C++?",
+      "options": {
+        "A": "No, constructors cannot be virtual in C++",
+        "B": "Yes",
+        "C": "Only in abstract classes",
+        "D": "Only with virtual inheritance"
+      },
+      "correctAnswer": "A",
+      "explanation": "Constructors cannot be virtual because object dynamic type is established during construction, and vtable pointer is initialized during construction."
+    },
+    {
+      "id": 148,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Virtual functions",
+      "question": "Can a destructor be declared `virtual` in C++?",
+      "options": {
+        "A": "Yes, virtual destructors ensure proper cleanup in polymorphic inheritance hierarchies",
+        "B": "No",
+        "C": "Only if pure virtual",
+        "D": "Only in structs"
+      },
+      "correctAnswer": "A",
+      "explanation": "Virtual destructors are essential in base classes to guarantee derived class destructor execution on dynamic deletion."
+    },
+    {
+      "id": 149,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Lambda expressions",
+      "question": "In C++14, what is a Generic Lambda?",
+      "options": {
+        "A": "A lambda whose parameter list uses `auto` (`[](auto x, auto y) { return x + y; }`)",
+        "B": "A lambda declared inside template class",
+        "C": "A lambda returning void",
+        "D": "A lambda capturing templates"
+      },
+      "correctAnswer": "A",
+      "explanation": "C++14 introduced generic lambdas using `auto` parameters, turning the closure's `operator()` into a template method."
+    },
+    {
+      "id": 150,
+      "subject": "C++",
+      "difficulty": "Hard",
+      "topic": "Modern C++ features",
+      "question": "What is the result of using `std::any` introduced in C++17?",
+      "options": {
+        "A": "A type-safe container for single values of any copy-constructible type",
+        "B": "A container for pointers only",
+        "C": "A macro expansion",
+        "D": "An untyped array"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::any can hold an instance of any copy-constructible type safely."
+    }
+  ]
+}

@@ -1,0 +1,761 @@
+{
+  "subject": "HTML",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 50,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 51,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which semantic HTML5 element represents self-contained, independent composition content like a blog post or news item?",
+      "options": {
+        "A": "<section>",
+        "B": "<article>",
+        "C": "<aside>",
+        "D": "<main>"
+      },
+      "correctAnswer": "B",
+      "explanation": "An <article> represents an independent, reusable composition meant for standalone distribution."
+    },
+    {
+      "id": 52,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which semantic HTML5 element represents content indirectly related to main content (like a sidebar)?",
+      "options": {
+        "A": "<sidebar>",
+        "B": "<aside>",
+        "C": "<section>",
+        "D": "<nav>"
+      },
+      "correctAnswer": "B",
+      "explanation": "<aside> defines content tangentially related to content around it (e.g., sidebars, callout boxes)."
+    },
+    {
+      "id": 53,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which HTML5 tag wraps the dominant, central content unique to a specific document (excluding headers/footers)?",
+      "options": {
+        "A": "<content>",
+        "B": "<main>",
+        "C": "<body-main>",
+        "D": "<primary>"
+      },
+      "correctAnswer": "B",
+      "explanation": "<main> contains the main body of content unique to that document."
+    },
+    {
+      "id": 54,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which HTML5 input type provides a built-in interactive date picker in supporting browsers?",
+      "options": {
+        "A": "type=\"calendar\"",
+        "B": "type=\"date\"",
+        "C": "type=\"time\"",
+        "D": "type=\"datetime\""
+      },
+      "correctAnswer": "B",
+      "explanation": "<input type=\"date\"> creates an input field with a native browser date picker UI."
+    },
+    {
+      "id": 55,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which input attribute defines a regular expression pattern that the input value must match for validation?",
+      "options": {
+        "A": "regex",
+        "B": "pattern",
+        "C": "validate",
+        "D": "match"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'pattern' attribute takes a JavaScript regex that user input is validated against."
+    },
+    {
+      "id": 56,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which HTML5 tag provides a pre-defined auto-complete list of options for an <input> field using the 'list' attribute?",
+      "options": {
+        "A": "<select>",
+        "B": "<datalist>",
+        "C": "<autocomplete>",
+        "D": "<options>"
+      },
+      "correctAnswer": "B",
+      "explanation": "<datalist> contains <option> tags offering autocomplete choices for linked <input> elements."
+    },
+    {
+      "id": 57,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "What is the purpose of ARIA (Accessible Rich Internet Applications) attributes like `role` or `aria-label`?",
+      "options": {
+        "A": "To speed up JavaScript execution",
+        "B": "To improve accessibility for users of assistive technologies like screen readers",
+        "C": "To style elements without CSS",
+        "D": "To optimize search engine indexing speed"
+      },
+      "correctAnswer": "B",
+      "explanation": "ARIA attributes provide semantic accessibility metadata to assistive technology users."
+    },
+    {
+      "id": 58,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "How should decorative images (images that carry no informational value) be marked for accessibility?",
+      "options": {
+        "A": "Omit the alt attribute entirely",
+        "B": "Use an empty alt attribute (alt=\"\")",
+        "C": "Use alt=\"decorative image\"",
+        "D": "Use alt=\"none\""
+      },
+      "correctAnswer": "B",
+      "explanation": "An empty alt attribute (alt=\"\") signals screen readers to skip purely decorative images."
+    },
+    {
+      "id": 59,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which attribute in <video> or <audio> tags causes media to play automatically when page loads?",
+      "options": {
+        "A": "play",
+        "B": "autoplay",
+        "C": "start",
+        "D": "auto"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'autoplay' boolean attribute requests instant playback upon media readiness."
+    },
+    {
+      "id": 60,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which attribute displays browser default playback controls (play, pause, volume) on <video> elements?",
+      "options": {
+        "A": "navigation",
+        "B": "controls",
+        "C": "ui",
+        "D": "buttons"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'controls' attribute displays standard native media control UI elements."
+    },
+    {
+      "id": 61,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Script and stylesheet integration",
+      "question": "What does the `async` attribute do when executing external `<script src=\"app.js\" async>`?",
+      "options": {
+        "A": "Fetches script in parallel and executes it immediately as soon as it downloads, non-blocking parsing",
+        "B": "Defers execution until DOM parsing complete",
+        "C": "Executes script on worker thread",
+        "D": "Loads script synchronously"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'async' attribute downloads the script asynchronously and runs it as soon as available, potentially before DOM completion."
+    },
+    {
+      "id": 62,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Script and stylesheet integration",
+      "question": "What does the `defer` attribute do when loading external `<script src=\"app.js\" defer>`?",
+      "options": {
+        "A": "Executes script immediately during parsing",
+        "B": "Downloads script in parallel and executes it after DOM parsing finishes in document order",
+        "C": "Prevents script execution",
+        "D": "Loads script on hover"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'defer' attribute downloads script concurrently but delays execution until HTML parsing completes entirely."
+    },
+    {
+      "id": 63,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "DOM structure and element relationships",
+      "question": "What is the relationship between the <head> and <body> elements in an HTML document?",
+      "options": {
+        "A": "They are sibling elements contained inside <html>",
+        "B": "<head> is a child of <body>",
+        "C": "<body> is a child of <head>",
+        "D": "They are parent and child"
+      },
+      "correctAnswer": "A",
+      "explanation": "<head> and <body> are sibling children directly under the <html> root element."
+    },
+    {
+      "id": 64,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Global attributes and data-* attributes",
+      "question": "What is the correct format for creating custom data attributes in HTML5?",
+      "options": {
+        "A": "custom-*",
+        "B": "data-*",
+        "C": "attr-*",
+        "D": "user-*"
+      },
+      "correctAnswer": "B",
+      "explanation": "Custom metadata attributes in HTML5 must start with the 'data-' prefix (e.g., data-user-id)."
+    },
+    {
+      "id": 65,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Global attributes and data-* attributes",
+      "question": "In JavaScript, how do you access a custom attribute declared as `data-user-role=\"admin\"` on element `el`?",
+      "options": {
+        "A": "el.dataUserRole",
+        "B": "el.dataset.userRole",
+        "C": "el.getAttribute(\"userRole\")",
+        "D": "el.custom.userRole"
+      },
+      "correctAnswer": "B",
+      "explanation": "Custom data-* attributes are exposed on an element's DOM `dataset` property in camelCase form (`userRole`)."
+    },
+    {
+      "id": 66,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Metadata and SEO fundamentals",
+      "question": "Which <meta> attribute specifies character encoding for the HTML document?",
+      "options": {
+        "A": "<meta charset=\"UTF-8\">",
+        "B": "<meta encoding=\"UTF-8\">",
+        "C": "<meta type=\"utf-8\">",
+        "D": "<meta code=\"utf-8\">"
+      },
+      "correctAnswer": "A",
+      "explanation": "<meta charset=\"UTF-8\"> declares the document character encoding as UTF-8."
+    },
+    {
+      "id": 67,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Metadata and SEO fundamentals",
+      "question": "Which meta tag prevents search engine crawlers from indexing a page?",
+      "options": {
+        "A": "<meta name=\"robots\" content=\"noindex\">",
+        "B": "<meta name=\"crawler\" content=\"stop\">",
+        "C": "<meta name=\"google\" content=\"no-search\">",
+        "D": "<meta name=\"index\" content=\"false\">"
+      },
+      "correctAnswer": "A",
+      "explanation": "The meta robots tag with value 'noindex' instructs web crawlers not to index the page."
+    },
+    {
+      "id": 68,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which HTTP method sends form data embedded in the URL query string?",
+      "options": {
+        "A": "POST",
+        "B": "GET",
+        "C": "PUT",
+        "D": "FETCH"
+      },
+      "correctAnswer": "B",
+      "explanation": "The GET method appends form input field values to the target URL query string."
+    },
+    {
+      "id": 69,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which form attribute and value must be set to upload files via `<input type=\"file\">`?",
+      "options": {
+        "A": "enctype=\"multipart/form-data\"",
+        "B": "enctype=\"text/plain\"",
+        "C": "method=\"FILE\"",
+        "D": "upload=\"true\""
+      },
+      "correctAnswer": "A",
+      "explanation": "Uploading binary files requires setting form enctype to \"multipart/form-data\" with method=\"POST\"."
+    },
+    {
+      "id": 70,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "HTML entities and character encoding",
+      "question": "Which HTML entity code represents the ampersand symbol (&)?",
+      "options": {
+        "A": "&amp;",
+        "B": "&and;",
+        "C": "&per;",
+        "D": "&symbol;"
+      },
+      "correctAnswer": "A",
+      "explanation": "The &amp; entity escapes the ampersand character in HTML."
+    },
+    {
+      "id": 71,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "HTML entities and character encoding",
+      "question": "Which HTML entity code represents the less-than symbol (<)?",
+      "options": {
+        "A": "&lt;",
+        "B": "&gt;",
+        "C": "&less;",
+        "D": "&sub;"
+      },
+      "correctAnswer": "A",
+      "explanation": "The &lt; entity escapes the less-than symbol < to prevent HTML tag misparsing."
+    },
+    {
+      "id": 72,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "HTML entities and character encoding",
+      "question": "Which HTML entity code represents the greater-than symbol (>)?",
+      "options": {
+        "A": "&lt;",
+        "B": "&gt;",
+        "C": "&great;",
+        "D": "&plus;"
+      },
+      "correctAnswer": "B",
+      "explanation": "The &gt; entity escapes the greater-than symbol >."
+    },
+    {
+      "id": 73,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which tag is used to wrap a self-contained figure, diagram, or photo along with its caption?",
+      "options": {
+        "A": "<figure> and <figcaption>",
+        "B": "<img > and <caption>",
+        "C": "<media> and <title>",
+        "D": "<picture> and <label>"
+      },
+      "correctAnswer": "A",
+      "explanation": "<figure> encloses self-contained visual media, while <figcaption> provides its caption."
+    },
+    {
+      "id": 74,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which element represents a highlighted or marked portion of text for reference purposes?",
+      "options": {
+        "A": "<mark>",
+        "B": "<highlight>",
+        "C": "<b>",
+        "D": "<em>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <mark> element represents text highlighted for reference or notation purposes."
+    },
+    {
+      "id": 75,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which tag represents machine-readable date/time values using the 'datetime' attribute?",
+      "options": {
+        "A": "<time>",
+        "B": "<date>",
+        "C": "<clock>",
+        "D": "<timestamp>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <time> element renders human-readable dates/times with machine-readable `datetime` attributes."
+    },
+    {
+      "id": 76,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Block-level and inline elements",
+      "question": "Which of the following is an inline element by default?",
+      "options": {
+        "A": "<div>",
+        "B": "<p>",
+        "C": "<span>",
+        "D": "<h1>"
+      },
+      "correctAnswer": "C",
+      "explanation": "<span> is an inline element, whereas <div>, <p>, and <h1> are block-level elements."
+    },
+    {
+      "id": 77,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Block-level and inline elements",
+      "question": "Can a block-level element be nested inside an inline element like <span> in standard HTML5?",
+      "options": {
+        "A": "Yes, always allowed",
+        "B": "No, inline elements generally should not contain block-level elements",
+        "C": "Only inside forms",
+        "D": "Only with CSS display: block"
+      },
+      "correctAnswer": "B",
+      "explanation": "In HTML specification, inline elements generally must not contain block-level elements."
+    },
+    {
+      "id": 78,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which element groups related fields and labels together inside a form with a visible border?",
+      "options": {
+        "A": "<fieldset>",
+        "B": "<group>",
+        "C": "<formgroup>",
+        "D": "<border>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <fieldset> tag groups related controls in a form and can take a <legend> as title."
+    },
+    {
+      "id": 79,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which element defines a caption for the content of a <fieldset>?",
+      "options": {
+        "A": "<legend>",
+        "B": "<label>",
+        "C": "<caption>",
+        "D": "<title>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <legend> tag provides a caption for its parent <fieldset>."
+    },
+    {
+      "id": 80,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which element allows defining multiple alternative media resources for <video> or <audio> elements?",
+      "options": {
+        "A": "<source>",
+        "B": "<media>",
+        "C": "<file>",
+        "D": "<url>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <source> tag specifies alternate video/audio files so browsers can pick supported formats."
+    },
+    {
+      "id": 81,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Audio, video, and embedded content",
+      "question": "Which HTML5 element provides responsive images by listing multiple image sources for different screen sizes/resolutions?",
+      "options": {
+        "A": "<picture>",
+        "B": "<figure>",
+        "C": "<img-set>",
+        "D": "<responsive>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <picture> element wraps multiple <source> tags and an <img> fallback for responsive image swapping."
+    },
+    {
+      "id": 82,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "Which keyboard attribute defines element tab focus order when navigating with the Tab key?",
+      "options": {
+        "A": "tabindex",
+        "B": "focusindex",
+        "C": "keyindex",
+        "D": "order"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'tabindex' attribute specifies sequential keyboard navigation focus order."
+    },
+    {
+      "id": 83,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "What does setting `tabindex=\"0\"` do to a non-interactive element like a <div>?",
+      "options": {
+        "A": "Removes it from tab order entirely",
+        "B": "Makes it focusable in natural document tab order",
+        "C": "Focuses it first before all other elements",
+        "D": "Disables element entirely"
+      },
+      "correctAnswer": "B",
+      "explanation": "tabindex=\"0\" inserts the element into normal document keyboard tab order."
+    },
+    {
+      "id": 84,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "What does setting `tabindex=\"-1\"` do to an element?",
+      "options": {
+        "A": "Makes element focusable programmatically via JavaScript but removes it from sequential keyboard tabbing",
+        "B": "Focuses element immediately",
+        "C": "Hides element from screen readers",
+        "D": "Deletes element from DOM"
+      },
+      "correctAnswer": "A",
+      "explanation": "tabindex=\"-1\" removes element from keyboard tab flow while remaining focusable via JS focus()."
+    },
+    {
+      "id": 85,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which input type renders a slider control for selecting a number within a specified range?",
+      "options": {
+        "A": "type=\"range\"",
+        "B": "type=\"slider\"",
+        "C": "type=\"number\"",
+        "D": "type=\"meter\""
+      },
+      "correctAnswer": "A",
+      "explanation": "<input type=\"range\"> produces a visual slider control for numeric input within bounds."
+    },
+    {
+      "id": 86,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which tag measures a scalar value within a known range or fractional value (like disk usage)?",
+      "options": {
+        "A": "<progress>",
+        "B": "<meter>",
+        "C": "<range>",
+        "D": "<gauge>"
+      },
+      "correctAnswer": "B",
+      "explanation": "<meter> represents a scalar measurement within a known range or fractional value."
+    },
+    {
+      "id": 87,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which tag represents the completion progress of a task (like file upload)?",
+      "options": {
+        "A": "<meter>",
+        "B": "<progress>",
+        "C": "<status>",
+        "D": "<bar>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <progress> tag displays task execution progress (e.g., loading or file transfer)."
+    },
+    {
+      "id": 88,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which element specifies expanding/collapsing details that user can view or hide?",
+      "options": {
+        "A": "<details> and <summary>",
+        "B": "<accordion> and <header>",
+        "C": "<expand> and <title>",
+        "D": "<toggle> and <content>"
+      },
+      "correctAnswer": "A",
+      "explanation": "<details> creates an interactive disclosure widget, with <summary> as its visible heading."
+    },
+    {
+      "id": 89,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Semantic HTML5 elements",
+      "question": "Which element represents a key-value list of terms and descriptions in HTML?",
+      "options": {
+        "A": "<dl>, <dt>, <dd>",
+        "B": "<ul>, <li>, <dd>",
+        "C": "<ol>, <dt>, <li>",
+        "D": "<list>, <term>, <desc>"
+      },
+      "correctAnswer": "A",
+      "explanation": "<dl> defines a description list, containing terms (<dt>) and descriptions (<dd>)."
+    },
+    {
+      "id": 90,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Global attributes and data-* attributes",
+      "question": "Which global attribute specifies text direction for element content (e.g., left-to-right vs right-to-left)?",
+      "options": {
+        "A": "dir",
+        "B": "direction",
+        "C": "lang",
+        "D": "orient"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'dir' attribute specifies text directionality (ltr, rtl, auto)."
+    },
+    {
+      "id": 91,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Common HTML errors and debugging",
+      "question": "What happens if you open an <em> tag inside a <b> tag but close them as `<b><em>Text</b></em>`?",
+      "options": {
+        "A": "Browser HTML parser auto-corrects overlapping tags in DOM, but it is invalid syntax",
+        "B": "Browser crashes immediately",
+        "C": "Page displays blank screen",
+        "D": "Compilation error occurs"
+      },
+      "correctAnswer": "A",
+      "explanation": "HTML parsers handle malformed overlapping tags via error recovery, but it violates standard syntax rules."
+    },
+    {
+      "id": 92,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Metadata and SEO fundamentals",
+      "question": "Which <link> attribute specifies canonical URL to eliminate duplicate content SEO penalties?",
+      "options": {
+        "A": "rel=\"canonical\"",
+        "B": "rel=\"original\"",
+        "C": "rel=\"seo\"",
+        "D": "rel=\"index\""
+      },
+      "correctAnswer": "A",
+      "explanation": "<link rel=\"canonical\" href=\"...\"> indicates preferred master page URL for search indexing."
+    },
+    {
+      "id": 93,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "HTML parsing and browser behavior",
+      "question": "Where does the browser construct the DOM tree from?",
+      "options": {
+        "A": "Directly from CSS styles",
+        "B": "From tokenized raw HTML byte streams",
+        "C": "From compiled JavaScript",
+        "D": "From JSON manifests"
+      },
+      "correctAnswer": "B",
+      "explanation": "Browsers convert raw network bytes -> characters -> tokens -> nodes -> DOM Tree."
+    },
+    {
+      "id": 94,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Security fundamentals",
+      "question": "What is the purpose of the `rel=\"noopener noreferrer\"` attribute on external target=\"_blank\" links?",
+      "options": {
+        "A": "Prevents target page from accessing window.opener DOM object and protects against tabnabbing phishing attacks",
+        "B": "Speeds up image downloading",
+        "C": "Encrypts connection to destination site",
+        "D": "Hides anchor text from search engines"
+      },
+      "correctAnswer": "A",
+      "explanation": "rel=\"noopener\" prevents foreign cross-origin target pages from controlling window.opener object."
+    },
+    {
+      "id": 95,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Forms, validation constraints, and submission",
+      "question": "Which attribute on <form> specifies where to send submitted form data?",
+      "options": {
+        "A": "action",
+        "B": "method",
+        "C": "target",
+        "D": "href"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'action' attribute specifies target URI where form data payload is transmitted."
+    },
+    {
+      "id": 96,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Script and stylesheet integration",
+      "question": "What is a `<noscript>` tag used for?",
+      "options": {
+        "A": "Defines fallback content displayed to users who have disabled JavaScript or use non-scripting browsers",
+        "B": "Prevents scripts from executing",
+        "C": "Logs script execution errors",
+        "D": "Minifies JavaScript code"
+      },
+      "correctAnswer": "A",
+      "explanation": "<noscript> renders HTML content when script execution is disabled or unsupported."
+    },
+    {
+      "id": 97,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which tag defines preformatted text where whitespace, indents, and line breaks are preserved exactly as typed?",
+      "options": {
+        "A": "<code>",
+        "B": "<pre>",
+        "C": "<text>",
+        "D": "<samp>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <pre> tag renders text in monospace font, maintaining all whitespace and line breaks."
+    },
+    {
+      "id": 98,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which tag represents inline computer code snippet?",
+      "options": {
+        "A": "<code>",
+        "B": "<pre>",
+        "C": "<var>",
+        "D": "<kbd>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <code> tag marks up computer source code snippets inline."
+    },
+    {
+      "id": 99,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Headings, paragraphs, links, and images",
+      "question": "Which tag represents keyboard key input (e.g. Ctrl + C) in HTML?",
+      "options": {
+        "A": "<key>",
+        "B": "<kbd>",
+        "C": "<input>",
+        "D": "<code>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <kbd> tag represents keyboard input or user shortcuts."
+    },
+    {
+      "id": 100,
+      "subject": "HTML",
+      "difficulty": "Medium",
+      "topic": "Accessibility, ARIA basics, and alt text",
+      "question": "Which ARIA attribute hides an decorative or redundant element completely from accessibility screen readers?",
+      "options": {
+        "A": "aria-hidden=\"true\"",
+        "B": "aria-invisible=\"true\"",
+        "C": "aria-skip=\"true\"",
+        "D": "aria-ignore=\"true\""
+      },
+      "correctAnswer": "A",
+      "explanation": "aria-hidden=\"true\" removes an element and its children from accessibility tree."
+    }
+  ]
+}

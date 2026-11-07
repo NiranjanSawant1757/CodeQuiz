@@ -21,6 +21,7 @@ import com.example.codequiz.model.AnswerRecord;
 import com.example.codequiz.model.Question;
 import com.example.codequiz.model.QuizAttempt;
 import com.example.codequiz.util.AppConstants;
+import com.example.codequiz.util.DialogHelper;
 import com.example.codequiz.util.SessionManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
@@ -113,7 +114,7 @@ public class QuizActivity extends AppCompatActivity {
             timeRemainingMillis = savedInstanceState.getLong(KEY_TIME_REMAINING, 0);
             quizStartTime = savedInstanceState.getLong(KEY_START_TIME, System.currentTimeMillis());
         } else {
-            // Check if pre-generated AI or offline cached questions were passed via Intent
+            // Check if questions were passed via Intent
             if (getIntent().hasExtra(AppConstants.EXTRA_QUESTIONS)) {
                 Serializable serializable = getIntent().getSerializableExtra(AppConstants.EXTRA_QUESTIONS);
                 if (serializable instanceof List) {
@@ -318,35 +319,16 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void confirmExit() {
-        new AlertDialog.Builder(this)
-                .setTitle("Exit Quiz?")
-                .setMessage("Your current quiz progress will be discarded. Are you sure you want to quit?")
-                .setPositiveButton("Yes, Exit", (dialog, which) -> {
-                    if (countDownTimer != null) countDownTimer.cancel();
-                    finish();
-                })
-                .setNegativeButton("Keep Playing", null)
-                .show();
+        DialogHelper.showExitQuizDialog(this, () -> {
+            if (countDownTimer != null) countDownTimer.cancel();
+            finish();
+        });
     }
 
     private void confirmSubmission() {
         int answered = getAnsweredCount();
         int total = questions.size();
-        int unanswered = total - answered;
-
-        String message;
-        if (unanswered > 0) {
-            message = "You have answered " + answered + " of " + total + " questions (" + unanswered + " unanswered).\n\nAre you sure you want to submit now?";
-        } else {
-            message = "You have answered all " + total + " questions!\n\nAre you ready to submit and view your results?";
-        }
-
-        new AlertDialog.Builder(this)
-                .setTitle("Submit Quiz")
-                .setMessage(message)
-                .setPositiveButton("Submit", (dialog, which) -> submitQuiz())
-                .setNegativeButton("Continue Quiz", null)
-                .show();
+        DialogHelper.showSubmitQuizDialog(this, answered, total, this::submitQuiz);
     }
 
     private void submitQuiz() {

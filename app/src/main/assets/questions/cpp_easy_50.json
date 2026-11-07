@@ -1,0 +1,761 @@
+{
+  "subject": "C++",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 50,
+    "medium": 0,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 1,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Introduction to C++ and program structure",
+      "question": "Which header file is required to use std::cout and std::cin in C++?",
+      "options": {
+        "A": "<iostream>",
+        "B": "<stdio.h>",
+        "C": "<conio.h>",
+        "D": "<stream>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <iostream> header defines the standard input and output stream objects in C++."
+    },
+    {
+      "id": 2,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Introduction to C++ and program structure",
+      "question": "Which operator is used with std::cout for output insertion?",
+      "options": {
+        "A": ">>",
+        "B": "<<",
+        "C": "::",
+        "D": "->"
+      },
+      "correctAnswer": "B",
+      "explanation": "The stream insertion operator << inserts formatted data into the output stream."
+    },
+    {
+      "id": 3,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Variables, constants, and data types",
+      "question": "Which of the following is the correct way to declare a constant integer in C++?",
+      "options": {
+        "A": "const int MAX = 100;",
+        "B": "constant int MAX = 100;",
+        "C": "int const MAX := 100;",
+        "D": "#define const MAX 100"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'const' keyword is used to declare read-only constant variables in C++."
+    },
+    {
+      "id": 4,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Variables, constants, and data types",
+      "question": "What is the size of the 'char' data type guaranteed to be in standard C++?",
+      "options": {
+        "A": "At least 1 byte (strictly 1 char length)",
+        "B": "2 bytes",
+        "C": "4 bytes",
+        "D": "Varies by system"
+      },
+      "correctAnswer": "A",
+      "explanation": "In C++, sizeof(char) is defined to be exactly 1."
+    },
+    {
+      "id": 5,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Variables, constants, and data types",
+      "question": "Which data type is used to store boolean values 'true' or 'false' in C++?",
+      "options": {
+        "A": "bool",
+        "B": "boolean",
+        "C": "bit",
+        "D": "IntBool"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'bool' keyword represents boolean logical values true or false in C++."
+    },
+    {
+      "id": 6,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What is the result of 17 % 5 in C++?",
+      "options": {
+        "A": "3",
+        "B": "2",
+        "C": "3.4",
+        "D": "0"
+      },
+      "correctAnswer": "B",
+      "explanation": "The modulus operator % calculates the integer remainder of division (17 divided by 5 gives remainder 2)."
+    },
+    {
+      "id": 7,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What is the value of x after: int a = 5; int x = ++a;",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "0"
+      },
+      "correctAnswer": "B",
+      "explanation": "The pre-increment operator ++a increments 'a' to 6 first, then assigns 6 to x."
+    },
+    {
+      "id": 8,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "Which scope resolution operator is used to access global variables or namespace members?",
+      "options": {
+        "A": "::",
+        "B": "->",
+        "C": ".",
+        "D": ":"
+      },
+      "correctAnswer": "A",
+      "explanation": "The double colon :: is the scope resolution operator in C++."
+    },
+    {
+      "id": 9,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Conditional statements and loops",
+      "question": "Which loop guarantees that its body will execute at least once?",
+      "options": {
+        "A": "for loop",
+        "B": "while loop",
+        "C": "do-while loop",
+        "D": "range-based for loop"
+      },
+      "correctAnswer": "C",
+      "explanation": "A do-while loop evaluates its condition at the end of the iteration, ensuring at least one execution."
+    },
+    {
+      "id": 10,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Conditional statements and loops",
+      "question": "What is the output of the following C++ code?\n\n#include <iostream>\nint main() {\n    int a = 0;\n    if (a = 5)\n        std::cout << \"True\";\n    else\n        std::cout << \"False\";\n    return 0;\n}",
+      "options": {
+        "A": "False",
+        "B": "True",
+        "C": "Compilation Error",
+        "D": "Runtime Error"
+      },
+      "correctAnswer": "B",
+      "explanation": "The assignment expression (a = 5) evaluates to 5, which is non-zero (treated as true), so \"True\" is printed."
+    },
+    {
+      "id": 11,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Arrays and multidimensional arrays",
+      "question": "What is the index of the first element in a standard C++ array?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "-1",
+        "D": "User defined"
+      },
+      "correctAnswer": "A",
+      "explanation": "Arrays in C++ use zero-based indexing."
+    },
+    {
+      "id": 12,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Arrays and multidimensional arrays",
+      "question": "How do you declare a 1D array of 5 integers in C++?",
+      "options": {
+        "A": "int arr[5];",
+        "B": "array<int, 5> arr;",
+        "C": "int arr(5);",
+        "D": "int arr[];"
+      },
+      "correctAnswer": "A",
+      "explanation": "'int arr[5];' declares a C-style array of 5 integers."
+    },
+    {
+      "id": 13,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Strings and string manipulation",
+      "question": "Which header file is required to use std::string class in C++?",
+      "options": {
+        "A": "<string>",
+        "B": "<cstring>",
+        "C": "<string.h>",
+        "D": "<strings>"
+      },
+      "correctAnswer": "A",
+      "explanation": "The <string> header declares std::string and std::wstring classes."
+    },
+    {
+      "id": 14,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Strings and string manipulation",
+      "question": "Which member function returns the number of characters in std::string s?",
+      "options": {
+        "A": "s.length()",
+        "B": "s.size()",
+        "C": "Both s.length() and s.size()",
+        "D": "s.count()"
+      },
+      "correctAnswer": "C",
+      "explanation": "In std::string, length() and size() are synonyms that return the character count."
+    },
+    {
+      "id": 15,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Functions, parameters, and return values",
+      "question": "Which keyword indicates that a function does not return any value?",
+      "options": {
+        "A": "null",
+        "B": "void",
+        "C": "empty",
+        "D": "static"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'void' return type specifies that a function returns no value."
+    },
+    {
+      "id": 16,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Functions, parameters, and return values",
+      "question": "What happens when an argument is passed by value to a function in C++?",
+      "options": {
+        "A": "A copy of the argument is created",
+        "B": "The function receives the original variable address",
+        "C": "The original variable is modified directly",
+        "D": "A reference is created automatically"
+      },
+      "correctAnswer": "A",
+      "explanation": "Passing by value copies the argument's value into the function parameter."
+    },
+    {
+      "id": 17,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Pointers and references",
+      "question": "Which symbol is used to declare a reference variable in C++?",
+      "options": {
+        "A": "*",
+        "B": "&",
+        "C": "->",
+        "D": "@"
+      },
+      "correctAnswer": "B",
+      "explanation": "The ampersand symbol & is used to declare reference types in C++."
+    },
+    {
+      "id": 18,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Pointers and references",
+      "question": "Which symbol is used to dereference a pointer in C++?",
+      "options": {
+        "A": "&",
+        "B": "*",
+        "C": "->",
+        "D": "::"
+      },
+      "correctAnswer": "B",
+      "explanation": "The asterisk * dereferences a pointer, accessing the value stored at the memory address."
+    },
+    {
+      "id": 19,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Pointers and references",
+      "question": "What is a nullptr in modern C++?",
+      "options": {
+        "A": "An integer literal equal to 0",
+        "B": "A strongly-typed null pointer literal of type std::nullptr_t",
+        "C": "A macro defined as (void*)0",
+        "D": "A wild pointer"
+      },
+      "correctAnswer": "B",
+      "explanation": "Introduced in C++11, nullptr is a type-safe null pointer literal."
+    },
+    {
+      "id": 20,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Classes, objects, and constructors",
+      "question": "Which keyword is used to declare a class in C++?",
+      "options": {
+        "A": "struct",
+        "B": "class",
+        "C": "object",
+        "D": "type"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'class' keyword defines a class type in C++."
+    },
+    {
+      "id": 21,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Classes, objects, and constructors",
+      "question": "What is the default access specifier for members of a class declared with keyword 'class' in C++?",
+      "options": {
+        "A": "public",
+        "B": "private",
+        "C": "protected",
+        "D": "friend"
+      },
+      "correctAnswer": "B",
+      "explanation": "Members of a class are private by default, whereas members of a struct are public by default."
+    },
+    {
+      "id": 22,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Classes, objects, and constructors",
+      "question": "What is the default access specifier for members of a C++ 'struct'?",
+      "options": {
+        "A": "public",
+        "B": "private",
+        "C": "protected",
+        "D": "internal"
+      },
+      "correctAnswer": "A",
+      "explanation": "Struct members in C++ default to public access."
+    },
+    {
+      "id": 23,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Classes, objects, and constructors",
+      "question": "Does a constructor in C++ have a return type?",
+      "options": {
+        "A": "Yes, void",
+        "B": "No, constructors have no return type",
+        "C": "Yes, int",
+        "D": "Yes, auto"
+      },
+      "correctAnswer": "B",
+      "explanation": "Constructors in C++ do not specify any return type, not even void."
+    },
+    {
+      "id": 24,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Destructors and object lifetime",
+      "question": "What is the correct syntax for declaring a destructor for class 'Car'?",
+      "options": {
+        "A": "~Car();",
+        "B": "delete Car();",
+        "C": "void ~Car();",
+        "D": "Car::~Car(void);"
+      },
+      "correctAnswer": "A",
+      "explanation": "Destructors are named with a tilde ~ followed by the class name."
+    },
+    {
+      "id": 25,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Destructors and object lifetime",
+      "question": "How many destructors can a C++ class have?",
+      "options": {
+        "A": "Multiple through overloading",
+        "B": "Exactly one",
+        "C": "As many as constructors",
+        "D": "None if constructor is private"
+      },
+      "correctAnswer": "B",
+      "explanation": "A class can have only one destructor as it takes no parameters and cannot be overloaded."
+    },
+    {
+      "id": 26,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Inheritance and its types",
+      "question": "Which keyword is used to establish inheritance between derived and base classes in C++?",
+      "options": {
+        "A": "extends",
+        "B": "implements",
+        "C": ":",
+        "D": "inherits"
+      },
+      "correctAnswer": "C",
+      "explanation": "The colon : operator is used to inherit from base classes in C++."
+    },
+    {
+      "id": 27,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Inheritance and its types",
+      "question": "In public inheritance, what access level do public members of base class have in derived class?",
+      "options": {
+        "A": "private",
+        "B": "protected",
+        "C": "public",
+        "D": "inaccessible"
+      },
+      "correctAnswer": "C",
+      "explanation": "Public inheritance preserves the access level of public base members as public in the derived class."
+    },
+    {
+      "id": 28,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Encapsulation and abstraction",
+      "question": "Which access modifier restricts member visibility strictly to within its own class?",
+      "options": {
+        "A": "private",
+        "B": "protected",
+        "C": "public",
+        "D": "internal"
+      },
+      "correctAnswer": "A",
+      "explanation": "Private members can only be accessed by member functions and friends of the class."
+    },
+    {
+      "id": 29,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Encapsulation and abstraction",
+      "question": "Which access modifier allows visibility within the class and its derived classes?",
+      "options": {
+        "A": "private",
+        "B": "protected",
+        "C": "public",
+        "D": "global"
+      },
+      "correctAnswer": "B",
+      "explanation": "Protected members are accessible inside the class and by derived classes."
+    },
+    {
+      "id": 30,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Dynamic memory allocation (new and delete)",
+      "question": "Which operator is used to allocate dynamic memory on the heap in C++?",
+      "options": {
+        "A": "malloc",
+        "B": "alloc",
+        "C": "new",
+        "D": "create"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'new' operator allocates memory on the free store (heap) and initializes objects."
+    },
+    {
+      "id": 31,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Dynamic memory allocation (new and delete)",
+      "question": "Which operator is used to deallocate dynamic memory allocated with 'new[]' for arrays?",
+      "options": {
+        "A": "delete",
+        "B": "delete[]",
+        "C": "free",
+        "D": "free[]"
+      },
+      "correctAnswer": "B",
+      "explanation": "Array dynamic memory allocated with new[] must be freed using delete[]."
+    },
+    {
+      "id": 32,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "STL containers (vector, list, deque, set, map, unordered_map)",
+      "question": "Which STL container header provides std::vector?",
+      "options": {
+        "A": "<vector>",
+        "B": "<array>",
+        "C": "<list>",
+        "D": "<container>"
+      },
+      "correctAnswer": "A",
+      "explanation": "<vector> defines the std::vector dynamic array container."
+    },
+    {
+      "id": 33,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "STL containers (vector, list, deque, set, map, unordered_map)",
+      "question": "How do you add an element to the end of std::vector<int> v?",
+      "options": {
+        "A": "v.add_back(x);",
+        "B": "v.push_back(x);",
+        "C": "v.append(x);",
+        "D": "v.insert_last(x);"
+      },
+      "correctAnswer": "B",
+      "explanation": "push_back() appends an element to the end of a vector."
+    },
+    {
+      "id": 34,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "STL containers (vector, list, deque, set, map, unordered_map)",
+      "question": "Which method checks if an STL container has zero elements?",
+      "options": {
+        "A": "v.size() == 0",
+        "B": "v.empty()",
+        "C": "Both v.empty() and v.size() == 0",
+        "D": "v.is_null()"
+      },
+      "correctAnswer": "C",
+      "explanation": "v.empty() returns true if the container has no elements, equivalent to checking size() == 0."
+    },
+    {
+      "id": 35,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Exception handling (try, catch, throw)",
+      "question": "Which block is used to enclose code that might throw an exception in C++?",
+      "options": {
+        "A": "catch",
+        "B": "try",
+        "C": "throw",
+        "D": "finally"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'try' block encloses code that may trigger runtime exceptions."
+    },
+    {
+      "id": 36,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Exception handling (try, catch, throw)",
+      "question": "Which keyword is used to signal/raise an exception in C++?",
+      "options": {
+        "A": "throw",
+        "B": "raise",
+        "C": "except",
+        "D": "error"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'throw' statement raises an exception in C++."
+    },
+    {
+      "id": 37,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Static members and member functions",
+      "question": "How is a static member variable initialized outside the class definition in C++?",
+      "options": {
+        "A": "Type ClassName::memberName = value;",
+        "B": "static Type ClassName::memberName = value;",
+        "C": "ClassName.memberName = value;",
+        "D": "Type ClassName.memberName = value;"
+      },
+      "correctAnswer": "A",
+      "explanation": "Static member variables are defined at namespace scope using scope resolution: Type ClassName::memberName = value;"
+    },
+    {
+      "id": 38,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Static members and member functions",
+      "question": "Can a static member function access non-static instance variables of the class directly?",
+      "options": {
+        "A": "Yes",
+        "B": "No, because static member functions do not have a 'this' pointer",
+        "C": "Only if they are public",
+        "D": "Only if marked virtual"
+      },
+      "correctAnswer": "B",
+      "explanation": "Static member functions lack a 'this' pointer and can only access static members or instance objects passed explicitly."
+    },
+    {
+      "id": 39,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Searching and sorting",
+      "question": "Which standard algorithm sorts elements in a range [first, last) in C++?",
+      "options": {
+        "A": "std::sort",
+        "B": "std::order",
+        "C": "std::arrange",
+        "D": "std::qsort"
+      },
+      "correctAnswer": "A",
+      "explanation": "std::sort from <algorithm> sorts elements in a given range."
+    },
+    {
+      "id": 40,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Header files and stream I/O",
+      "question": "Which output stream object is used for unbuffered error reporting in standard C++?",
+      "options": {
+        "A": "std::cout",
+        "B": "std::cerr",
+        "C": "std::clog",
+        "D": "std::cin"
+      },
+      "correctAnswer": "B",
+      "explanation": "std::cerr is the standard unbuffered error output stream."
+    },
+    {
+      "id": 41,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Modern C++ features",
+      "question": "What does 'auto' keyword do when declaring a variable in C++11 and later?",
+      "options": {
+        "A": "Specifies automatic storage duration",
+        "B": "Deduces the variable's type automatically from its initializer",
+        "C": "Makes the variable dynamic",
+        "D": "Declares an asynchronous thread"
+      },
+      "correctAnswer": "B",
+      "explanation": "In modern C++, auto enables compile-time type deduction based on the initialization expression."
+    },
+    {
+      "id": 42,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What is the result of expression: 5 + 3 * 2 in C++?",
+      "options": {
+        "A": "16",
+        "B": "11",
+        "C": "13",
+        "D": "10"
+      },
+      "correctAnswer": "B",
+      "explanation": "Multiplication has higher operator precedence than addition, so 3 * 2 = 6, and 5 + 6 = 11."
+    },
+    {
+      "id": 43,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Recursion and algorithms",
+      "question": "What is a base condition in a recursive function?",
+      "options": {
+        "A": "The line where recursive function calls itself",
+        "B": "The terminating condition that stops recursion",
+        "C": "The initial parameter set",
+        "D": "The return type of function"
+      },
+      "correctAnswer": "B",
+      "explanation": "The base condition stops further recursive calls and prevents call stack overflow."
+    },
+    {
+      "id": 44,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Strings and string manipulation",
+      "question": "What is the result of string concatenation: std::string a = \"Hello \"; std::string b = \"World\"; std::string c = a + b;",
+      "options": {
+        "A": "\"Hello World\"",
+        "B": "\"HelloWorld\"",
+        "C": "Compilation Error",
+        "D": "Undefined"
+      },
+      "correctAnswer": "A",
+      "explanation": "The + operator concatenates std::string objects, producing \"Hello World\"."
+    },
+    {
+      "id": 45,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Conditional statements and loops",
+      "question": "What statement exits immediately from a loop or switch statement in C++?",
+      "options": {
+        "A": "continue",
+        "B": "break",
+        "C": "return",
+        "D": "exit"
+      },
+      "correctAnswer": "B",
+      "explanation": "The break statement terminates execution of the nearest enclosing loop or switch."
+    },
+    {
+      "id": 46,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Function overloading and default arguments",
+      "question": "What is function overloading in C++?",
+      "options": {
+        "A": "Defining multiple functions with the same name but different parameter lists in the same scope",
+        "B": "Redefining a base class function in a derived class",
+        "C": "A function calling itself",
+        "D": "Passing too many arguments to a function"
+      },
+      "correctAnswer": "A",
+      "explanation": "Function overloading allows functions in the same scope to share a name if their parameter signatures differ."
+    },
+    {
+      "id": 47,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Time and space complexity",
+      "question": "What is the time complexity of accessing an element in an array or std::vector by index?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(N)",
+        "C": "O(log N)",
+        "D": "O(N^2)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Random access by index in contiguous arrays takes constant time O(1)."
+    },
+    {
+      "id": 48,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Pointers and references",
+      "question": "Can a C++ reference be rebound to refer to a different object after initialization?",
+      "options": {
+        "A": "Yes",
+        "B": "No, references are bound permanently upon initialization",
+        "C": "Only if declared const",
+        "D": "Only with pointers"
+      },
+      "correctAnswer": "B",
+      "explanation": "A reference cannot be rebound to another object after its initialization."
+    },
+    {
+      "id": 49,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Friend functions and friend classes",
+      "question": "What privilege does a friend function have regarding a class in C++?",
+      "options": {
+        "A": "It can access private and protected members of that class",
+        "B": "It inherits all public members",
+        "C": "It becomes a member function automatically",
+        "D": "It overrides virtual functions"
+      },
+      "correctAnswer": "A",
+      "explanation": "Friend functions are granted full access to private and protected class members."
+    },
+    {
+      "id": 50,
+      "subject": "C++",
+      "difficulty": "Easy",
+      "topic": "Introduction to C++ and program structure",
+      "question": "What is the return type of the main() function in C++ standard?",
+      "options": {
+        "A": "void",
+        "B": "int",
+        "C": "bool",
+        "D": "double"
+      },
+      "correctAnswer": "B",
+      "explanation": "According to C++ standards, main() must return int."
+    }
+  ]
+}

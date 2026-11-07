@@ -1,0 +1,761 @@
+{
+  "subject": "JavaScript",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 50,
+    "medium": 0,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 1,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Variables: var, let, and const",
+      "question": "Which keyword declares a block-scoped variable that can be reassigned in modern JavaScript?",
+      "options": {
+        "A": "const",
+        "B": "let",
+        "C": "var",
+        "D": "static"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'let' keyword declares a reassignable, block-scoped local variable."
+    },
+    {
+      "id": 2,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Variables: var, let, and const",
+      "question": "Which keyword declares a block-scoped variable that CANNOT be reassigned after initialization?",
+      "options": {
+        "A": "const",
+        "B": "let",
+        "C": "var",
+        "D": "fixed"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'const' keyword creates a read-only, block-scoped reference that cannot be reassigned."
+    },
+    {
+      "id": 3,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Primitive and reference types",
+      "question": "Which of the following is NOT a primitive data type in JavaScript?",
+      "options": {
+        "A": "String",
+        "B": "Number",
+        "C": "Array",
+        "D": "Boolean"
+      },
+      "correctAnswer": "C",
+      "explanation": "Arrays are reference objects in JavaScript, whereas String, Number, and Boolean are primitives."
+    },
+    {
+      "id": 4,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Primitive and reference types",
+      "question": "What does the `typeof` operator return for `typeof 'Hello World'`?",
+      "options": {
+        "A": "string",
+        "B": "String",
+        "C": "text",
+        "D": "object"
+      },
+      "correctAnswer": "A",
+      "explanation": "The typeof operator returns lowercase 'string' for string primitive values."
+    },
+    {
+      "id": 5,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Primitive and reference types",
+      "question": "What does `typeof 42` return in JavaScript?",
+      "options": {
+        "A": "integer",
+        "B": "number",
+        "C": "float",
+        "D": "Number"
+      },
+      "correctAnswer": "B",
+      "explanation": "JavaScript treats all numeric values under the 'number' primitive type."
+    },
+    {
+      "id": 6,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Primitive and reference types",
+      "question": "What does `typeof true` return?",
+      "options": {
+        "A": "boolean",
+        "B": "Boolean",
+        "C": "bool",
+        "D": "flag"
+      },
+      "correctAnswer": "A",
+      "explanation": "The typeof operator returns 'boolean' for boolean primitive values."
+    },
+    {
+      "id": 7,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Primitive and reference types",
+      "question": "What is the result of `typeof undefined`?",
+      "options": {
+        "A": "undefined",
+        "B": "object",
+        "C": "null",
+        "D": "void"
+      },
+      "correctAnswer": "A",
+      "explanation": "The typeof operator returns the string 'undefined' for uninitialized/undefined values."
+    },
+    {
+      "id": 8,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "JavaScript introduction and syntax",
+      "question": "How do you write a single-line comment in JavaScript?",
+      "options": {
+        "A": "<!-- This is a comment -->",
+        "B": "// This is a comment",
+        "C": "/* This is a comment */",
+        "D": "' This is a comment"
+      },
+      "correctAnswer": "B",
+      "explanation": "Double slashes // indicate a single-line comment in JavaScript."
+    },
+    {
+      "id": 9,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "JavaScript introduction and syntax",
+      "question": "How do you write a multi-line comment in JavaScript?",
+      "options": {
+        "A": "/* This is a comment */",
+        "B": "// This is a comment",
+        "C": "<!-- This is a comment -->",
+        "D": "# This is a comment"
+      },
+      "correctAnswer": "A",
+      "explanation": "/* ... */ delimits multi-line comments in JavaScript."
+    },
+    {
+      "id": 10,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "Which operator is used to assign a value to a variable?",
+      "options": {
+        "A": "=",
+        "B": "==",
+        "C": "===",
+        "D": ":="
+      },
+      "correctAnswer": "A",
+      "explanation": "The single equal sign '=' is the assignment operator."
+    },
+    {
+      "id": 11,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Equality, truthiness, and short-circuit evaluation",
+      "question": "Which operator checks both value AND type equality without performing type coercion?",
+      "options": {
+        "A": "==",
+        "B": "=",
+        "C": "===",
+        "D": "!="
+      },
+      "correctAnswer": "C",
+      "explanation": "The strict equality operator '===' compares both value and type without coercion."
+    },
+    {
+      "id": 12,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What is the remainder of `10 % 3` in JavaScript?",
+      "options": {
+        "A": "1",
+        "B": "3",
+        "C": "0",
+        "D": "3.33"
+      },
+      "correctAnswer": "A",
+      "explanation": "The modulus operator % calculates the remainder of division (10 % 3 = 1)."
+    },
+    {
+      "id": 13,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Strings and template literals",
+      "question": "Which character is used to enclose template literals in ES6+?",
+      "options": {
+        "A": "Backticks (`)",
+        "B": "Single quotes (')",
+        "C": "Double quotes (\")",
+        "D": "Tildes (~)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Template literals are enclosed by backticks (`) and support string interpolation with ${expression}."
+    },
+    {
+      "id": 14,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Strings and template literals",
+      "question": "What is the syntax for embedded expressions inside template literals?",
+      "options": {
+        "A": "${expression}",
+        "B": "{{expression}}",
+        "C": "%{expression}",
+        "D": "#{expression}"
+      },
+      "correctAnswer": "A",
+      "explanation": "Template literals use `${expression}` to interpolate dynamic variables or statements."
+    },
+    {
+      "id": 15,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Arrays and array methods",
+      "question": "Which method adds one or more elements to the END of an array and returns its new length?",
+      "options": {
+        "A": "push()",
+        "B": "pop()",
+        "C": "shift()",
+        "D": "unshift()"
+      },
+      "correctAnswer": "A",
+      "explanation": "push() appends items to the end of an array."
+    },
+    {
+      "id": 16,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Arrays and array methods",
+      "question": "Which method removes the LAST element from an array and returns that element?",
+      "options": {
+        "A": "pop()",
+        "B": "push()",
+        "C": "shift()",
+        "D": "splice()"
+      },
+      "correctAnswer": "A",
+      "explanation": "pop() removes and returns the last element of an array."
+    },
+    {
+      "id": 17,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Arrays and array methods",
+      "question": "Which method removes the FIRST element from an array?",
+      "options": {
+        "A": "shift()",
+        "B": "unshift()",
+        "C": "pop()",
+        "D": "slice()"
+      },
+      "correctAnswer": "A",
+      "explanation": "shift() removes and returns the first element at index 0."
+    },
+    {
+      "id": 18,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Arrays and array methods",
+      "question": "Which method adds one or more elements to the BEGINNING of an array?",
+      "options": {
+        "A": "unshift()",
+        "B": "shift()",
+        "C": "append()",
+        "D": "prepend()"
+      },
+      "correctAnswer": "A",
+      "explanation": "unshift() inserts elements at index 0 of an array."
+    },
+    {
+      "id": 19,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Arrays and array methods",
+      "question": "How do you access the length of an array named `items`?",
+      "options": {
+        "A": "items.length",
+        "B": "items.size()",
+        "C": "items.count",
+        "D": "items.getLength()"
+      },
+      "correctAnswer": "A",
+      "explanation": "The .length property returns the total element count in an array."
+    },
+    {
+      "id": 20,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Conditional statements and loops",
+      "question": "Which keyword starts a conditional block in JavaScript?",
+      "options": {
+        "A": "if",
+        "B": "when",
+        "C": "check",
+        "D": "condition"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'if' statement conditionally executes code if a test expression evaluates to truthy."
+    },
+    {
+      "id": 21,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Conditional statements and loops",
+      "question": "Which loop structure executes a block of code a set number of times using an initializer, condition, and final expression?",
+      "options": {
+        "A": "for loop",
+        "B": "while loop",
+        "C": "do-while loop",
+        "D": "for-in loop"
+      },
+      "correctAnswer": "A",
+      "explanation": "A standard 'for (init; condition; step)' loop repeats code while condition is true."
+    },
+    {
+      "id": 22,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Functions and arrow functions",
+      "question": "How do you declare a named function in JavaScript?",
+      "options": {
+        "A": "function myFunc() {}",
+        "B": "def myFunc() {}",
+        "C": "func myFunc() {}",
+        "D": "void myFunc() {}"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'function' keyword is used to declare named function statements."
+    },
+    {
+      "id": 23,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Functions and arrow functions",
+      "question": "Which syntax represents an ES6 arrow function with no parameters returning `10`?",
+      "options": {
+        "A": "() => 10",
+        "B": "-> 10",
+        "C": "function() => 10",
+        "D": "() -> { return 10; }"
+      },
+      "correctAnswer": "A",
+      "explanation": "`() => 10` is an arrow function expression with concise implicit return."
+    },
+    {
+      "id": 24,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Objects and object properties",
+      "question": "How do you create an empty object literal in JavaScript?",
+      "options": {
+        "A": "const obj = {};",
+        "B": "const obj = [];",
+        "C": "const obj = ();",
+        "D": "const obj = <>;"
+      },
+      "correctAnswer": "A",
+      "explanation": "Curly braces `{}` create an empty object literal."
+    },
+    {
+      "id": 25,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Objects and object properties",
+      "question": "How do you access property `name` on object `user` using dot notation?",
+      "options": {
+        "A": "user.name",
+        "B": "user['name']",
+        "C": "both A and B work",
+        "D": "user->name"
+      },
+      "correctAnswer": "C",
+      "explanation": "Both dot notation `user.name` and bracket notation `user['name']` access object properties."
+    },
+    {
+      "id": 26,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "JSON parsing and serialization",
+      "question": "Which built-in method converts a JavaScript object into a JSON string?",
+      "options": {
+        "A": "JSON.stringify()",
+        "B": "JSON.parse()",
+        "C": "JSON.encode()",
+        "D": "JSON.toString()"
+      },
+      "correctAnswer": "A",
+      "explanation": "JSON.stringify() serializes JavaScript values/objects into JSON formatted strings."
+    },
+    {
+      "id": 27,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "JSON parsing and serialization",
+      "question": "Which built-in method parses a valid JSON string into a JavaScript object?",
+      "options": {
+        "A": "JSON.parse()",
+        "B": "JSON.stringify()",
+        "C": "JSON.decode()",
+        "D": "JSON.toObject()"
+      },
+      "correctAnswer": "A",
+      "explanation": "JSON.parse() constructs JavaScript values/objects described by a JSON string."
+    },
+    {
+      "id": 28,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Type conversion and coercion",
+      "question": "What is the result of `'5' + 2` in JavaScript?",
+      "options": {
+        "A": "'52'",
+        "B": "7",
+        "C": "NaN",
+        "D": "TypeError"
+      },
+      "correctAnswer": "A",
+      "explanation": "The + operator concatenates string '5' and converted string '2', producing '52'."
+    },
+    {
+      "id": 29,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Type conversion and coercion",
+      "question": "What is the result of `'5' - 2` in JavaScript?",
+      "options": {
+        "A": "3",
+        "B": "'52'",
+        "C": "NaN",
+        "D": "'3'"
+      },
+      "correctAnswer": "A",
+      "explanation": "The subtraction operator - converts string '5' to number 5, yielding 3."
+    },
+    {
+      "id": 30,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Equality, truthiness, and short-circuit evaluation",
+      "question": "What is the boolean evaluation of `Boolean(0)` in JavaScript?",
+      "options": {
+        "A": "false",
+        "B": "true",
+        "C": "undefined",
+        "D": "null"
+      },
+      "correctAnswer": "A",
+      "explanation": "Numeric 0 is a falsy value in JavaScript, evaluating to false."
+    },
+    {
+      "id": 31,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Equality, truthiness, and short-circuit evaluation",
+      "question": "Which of the following values is TRUTHY in JavaScript?",
+      "options": {
+        "A": "'0'",
+        "B": "0",
+        "C": "null",
+        "D": "undefined"
+      },
+      "correctAnswer": "A",
+      "explanation": "Non-empty string `'0'` is truthy, whereas 0, null, and undefined are falsy."
+    },
+    {
+      "id": 32,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What does the logical AND operator `&&` return if the first operand is falsy?",
+      "options": {
+        "A": "The first (falsy) operand",
+        "B": "The second operand",
+        "C": "Always false",
+        "D": "Always true"
+      },
+      "correctAnswer": "A",
+      "explanation": "Logical AND `&&` short-circuits and returns the first falsy operand value."
+    },
+    {
+      "id": 33,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What does the logical OR operator `||` return if the first operand is truthy?",
+      "options": {
+        "A": "The first (truthy) operand",
+        "B": "The second operand",
+        "C": "Always true",
+        "D": "Boolean true"
+      },
+      "correctAnswer": "A",
+      "explanation": "Logical OR `||` short-circuits and returns the first truthy operand value."
+    },
+    {
+      "id": 34,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "DOM selection and manipulation",
+      "question": "In browser environments, which method selects a single DOM element by its unique ID?",
+      "options": {
+        "A": "document.getElementById()",
+        "B": "document.querySelectorID()",
+        "C": "document.getElementByClass()",
+        "D": "document.findId()"
+      },
+      "correctAnswer": "A",
+      "explanation": "document.getElementById('id') returns an Element object matching the specified ID string."
+    },
+    {
+      "id": 35,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "DOM selection and manipulation",
+      "question": "Which DOM method selects the FIRST element matching a specified CSS selector string?",
+      "options": {
+        "A": "document.querySelector()",
+        "B": "document.querySelectorAll()",
+        "C": "document.getElementsByTagName()",
+        "D": "document.select()"
+      },
+      "correctAnswer": "A",
+      "explanation": "document.querySelector() returns the first element matching the given CSS selector."
+    },
+    {
+      "id": 36,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Events and event propagation",
+      "question": "Which method registers an event listener callback function on a DOM element?",
+      "options": {
+        "A": "element.addEventListener()",
+        "B": "element.attachEvent()",
+        "C": "element.onEvent()",
+        "D": "element.listen()"
+      },
+      "correctAnswer": "A",
+      "explanation": "addEventListener() sets up a function to be called whenever the target event is delivered."
+    },
+    {
+      "id": 37,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Local storage and session storage",
+      "question": "Which Web Storage API mechanism persists stored key-value data across browser restarts until cleared?",
+      "options": {
+        "A": "localStorage",
+        "B": "sessionStorage",
+        "C": "cookieStorage",
+        "D": "tempStorage"
+      },
+      "correctAnswer": "A",
+      "explanation": "localStorage persists data with no expiration time across browser sessions."
+    },
+    {
+      "id": 38,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Local storage and session storage",
+      "question": "Which method stores a key-value pair in `localStorage`?",
+      "options": {
+        "A": "localStorage.setItem('key', 'value')",
+        "B": "localStorage.put('key', 'value')",
+        "C": "localStorage.add('key', 'value')",
+        "D": "localStorage.save('key', 'value')"
+      },
+      "correctAnswer": "A",
+      "explanation": "localStorage.setItem(key, value) saves string key-value pairs."
+    },
+    {
+      "id": 39,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Error handling and custom errors",
+      "question": "Which block catches runtime exceptions thrown inside a `try` block?",
+      "options": {
+        "A": "catch",
+        "B": "except",
+        "C": "finally",
+        "D": "handle"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `catch` block executes if an exception is thrown inside the preceding `try` block."
+    },
+    {
+      "id": 40,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Error handling and custom errors",
+      "question": "Which keyword is used to manually throw a user-defined exception in JavaScript?",
+      "options": {
+        "A": "throw",
+        "B": "raise",
+        "C": "error",
+        "D": "return"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `throw` statement throws a user-defined exception."
+    },
+    {
+      "id": 41,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Promises and asynchronous programming",
+      "question": "What are the three possible states of a JavaScript Promise?",
+      "options": {
+        "A": "pending, fulfilled, rejected",
+        "B": "started, running, finished",
+        "C": "waiting, resolved, failed",
+        "D": "open, active, closed"
+      },
+      "correctAnswer": "A",
+      "explanation": "A Promise is always in one of three states: pending, fulfilled, or rejected."
+    },
+    {
+      "id": 42,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Promises and asynchronous programming",
+      "question": "Which method handles the successful fulfillment of a Promise?",
+      "options": {
+        "A": ".then()",
+        "B": ".catch()",
+        "C": ".finally()",
+        "D": ".done()"
+      },
+      "correctAnswer": "A",
+      "explanation": "The .then() method attaches callbacks for the resolution of a Promise."
+    },
+    {
+      "id": 43,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "async and await",
+      "question": "An `async` function always returns which type of object?",
+      "options": {
+        "A": "Promise",
+        "B": "Generator",
+        "C": "Callback",
+        "D": "Observable"
+      },
+      "correctAnswer": "A",
+      "explanation": "Async functions always return a Promise implicitly or explicitly."
+    },
+    {
+      "id": 44,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "ES modules and imports/exports",
+      "question": "Which ES module keyword exports a single primary value or component from a module file?",
+      "options": {
+        "A": "export default",
+        "B": "export main",
+        "C": "export primary",
+        "D": "default send"
+      },
+      "correctAnswer": "A",
+      "explanation": "export default specifies the default fallback export of an ES module."
+    },
+    {
+      "id": 45,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Strict mode and common runtime errors",
+      "question": "Which directive string enables Strict Mode in a JavaScript file or function?",
+      "options": {
+        "A": "\"use strict\";",
+        "B": "\"strict mode\";",
+        "C": "\"enable strict\";",
+        "D": "\"use strictness\";"
+      },
+      "correctAnswer": "A",
+      "explanation": "The pragma string \"use strict\"; enforces strict parsing and error handling."
+    },
+    {
+      "id": 46,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What is the result of `3 ** 2` in JavaScript?",
+      "options": {
+        "A": "9",
+        "B": "6",
+        "C": "8",
+        "D": "1.5"
+      },
+      "correctAnswer": "A",
+      "explanation": "The exponentiation operator ** raises the first operand to the power of the second operand (3^2 = 9)."
+    },
+    {
+      "id": 47,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Destructuring and spread/rest syntax",
+      "question": "Which operator syntax `...` spreads array elements or merges objects?",
+      "options": {
+        "A": "Spread syntax",
+        "B": "Rest parameter",
+        "C": "Dot operator",
+        "D": "Concat operator"
+      },
+      "correctAnswer": "A",
+      "explanation": "The spread operator `...` unpacks elements of an iterable array or object properties."
+    },
+    {
+      "id": 48,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Arrays and array methods",
+      "question": "Which array method checks if at least one element in an array passes a test function?",
+      "options": {
+        "A": "some()",
+        "B": "every()",
+        "C": "find()",
+        "D": "includes()"
+      },
+      "correctAnswer": "A",
+      "explanation": "some() tests whether at least one element in the array passes the provided callback test."
+    },
+    {
+      "id": 49,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Arrays and array methods",
+      "question": "Which array method checks if ALL elements in an array pass a test function?",
+      "options": {
+        "A": "every()",
+        "B": "some()",
+        "C": "filter()",
+        "D": "map()"
+      },
+      "correctAnswer": "A",
+      "explanation": "every() returns true if all array elements satisfy the test callback condition."
+    },
+    {
+      "id": 50,
+      "subject": "JavaScript",
+      "difficulty": "Easy",
+      "topic": "Fetch API and HTTP fundamentals",
+      "question": "What type of object does `fetch(url)` return in modern browser environments?",
+      "options": {
+        "A": "Promise resolving to a Response object",
+        "B": "JSON string",
+        "C": "XMLHttpRequest object",
+        "D": "Text stream"
+      },
+      "correctAnswer": "A",
+      "explanation": "fetch() returns a Promise that fulfills with the Response object representing the HTTP response."
+    }
+  ]
+}

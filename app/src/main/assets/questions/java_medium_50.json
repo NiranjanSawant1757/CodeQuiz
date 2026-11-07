@@ -1,0 +1,761 @@
+{
+  "subject": "Java",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 50,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 51,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "OOP Principles",
+      "question": "Which OOP principle allows a subclass to provide a specific implementation of a method already defined in its parent class?",
+      "options": {
+        "A": "Abstraction",
+        "B": "Encapsulation",
+        "C": "Method Overriding",
+        "D": "Composition"
+      },
+      "correctAnswer": "C",
+      "explanation": "Method overriding allows a subclass to provide a specific implementation of a method declared in its superclass."
+    },
+    {
+      "id": 52,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Inheritance",
+      "question": "Which keyword is used by a class to inherit from another class in Java?",
+      "options": {
+        "A": "implements",
+        "B": "extends",
+        "C": "inherits",
+        "D": "super"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'extends' keyword establishes an inheritance relationship between classes."
+    },
+    {
+      "id": 53,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Interfaces",
+      "question": "Which keyword is used by a class to use an interface in Java?",
+      "options": {
+        "A": "extends",
+        "B": "implements",
+        "C": "uses",
+        "D": "interface"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'implements' keyword is used by classes to implement interface contracts."
+    },
+    {
+      "id": 54,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Interfaces",
+      "question": "Starting in Java 8, can interfaces contain default methods with concrete implementations?",
+      "options": {
+        "A": "No, interface methods must all be abstract",
+        "B": "Yes, using the 'default' keyword",
+        "C": "Yes, using the 'static' keyword only",
+        "D": "Only private methods were allowed in Java 8"
+      },
+      "correctAnswer": "B",
+      "explanation": "Java 8 introduced default methods in interfaces to allow adding new capabilities without breaking backward compatibility."
+    },
+    {
+      "id": 55,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Abstract Classes",
+      "question": "Which of the following is true about abstract classes in Java?",
+      "options": {
+        "A": "An abstract class can be directly instantiated with 'new'",
+        "B": "An abstract class cannot contain constructors",
+        "C": "An abstract class cannot be instantiated directly",
+        "D": "All methods in an abstract class must be abstract"
+      },
+      "correctAnswer": "C",
+      "explanation": "Abstract classes cannot be instantiated directly with 'new'; they must be extended by concrete subclasses."
+    },
+    {
+      "id": 56,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Polymorphism",
+      "question": "What type of polymorphism is achieved through Method Overloading?",
+      "options": {
+        "A": "Compile-time polymorphism",
+        "B": "Run-time polymorphism",
+        "C": "Dynamic polymorphism",
+        "D": "Late binding polymorphism"
+      },
+      "correctAnswer": "A",
+      "explanation": "Method overloading is resolved by the compiler based on method signatures (compile-time/static polymorphism)."
+    },
+    {
+      "id": 57,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Polymorphism",
+      "question": "What type of polymorphism is achieved through Method Overriding?",
+      "options": {
+        "A": "Compile-time polymorphism",
+        "B": "Run-time polymorphism",
+        "C": "Static polymorphism",
+        "D": "Parametric polymorphism"
+      },
+      "correctAnswer": "B",
+      "explanation": "Method overriding is resolved at runtime based on the actual object type (run-time/dynamic polymorphism)."
+    },
+    {
+      "id": 58,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Collections",
+      "question": "Which Collection interface allows fast lookup by key and does not allow duplicate keys?",
+      "options": {
+        "A": "List",
+        "B": "Set",
+        "C": "Map",
+        "D": "Queue"
+      },
+      "correctAnswer": "C",
+      "explanation": "Map stores key-value pairs where keys are unique."
+    },
+    {
+      "id": 59,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "ArrayList",
+      "question": "What is the primary advantage of ArrayList over a standard Java array?",
+      "options": {
+        "A": "ArrayList holds primitive types directly",
+        "B": "ArrayList automatically resizes dynamically as elements are added",
+        "C": "ArrayList is synchronized by default",
+        "D": "ArrayList elements are fixed in size"
+      },
+      "correctAnswer": "B",
+      "explanation": "ArrayList grows dynamically when elements are added beyond its current capacity."
+    },
+    {
+      "id": 60,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "HashMap",
+      "question": "How does HashMap handle key collisions in Java 8 and later when a bucket capacity exceeds a threshold?",
+      "options": {
+        "A": "Throws HashCollisionException",
+        "B": "Converts the bucket from a linked list to a balanced tree (Red-Black tree)",
+        "C": "Replaces old value with new value automatically",
+        "D": "Expands array size immediately"
+      },
+      "correctAnswer": "B",
+      "explanation": "When a bucket linked list exceeds 8 elements (and total table capacity >= 64), Java 8 converts it to a balanced red-black tree."
+    },
+    {
+      "id": 61,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Generics",
+      "question": "What is Type Erasure in Java Generics?",
+      "options": {
+        "A": "Removing generic type information at compile time so bytecode maintains backward compatibility",
+        "B": "Erasing unused objects from heap memory",
+        "C": "Casting primitive types to wrapper classes",
+        "D": "Converting interfaces into abstract classes"
+      },
+      "correctAnswer": "A",
+      "explanation": "Type erasure removes generic type parameters during compilation, inserting necessary casts for type safety."
+    },
+    {
+      "id": 62,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Generics",
+      "question": "Which wildcard syntax allows accepting a List of Integer or any of its superclasses?",
+      "options": {
+        "A": "List<? extends Integer>",
+        "B": "List<? super Integer>",
+        "C": "List<T extends Integer>",
+        "D": "List<?>"
+      },
+      "correctAnswer": "B",
+      "explanation": "<? super Integer> specifies a lower-bounded wildcard accepting Integer or its superclasses."
+    },
+    {
+      "id": 63,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Recursion",
+      "question": "What happens if a recursive function does not have a proper base condition?",
+      "options": {
+        "A": "NullPointerException",
+        "B": "StackOverflowError",
+        "C": "OutOfMemoryError",
+        "D": "ArithmeticException"
+      },
+      "correctAnswer": "B",
+      "explanation": "Infinite recursion exhausts call stack space, leading to StackOverflowError."
+    },
+    {
+      "id": 64,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "File Handling",
+      "question": "Which class in java.nio.file package provides utility methods to read all lines from a text file conveniently?",
+      "options": {
+        "A": "FileReader",
+        "B": "FileInputStream",
+        "C": "Files",
+        "D": "BufferedReader"
+      },
+      "correctAnswer": "C",
+      "explanation": "java.nio.file.Files provides static methods like Files.readAllLines()."
+    },
+    {
+      "id": 65,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Exception Handling",
+      "question": "Which of the following is a checked exception in Java?",
+      "options": {
+        "A": "NullPointerException",
+        "B": "ArrayIndexOutOfBoundsException",
+        "C": "IOException",
+        "D": "IllegalArgumentException"
+      },
+      "correctAnswer": "C",
+      "explanation": "IOException is a checked exception derived from Exception, requiring explicit try-catch or throws."
+    },
+    {
+      "id": 66,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Exception Handling",
+      "question": "What class is the root of the exception hierarchy in Java?",
+      "options": {
+        "A": "java.lang.Exception",
+        "B": "java.lang.Throwable",
+        "C": "java.lang.Error",
+        "D": "java.lang.Object"
+      },
+      "correctAnswer": "B",
+      "explanation": "java.lang.Throwable is the superclass of all errors and exceptions in Java."
+    },
+    {
+      "id": 67,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Lambda Expressions",
+      "question": "Which statement accurately describes a Functional Interface in Java?",
+      "options": {
+        "A": "An interface with no methods",
+        "B": "An interface with exactly one abstract method",
+        "C": "An interface containing only static methods",
+        "D": "An interface with multiple abstract methods"
+      },
+      "correctAnswer": "B",
+      "explanation": "A functional interface contains exactly one abstract method (annotated optionally with @FunctionalInterface)."
+    },
+    {
+      "id": 68,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Lambda Expressions",
+      "question": "Which standard functional interface takes one argument and returns a boolean?",
+      "options": {
+        "A": "Function<T, R>",
+        "B": "Supplier<T>",
+        "C": "Consumer<T>",
+        "D": "Predicate<T>"
+      },
+      "correctAnswer": "D",
+      "explanation": "Predicate<T> defines boolean test(T t)."
+    },
+    {
+      "id": 69,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Lambda Expressions",
+      "question": "Which functional interface takes no parameters and produces/returns a result?",
+      "options": {
+        "A": "Consumer<T>",
+        "B": "Supplier<T>",
+        "C": "Predicate<T>",
+        "D": "Function<T,R>"
+      },
+      "correctAnswer": "B",
+      "explanation": "Supplier<T> defines T get() which accepts no arguments and produces a result."
+    },
+    {
+      "id": 70,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Stream API",
+      "question": "Which Stream operation is terminal and reduces elements to a single value or performs a side-effect?",
+      "options": {
+        "A": "filter",
+        "B": "map",
+        "C": "forEach",
+        "D": "sorted"
+      },
+      "correctAnswer": "C",
+      "explanation": "forEach is a terminal operation that triggers stream processing; filter, map, and sorted are intermediate."
+    },
+    {
+      "id": 71,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Stream API",
+      "question": "What is the result of the following stream code?\nList<Integer> nums = List.of(1, 2, 3, 4);\nlong count = nums.stream().filter(n -> n % 2 == 0).count();",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correctAnswer": "B",
+      "explanation": "The filter keeps even numbers (2, 4), so count() returns 2."
+    },
+    {
+      "id": 72,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Stream API",
+      "question": "What does the Stream map() method do?",
+      "options": {
+        "A": "Filters elements based on a condition",
+        "B": "Transforms each element into another element using a function",
+        "C": "Sorts the elements of a stream",
+        "D": "Groups elements into a Map object"
+      },
+      "correctAnswer": "B",
+      "explanation": "map() applies a mapping function to transform elements in the stream."
+    },
+    {
+      "id": 73,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "OOP Principles",
+      "question": "Encapsulation is best demonstrated by which of the following practices?",
+      "options": {
+        "A": "Making fields public for direct access",
+        "B": "Making instance variables private and providing public getter and setter methods",
+        "C": "Using multiple inheritance with interfaces",
+        "D": "Overriding the toString() method"
+      },
+      "correctAnswer": "B",
+      "explanation": "Hiding internal data behind private access modifiers and exposing safe access via public methods embodies encapsulation."
+    },
+    {
+      "id": 74,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Inheritance",
+      "question": "Can a class in Java extend multiple concrete classes directly (Multiple Inheritance)?",
+      "options": {
+        "A": "Yes",
+        "B": "No",
+        "C": "Yes, using super keyword",
+        "D": "Yes, if both parent classes are abstract"
+      },
+      "correctAnswer": "B",
+      "explanation": "Java does not support multiple class inheritance to avoid ambiguity (the diamond problem)."
+    },
+    {
+      "id": 75,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Super Keyword",
+      "question": "What is the super keyword used for in a constructor of a child class?",
+      "options": {
+        "A": "To call the superclass constructor",
+        "B": "To create a super-sized object",
+        "C": "To reference the child class instance",
+        "D": "To declare a method static"
+      },
+      "correctAnswer": "A",
+      "explanation": "super(...) invokes the constructor of the direct parent class."
+    },
+    {
+      "id": 76,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Collections",
+      "question": "Which Set implementation in Java maintains elements in insertion order?",
+      "options": {
+        "A": "HashSet",
+        "B": "TreeSet",
+        "C": "LinkedHashSet",
+        "D": "ConcurrentSkipListSet"
+      },
+      "correctAnswer": "C",
+      "explanation": "LinkedHashSet maintains a doubly-linked list running through its entries to preserve insertion order."
+    },
+    {
+      "id": 77,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Collections",
+      "question": "Which Set implementation automatically sorts its elements in natural ascending order?",
+      "options": {
+        "A": "HashSet",
+        "B": "LinkedHashSet",
+        "C": "TreeSet",
+        "D": "CopyOnWriteArraySet"
+      },
+      "correctAnswer": "C",
+      "explanation": "TreeSet is backed by a Red-Black tree and stores elements in natural sorted order or via a custom Comparator."
+    },
+    {
+      "id": 78,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Exception Handling",
+      "question": "What is a custom unchecked exception in Java?",
+      "options": {
+        "A": "A class extending java.lang.Throwable directly",
+        "B": "A class extending java.lang.Exception",
+        "C": "A class extending java.lang.RuntimeException",
+        "D": "A class implementing ExceptionListener"
+      },
+      "correctAnswer": "C",
+      "explanation": "Unchecked exceptions extend RuntimeException (or Throwable/Error, but custom exceptions extend RuntimeException)."
+    },
+    {
+      "id": 79,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Lambda Expressions",
+      "question": "What is the correct syntax for a lambda expression taking two integers 'a' and 'b' and returning their sum?",
+      "options": {
+        "A": "(a, b) -> a + b",
+        "B": "lambda(a, b) { return a + b; }",
+        "C": "(int a, b) => a + b",
+        "D": "a, b -> { a + b }"
+      },
+      "correctAnswer": "A",
+      "explanation": "(a, b) -> a + b is valid Java lambda syntax."
+    },
+    {
+      "id": 80,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Stream API",
+      "question": "Which method is used to convert a Stream back into a List in Java 16 or later?",
+      "options": {
+        "A": "stream.asList()",
+        "B": "stream.toList()",
+        "C": "stream.collectList()",
+        "D": "stream.toArrayList()"
+      },
+      "correctAnswer": "B",
+      "explanation": "Java 16 introduced Stream.toList() as an unmodifiable convenience method."
+    },
+    {
+      "id": 81,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Abstract Classes",
+      "question": "Can an abstract class have concrete (implemented) methods in Java?",
+      "options": {
+        "A": "No, all methods in an abstract class must be abstract",
+        "B": "Yes, an abstract class can contain both abstract and concrete methods",
+        "C": "Only if the class is declared static",
+        "D": "Only if methods are marked final"
+      },
+      "correctAnswer": "B",
+      "explanation": "Abstract classes can feature both fully implemented methods and abstract methods."
+    },
+    {
+      "id": 82,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Interfaces",
+      "question": "Can an interface have instance fields (non-static, non-final fields)?",
+      "options": {
+        "A": "Yes",
+        "B": "No, fields in interfaces are implicitly public static final",
+        "C": "Yes, if declared private",
+        "D": "Yes, in Java 11+"
+      },
+      "correctAnswer": "B",
+      "explanation": "All fields declared in interfaces are implicitly public, static, and final."
+    },
+    {
+      "id": 83,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Generics",
+      "question": "What is the primary benefit of using Generics in Java collections?",
+      "options": {
+        "A": "Faster execution speed at runtime",
+        "B": "Compile-time type checking and elimination of explicit type casting",
+        "C": "Automatic synchronization of collections",
+        "D": "Reduced heap memory footprint"
+      },
+      "correctAnswer": "B",
+      "explanation": "Generics enforce type safety at compile time, eliminating manual casting and preventing ClassCastException."
+    },
+    {
+      "id": 84,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "File Handling",
+      "question": "Which Java class is best suited for writing low-level binary data to a file?",
+      "options": {
+        "A": "FileWriter",
+        "B": "FileOutputStream",
+        "C": "PrintWriter",
+        "D": "BufferedWriter"
+      },
+      "correctAnswer": "B",
+      "explanation": "FileOutputStream writes raw bytes/binary data to files."
+    },
+    {
+      "id": 85,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "File Handling",
+      "question": "Which class is designed for reading characters and text efficiently with buffering?",
+      "options": {
+        "A": "FileInputStream",
+        "B": "BufferedReader",
+        "C": "DataInputStream",
+        "D": "ObjectInputStream"
+      },
+      "correctAnswer": "B",
+      "explanation": "BufferedReader reads text efficiently from a character-input stream by buffering characters."
+    },
+    {
+      "id": 86,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Exception Handling",
+      "question": "What happens if a catch block catches a broad Exception before a specific SubException block?",
+      "options": {
+        "A": "SubException block executes first",
+        "B": "Compilation error occurs due to unreachable code",
+        "C": "Both blocks execute sequentially",
+        "D": "Runtime error occurs"
+      },
+      "correctAnswer": "B",
+      "explanation": "The Java compiler reports an error because the lower catch block for SubException would be unreachable."
+    },
+    {
+      "id": 87,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Polymorphism",
+      "question": "What happens when a subclass object calls an overridden method using a superclass reference? (e.g., Animal a = new Dog(); a.makeSound();)",
+      "options": {
+        "A": "Animal's version is called",
+        "B": "Dog's version is called",
+        "C": "Compilation error",
+        "D": "Runtime exception"
+      },
+      "correctAnswer": "B",
+      "explanation": "Dynamic method dispatch invokes the implementation corresponding to the actual object type (Dog) at runtime."
+    },
+    {
+      "id": 88,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Collections",
+      "question": "Which interface does Map extend in the Java Collections Framework?",
+      "options": {
+        "A": "Collection",
+        "B": "Iterable",
+        "C": "Map does not extend Collection interface",
+        "D": "List"
+      },
+      "correctAnswer": "C",
+      "explanation": "Map is part of the Java Collections Framework, but it does NOT extend Collection or Iterable."
+    },
+    {
+      "id": 89,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Collections",
+      "question": "What is the underlying data structure of dynamic sizing for ArrayList?",
+      "options": {
+        "A": "Singly Linked List",
+        "B": "Resizable Array",
+        "C": "Binary Search Tree",
+        "D": "Hash Table"
+      },
+      "correctAnswer": "B",
+      "explanation": "ArrayList uses a contiguous internal array that expands when capacity is reached."
+    },
+    {
+      "id": 90,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Recursion",
+      "question": "In recursion, what is the 'base case'?",
+      "options": {
+        "A": "The line where function calls itself",
+        "B": "The terminating condition that stops further recursive calls",
+        "C": "The initial value passed to the root call",
+        "D": "The memory stack frame allocated"
+      },
+      "correctAnswer": "B",
+      "explanation": "The base case prevents infinite recursion by providing a stopping condition."
+    },
+    {
+      "id": 91,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "OOP Principles",
+      "question": "Which concept refers to binding data members and methods into a single unit?",
+      "options": {
+        "A": "Abstraction",
+        "B": "Encapsulation",
+        "C": "Polymorphism",
+        "D": "Inheritance"
+      },
+      "correctAnswer": "B",
+      "explanation": "Encapsulation bundles data and methods together and protects internal state."
+    },
+    {
+      "id": 92,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Stream API",
+      "question": "What is the difference between intermediate and terminal operations in Java Streams?",
+      "options": {
+        "A": "Intermediate operations trigger stream processing; terminal operations return streams",
+        "B": "Intermediate operations return a new Stream and are lazy; terminal operations produce a result or side-effect",
+        "C": "Terminal operations can be chained together",
+        "D": "There is no functional difference"
+      },
+      "correctAnswer": "B",
+      "explanation": "Intermediate operations return streams lazily; terminal operations execute the pipeline."
+    },
+    {
+      "id": 93,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Lambda Expressions",
+      "question": "Which functional interface accepts two arguments and returns no result?",
+      "options": {
+        "A": "BiFunction<T, U, R>",
+        "B": "BiConsumer<T, U>",
+        "C": "BiPredicate<T, U>",
+        "D": "BinaryOperator<T>"
+      },
+      "correctAnswer": "B",
+      "explanation": "BiConsumer<T, U> accepts two input arguments and performs an operation without returning a result."
+    },
+    {
+      "id": 94,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Lambda Expressions",
+      "question": "What is a Method Reference in Java?",
+      "options": {
+        "A": "A pointer to C++ native code",
+        "B": "A compact lambda expression for invoking an existing method by name (e.g., System.out::println)",
+        "C": "A reflective reflection object",
+        "D": "An abstract method in an interface"
+      },
+      "correctAnswer": "B",
+      "explanation": "Method references provide readable, concise syntax using :: to refer directly to existing methods."
+    },
+    {
+      "id": 95,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Collections",
+      "question": "What is the key difference between Vector and ArrayList?",
+      "options": {
+        "A": "Vector is dynamic; ArrayList is fixed",
+        "B": "Vector methods are synchronized (thread-safe); ArrayList is not",
+        "C": "ArrayList allows duplicate values; Vector does not",
+        "D": "Vector is faster than ArrayList in single-threaded environments"
+      },
+      "correctAnswer": "B",
+      "explanation": "Vector synchronizes its operations, making it thread-safe but slower than unsynchronized ArrayList."
+    },
+    {
+      "id": 96,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "OOP Principles",
+      "question": "Which principle of OOP focuses on showing only essential features and hiding internal complexity?",
+      "options": {
+        "A": "Abstraction",
+        "B": "Inheritance",
+        "C": "Polymorphism",
+        "D": "Cohesion"
+      },
+      "correctAnswer": "A",
+      "explanation": "Abstraction hides background implementation details and shows essential features."
+    },
+    {
+      "id": 97,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Interfaces",
+      "question": "Can an interface extend multiple interfaces in Java?",
+      "options": {
+        "A": "No, interfaces can only extend one interface",
+        "B": "Yes, using comma-separated list of interfaces",
+        "C": "Only if all interfaces have no default methods",
+        "D": "Interfaces implement other interfaces, not extend"
+      },
+      "correctAnswer": "B",
+      "explanation": "Interfaces support multiple inheritance from other interfaces (e.g. interface C extends A, B)."
+    },
+    {
+      "id": 98,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Exception Handling",
+      "question": "What is try-with-resources introduced in Java 7?",
+      "options": {
+        "A": "A try block that automatically closes resources implementing AutoCloseable",
+        "B": "A try block with multiple catch clauses",
+        "C": "A try block that rethrows exceptions automatically",
+        "D": "A try block for managing memory allocation"
+      },
+      "correctAnswer": "A",
+      "explanation": "Try-with-resources ensures that each resource implementing AutoCloseable is closed at the end of the statement."
+    },
+    {
+      "id": 99,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Generics",
+      "question": "What does the symbol <?> represent in Java Generics?",
+      "options": {
+        "A": "Unbounded wildcard",
+        "B": "Object type only",
+        "C": "Primitive parameter",
+        "D": "Syntax error"
+      },
+      "correctAnswer": "A",
+      "explanation": "<?> represents an unbounded wildcard, standing for any unknown type."
+    },
+    {
+      "id": 100,
+      "subject": "Java",
+      "difficulty": "Medium",
+      "topic": "Collections",
+      "question": "Which class provides static utility methods to sort, search, and reverse Collections?",
+      "options": {
+        "A": "Collection",
+        "B": "Collections",
+        "C": "Arrays",
+        "D": "ListUtils"
+      },
+      "correctAnswer": "B",
+      "explanation": "java.util.Collections contains static helper methods operating on Collections."
+    }
+  ]
+}

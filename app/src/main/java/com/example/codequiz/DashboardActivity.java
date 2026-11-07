@@ -7,40 +7,40 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.codequiz.adapter.CategoryProgressAdapter;
 import com.example.codequiz.adapter.RecentAttemptAdapter;
-import com.example.codequiz.database.QuestionRepository;
 import com.example.codequiz.database.QuizAttemptRepository;
 import com.example.codequiz.model.DashboardStats;
-import com.example.codequiz.model.QuizAttempt;
 import com.example.codequiz.util.AppConstants;
 import com.example.codequiz.util.SessionManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 
+import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class DashboardActivity extends AppCompatActivity {
 
     private TextView tvWelcomeUser, tvMotivationalMessage;
-    private MaterialButton btnHeroStartQuiz, btnHeroAiQuiz, btnZeroStateStart;
+    private MaterialButton btnHeroStartQuiz, btnZeroStateStart;
     private View cardZeroState, layoutStatsGrid, cardInsights;
     private TextView tvStatTotalQuizzes, tvStatTotalQuestions, tvStatAverageScore, tvStatHighestScore;
     private TextView tvStrongestCategory, tvNeedsImprovementCategory, tvImprovementTrend;
-    private TextView tvCorrectIncorrectAnswers, tvOverallAccuracy, tvDifficultyProgress, tvSavedOfflineCount;
+    private TextView tvCorrectIncorrectAnswers, tvOverallAccuracy, tvDifficultyProgress;
     private TextView tvCategoryProgHeader, tvViewAllHistory;
     private LinearLayout layoutRecentHeader;
     private RecyclerView rvCategoryProgress, rvRecentAttempts;
     private ImageView btnNavHistory, btnNavProfile, btnNavSettings;
+    private BottomNavigationView bottomNavDashboard;
 
     private SessionManager sessionManager;
     private QuizAttemptRepository attemptRepository;
-    private QuestionRepository questionRepository;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     private final String[] motivationalQuotes = {
@@ -48,10 +48,6 @@ public class DashboardActivity extends AppCompatActivity {
             "Write code, make mistakes, learn, repeat.",
             "Great programmers aren't born; they practice daily.",
             "Every bug fixed is a step towards senior engineer mastery."
-    };
-
-    private static final String[] AI_SUBJECTS = {
-            "Java", "Python", "C", "C++", "SQL", "JavaScript", "React"
     };
 
     @Override
@@ -66,7 +62,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_dashboard);
         attemptRepository = new QuizAttemptRepository(this);
-        questionRepository = new QuestionRepository(this);
 
         initViews();
         setupListeners();
@@ -78,6 +73,9 @@ public class DashboardActivity extends AppCompatActivity {
         if (!sessionManager.isLoggedIn()) {
             redirectToLogin();
             return;
+        }
+        if (bottomNavDashboard != null) {
+            bottomNavDashboard.setSelectedItemId(R.id.nav_home);
         }
         loadDashboardData();
     }
@@ -93,7 +91,6 @@ public class DashboardActivity extends AppCompatActivity {
         tvWelcomeUser = findViewById(R.id.tvWelcomeUser);
         tvMotivationalMessage = findViewById(R.id.tvMotivationalMessage);
         btnHeroStartQuiz = findViewById(R.id.btnHeroStartQuiz);
-        btnHeroAiQuiz = findViewById(R.id.btnHeroAiQuiz);
         btnZeroStateStart = findViewById(R.id.btnZeroStateStart);
         cardZeroState = findViewById(R.id.cardZeroState);
         layoutStatsGrid = findViewById(R.id.layoutStatsGrid);
@@ -111,7 +108,6 @@ public class DashboardActivity extends AppCompatActivity {
         tvCorrectIncorrectAnswers = findViewById(R.id.tvCorrectIncorrectAnswers);
         tvOverallAccuracy = findViewById(R.id.tvOverallAccuracy);
         tvDifficultyProgress = findViewById(R.id.tvDifficultyProgress);
-        tvSavedOfflineCount = findViewById(R.id.tvSavedOfflineCount);
 
         tvCategoryProgHeader = findViewById(R.id.tvCategoryProgHeader);
         layoutRecentHeader = findViewById(R.id.layoutRecentHeader);
@@ -126,6 +122,7 @@ public class DashboardActivity extends AppCompatActivity {
         btnNavHistory = findViewById(R.id.btnNavHistory);
         btnNavProfile = findViewById(R.id.btnNavProfile);
         btnNavSettings = findViewById(R.id.btnNavSettings);
+        bottomNavDashboard = findViewById(R.id.bottomNavDashboard);
     }
 
     private void setupListeners() {
@@ -136,8 +133,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         btnHeroStartQuiz.setOnClickListener(startQuizAction);
         btnZeroStateStart.setOnClickListener(startQuizAction);
-
-        btnHeroAiQuiz.setOnClickListener(v -> showAiSubjectPicker());
 
         btnNavHistory.setOnClickListener(v -> {
             Intent intent = new Intent(DashboardActivity.this, QuizHistoryActivity.class);
@@ -158,19 +153,25 @@ public class DashboardActivity extends AppCompatActivity {
             Intent intent = new Intent(DashboardActivity.this, SettingsActivity.class);
             startActivity(intent);
         });
-    }
 
-    private void showAiSubjectPicker() {
-        new AlertDialog.Builder(this)
-                .setTitle("Select Subject for AI Quiz")
-                .setItems(AI_SUBJECTS, (dialog, which) -> {
-                    String selectedSubject = AI_SUBJECTS[which];
-                    Intent intent = new Intent(DashboardActivity.this, QuizSetupActivity.class);
-                    intent.putExtra(AppConstants.EXTRA_CATEGORY, selectedSubject);
-                    startActivity(intent);
-                })
-                .setNegativeButton("Cancel", null)
-                .show();
+        if (bottomNavDashboard != null) {
+            bottomNavDashboard.setOnItemSelectedListener(item -> {
+                int itemId = item.getItemId();
+                if (itemId == R.id.nav_home) {
+                    return true;
+                } else if (itemId == R.id.nav_categories) {
+                    startActivity(new Intent(DashboardActivity.this, CategoryActivity.class));
+                    return false;
+                } else if (itemId == R.id.nav_history) {
+                    startActivity(new Intent(DashboardActivity.this, QuizHistoryActivity.class));
+                    return false;
+                } else if (itemId == R.id.nav_profile) {
+                    startActivity(new Intent(DashboardActivity.this, ProfileActivity.class));
+                    return false;
+                }
+                return false;
+            });
+        }
     }
 
     private void loadDashboardData() {
@@ -181,11 +182,27 @@ public class DashboardActivity extends AppCompatActivity {
         int quoteIdx = (int) (System.currentTimeMillis() % motivationalQuotes.length);
         tvMotivationalMessage.setText(motivationalQuotes[quoteIdx]);
 
+        String profileImg = sessionManager.getProfileImage();
+        if (profileImg != null && !profileImg.trim().isEmpty()) {
+            File imgFile = new File(profileImg);
+            if (imgFile.exists()) {
+                Glide.with(this)
+                        .load(imgFile)
+                        .circleCrop()
+                        .placeholder(R.drawable.ic_profile)
+                        .error(R.drawable.ic_profile)
+                        .into(btnNavProfile);
+            } else {
+                btnNavProfile.setImageResource(R.drawable.ic_profile);
+            }
+        } else {
+            btnNavProfile.setImageResource(R.drawable.ic_profile);
+        }
+
         long userId = sessionManager.getUserId();
 
         executor.execute(() -> {
             DashboardStats stats = attemptRepository.getUserDashboardStats(userId);
-            int totalSavedQuestions = questionRepository.getTotalSavedQuestionsCount();
 
             runOnUiThread(() -> {
                 if (stats.getTotalQuizzes() == 0) {
@@ -214,7 +231,6 @@ public class DashboardActivity extends AppCompatActivity {
                     tvCorrectIncorrectAnswers.setText(stats.getTotalCorrectAnswers() + " Correct / " + stats.getTotalIncorrectAnswers() + " Incorrect");
                     tvOverallAccuracy.setText(stats.getOverallAccuracy() + "%");
                     tvDifficultyProgress.setText(stats.getDifficultyProgressSummary());
-                    tvSavedOfflineCount.setText(totalSavedQuestions + " questions in SQLite");
 
                     // Category progress
                     if (stats.getCategoryPerformances() != null && !stats.getCategoryPerformances().isEmpty()) {

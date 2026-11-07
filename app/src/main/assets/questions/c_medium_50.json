@@ -1,0 +1,761 @@
+{
+  "subject": "C",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 50,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 51,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Nested loops and multidimensional arrays",
+      "question": "What is the correct declaration and memory layout of a 2x3 2D array of integers in C?",
+      "options": {
+        "A": "int arr[2][3]; stored column-major",
+        "B": "int arr[2][3]; stored row-major in contiguous memory",
+        "C": "int arr[3][2]; stored row-major",
+        "D": "int arr(2,3); stored non-contiguously"
+      },
+      "correctAnswer": "B",
+      "explanation": "C multidimensional arrays are declared as arr[rows][cols] and stored in row-major order contiguously in memory."
+    },
+    {
+      "id": 52,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "String manipulation",
+      "question": "What is the output of the following program?\n\n#include <stdio.h>\n#include <string.h>\nint main(void) {\n    char str1[20] = \"Hello\";\n    char str2[] = \"World\";\n    strcat(str1, str2);\n    printf(\"%zu\", strlen(str1));\n    return 0;\n}",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "11",
+        "D": "20"
+      },
+      "correctAnswer": "B",
+      "explanation": "strcat appends 'World' to 'Hello', making str1 'HelloWorld'. strlen(\"HelloWorld\") is 10."
+    },
+    {
+      "id": 53,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Functions and recursion",
+      "question": "What will be the output of this recursive function call print_rec(3)?\n\nvoid print_rec(int n) {\n    if (n <= 0) return;\n    print_rec(n - 1);\n    printf(\"%d \", n);\n}",
+      "options": {
+        "A": "3 2 1 ",
+        "B": "1 2 3 ",
+        "C": "3 3 3 ",
+        "D": "0 1 2 3 "
+      },
+      "correctAnswer": "B",
+      "explanation": "The recursive call happens before printing. So recursive unwinding prints 1, then 2, then 3."
+    },
+    {
+      "id": 54,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Pointer arithmetic",
+      "question": "Given int arr[5] = {10, 20, 30, 40, 50}; int *p = arr + 2; what is the value of *(p + 1)?",
+      "options": {
+        "A": "20",
+        "B": "30",
+        "C": "40",
+        "D": "50"
+      },
+      "correctAnswer": "C",
+      "explanation": "arr+2 points to arr[2] (value 30). (p+1) points to arr[3], so dereferencing yields 40."
+    },
+    {
+      "id": 55,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Arrays and pointers",
+      "question": "Which of the following expressions is equivalent to arr[i] where arr is an array name?",
+      "options": {
+        "A": "*(arr + i)",
+        "B": "&arr + i",
+        "C": "*(arr * i)",
+        "D": "arr + *i"
+      },
+      "correctAnswer": "A",
+      "explanation": "In C, array indexing arr[i] is defined as exact syntactic sugar for dereferencing *(arr + i)."
+    },
+    {
+      "id": 56,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Structures and unions",
+      "question": "What is the fundamental difference in memory allocation between a struct and a union in C?",
+      "options": {
+        "A": "Struct members share memory; union members have separate memory",
+        "B": "Union members share the same memory location; struct members have distinct memory locations",
+        "C": "Structs can hold functions; unions cannot",
+        "D": "Unions cannot store integers"
+      },
+      "correctAnswer": "B",
+      "explanation": "A union allocates memory equal to its largest member so all members overlap, whereas struct allocates separate memory for each member."
+    },
+    {
+      "id": 57,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Storage classes and scope",
+      "question": "What is the output of the following program?\n\n#include <stdio.h>\nvoid count(void) {\n    static int c = 0;\n    c++;\n    printf(\"%d \", c);\n}\nint main(void) {\n    count();\n    count();\n    count();\n    return 0;\n}",
+      "options": {
+        "A": "1 1 1 ",
+        "B": "1 2 3 ",
+        "C": "0 0 0 ",
+        "D": "0 1 2 "
+      },
+      "correctAnswer": "B",
+      "explanation": "The static variable 'c' persists across calls. Increments produce output '1 2 3 '."
+    },
+    {
+      "id": 58,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Preprocessor directives and macros",
+      "question": "What is the potential pitfall of macro definition #define SQUARE(x) x * x when called as SQUARE(2 + 3)?",
+      "options": {
+        "A": "Evaluates to 25",
+        "B": "Evaluates to 11 because of expansion 2 + 3 * 2 + 3",
+        "C": "Causes compilation error",
+        "D": "Evaluates to 10"
+      },
+      "correctAnswer": "B",
+      "explanation": "SQUARE(2 + 3) expands strictly to 2 + 3 * 2 + 3 = 2 + 6 + 3 = 11. Parentheses around parameters are necessary to fix this."
+    },
+    {
+      "id": 59,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Dynamic memory allocation",
+      "question": "What is the difference between malloc(n * sizeof(int)) and calloc(n, sizeof(int))?",
+      "options": {
+        "A": "malloc clears memory to 0; calloc leaves uninitialized garbage",
+        "B": "calloc clears allocated memory to zero; malloc leaves memory contents uninitialized",
+        "C": "malloc is used for structs; calloc for primitives",
+        "D": "calloc cannot fail"
+      },
+      "correctAnswer": "B",
+      "explanation": "calloc initializes allocated heap bytes to zero, whereas malloc leaves memory unitialized."
+    },
+    {
+      "id": 60,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "File handling",
+      "question": "Which C file function is used to write formatted output directly to a file stream?",
+      "options": {
+        "A": "fwrite()",
+        "B": "fputs()",
+        "C": "fprintf()",
+        "D": "write()"
+      },
+      "correctAnswer": "C",
+      "explanation": "fprintf() works like printf() but outputs formatted text to a specified FILE pointer stream."
+    },
+    {
+      "id": 61,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Searching and sorting",
+      "question": "What is the worst-case time complexity of Quick Sort algorithm?",
+      "options": {
+        "A": "O(N log N)",
+        "B": "O(N)",
+        "C": "O(N^2)",
+        "D": "O(1)"
+      },
+      "correctAnswer": "C",
+      "explanation": "Quick sort degrades to O(N^2) worst-case time when pivot selection is poor (e.g. already sorted array with end pivot)."
+    },
+    {
+      "id": 62,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Linked lists and basic data structures",
+      "question": "In a singly linked list node structure struct Node { int data; struct Node *next; }; what does 'next' store?",
+      "options": {
+        "A": "The next integer value",
+        "B": "The memory address of the next Node",
+        "C": "Size of the list",
+        "D": "Head pointer"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'next' member is a self-referential pointer storing the memory address of the subsequent list node."
+    },
+    {
+      "id": 63,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Predicting program output",
+      "question": "What is the output of the following C code?\n\n#include <stdio.h>\nint main(void) {\n    int x = 10, y = 20;\n    int *p = &x;\n    *p = 30;\n    p = &y;\n    *p = 40;\n    printf(\"%d %d\", x, y);\n    return 0;\n}",
+      "options": {
+        "A": "10 20",
+        "B": "30 40",
+        "C": "30 20",
+        "D": "10 40"
+      },
+      "correctAnswer": "B",
+      "explanation": "*p = 30 modifies x to 30. Then p is reassigned to y, and *p = 40 modifies y to 40."
+    },
+    {
+      "id": 64,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Type conversion and type casting",
+      "question": "What is integer promotion in C expression evaluation?",
+      "options": {
+        "A": "Converting float to int automatically",
+        "B": "Automatic conversion of integer types smaller than int (like char or short) to int/unsigned int during expressions",
+        "C": "Promoting pointers to long int",
+        "D": "Casting long to long long"
+      },
+      "correctAnswer": "B",
+      "explanation": "C automatically promotes small integer types (char, short) to int or unsigned int before evaluating expressions."
+    },
+    {
+      "id": 65,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Arrays and multidimensional arrays",
+      "question": "Given int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}}; what is the value of matrix[1][2]?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "6",
+        "D": "4"
+      },
+      "correctAnswer": "C",
+      "explanation": "matrix[1] accesses the second row {4, 5, 6}, and matrix[1][2] accesses the 3rd element in that row, which is 6."
+    },
+    {
+      "id": 66,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Strings and string-handling functions",
+      "question": "Which standard function safely copies a string up to n characters preventing buffer overflow?",
+      "options": {
+        "A": "strcpy()",
+        "B": "strncpy()",
+        "C": "strcat()",
+        "D": "sprintf()"
+      },
+      "correctAnswer": "B",
+      "explanation": "strncpy() copies at most n characters from source to destination buffer."
+    },
+    {
+      "id": 67,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Storage classes and scope",
+      "question": "What does the 'extern' keyword signify in variable declarations?",
+      "options": {
+        "A": "Variable is stored in external disk",
+        "B": "Variable is declared here but defined in another translation unit/file",
+        "C": "Variable is constant",
+        "D": "Variable has function scope"
+      },
+      "correctAnswer": "B",
+      "explanation": "'extern' specifies that a variable/function has external linkage and is defined in another file or scope."
+    },
+    {
+      "id": 68,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Bitwise operators",
+      "question": "What is the effect of expression x ^ x for any integer variable x?",
+      "options": {
+        "A": "Produces x",
+        "B": "Produces 0",
+        "C": "Produces 1",
+        "D": "Produces -x"
+      },
+      "correctAnswer": "B",
+      "explanation": "XORing any number with itself results in 0 because matching bits cancel out (1^1=0, 0^0=0)."
+    },
+    {
+      "id": 69,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Preprocessor directives and macros",
+      "question": "What is the output of the stringification operator '#' in macro #define STR(x) #x?",
+      "options": {
+        "A": "Converts macro argument x into a string literal \"x\"",
+        "B": "Calculates hash code of x",
+        "C": "Includes header x",
+        "D": "Syntax error"
+      },
+      "correctAnswer": "A",
+      "explanation": "The single '#' operator converts the macro parameter into a quoted string literal."
+    },
+    {
+      "id": 70,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Dynamic memory allocation",
+      "question": "What happens if realloc(ptr, new_size) cannot expand memory in place and allocates a new memory block?",
+      "options": {
+        "A": "Original block remains active",
+        "B": "Copies old contents to new location, frees old block, and returns new pointer",
+        "C": "Throws runtime exception",
+        "D": "Fails without returning"
+      },
+      "correctAnswer": "B",
+      "explanation": "realloc copies existing data to the newly allocated block, frees the old block memory automatically, and returns the new address."
+    },
+    {
+      "id": 71,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "File handling",
+      "question": "What does the fseek(fp, 0, SEEK_END) call do in C file handling?",
+      "options": {
+        "A": "Rewinds file pointer to beginning",
+        "B": "Positions file position indicator to the end of the file stream",
+        "C": "Deletes the file",
+        "D": "Reads last character"
+      },
+      "correctAnswer": "B",
+      "explanation": "fseek with SEEK_END sets the file position indicator to the file end, useful for determining file size via ftell()."
+    },
+    {
+      "id": 72,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Command-line arguments",
+      "question": "For command `./app input.txt 100`, what is argv[1]?",
+      "options": {
+        "A": "\"./app\"",
+        "B": "\"input.txt\"",
+        "C": "\"100\"",
+        "D": "NULL"
+      },
+      "correctAnswer": "B",
+      "explanation": "argv[0] is executable name (\"./app\"), and argv[1] is the first argument string (\"input.txt\")."
+    },
+    {
+      "id": 73,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Searching and sorting",
+      "question": "What precondition must be met before executing Binary Search on an array?",
+      "options": {
+        "A": "Array elements must be floating point",
+        "B": "Array must be sorted in order",
+        "C": "Array size must be even",
+        "D": "Array must contain positive numbers"
+      },
+      "correctAnswer": "B",
+      "explanation": "Binary search requires a pre-sorted array to eliminate half of the remaining elements at each step."
+    },
+    {
+      "id": 74,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Linked lists and basic data structures",
+      "question": "What is the time complexity of pushing an item onto a stack implemented with a linked list?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(N)",
+        "C": "O(log N)",
+        "D": "O(N^2)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Inserting at the head of a linked list stack takes constant O(1) time."
+    },
+    {
+      "id": 75,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Debugging compilation and runtime errors",
+      "question": "What compiler warning or error occurs if a non-void function reaches the end without a return statement?",
+      "options": {
+        "A": "Control reaches end of non-void function",
+        "B": "Segmentation fault",
+        "C": "Stack overflow",
+        "D": "Linker error"
+      },
+      "correctAnswer": "A",
+      "explanation": "Compilers issue a warning 'control reaches end of non-void function' because returning without a value causes undefined behavior when caller uses return value."
+    },
+    {
+      "id": 76,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Recursion",
+      "question": "What is the result of evaluating recursive Fibonacci fib(4) where fib(0)=0, fib(1)=1?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "1"
+      },
+      "correctAnswer": "B",
+      "explanation": "fib(0)=0, fib(1)=1, fib(2)=1, fib(3)=2, fib(4)=3."
+    },
+    {
+      "id": 77,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Pointers and pointer arithmetic",
+      "question": "If int *p = (int*)1000; on a system where sizeof(int) == 4, what is the value of p + 2?",
+      "options": {
+        "A": "1002",
+        "B": "1008",
+        "C": "1004",
+        "D": "1016"
+      },
+      "correctAnswer": "B",
+      "explanation": "Pointer arithmetic scales increments by sizeof(*p). 1000 + 2 * 4 = 1008."
+    },
+    {
+      "id": 78,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Structures and unions",
+      "question": "What is typedef used for when defining a struct in C?",
+      "options": {
+        "A": "To create an alias name for the struct type avoiding mandatory 'struct' keyword in declarations",
+        "B": "To make struct fields constant",
+        "C": "To allocate memory dynamically",
+        "D": "To export struct to C++"
+      },
+      "correctAnswer": "A",
+      "explanation": "typedef creates a custom type alias (e.g. typedef struct Node Node;) so you can write 'Node n;' instead of 'struct Node n;'."
+    },
+    {
+      "id": 79,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Enumerations (enum)",
+      "question": "What is the printed value in this code?\n\nenum State { LOW = 5, MEDIUM, HIGH = 10 };\nprintf(\"%d\", MEDIUM);",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "6",
+        "D": "5"
+      },
+      "correctAnswer": "C",
+      "explanation": "Enumeration values increment sequentially from the previous explicit assignment. LOW=5 makes MEDIUM=6."
+    },
+    {
+      "id": 80,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Bitwise operators",
+      "question": "How can you check if an integer x is odd using bitwise operators?",
+      "options": {
+        "A": "(x & 1) != 0",
+        "B": "(x | 1) == 0",
+        "C": "(x ^ 1) == 0",
+        "D": "(x >> 1) == 1"
+      },
+      "correctAnswer": "A",
+      "explanation": "An integer is odd if its least significant bit (LSB) is 1. Bitwise AND with 1 tests the LSB."
+    },
+    {
+      "id": 81,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Arrays and pointers",
+      "question": "What is printed by printf(\"%c\", *(\"Programming\" + 3));?",
+      "options": {
+        "A": "P",
+        "B": "o",
+        "C": "g",
+        "D": "r"
+      },
+      "correctAnswer": "C",
+      "explanation": "\"Programming\" is char pointer to 'P' (index 0). Index + 3 points to 'g' (P=0, r=1, o=2, g=3)."
+    },
+    {
+      "id": 82,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Functions and parameters",
+      "question": "How can a C function modify a caller variable's value?",
+      "options": {
+        "A": "By declaring variable global",
+        "B": "By passing pointer address of variable as argument",
+        "C": "By using return statement twice",
+        "D": "C functions cannot modify caller variables"
+      },
+      "correctAnswer": "B",
+      "explanation": "Passing a variable's memory address (pointer) allows the function to dereference and modify the caller's memory value."
+    },
+    {
+      "id": 83,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Dynamic memory allocation",
+      "question": "What issue is caused by calling free(ptr); twice on the same allocated pointer?",
+      "options": {
+        "A": "Dangling pointer",
+        "B": "Double Free vulnerability / Undefined Behavior",
+        "C": "Memory leak",
+        "D": "Nothing happens"
+      },
+      "correctAnswer": "B",
+      "explanation": "Freeing the same pointer twice corrupts memory allocator internal structures resulting in undefined behavior or crash."
+    },
+    {
+      "id": 84,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Time and space complexity",
+      "question": "What is the space complexity of an in-place Selection Sort algorithm?",
+      "options": {
+        "A": "O(N)",
+        "B": "O(1)",
+        "C": "O(log N)",
+        "D": "O(N^2)"
+      },
+      "correctAnswer": "B",
+      "explanation": "In-place selection sort requires O(1) auxiliary memory space beyond the input array."
+    },
+    {
+      "id": 85,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Searching and sorting",
+      "question": "Which sorting algorithm has a stable best, average, and worst-case time complexity of O(N log N)?",
+      "options": {
+        "A": "Quick Sort",
+        "B": "Bubble Sort",
+        "C": "Merge Sort",
+        "D": "Insertion Sort"
+      },
+      "correctAnswer": "C",
+      "explanation": "Merge sort recursively divides array and merges, maintaining O(N log N) across all cases."
+    },
+    {
+      "id": 86,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Undefined behavior and common programming errors",
+      "question": "What is a dangling pointer in C?",
+      "options": {
+        "A": "Pointer assigned to NULL",
+        "B": "Pointer pointing to memory that has been deallocated/freed",
+        "C": "Pointer pointing to invalid string",
+        "D": "Uninitialized pointer"
+      },
+      "correctAnswer": "B",
+      "explanation": "A dangling pointer holds the address of a memory block that has already been deallocated or freed."
+    },
+    {
+      "id": 87,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Memory management and debugging",
+      "question": "What is the purpose of the valgrind tool in C development?",
+      "options": {
+        "A": "C code formatting",
+        "B": "Detecting memory leaks and invalid memory accesses",
+        "C": "Compiling C files faster",
+        "D": "Generating unit tests"
+      },
+      "correctAnswer": "B",
+      "explanation": "Valgrind is a dynamic analysis tool used to detect memory leaks, uninitialized memory reads, and buffer overrides."
+    },
+    {
+      "id": 88,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Loops (for, while, do-while)",
+      "question": "How many times does loop execute?\n\nunsigned char i;\nfor (i = 0; i < 255; i++);",
+      "options": {
+        "A": "255 times",
+        "B": "256 times",
+        "C": "Infinite loop",
+        "D": "254 times"
+      },
+      "correctAnswer": "A",
+      "explanation": "i runs from 0 up to 254 (255 iterations). When i reaches 255, condition i < 255 fails."
+    },
+    {
+      "id": 89,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Conditional statements",
+      "question": "What happens if a switch case block lacks a 'break' statement?",
+      "options": {
+        "A": "Compilation Error",
+        "B": "Fall-through to subsequent case blocks until break or end is reached",
+        "C": "Infinite loop",
+        "D": "Default case executes immediately"
+      },
+      "correctAnswer": "B",
+      "explanation": "Lacking a break statement causes execution to fall through into subsequent switch case blocks."
+    },
+    {
+      "id": 90,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Strings and string-handling functions",
+      "question": "What is the return value of strcmp(\"apple\", \"banana\")?",
+      "options": {
+        "A": "0",
+        "B": "A negative integer value (< 0)",
+        "C": "A positive integer value (> 0)",
+        "D": "Undefined"
+      },
+      "correctAnswer": "B",
+      "explanation": "strcmp compares strings lexicographically. 'apple' precedes 'banana' in ASCII, returning a value less than 0."
+    },
+    {
+      "id": 91,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Arrays and multidimensional arrays",
+      "question": "What is the size in bytes of array double arr[10] on a platform where sizeof(double) == 8?",
+      "options": {
+        "A": "10 bytes",
+        "B": "40 bytes",
+        "C": "80 bytes",
+        "D": "16 bytes"
+      },
+      "correctAnswer": "C",
+      "explanation": "Total array memory size is element count multiplied by sizeof(type): 10 * 8 = 80 bytes."
+    },
+    {
+      "id": 92,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Preprocessor directives and macros",
+      "question": "Which macro conditional directive checks if a macro identifier is NOT defined?",
+      "options": {
+        "A": "#ifndef",
+        "B": "#ifdef",
+        "C": "#ifndef",
+        "D": "#if undef"
+      },
+      "correctAnswer": "A",
+      "explanation": "#ifndef (if not defined) checks whether a macro name has not been defined previously."
+    },
+    {
+      "id": 93,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Functions and parameters",
+      "question": "Can C functions return a structure by value?",
+      "options": {
+        "A": "No, C functions can only return primitive types",
+        "B": "Yes, C supports returning structures by value",
+        "C": "Only if struct size is under 8 bytes",
+        "D": "Only with pointers"
+      },
+      "correctAnswer": "B",
+      "explanation": "C fully supports returning entire struct instances by value from functions."
+    },
+    {
+      "id": 94,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Pointers and pointer arithmetic",
+      "question": "What is the output of printf(\"%d\", sizeof(void*)) on a 64-bit platform?",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "8",
+        "D": "16"
+      },
+      "correctAnswer": "C",
+      "explanation": "On a 64-bit architecture system, all object pointers (including void*) are 8 bytes (64 bits) wide."
+    },
+    {
+      "id": 95,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "File handling",
+      "question": "Which standard file open mode opens a binary file for appending data?",
+      "options": {
+        "A": "\"a\"",
+        "B": "\"ab\"",
+        "C": "\"wa\"",
+        "D": "\"wb+\""
+      },
+      "correctAnswer": "B",
+      "explanation": "\"ab\" opens a file in binary mode for appending at end of file."
+    },
+    {
+      "id": 96,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Linked lists and basic data structures",
+      "question": "Which data structure operates on a Last-In, First-Out (LIFO) order?",
+      "options": {
+        "A": "Queue",
+        "B": "Stack",
+        "C": "Array",
+        "D": "Binary Tree"
+      },
+      "correctAnswer": "B",
+      "explanation": "A Stack data structure stores and retrieves elements in Last-In, First-Out (LIFO) order."
+    },
+    {
+      "id": 97,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Header files and compilation process",
+      "question": "Which stage of C compilation expands macros and handles #include directives?",
+      "options": {
+        "A": "Linker",
+        "B": "Assembler",
+        "C": "Preprocessor",
+        "D": "Optimizer"
+      },
+      "correctAnswer": "C",
+      "explanation": "The Preprocessor stage processes #include, #define macros, and conditional compilation directives before compilation."
+    },
+    {
+      "id": 98,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Header files and compilation process",
+      "question": "What is the main task of the Linker in C build pipeline?",
+      "options": {
+        "A": "Translating C code to assembly",
+        "B": "Combining compiled object files (.o/.obj) and library code into a single executable file",
+        "C": "Pre-parsing macro expressions",
+        "D": "Checking syntax errors"
+      },
+      "correctAnswer": "B",
+      "explanation": "The Linker resolves external symbols and combines object files into a single binary executable file."
+    },
+    {
+      "id": 99,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Undefined behavior and common programming errors",
+      "question": "What type of error is caused by dividing an integer variable by zero at runtime in C?",
+      "options": {
+        "A": "Compilation Error",
+        "B": "Undefined Behavior / Floating-point exception (Runtime crash)",
+        "C": "Linker Error",
+        "D": "Syntax Warning"
+      },
+      "correctAnswer": "B",
+      "explanation": "Division by zero is undefined behavior in C standard, typically triggering a runtime exception/signal."
+    },
+    {
+      "id": 100,
+      "subject": "C",
+      "difficulty": "Medium",
+      "topic": "Bitwise operators",
+      "question": "What is the result of expression ~0 in 32-bit two's complement integer arithmetic?",
+      "options": {
+        "A": "0",
+        "B": "-1",
+        "C": "1",
+        "D": "2147483647"
+      },
+      "correctAnswer": "B",
+      "explanation": "Bitwise NOT (~0) flips all 32 zero bits to ones (0xFFFFFFFF), representing -1 in two's complement format."
+    }
+  ]
+}

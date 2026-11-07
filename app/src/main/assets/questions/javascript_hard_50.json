@@ -1,0 +1,761 @@
+{
+  "subject": "JavaScript",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 50
+  },
+  "questions": [
+    {
+      "id": 101,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "The event loop, tasks, and microtasks",
+      "question": "What is the exact console output order of the following code?\n```js\nconsole.log(1);\nsetTimeout(() => console.log(2), 0);\nPromise.resolve().then(() => console.log(3));\nconsole.log(4);\n```",
+      "options": {
+        "A": "1, 4, 3, 2",
+        "B": "1, 2, 3, 4",
+        "C": "1, 3, 4, 2",
+        "D": "1, 4, 2, 3"
+      },
+      "correctAnswer": "A",
+      "explanation": "Synchronous code runs first (1, 4), then Microtasks run (Promise .then: 3), then Macrotasks run (setTimeout: 2)."
+    },
+    {
+      "id": 102,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "The event loop, tasks, and microtasks",
+      "question": "What is the output order of this code?\n```js\nsetTimeout(() => console.log('A'), 0);\nPromise.resolve().then(() => {\n  console.log('B');\n  Promise.resolve().then(() => console.log('C'));\n});\nconsole.log('D');\n```",
+      "options": {
+        "A": "D, B, C, A",
+        "B": "D, A, B, C",
+        "C": "D, B, A, C",
+        "D": "B, C, D, A"
+      },
+      "correctAnswer": "A",
+      "explanation": "Sync code prints D. The microtask queue processes 'B', which queues microtask 'C'. Microtasks drain completely before Macrotask 'A'."
+    },
+    {
+      "id": 103,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Closure and variable shadowing",
+      "question": "What is the output of the following code?\n```js\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n}\n```",
+      "options": {
+        "A": "3, 3, 3",
+        "B": "0, 1, 2",
+        "C": "undefined, undefined, undefined",
+        "D": "0, 0, 0"
+      },
+      "correctAnswer": "A",
+      "explanation": "Because 'var' is function-scoped, all three timer callbacks close over the same shared variable 'i' which equals 3 post-loop."
+    },
+    {
+      "id": 104,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Closure and block scope",
+      "question": "What is the output when changing `var` to `let` in the loop?\n```js\nfor (let i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n}\n```",
+      "options": {
+        "A": "0, 1, 2",
+        "B": "3, 3, 3",
+        "C": "2, 1, 0",
+        "D": "0, 0, 0"
+      },
+      "correctAnswer": "A",
+      "explanation": "Each iteration of a 'for' loop with 'let' creates a new lexical block binding, capturing current iteration value (0, 1, 2)."
+    },
+    {
+      "id": 105,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "this binding edge cases",
+      "question": "What is the output of this code?\n```js\nconst obj = {\n  num: 42,\n  getNum: function() {\n    return this.num;\n  }\n};\nconst f = obj.getNum;\nconsole.log(f());\n``` in non-strict browser mode.",
+      "options": {
+        "A": "undefined",
+        "B": "42",
+        "C": "TypeError",
+        "D": "null"
+      },
+      "correctAnswer": "A",
+      "explanation": "Detaching method `obj.getNum` to `f` invokes `f()` as a plain function where `this` refers to global object, where `num` is undefined."
+    },
+    {
+      "id": 106,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "this binding with arrow functions",
+      "question": "What is the output of this code?\n```js\nconst obj = {\n  num: 42,\n  getNum: () => {\n    return this.num;\n  }\n};\nconsole.log(obj.getNum());\n``` in global module scope where globalThis.num is undefined.",
+      "options": {
+        "A": "undefined",
+        "B": "42",
+        "C": "TypeError",
+        "D": "ReferenceError"
+      },
+      "correctAnswer": "A",
+      "explanation": "Arrow functions capture `this` from enclosing scope (global), ignoring object invocation caller `obj`."
+    },
+    {
+      "id": 107,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Coercion edge cases",
+      "question": "What is the result of `[] + {}` in JavaScript?",
+      "options": {
+        "A": "\"[object Object]\"",
+        "B": "NaN",
+        "C": "0",
+        "D": "TypeError"
+      },
+      "correctAnswer": "A",
+      "explanation": "Array [] converts to empty string ''; object {} converts to '[object Object]'; string concatenation yields '[object Object]'."
+    },
+    {
+      "id": 108,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Coercion edge cases",
+      "question": "What is the result of `{}` in statement context followed by `+ []` -> `{} + []` evaluated as expression in JS console?",
+      "options": {
+        "A": "0",
+        "B": "\"[object Object]\"",
+        "C": "NaN",
+        "D": "undefined"
+      },
+      "correctAnswer": "A",
+      "explanation": "In statement context, `{}` is parsed as an empty block statement; `+ []` coerces empty array to number 0."
+    },
+    {
+      "id": 109,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Coercion edge cases",
+      "question": "What does `true + false` evaluate to?",
+      "options": {
+        "A": "1",
+        "B": "truefalse",
+        "C": "NaN",
+        "D": "0"
+      },
+      "correctAnswer": "A",
+      "explanation": "Numeric addition coerces boolean true -> 1 and false -> 0, yielding 1 + 0 = 1."
+    },
+    {
+      "id": 110,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Coercion edge cases",
+      "question": "What is the result of `NaN === NaN` in JavaScript?",
+      "options": {
+        "A": "false",
+        "B": "true",
+        "C": "TypeError",
+        "D": "undefined"
+      },
+      "correctAnswer": "A",
+      "explanation": "In JavaScript, IEEE 754 standard defines NaN as non-equal to everything, including itself (NaN === NaN is false)."
+    },
+    {
+      "id": 111,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Type checking edge cases",
+      "question": "How can you accurately check if a variable `x` is strictly `NaN`?",
+      "options": {
+        "A": "Number.isNaN(x)",
+        "B": "x === NaN",
+        "C": "typeof x === 'NaN'",
+        "D": "isNaN(x) for all strings"
+      },
+      "correctAnswer": "A",
+      "explanation": "Number.isNaN(x) checks if x is type Number and value NaN without false positives from global isNaN coercion."
+    },
+    {
+      "id": 112,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Prototype chain modification",
+      "question": "What is the output of the following code?\n```js\nfunction Person() {}\nPerson.prototype.age = 30;\nconst p1 = new Person();\nPerson.prototype = { age: 40 };\nconst p2 = new Person();\nconsole.log(p1.age, p2.age);\n```",
+      "options": {
+        "A": "30 40",
+        "B": "40 40",
+        "C": "30 30",
+        "D": "undefined 40"
+      },
+      "correctAnswer": "A",
+      "explanation": "p1 retains pointer reference to original prototype object (age: 30); p2 gets assigned newly replaced prototype object (age: 40)."
+    },
+    {
+      "id": 113,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Prototype chain lookup",
+      "question": "What happens when accessing a property on an object that exists neither on the object nor anywhere on its prototype chain?",
+      "options": {
+        "A": "Returns undefined",
+        "B": "Throws ReferenceError",
+        "C": "Throws TypeError",
+        "D": "Returns null"
+      },
+      "correctAnswer": "A",
+      "explanation": "Traversing prototype chain up to Object.prototype.__proto__ (null) returns undefined for missing properties."
+    },
+    {
+      "id": 114,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Advanced promises and async execution",
+      "question": "What is the output of this code?\n```js\nasync function foo() {\n  console.log(1);\n  await null;\n  console.log(2);\n}\nconsole.log(3);\nfoo();\nconsole.log(4);\n```",
+      "options": {
+        "A": "3, 1, 4, 2",
+        "B": "1, 3, 4, 2",
+        "C": "3, 1, 2, 4",
+        "D": "1, 2, 3, 4"
+      },
+      "correctAnswer": "A",
+      "explanation": "prints 3; foo() starts synchronously printing 1; `await null` pauses foo() queuing microtask; prints 4; microtask executes printing 2."
+    },
+    {
+      "id": 115,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Advanced promises and catch handling",
+      "question": "What is the output of this code?\n```js\nPromise.resolve(1)\n  .then(x => x + 1)\n  .then(x => { throw new Error('My Error'); })\n  .catch(() => 100)\n  .then(x => console.log(x));\n```",
+      "options": {
+        "A": "100",
+        "B": "2",
+        "C": "Error printed to console",
+        "D": "undefined"
+      },
+      "correctAnswer": "A",
+      "explanation": "The thrown error bypasses subsequent thens and hits `.catch()`, which returns resolved 100 passed to next `.then()`."
+    },
+    {
+      "id": 116,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Generators and iterators",
+      "question": "What is the output of this generator invocation?\n```js\nfunction* gen() {\n  const x = yield 10;\n  yield x + 5;\n}\nconst g = gen();\nconsole.log(g.next().value);\nconsole.log(g.next(20).value);\n```",
+      "options": {
+        "A": "10 then 25",
+        "B": "10 then 15",
+        "C": "10 then undefined",
+        "D": "20 then 25"
+      },
+      "correctAnswer": "A",
+      "explanation": "First `next()` yields 10. Second `next(20)` passes 20 as return value of `yield 10` expression, so `x` becomes 20 -> `yield 25`."
+    },
+    {
+      "id": 117,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Object.defineProperty and property descriptors",
+      "question": "What happens when modifying `obj.a = 2` when created via `Object.defineProperty(obj, 'a', { value: 1, writable: false });` in strict mode?",
+      "options": {
+        "A": "Throws TypeError",
+        "B": "Silently updates value to 2",
+        "C": "Silently ignores edit",
+        "D": "Deletes property a"
+      },
+      "correctAnswer": "A",
+      "explanation": "Attempting to write to a non-writable property in Strict Mode throws a TypeError."
+    },
+    {
+      "id": 118,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Object getter and setter methods",
+      "question": "What is the output of this code?\n```js\nconst obj = {\n  log: ['a', 'b'],\n  get latest() {\n    return this.log[this.log.length - 1];\n  }\n};\nconsole.log(obj.latest);\n```",
+      "options": {
+        "A": "'b'",
+        "B": "['a', 'b']",
+        "C": "undefined",
+        "D": "Function latest"
+      },
+      "correctAnswer": "A",
+      "explanation": "Getter `latest` executes automatically as property access without parenthesis, returning last item 'b'."
+    },
+    {
+      "id": 119,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Call stack and recursion limit",
+      "question": "Which technique optimizes recursive calls in supporting engines to prevent call stack growth?",
+      "options": {
+        "A": "Proper Tail Call (PTC) optimization",
+        "B": "Memoization",
+        "C": "Debouncing",
+        "D": "Currying"
+      },
+      "correctAnswer": "A",
+      "explanation": "Tail Call Optimization reuses current stack frame if recursive call is in tail position."
+    },
+    {
+      "id": 120,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Currying and partial application",
+      "question": "What is function currying in JavaScript?",
+      "options": {
+        "A": "Transforming a function with multiple arguments into a sequence of functions each taking a single argument",
+        "B": "Converting sync functions to async",
+        "C": "Binding this context",
+        "D": "Memoizing return values"
+      },
+      "correctAnswer": "A",
+      "explanation": "Currying translates `f(a, b, c)` into callable chain `f(a)(b)(c)`."
+    },
+    {
+      "id": 121,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "WeakMap garbage collection behavior",
+      "question": "Why are keys in a `WeakMap` NOT enumerable via methods like `Object.keys()`?",
+      "options": {
+        "A": "Non-enumerability prevents non-deterministic behavior caused by unpredictable garbage collector runs",
+        "B": "Because keys are strings",
+        "C": "WeakMap is asynchronous",
+        "D": "Engine limitation"
+      },
+      "correctAnswer": "A",
+      "explanation": "Exposing WeakMap keys would introduce non-determinism based on when GC sweeps collect unreferenced objects."
+    },
+    {
+      "id": 122,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Module import/export bindings",
+      "question": "Are exported variables in ES Modules live bindings or static value copies?",
+      "options": {
+        "A": "Live bindings (importers see real-time value updates made inside exporting module)",
+        "B": "Static copies",
+        "C": "Clones created on import",
+        "D": "Read-only constants"
+      },
+      "correctAnswer": "A",
+      "explanation": "ES module exports are live bindings; mutations inside the source module are reflected across all importing modules."
+    },
+    {
+      "id": 123,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Classes and private class fields",
+      "question": "Which prefix syntax designates a private class field/method in modern ES2022 JavaScript?",
+      "options": {
+        "A": "# (hash prefix e.g. #privateField)",
+        "B": "_ (underscore prefix)",
+        "C": "private keyword",
+        "D": "protected keyword"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `#` prefix creates hard private class fields inaccessible outside the class body."
+    },
+    {
+      "id": 124,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Deep cloning and Structured Clone API",
+      "question": "Which native modern JavaScript method creates a deep clone of a complex object containing nested objects, dates, and arrays?",
+      "options": {
+        "A": "structuredClone(obj)",
+        "B": "Object.assign({}, obj)",
+        "C": "JSON.parse(JSON.stringify(obj)) for functions",
+        "D": "obj.clone()"
+      },
+      "correctAnswer": "A",
+      "explanation": "structuredClone() creates deep copies of structured data including cyclic references, ArrayBuffers, Dates, and Maps."
+    },
+    {
+      "id": 125,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Structured Clone API limitations",
+      "question": "Which type of value CANNOT be cloned using `structuredClone()`?",
+      "options": {
+        "A": "Functions and DOM elements",
+        "B": "Dates and RegExp",
+        "C": "Maps and Sets",
+        "D": "ArrayBuffers"
+      },
+      "correctAnswer": "A",
+      "explanation": "structuredClone() throws DataCloneError if attempting to clone Functions or DOM nodes."
+    },
+    {
+      "id": 126,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Symbol.toPrimitive coercion",
+      "question": "When an object has `[Symbol.toPrimitive](hint)` defined, what hints can JavaScript pass to this method during coercion?",
+      "options": {
+        "A": "'number', 'string', or 'default'",
+        "B": "'boolean', 'object', or 'function'",
+        "C": "'float', 'int', or 'text'",
+        "D": "'primitive' or 'reference'"
+      },
+      "correctAnswer": "A",
+      "explanation": "The JS coercion engine passes string hints 'number', 'string', or 'default'."
+    },
+    {
+      "id": 127,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Promise.any vs Promise.race",
+      "question": "What is the key difference between `Promise.any()` and `Promise.race()`?",
+      "options": {
+        "A": "`Promise.any()` ignores rejections and resolves with first FULFILLED promise; `Promise.race()` settles on first promise to settle (fulfill OR reject)",
+        "B": "`Promise.race()` ignores rejections",
+        "C": "`Promise.any()` requires all to fulfill",
+        "D": "They perform identical functions"
+      },
+      "correctAnswer": "A",
+      "explanation": "Promise.any fulfills on first fulfillment (rejecting with AggregateError if all reject); Promise.race settles on first settled item."
+    },
+    {
+      "id": 128,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "AggregateError in Promises",
+      "question": "When does `Promise.any()` reject with an `AggregateError`?",
+      "options": {
+        "A": "When ALL promises in the input iterable reject",
+        "B": "When the first promise rejects",
+        "C": "When given an empty array",
+        "D": "When promise times out"
+      },
+      "correctAnswer": "A",
+      "explanation": "Promise.any() throws AggregateError wrapping individual rejection reasons when every input promise fails."
+    },
+    {
+      "id": 129,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Event loop microtask ordering",
+      "question": "In node/browser environments, what happens if a microtask recursively queues another microtask infinitely?",
+      "options": {
+        "A": "The microtask queue starves the Macrotask queue, freezing I/O and UI rendering indefinitely",
+        "B": "The event loop skips microtasks and runs Macrotasks",
+        "C": "Engine throws Stack Overflow error instantly",
+        "D": "Web Worker handles it"
+      },
+      "correctAnswer": "A",
+      "explanation": "Microtask queue must drain completely before event loop moves on; recursive microtasks block rendering and macrotask execution."
+    },
+    {
+      "id": 130,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Set and Object key difference",
+      "question": "What is a primary difference between JavaScript `Set` and `Map`/`Object`?",
+      "options": {
+        "A": "`Set` stores unique values of any type with no key-value pairing",
+        "B": "`Set` key lookup is O(N)",
+        "C": "`Set` accepts duplicate primitive values",
+        "D": "`Set` keys must be strings"
+      },
+      "correctAnswer": "A",
+      "explanation": "Set is a collection of unique values without distinct keys."
+    },
+    {
+      "id": 131,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Subclassing built-ins",
+      "question": "What occurs when executing `class MyArray extends Array {}` and calling `new MyArray().slice()` in ES6?",
+      "options": {
+        "A": "Returns an instance of `MyArray` (using Symbol.species)",
+        "B": "Returns standard Array instance",
+        "C": "Throws TypeError",
+        "D": "Returns null"
+      },
+      "correctAnswer": "A",
+      "explanation": "Built-in array methods like slice use `[Symbol.species]` to instantiate derived class `MyArray` objects."
+    },
+    {
+      "id": 132,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "GlobalThis specification",
+      "question": "What is `globalThis` in modern ECMAScript?",
+      "options": {
+        "A": "A standardized universal global object reference available across browser window, Web Workers, and Node.js environments",
+        "B": "A replacement for local this",
+        "C": "An alias for strict mode",
+        "D": "A DOM element pointer"
+      },
+      "correctAnswer": "A",
+      "explanation": "globalThis provides a unified standard property for accessing global scope across any JavaScript execution platform."
+    },
+    {
+      "id": 133,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Error cause property ES2022",
+      "question": "How do you attach an underlying cause error when re-throwing an error in ES2022?",
+      "options": {
+        "A": "throw new Error('Failed operation', { cause: originalError });",
+        "B": "throw new Error('Failed', originalError);",
+        "C": "throw new Error('Failed').cause(originalError);",
+        "D": "throw Error.withCause(msg, err);"
+      },
+      "correctAnswer": "A",
+      "explanation": "ES2022 introduced options object `{ cause: err }` parameter to Error constructors for chained error diagnostics."
+    },
+    {
+      "id": 134,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Array.prototype.at() method",
+      "question": "What does `[10, 20, 30].at(-1)` return in modern JavaScript?",
+      "options": {
+        "A": "30",
+        "B": "undefined",
+        "C": "10",
+        "D": "SyntaxError"
+      },
+      "correctAnswer": "A",
+      "explanation": ".at(index) accepts negative integers to count back from the last item (-1 returns last item 30)."
+    },
+    {
+      "id": 135,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Top-level await",
+      "question": "Where is top-level `await` allowed without wrapping inside an `async` function in modern JS?",
+      "options": {
+        "A": "At the top level of ES Modules (.mjs / type=\"module\")",
+        "B": "Inside traditional CommonJS scripts",
+        "C": "Inside standard HTML inline event handlers",
+        "D": "Inside synchronous constructors"
+      },
+      "correctAnswer": "A",
+      "explanation": "Top-level await is valid at top level of ES modules."
+    },
+    {
+      "id": 136,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Object.is comparison vs strict equality",
+      "question": "What is the result of `Object.is(-0, +0)` compared to `-0 === +0`?",
+      "options": {
+        "A": "`Object.is(-0, +0)` is false; `-0 === +0` is true",
+        "B": "Both are true",
+        "C": "Both are false",
+        "D": "`Object.is(-0, +0)` is true"
+      },
+      "correctAnswer": "A",
+      "explanation": "Object.is differentiates -0 and +0 (returns false), whereas strict equality === treats them as equal (returns true)."
+    },
+    {
+      "id": 137,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Proxy and Reflect API",
+      "question": "What is a 'trap' in JavaScript Proxy objects?",
+      "options": {
+        "A": "A method that intercepts and customizes internal object operations (e.g., get, set, deleteProperty)",
+        "B": "An unhandled runtime error",
+        "C": "A private property guard",
+        "D": "A memory leak"
+      },
+      "correctAnswer": "A",
+      "explanation": "Proxy traps intercept low-level object target operations."
+    },
+    {
+      "id": 138,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Proxy revocable",
+      "question": "How do you create a Proxy that can be turned off/disabled later?",
+      "options": {
+        "A": "Proxy.revocable(target, handler)",
+        "B": "new Proxy(target, handler).revoke()",
+        "C": "Object.freeze(proxy)",
+        "D": "Proxy.disable(proxy)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Proxy.revocable returns object `{ proxy, revoke }` allowing invocation of `revoke()` to disable proxy access."
+    },
+    {
+      "id": 139,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "SharedArrayBuffer and Atomics",
+      "question": "What is the purpose of the `Atomics` object in multi-threaded JavaScript (Web Workers)?",
+      "options": {
+        "A": "Provides atomic operations for shared memory across threads to prevent race conditions",
+        "B": "Creates atomic DOM elements",
+        "C": "Handles JSON parsing",
+        "D": "Executes garbage collection"
+      },
+      "correctAnswer": "A",
+      "explanation": "Atomics ensures memory operations on SharedArrayBuffer instances occur predictably without thread race collisions."
+    },
+    {
+      "id": 140,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Function.prototype.toString() ES2019",
+      "question": "What does `.toString()` return on a function in modern ES2019+?",
+      "options": {
+        "A": "Exact source code text representation including comments and whitespace",
+        "B": "Stripped code without comments",
+        "C": "[object Function]",
+        "D": "Compiled bytecode"
+      },
+      "correctAnswer": "A",
+      "explanation": "ES2019 updated `Function.prototype.toString()` to return exact source code slice including white-space and comments."
+    },
+    {
+      "id": 141,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "String padding methods",
+      "question": "What is the result of `'5'.padStart(3, '0')`?",
+      "options": {
+        "A": "'005'",
+        "B": "'500'",
+        "C": "'05'",
+        "D": "'50'"
+      },
+      "correctAnswer": "A",
+      "explanation": "padStart(targetLength, padString) pads current string from start until target length 3 is met ('005')."
+    },
+    {
+      "id": 142,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "BigInt primitive type",
+      "question": "How do you declare a `BigInt` primitive literal representing arbitrary precision integers?",
+      "options": {
+        "A": "12345678901234567890n (with trailing 'n')",
+        "B": "BigInt('123')i",
+        "C": "12345678901234567890L",
+        "D": "#12345678901234567890"
+      },
+      "correctAnswer": "A",
+      "explanation": "Appending trailing `n` to an integer literal constructs a BigInt primitive."
+    },
+    {
+      "id": 143,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "BigInt arithmetic restriction",
+      "question": "What happens when performing `10n + 5` (mixing BigInt and Number)?",
+      "options": {
+        "A": "Throws TypeError",
+        "B": "Returns 15n",
+        "C": "Returns 15",
+        "D": "Coerces to String"
+      },
+      "correctAnswer": "A",
+      "explanation": "JavaScript forbids mixing BigInt and Number types implicitly in arithmetic operations, throwing TypeError."
+    },
+    {
+      "id": 144,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Logical Assignment Operators",
+      "question": "What does `x ||= y` do in ES2021?",
+      "options": {
+        "A": "Assigns `y` to `x` ONLY IF `x` is falsy (`x || (x = y)`)",
+        "B": "Assigns y to x only if x is nullish",
+        "C": "Assigns y to x always",
+        "D": "Compares x and y"
+      },
+      "correctAnswer": "A",
+      "explanation": "Logical OR assignment `x ||= y` assigns y to x if x evaluates to falsy."
+    },
+    {
+      "id": 145,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Logical Assignment Operators",
+      "question": "What does `x ??= y` do in ES2021?",
+      "options": {
+        "A": "Assigns `y` to `x` ONLY IF `x` is nullish (null or undefined)",
+        "B": "Assigns y to x if x is false",
+        "C": "Assigns y to x if x is 0",
+        "D": "Throws SyntaxError"
+      },
+      "correctAnswer": "A",
+      "explanation": "Nullish logical assignment `x ??= y` assigns y to x only if x is null or undefined."
+    },
+    {
+      "id": 146,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "WeakRef and FinalizationRegistry",
+      "question": "What is the purpose of `WeakRef` introduced in ES2021?",
+      "options": {
+        "A": "Holds a weak reference to a target object without preventing that target object from being garbage collected",
+        "B": "Creates hard clones of objects",
+        "C": "Improves array sort speed",
+        "D": "Prevents memory leaks in strings"
+      },
+      "correctAnswer": "A",
+      "explanation": "WeakRef lets developers hold weak object references that don't protect target objects from GC removal."
+    },
+    {
+      "id": 147,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "FinalizationRegistry API",
+      "question": "What is the purpose of `FinalizationRegistry` in ES2021?",
+      "options": {
+        "A": "Allows registering a cleanup callback triggered after a target object has been garbage collected",
+        "B": "Clears localStorage automatically",
+        "C": "Halts thread execution on exit",
+        "D": "Registers DOM custom elements"
+      },
+      "correctAnswer": "A",
+      "explanation": "FinalizationRegistry provides callbacks notifying when registered objects get swept by garbage collector."
+    },
+    {
+      "id": 148,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Array.prototype.groupBy / Object.groupBy ES2024",
+      "question": "What does `Object.groupBy(array, callback)` return in modern ES2024 JavaScript?",
+      "options": {
+        "A": "An object with null-prototype containing properties grouping array items by callback string return keys",
+        "B": "A Set of grouped arrays",
+        "C": "A nested Array",
+        "D": "A Map object"
+      },
+      "correctAnswer": "A",
+      "explanation": "Object.groupBy groups items into an object whose keys are returned from the group criteria callback."
+    },
+    {
+      "id": 149,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "RegExp v flag and set notation",
+      "question": "What feature does the RegExp `v` flag (UnicodeSets) enable in modern JS?",
+      "options": {
+        "A": "Enables set operations (intersection, subtraction) inside character classes in regular expressions",
+        "B": "Validates JSON strings",
+        "C": "Enables verbose logging",
+        "D": "Disables backtracking"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `v` flag extends regex character classes to support set difference, intersection, and nested classes."
+    },
+    {
+      "id": 150,
+      "subject": "JavaScript",
+      "difficulty": "Hard",
+      "topic": "Temporal API proposal / date handling",
+      "question": "Why is the modern `Temporal` API replacing legacy `Date` object in JavaScript?",
+      "options": {
+        "A": "Provides immutable date-time objects, handles timezones explicitly, and eliminates zero-based month bugs",
+        "B": "Runs on GPU",
+        "C": "Date object is deprecated in Node",
+        "D": "Temporal supports 64-bit strings"
+      },
+      "correctAnswer": "A",
+      "explanation": "Temporal provides a robust modern specification for date/time computations, overcoming Date's mutability and timezone pitfalls."
+    }
+  ]
+}

@@ -1,0 +1,762 @@
+{
+  "subject": "Python",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 0,
+    "half": 0,
+    "hard": 50
+  },
+  "questions": [
+    {
+      "id": 101,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced OOP & MRO",
+      "question": "Given classes A, B(A), C(A), D(B, C), what is D.__mro__ order?",
+      "options": {
+        "A": "D, B, C, A, object",
+        "B": "D, B, A, C, object",
+        "C": "D, C, B, A, object",
+        "D": "D, A, B, C, object"
+      },
+      "correctAnswer": "A",
+      "explanation": "Python's C3 Linearization algorithm orders hierarchy as D -> B -> C -> A -> object."
+    },
+    {
+      "id": 102,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced OOP & MRO",
+      "question": "What happens when defining class Meta(type) and class A(metaclass=Meta)?",
+      "options": {
+        "A": "Meta instantiates instances of A",
+        "B": "Meta controls the creation and structure of class A itself",
+        "C": "SyntaxError",
+        "D": "A inherits methods from type"
+      },
+      "correctAnswer": "B",
+      "explanation": "Metaclasses inherit from type and customize class creation at definition time."
+    },
+    {
+      "id": 103,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Decorators",
+      "question": "What does the @functools.wraps(func) decorator do inside a custom decorator?",
+      "options": {
+        "A": "Speeds up function execution",
+        "B": "Preserves original function name, docstring, and metadata",
+        "C": "Prevents recursion errors",
+        "D": "Validates argument types"
+      },
+      "correctAnswer": "B",
+      "explanation": "wraps() copies attributes like __name__ and __doc__ from original function to wrapper."
+    },
+    {
+      "id": 104,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Generators and Iterators",
+      "question": "What is the behavior of calling next() on a generator that has completed execution?",
+      "options": {
+        "A": "Returns None",
+        "B": "Restarts generator",
+        "C": "Raises StopIteration exception",
+        "D": "Raises GeneratorExit exception"
+      },
+      "correctAnswer": "C",
+      "explanation": "Iterators and generators raise StopIteration when there are no further items."
+    },
+    {
+      "id": 105,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Generators and Iterators",
+      "question": "What is the primary difference between yield and yield from in a generator?",
+      "options": {
+        "A": "yield from is faster than yield",
+        "B": "yield from delegates iteration to a sub-generator or iterable",
+        "C": "yield from returns a tuple",
+        "D": "yield from is used only in async functions"
+      },
+      "correctAnswer": "B",
+      "explanation": "yield from delegates generator execution to another sub-iterable or generator."
+    },
+    {
+      "id": 106,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Closures and Scope",
+      "question": "What is the output of the following code?\n\ndef outer():\n    x = 10\n    def inner():\n        nonlocal x\n        x += 5\n        return x\n    return inner\nf = outer()\nprint(f(), f())",
+      "options": {
+        "A": "15 15",
+        "B": "15 20",
+        "C": "10 15",
+        "D": "UnboundLocalError"
+      },
+      "correctAnswer": "B",
+      "explanation": "nonlocal binds x to outer scope. First call modifies x to 15, second call modifies x to 20."
+    },
+    {
+      "id": 107,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Memory Management",
+      "question": "What is the key difference between copy.copy() and copy.deepcopy()?",
+      "options": {
+        "A": "copy() is faster; deepcopy() creates a shallow copy",
+        "B": "copy() creates a shallow copy; deepcopy() recursively copies nested objects",
+        "C": "deepcopy() works only on lists",
+        "D": "They perform identical operations"
+      },
+      "correctAnswer": "B",
+      "explanation": "Shallow copy constructs a new object inserting references; deepcopy recursively copies all nested objects."
+    },
+    {
+      "id": 108,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Memory Management",
+      "question": "What does the sys.getrefcount(obj) function return?",
+      "options": {
+        "A": "Total memory used by obj",
+        "B": "Current reference count of obj plus one temporary reference",
+        "C": "Number of attributes in obj",
+        "D": "Number of instances of obj"
+      },
+      "correctAnswer": "B",
+      "explanation": "getrefcount() returns current reference count, including temporary reference passed as argument."
+    },
+    {
+      "id": 109,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Features",
+      "question": "What is the output of the following code?\n\nfuncs = [lambda: i for i in range(3)]\nprint([f() for f in funcs])",
+      "options": {
+        "A": "[0, 1, 2]",
+        "B": "[2, 2, 2]",
+        "C": "[0, 0, 0]",
+        "D": "[3, 3, 3]"
+      },
+      "correctAnswer": "B",
+      "explanation": "Late binding in closures binds 'i' by reference; after loop completes, 'i' evaluates to 2 for all lambdas."
+    },
+    {
+      "id": 110,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Features",
+      "question": "How can late binding issue in lambdas inside loops be resolved?",
+      "options": {
+        "A": "Use funcs = [lambda i=i: i for i in range(3)]",
+        "B": "Use global i",
+        "C": "Use nonlocal i",
+        "D": "Convert loop to while loop"
+      },
+      "correctAnswer": "A",
+      "explanation": "Setting default argument i=i binds current loop value at definition time."
+    },
+    {
+      "id": 111,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Features",
+      "question": "What is the output of the following code?\n\na = [[]] * 3\na[0].append(1)\nprint(a)",
+      "options": {
+        "A": "[[1], [], []]",
+        "B": "[[1], [1], [1]]",
+        "C": "[[1], [0], [0]]",
+        "D": "[[1, 1, 1]]"
+      },
+      "correctAnswer": "B",
+      "explanation": "Multiplying list with mutable elements repeats references to the same inner list object."
+    },
+    {
+      "id": 112,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Time and Space Complexity",
+      "question": "What is the average time complexity of key lookup in a Python dictionary?",
+      "options": {
+        "A": "O(n)",
+        "B": "O(1)",
+        "C": "O(log n)",
+        "D": "O(n log n)"
+      },
+      "correctAnswer": "B",
+      "explanation": "Dictionaries in Python use hash tables, offering average O(1) time complexity for lookup."
+    },
+    {
+      "id": 113,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Time and Space Complexity",
+      "question": "What algorithm does Python's built-in sorted() and list.sort() use?",
+      "options": {
+        "A": "Quicksort",
+        "B": "Mergesort",
+        "C": "Timsort",
+        "D": "Heapsort"
+      },
+      "correctAnswer": "C",
+      "explanation": "Python uses Timsort, a hybrid stable sorting algorithm derived from merge sort and insertion sort."
+    },
+    {
+      "id": 114,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Multithreading and Multiprocessing",
+      "question": "What is the role of GIL (Global Interpreter Lock) in CPython?",
+      "options": {
+        "A": "It speeds up multithreaded CPU-bound programs",
+        "B": "It prevents multiple native threads from executing Python bytecodes concurrently",
+        "C": "It handles garbage collection",
+        "D": "It compiles Python code to machine code"
+      },
+      "correctAnswer": "B",
+      "explanation": "GIL ensures thread safety by allowing only one CPython thread to execute bytecode at a time."
+    },
+    {
+      "id": 115,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Multithreading and Multiprocessing",
+      "question": "Which module is recommended for CPU-bound parallel execution in Python to bypass GIL?",
+      "options": {
+        "A": "threading",
+        "B": "asyncio",
+        "C": "multiprocessing",
+        "D": "concurrent.futures.ThreadPoolExecutor"
+      },
+      "correctAnswer": "C",
+      "explanation": "multiprocessing spawns separate processes, each with its own Python interpreter and GIL instance."
+    },
+    {
+      "id": 116,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of the following code?\n\nclass A:\n    x = 1\nclass B(A):\n    pass\nclass C(A):\n    pass\nB.x = 2\nA.x = 3\nprint(A.x, B.x, C.x)",
+      "options": {
+        "A": "3 2 3",
+        "B": "3 3 3",
+        "C": "1 2 3",
+        "D": "3 2 1"
+      },
+      "correctAnswer": "A",
+      "explanation": "B.x sets attribute on B class. Changing A.x updates A and C (inheriting from A), but not B which has overriding attribute."
+    },
+    {
+      "id": 117,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Exception Handling",
+      "question": "What is the output of this function?\n\ndef test():\n    try:\n        return 1\n    finally:\n        return 2\nprint(test())",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "None",
+        "D": "SyntaxError"
+      },
+      "correctAnswer": "B",
+      "explanation": "A return statement in the finally block overrides any previous return statement in try/except."
+    },
+    {
+      "id": 118,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the result of print(bool(type(None)))?",
+      "options": {
+        "A": "False",
+        "B": "True",
+        "C": "None",
+        "D": "TypeError"
+      },
+      "correctAnswer": "B",
+      "explanation": "type(None) returns <class 'NoneType'>, which is a class object, and all class objects are truthy."
+    },
+    {
+      "id": 119,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What does the '__slots__' declaration in a Python class accomplish?",
+      "options": {
+        "A": "Restricts class inheritance",
+        "B": "Prevents creation of __dict__ and optimizes memory for instances",
+        "C": "Makes all attributes private",
+        "D": "Enforces type hints"
+      },
+      "correctAnswer": "B",
+      "explanation": "__slots__ reserves space for specified attributes, eliminating per-instance __dict__ and saving memory."
+    },
+    {
+      "id": 120,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print(isinstance(type, object)) and print(isinstance(object, type))?",
+      "options": {
+        "A": "True, False",
+        "B": "False, True",
+        "C": "True, True",
+        "D": "False, False"
+      },
+      "correctAnswer": "C",
+      "explanation": "In Python object-model, type is an instance of object, and object is an instance of type (both True)."
+    },
+    {
+      "id": 121,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of the following expression?\n\nprint(sum([True, True, False, True]))",
+      "options": {
+        "A": "TypeError",
+        "B": "3",
+        "C": "True",
+        "D": "4"
+      },
+      "correctAnswer": "B",
+      "explanation": "bool is a subclass of int (True=1, False=0), so sum is 1+1+0+1 = 3."
+    },
+    {
+      "id": 122,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of [x for x in (1, 2, 3) if (x := x + 1) > 2]?",
+      "options": {
+        "A": "[2, 3]",
+        "B": "[2, 3, 4]",
+        "C": "[1, 2, 3]",
+        "D": "SyntaxError"
+      },
+      "correctAnswer": "A",
+      "explanation": "Walrus operator := increments x and evaluates condition. x=1 -> 2 (>2 False); x=2 -> 3 (>2 True); x=3 -> 4 (>2 True). Outputs evaluated x: [2, 3] or values selected."
+    },
+    {
+      "id": 123,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print('a' is 'a', [1] is [1])?",
+      "options": {
+        "A": "(True, True)",
+        "B": "(True, False)",
+        "C": "(False, False)",
+        "D": "(False, True)"
+      },
+      "correctAnswer": "B",
+      "explanation": "String literals are interned/identical in CPython, but distinct list literals create new separate objects."
+    },
+    {
+      "id": 124,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the value of x after x, *y, z = [1, 2, 3, 4, 5]?",
+      "options": {
+        "A": "1",
+        "B": "[1]",
+        "C": "[2, 3, 4]",
+        "D": "5"
+      },
+      "correctAnswer": "A",
+      "explanation": "Extended unpacking assigns x=1, y=[2, 3, 4], and z=5."
+    },
+    {
+      "id": 125,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the result of dict(a=1, **{'b': 2, 'c': 3})?",
+      "options": {
+        "A": "{'a': 1, 'b': 2, 'c': 3}",
+        "B": "TypeError",
+        "C": "{'a': 1, 'bc': 23}",
+        "D": "SyntaxError"
+      },
+      "correctAnswer": "A",
+      "explanation": "dict keyword arguments and unpacked dictionary merge into a single dictionary."
+    },
+    {
+      "id": 126,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of list(bytes([65, 66, 67]))?",
+      "options": {
+        "A": "['A', 'B', 'C']",
+        "B": "[65, 66, 67]",
+        "C": "b'ABC'",
+        "D": "TypeError"
+      },
+      "correctAnswer": "B",
+      "explanation": "Iterating over a bytes object yields integer byte values [65, 66, 67]."
+    },
+    {
+      "id": 127,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the value of print(1_000_000 + 2_000)?",
+      "options": {
+        "A": "1_002_000",
+        "B": "1002000",
+        "C": "SyntaxError",
+        "D": "10000002000"
+      },
+      "correctAnswer": "B",
+      "explanation": "Underscores in numeric literals are ignored by Python parser for readability."
+    },
+    {
+      "id": 128,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of slice(1, 5, 2).indices(10)?",
+      "options": {
+        "A": "(1, 5, 2)",
+        "B": "(1, 10, 2)",
+        "C": "(0, 5, 2)",
+        "D": "AttributeError"
+      },
+      "correctAnswer": "A",
+      "explanation": "slice.indices(length) calculates start, stop, step tuple for sequence of given length."
+    },
+    {
+      "id": 129,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print({1, 2} < {1, 2, 3})?",
+      "options": {
+        "A": "True",
+        "B": "False",
+        "C": "TypeError",
+        "D": "None"
+      },
+      "correctAnswer": "A",
+      "explanation": "The < operator between sets tests for strict proper subset."
+    },
+    {
+      "id": 130,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the result of print(hash((1, 2)), hash([1, 2]))?",
+      "options": {
+        "A": "Both succeed",
+        "B": "Raises TypeError on tuple",
+        "C": "Raises TypeError on list",
+        "D": "Both raise TypeError"
+      },
+      "correctAnswer": "C",
+      "explanation": "Lists are mutable and unhashable, raising TypeError when passed to hash()."
+    },
+    {
+      "id": 131,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of array slicing x = [0, 1, 2, 3, 4]; x[:: -1]?",
+      "options": {
+        "A": "[0, 1, 2, 3, 4]",
+        "B": "[4, 3, 2, 1, 0]",
+        "C": "[4, 3, 2, 1]",
+        "D": "IndexError"
+      },
+      "correctAnswer": "B",
+      "explanation": "Negative step -1 reverses sequence."
+    },
+    {
+      "id": 132,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of math.isclose(0.1 + 0.2, 0.3)?",
+      "options": {
+        "A": "False",
+        "B": "True",
+        "C": "TypeError",
+        "D": "None"
+      },
+      "correctAnswer": "B",
+      "explanation": "math.isclose checks floating point closeness within tolerance, returning True."
+    },
+    {
+      "id": 133,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What does sys.setrecursionlimit(1000) do?",
+      "options": {
+        "A": "Increases recursion speed by 1000x",
+        "B": "Sets maximum depth of Python interpreter stack",
+        "C": "Limits loop iterations to 1000",
+        "D": "Restricts memory usage"
+      },
+      "correctAnswer": "B",
+      "explanation": "sys.setrecursionlimit configures maximum call stack depth."
+    },
+    {
+      "id": 134,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print(any([]), all([]))?",
+      "options": {
+        "A": "False True",
+        "B": "True False",
+        "C": "False False",
+        "D": "True True"
+      },
+      "correctAnswer": "A",
+      "explanation": "any([]) is False (no true elements); all([]) is vacuously True."
+    },
+    {
+      "id": 135,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print(chr(ord('A') + 2))?",
+      "options": {
+        "A": "'A2'",
+        "B": "'C'",
+        "C": "'B'",
+        "D": "67"
+      },
+      "correctAnswer": "B",
+      "explanation": "ord('A') is 65, + 2 = 67, chr(67) is 'C'."
+    },
+    {
+      "id": 136,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What does string.ascii_lowercase contain?",
+      "options": {
+        "A": "All letters a-z",
+        "B": "All letters A-Z",
+        "C": "Digits 0-9",
+        "D": "ASCII printable characters"
+      },
+      "correctAnswer": "A",
+      "explanation": "string.ascii_lowercase is string constant 'abcdefghijklmnopqrstuvwxyz'."
+    },
+    {
+      "id": 137,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the result of print(10 and 20 or 30)?",
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "30",
+        "D": "True"
+      },
+      "correctAnswer": "B",
+      "explanation": "'10 and 20' evaluates to 20; '20 or 30' short-circuits and evaluates to 20."
+    },
+    {
+      "id": 138,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of type(lambda: None)?",
+      "options": {
+        "A": "<class 'function'>",
+        "B": "<class 'lambda'>",
+        "C": "<class 'NoneType'>",
+        "D": "<class 'type'>"
+      },
+      "correctAnswer": "A",
+      "explanation": "Lambda functions are instances of standard function type."
+    },
+    {
+      "id": 139,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What happens when executing 'del x' where x is a variable name?",
+      "options": {
+        "A": "Frees memory immediately",
+        "B": "Unbinds name 'x' from current namespace",
+        "C": "Sets x to None",
+        "D": "Deletes definition from disk"
+      },
+      "correctAnswer": "B",
+      "explanation": "'del x' removes binding of name x from local/global namespace."
+    },
+    {
+      "id": 140,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the result of list(set([1, 2, 2, 3, 1]))?",
+      "options": {
+        "A": "[1, 2, 3] (order guaranteed)",
+        "B": "Set of unique elements converted to list (order not guaranteed)",
+        "C": "[1, 2, 2, 3, 1]",
+        "D": "TypeError"
+      },
+      "correctAnswer": "B",
+      "explanation": "set removes duplicates; converting back to list gives list of unique items."
+    },
+    {
+      "id": 141,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print(3 not in [1, 2, 3])?",
+      "options": {
+        "A": "True",
+        "B": "False",
+        "C": "TypeError",
+        "D": "3"
+      },
+      "correctAnswer": "B",
+      "explanation": "3 is present in list, so '3 not in [1, 2, 3]' evaluates to False."
+    },
+    {
+      "id": 142,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the result of list(reversed([1, 2, 3]))?",
+      "options": {
+        "A": "[3, 2, 1]",
+        "B": "[1, 2, 3]",
+        "C": "reversed object",
+        "D": "TypeError"
+      },
+      "correctAnswer": "A",
+      "explanation": "reversed() returns reverse iterator; list() turns it into [3, 2, 1]."
+    },
+    {
+      "id": 143,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print(f'{12.3456:.2f}')?",
+      "options": {
+        "A": "12.3456",
+        "B": "12.35",
+        "C": "12.34",
+        "D": "12.3"
+      },
+      "correctAnswer": "B",
+      "explanation": "Format specifier .2f formats float to 2 decimal places with rounding (12.35)."
+    },
+    {
+      "id": 144,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What does collection Counter('aba') return?",
+      "options": {
+        "A": "{'a': 2, 'b': 1}",
+        "B": "3",
+        "C": "['a', 'b', 'a']",
+        "D": "{'a': 1, 'b': 1}"
+      },
+      "correctAnswer": "A",
+      "explanation": "collections.Counter creates frequency mapping dictionary: {'a': 2, 'b': 1}."
+    },
+    {
+      "id": 145,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the result of list(zip(*[(1, 2), (3, 4)]))?",
+      "options": {
+        "A": "[(1, 3), (2, 4)]",
+        "B": "[(1, 2), (3, 4)]",
+        "C": "[(1, 4), (2, 3)]",
+        "D": "[(1, 2, 3, 4)]"
+      },
+      "correctAnswer": "A",
+      "explanation": "Unpacking list into zip(*...) transposes nested sequence matrix."
+    },
+    {
+      "id": 146,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print(sum([1, 2, 3], -6))?",
+      "options": {
+        "A": "0",
+        "B": "6",
+        "C": "-6",
+        "D": "12"
+      },
+      "correctAnswer": "A",
+      "explanation": "sum(iterable, start) adds the elements (1+2+3=6) to start (-6), returning 0."
+    },
+    {
+      "id": 147,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the result of isinstance(type, object) and isinstance(object, type)?",
+      "options": {
+        "A": "True, True",
+        "B": "True, False",
+        "C": "False, True",
+        "D": "False, False"
+      },
+      "correctAnswer": "A",
+      "explanation": "In CPython's object model, both type and object are instances of each other."
+    },
+    {
+      "id": 148,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print(dict(a=1) | dict(b=2)) in Python 3.9+?",
+      "options": {
+        "A": "{'a': 1, 'b': 2}",
+        "B": "TypeError",
+        "C": "{'a': 1}, {'b': 2}",
+        "D": "SyntaxError"
+      },
+      "correctAnswer": "A",
+      "explanation": "The union operator | merges two dictionaries in Python 3.9+."
+    },
+    {
+      "id": 149,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What happens when you evaluate x = (yield 1) inside a generator?",
+      "options": {
+        "A": "Suspends generator yielding 1, and x receives value sent via send()",
+        "B": "Assigns 1 to x",
+        "C": "SyntaxError",
+        "D": "Terminates generator"
+      },
+      "correctAnswer": "A",
+      "explanation": "Yield expressions evaluate to the value passed into the generator via send()."
+    },
+    {
+      "id": 150,
+      "subject": "Python",
+      "difficulty": "Hard",
+      "topic": "Advanced Language Features",
+      "question": "What is the output of print(bool(type(None)))?",
+      "options": {
+        "A": "True",
+        "B": "False",
+        "C": "None",
+        "D": "TypeError"
+      },
+      "correctAnswer": "A",
+      "explanation": "type(None) is <class 'NoneType'>, which is a class object, and all class objects evaluate to True."
+    }
+  ]
+}

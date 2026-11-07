@@ -9,18 +9,24 @@ public class User implements Serializable {
     private String username;
     private String passwordHash;
     private String passwordSalt;
+    private String profileImage;
     private long createdAt;
 
     public User() {
     }
 
     public User(long id, String fullName, String email, String username, String passwordHash, String passwordSalt, long createdAt) {
+        this(id, fullName, email, username, passwordHash, passwordSalt, null, createdAt);
+    }
+
+    public User(long id, String fullName, String email, String username, String passwordHash, String passwordSalt, String profileImage, long createdAt) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.username = username;
         this.passwordHash = passwordHash;
         this.passwordSalt = passwordSalt;
+        this.profileImage = profileImage;
         this.createdAt = createdAt;
     }
 
@@ -70,6 +76,14 @@ public class User implements Serializable {
 
     public void setPasswordSalt(String passwordSalt) {
         this.passwordSalt = passwordSalt;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 
     public long getCreatedAt() {

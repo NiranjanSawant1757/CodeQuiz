@@ -1,0 +1,761 @@
+{
+  "subject": "Python",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 50,
+    "medium": 0,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 1,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Python Introduction",
+      "question": "Who developed the Python programming language?",
+      "options": {
+        "A": "Dennis Ritchie",
+        "B": "Guido van Rossum",
+        "C": "James Gosling",
+        "D": "Bjarne Stroustrup"
+      },
+      "correctAnswer": "B",
+      "explanation": "Python was created by Guido van Rossum and released in 1991."
+    },
+    {
+      "id": 2,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Python Syntax",
+      "question": "Which character is used to start a single-line comment in Python?",
+      "options": {
+        "A": "//",
+        "B": "/*",
+        "C": "#",
+        "D": "--"
+      },
+      "correctAnswer": "C",
+      "explanation": "The # symbol is used for single-line comments in Python."
+    },
+    {
+      "id": 3,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Python Syntax",
+      "question": "What is the extension of Python source code files?",
+      "options": {
+        "A": ".py",
+        "B": ".python",
+        "C": ".pyt",
+        "D": ".p"
+      },
+      "correctAnswer": "A",
+      "explanation": "Python source code files typically have the .py extension."
+    },
+    {
+      "id": 4,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Python Syntax",
+      "question": "Which of the following is an invalid variable name in Python?",
+      "options": {
+        "A": "my_var",
+        "B": "_myvar",
+        "C": "2myvar",
+        "D": "myVar2"
+      },
+      "correctAnswer": "C",
+      "explanation": "Variable names cannot begin with a digit in Python."
+    },
+    {
+      "id": 5,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "What is the output of the following code?\n\nx = 5\nprint(type(x).__name__)",
+      "options": {
+        "A": "int",
+        "B": "float",
+        "C": "str",
+        "D": "number"
+      },
+      "correctAnswer": "A",
+      "explanation": "The integer value 5 has the type 'int'."
+    },
+    {
+      "id": 6,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "Which data type is immutable in Python?",
+      "options": {
+        "A": "list",
+        "B": "dict",
+        "C": "set",
+        "D": "tuple"
+      },
+      "correctAnswer": "D",
+      "explanation": "Tuples are immutable sequences in Python."
+    },
+    {
+      "id": 7,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "What is the correct way to convert the float 3.14 to an integer in Python?",
+      "options": {
+        "A": "int(3.14)",
+        "B": "integer(3.14)",
+        "C": "(int)3.14",
+        "D": "parse_int(3.14)"
+      },
+      "correctAnswer": "A",
+      "explanation": "The built-in int() function converts a float to an integer by truncating."
+    },
+    {
+      "id": 8,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "What is the output of the expression type(True)?",
+      "options": {
+        "A": "<class 'bool'>",
+        "B": "<class 'int'>",
+        "C": "<class 'str'>",
+        "D": "<class 'boolean'>"
+      },
+      "correctAnswer": "A",
+      "explanation": "True is a Boolean literal in Python, belonging to class 'bool'."
+    },
+    {
+      "id": 9,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "Which of the following complex numbers is represented correctly in Python?",
+      "options": {
+        "A": "2 + 3i",
+        "B": "2 + 3j",
+        "C": "2 + 3k",
+        "D": "complex(2, 3i)"
+      },
+      "correctAnswer": "B",
+      "explanation": "Python uses 'j' or 'J' to represent the imaginary part of complex numbers."
+    },
+    {
+      "id": 10,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Operators and Expressions",
+      "question": "What is the output of 10 // 3 in Python?",
+      "options": {
+        "A": "3.3333",
+        "B": "3.33",
+        "C": "3",
+        "D": "1"
+      },
+      "correctAnswer": "C",
+      "explanation": "The // operator performs floor division, returning the quotient 3."
+    },
+    {
+      "id": 11,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Operators and Expressions",
+      "question": "What is the result of 2 ** 3 ** 2?",
+      "options": {
+        "A": "64",
+        "B": "512",
+        "C": "36",
+        "D": "256"
+      },
+      "correctAnswer": "B",
+      "explanation": "Exponentiation ** is right-associative, so 3**2 = 9, then 2**9 = 512."
+    },
+    {
+      "id": 12,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Operators and Expressions",
+      "question": "Which operator is used to calculate the remainder of division in Python?",
+      "options": {
+        "A": "/",
+        "B": "%",
+        "C": "//",
+        "D": "rem"
+      },
+      "correctAnswer": "B",
+      "explanation": "The % modulo operator returns the remainder of division."
+    },
+    {
+      "id": 13,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Operators and Expressions",
+      "question": "What is the value of the expression: 5 + 3 * 2?",
+      "options": {
+        "A": "16",
+        "B": "11",
+        "C": "13",
+        "D": "10"
+      },
+      "correctAnswer": "B",
+      "explanation": "Multiplication has higher precedence than addition, so 3 * 2 = 6, then 5 + 6 = 11."
+    },
+    {
+      "id": 14,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Conditional Statements",
+      "question": "Which keyword is used for 'else if' in Python?",
+      "options": {
+        "A": "elseif",
+        "B": "else if",
+        "C": "elif",
+        "D": "if else"
+      },
+      "correctAnswer": "C",
+      "explanation": "Python uses 'elif' for conditional chain branches."
+    },
+    {
+      "id": 15,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Conditional Statements",
+      "question": "What does the following code print?\n\nif 0:\n    print('A')\nelse:\n    print('B')",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "0",
+        "D": "SyntaxError"
+      },
+      "correctAnswer": "B",
+      "explanation": "In Python, 0 evaluates to False in a boolean context, executing the else block."
+    },
+    {
+      "id": 16,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Conditional Statements",
+      "question": "Which statement is used as a placeholder when code is syntactically required?",
+      "options": {
+        "A": "continue",
+        "B": "break",
+        "C": "pass",
+        "D": "return"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'pass' statement is a null statement used as a placeholder."
+    },
+    {
+      "id": 17,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Loops",
+      "question": "What is the output of list(range(1, 5))?",
+      "options": {
+        "A": "[1, 2, 3, 4, 5]",
+        "B": "[1, 2, 3, 4]",
+        "C": "[0, 1, 2, 3, 4]",
+        "D": "[2, 3, 4, 5]"
+      },
+      "correctAnswer": "B",
+      "explanation": "range(start, stop) generates integers from start up to (stop - 1)."
+    },
+    {
+      "id": 18,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Loops",
+      "question": "Which statement is used to terminate a loop prematurely?",
+      "options": {
+        "A": "stop",
+        "B": "exit",
+        "C": "break",
+        "D": "end"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'break' statement terminates the current loop execution immediately."
+    },
+    {
+      "id": 19,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Loops",
+      "question": "What does the 'continue' statement do inside a loop?",
+      "options": {
+        "A": "Exits the loop",
+        "B": "Skips the rest of the current iteration",
+        "C": "Restarts the entire loop",
+        "D": "Does nothing"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'continue' statement skips the remaining statements of the current iteration and jumps to the next."
+    },
+    {
+      "id": 20,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Strings and String Methods",
+      "question": "What is the output of 'python'[1:4]?",
+      "options": {
+        "A": "pyt",
+        "B": "yth",
+        "C": "ytho",
+        "D": "pyth"
+      },
+      "correctAnswer": "B",
+      "explanation": "Slicing [1:4] extracts characters from index 1 up to index 3 ('yth')."
+    },
+    {
+      "id": 21,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Strings and String Methods",
+      "question": "Which method converts a string to all uppercase letters?",
+      "options": {
+        "A": "to_upper()",
+        "B": "uppercase()",
+        "C": "upper()",
+        "D": "capital()"
+      },
+      "correctAnswer": "C",
+      "explanation": "The str.upper() method returns a copy of the string converted to uppercase."
+    },
+    {
+      "id": 22,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Strings and String Methods",
+      "question": "What is the result of 'Hello' + 'World'?",
+      "options": {
+        "A": "Hello World",
+        "B": "HelloWorld",
+        "C": "Hello+World",
+        "D": "Error"
+      },
+      "correctAnswer": "B",
+      "explanation": "The + operator concatenates two strings directly without adding spaces."
+    },
+    {
+      "id": 23,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Strings and String Methods",
+      "question": "What is the length of the string 'Python\\n'?",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "5"
+      },
+      "correctAnswer": "B",
+      "explanation": "The escape sequence '\\n' represents a single newline character, so length is 6 + 1 = 7."
+    },
+    {
+      "id": 24,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Lists and Tuples",
+      "question": "Which method adds an element to the end of a list?",
+      "options": {
+        "A": "add()",
+        "B": "insert()",
+        "C": "append()",
+        "D": "push()"
+      },
+      "correctAnswer": "C",
+      "explanation": "The list.append() method adds a single item to the end of a list."
+    },
+    {
+      "id": 25,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Lists and Tuples",
+      "question": "How do you access the last item of a non-empty list 'lst' in Python?",
+      "options": {
+        "A": "lst[last]",
+        "B": "lst[-1]",
+        "C": "lst[end]",
+        "D": "lst[len(lst)]"
+      },
+      "correctAnswer": "B",
+      "explanation": "Negative indexing lst[-1] accesses the last element of a sequence."
+    },
+    {
+      "id": 26,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Sets and Dictionaries",
+      "question": "Which of the following creates an empty dictionary?",
+      "options": {
+        "A": "{}",
+        "B": "set()",
+        "C": "[]",
+        "D": "dict[]"
+      },
+      "correctAnswer": "A",
+      "explanation": "Curly braces {} create an empty dictionary. An empty set is created with set()."
+    },
+    {
+      "id": 27,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Sets and Dictionaries",
+      "question": "What is a key property of Python sets?",
+      "options": {
+        "A": "Elements are ordered",
+        "B": "Elements are indexed",
+        "C": "Elements are unique",
+        "D": "Elements are mutable"
+      },
+      "correctAnswer": "C",
+      "explanation": "Sets are unordered collections that store unique elements."
+    },
+    {
+      "id": 28,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Sets and Dictionaries",
+      "question": "How do you access the value associated with key 'name' in dictionary 'd'?",
+      "options": {
+        "A": "d('name')",
+        "B": "d['name']",
+        "C": "d.name",
+        "D": "d->name"
+      },
+      "correctAnswer": "B",
+      "explanation": "Dictionary values are accessed using square brackets d[key]."
+    },
+    {
+      "id": 29,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "question": "Which keyword is used to define a function in Python?",
+      "options": {
+        "A": "func",
+        "B": "function",
+        "C": "def",
+        "D": "define"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'def' keyword is used to start a function definition."
+    },
+    {
+      "id": 30,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "question": "What does a Python function return by default if no return statement is specified?",
+      "options": {
+        "A": "0",
+        "B": "False",
+        "C": "None",
+        "D": "Empty string"
+      },
+      "correctAnswer": "C",
+      "explanation": "Functions without an explicit return statement return None."
+    },
+    {
+      "id": 31,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Lambda Functions",
+      "question": "What is a lambda function in Python?",
+      "options": {
+        "A": "A built-in module",
+        "B": "An anonymous single-expression function",
+        "C": "A recursive loop",
+        "D": "A class method"
+      },
+      "correctAnswer": "B",
+      "explanation": "Lambda functions are small anonymous functions defined with the lambda keyword."
+    },
+    {
+      "id": 32,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "List Comprehensions",
+      "question": "What is the output of [x*2 for x in range(3)]?",
+      "options": {
+        "A": "[0, 2, 4]",
+        "B": "[2, 4, 6]",
+        "C": "[0, 1, 2]",
+        "D": "[1, 2, 3]"
+      },
+      "correctAnswer": "A",
+      "explanation": "range(3) produces 0, 1, 2. Multiplying each by 2 yields [0, 2, 4]."
+    },
+    {
+      "id": 33,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Object-Oriented Programming",
+      "question": "Which keyword is used to instantiate an object in Python?",
+      "options": {
+        "A": "new",
+        "B": "create",
+        "C": "instance",
+        "D": "No keyword is required"
+      },
+      "correctAnswer": "D",
+      "explanation": "Python instantiates classes by calling the class name directly without 'new'."
+    },
+    {
+      "id": 34,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Object-Oriented Programming",
+      "question": "What is the purpose of the '__init__' method in a Python class?",
+      "options": {
+        "A": "To delete an object",
+        "B": "To serve as the constructor initializer",
+        "C": "To print class details",
+        "D": "To import modules"
+      },
+      "correctAnswer": "B",
+      "explanation": "The __init__ method acts as the class constructor to initialize attributes."
+    },
+    {
+      "id": 35,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Object-Oriented Programming",
+      "question": "What parameter represents the instance of the class in instance methods?",
+      "options": {
+        "A": "this",
+        "B": "self",
+        "C": "cls",
+        "D": "super"
+      },
+      "correctAnswer": "B",
+      "explanation": "By convention, 'self' is used as the first parameter of instance methods to refer to the current object."
+    },
+    {
+      "id": 36,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Exception Handling",
+      "question": "Which keyword is used to handle exceptions in Python?",
+      "options": {
+        "A": "catch",
+        "B": "except",
+        "C": "try",
+        "D": "handle"
+      },
+      "correctAnswer": "B",
+      "explanation": "Python uses try-except blocks to catch and handle exceptions."
+    },
+    {
+      "id": 37,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Exception Handling",
+      "question": "Which block in exception handling executes regardless of whether an exception occurred?",
+      "options": {
+        "A": "finally",
+        "B": "else",
+        "C": "except",
+        "D": "always"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'finally' block always executes before exiting the try-except structure."
+    },
+    {
+      "id": 38,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "File Handling",
+      "question": "Which mode parameter is used to open a file for writing, overwriting existing content?",
+      "options": {
+        "A": "'r'",
+        "B": "'a'",
+        "C": "'w'",
+        "D": "'x'"
+      },
+      "correctAnswer": "C",
+      "explanation": "'w' mode opens a file for writing and truncates/overwrites existing contents."
+    },
+    {
+      "id": 39,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "File Handling",
+      "question": "What is the purpose of the 'with' statement when working with files?",
+      "options": {
+        "A": "To speed up file operations",
+        "B": "To automatically close the file when done",
+        "C": "To read binary files",
+        "D": "To encrypt file content"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'with' statement acts as a context manager that ensures files are properly closed."
+    },
+    {
+      "id": 40,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Modules and Packages",
+      "question": "Which keyword is used to load a module in Python?",
+      "options": {
+        "A": "include",
+        "B": "import",
+        "C": "require",
+        "D": "load"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'import' statement is used to import modules into the script."
+    },
+    {
+      "id": 41,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "What does len([1, [2, 3], 4]) evaluate to?",
+      "options": {
+        "A": "4",
+        "B": "3",
+        "C": "2",
+        "D": "5"
+      },
+      "correctAnswer": "B",
+      "explanation": "The top-level list has 3 elements: 1, [2, 3], and 4."
+    },
+    {
+      "id": 42,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "What is the output of print(abs(-7.5))?",
+      "options": {
+        "A": "-7.5",
+        "B": "7.5",
+        "C": "7",
+        "D": "8"
+      },
+      "correctAnswer": "B",
+      "explanation": "abs() returns the absolute value of a number."
+    },
+    {
+      "id": 43,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "What does min('python') return?",
+      "options": {
+        "A": "'p'",
+        "B": "'h'",
+        "C": "'y'",
+        "D": "'n'"
+      },
+      "correctAnswer": "B",
+      "explanation": "The character with the lowest ASCII value in 'python' is 'h' (ASCII 104)."
+    },
+    {
+      "id": 44,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "Which built-in function returns an iterator of tuples containing index and value?",
+      "options": {
+        "A": "zip()",
+        "B": "enumerate()",
+        "C": "range()",
+        "D": "map()"
+      },
+      "correctAnswer": "B",
+      "explanation": "enumerate() yields tuples of (index, item) during iteration."
+    },
+    {
+      "id": 45,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "What is the output of bool('')?",
+      "options": {
+        "A": "True",
+        "B": "False",
+        "C": "None",
+        "D": "Error"
+      },
+      "correctAnswer": "B",
+      "explanation": "An empty string '' is falsy in Python, so bool('') returns False."
+    },
+    {
+      "id": 46,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "What does sum([1, 2, 3], 10) return?",
+      "options": {
+        "A": "6",
+        "B": "16",
+        "C": "10",
+        "D": "TypeError"
+      },
+      "correctAnswer": "B",
+      "explanation": "sum(iterable, start) adds the start value (10) to the sum of elements (6), resulting in 16."
+    },
+    {
+      "id": 47,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "What is the output of str(10) + str(20)?",
+      "options": {
+        "A": "30",
+        "B": "1020",
+        "C": "10 20",
+        "D": "Error"
+      },
+      "correctAnswer": "B",
+      "explanation": "String conversion produces '10' and '20'. Concatenation yields '1020'."
+    },
+    {
+      "id": 48,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "Which function converts an integer to its binary string representation?",
+      "options": {
+        "A": "bin()",
+        "B": "binary()",
+        "C": "hex()",
+        "D": "to_bin()"
+      },
+      "correctAnswer": "A",
+      "explanation": "bin() converts an integer to a binary string prefixed with '0b'."
+    },
+    {
+      "id": 49,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "What does any([False, 0, '', True]) evaluate to?",
+      "options": {
+        "A": "False",
+        "B": "True",
+        "C": "0",
+        "D": "None"
+      },
+      "correctAnswer": "B",
+      "explanation": "any() returns True if at least one element in the iterable is truthy."
+    },
+    {
+      "id": 50,
+      "subject": "Python",
+      "difficulty": "Easy",
+      "topic": "Built-in Functions",
+      "question": "What does all([1, True, 'hello', []]) evaluate to?",
+      "options": {
+        "A": "True",
+        "B": "False",
+        "C": "None",
+        "D": "Error"
+      },
+      "correctAnswer": "B",
+      "explanation": "all() returns False because [] (empty list) is falsy."
+    }
+  ]
+}

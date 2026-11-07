@@ -1,26 +1,51 @@
 package com.example.codequiz;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.codequiz.database.UserRepository;
+import com.example.codequiz.util.DialogHelper;
 import com.example.codequiz.util.SessionManager;
 import com.example.codequiz.util.ValidationUtils;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    private ShapeableImageView ivProfileAvatar;
+    private FrameLayout layoutAvatarContainer, btnChangeAvatarBadge;
     private TextView tvProfileFullName, tvProfileUsername, tvProfileEmail;
     private TextInputLayout tilEditName, tilOldPassword, tilNewPassword;
     private TextInputEditText etEditName, etOldPassword, etNewPassword;
@@ -29,6 +54,11 @@ public class ProfileActivity extends AppCompatActivity {
     private SessionManager sessionManager;
     private UserRepository userRepository;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
+
+    private ActivityResultLauncher<String> requestCameraPermissionLauncher;
+    private ActivityResultLauncher<Uri> takePictureLauncher;
+    private ActivityResultLauncher<String> pickImageLauncher;
+    private File tempCameraFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +76,41 @@ public class ProfileActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarProfile);
         toolbar.setNavigationOnClickListener(v -> finish());
 
+        setupPhotoLaunchers();
         initViews();
         displayUserData();
         setupListeners();
+    }
+
+    private void setupPhotoLaunchers() {
+        requestCameraPermissionLauncher = registerForActivityResult(
+                new ActivityResultContracts.RequestPermission(),
+                isGranted -> {
+                    if (isGranted) {
+                        launchCameraCapture();
+                    } else {
+                        Toast.makeText(this, "Camera permission is required to take a selfie", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        takePictureLauncher = registerForActivityResult(
+                new ActivityResultContracts.TakePicture(),
+                success -> {
+                    if (Boolean.TRUE.equals(success) && tempCameraFile != null && tempCameraFile.exists()) {
+                        processCapturedPhoto(tempCameraFile);
+                    }
+                }
+        );
+
+        pickImageLauncher = registerForActivityResult(
+                new ActivityResultContracts.GetContent(),
+                uri -> {
+                    if (uri != null) {
+                        processGalleryPhoto(uri);
+                    }
+                }
+        );
     }
 
     private void redirectToLogin() {
@@ -59,6 +121,10 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        ivProfileAvatar = findViewById(R.id.ivProfileAvatar);
+        layoutAvatarContainer = findViewById(R.id.layoutAvatarContainer);
+        btnChangeAvatarBadge = findViewById(R.id.btnChangeAvatarBadge);
+
         tvProfileFullName = findViewById(R.id.tvProfileFullName);
         tvProfileUsername = findViewById(R.id.tvProfileUsername);
         tvProfileEmail = findViewById(R.id.tvProfileEmail);
@@ -85,12 +151,174 @@ public class ProfileActivity extends AppCompatActivity {
         tvProfileUsername.setText("@" + username);
         tvProfileEmail.setText(email);
         etEditName.setText(name);
+
+        String savedImagePath = sessionManager.getProfileImage();
+        if (savedImagePath != null && !savedImagePath.trim().isEmpty()) {
+            loadAvatar(savedImagePath);
+        } else {
+            executor.execute(() -> {
+                String dbImagePath = userRepository.getProfileImage(sessionManager.getUserId());
+                if (dbImagePath != null && !dbImagePath.trim().isEmpty()) {
+                    sessionManager.updateProfileImage(dbImagePath);
+                    runOnUiThread(() -> loadAvatar(dbImagePath));
+                } else {
+                    runOnUiThread(() -> ivProfileAvatar.setImageResource(R.drawable.ic_profile));
+                }
+            });
+        }
     }
 
     private void setupListeners() {
+        View.OnClickListener photoClickListener = v -> showPhotoPickerDialog();
+        layoutAvatarContainer.setOnClickListener(photoClickListener);
+        btnChangeAvatarBadge.setOnClickListener(photoClickListener);
+
         btnSaveName.setOnClickListener(v -> saveDisplayName());
         btnChangePassword.setOnClickListener(v -> performChangePassword());
         btnLogout.setOnClickListener(v -> confirmLogout());
+    }
+
+    private void showPhotoPickerDialog() {
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog_photo_picker, null);
+        MaterialCardView cardOptionCamera = view.findViewById(R.id.cardOptionCamera);
+        MaterialCardView cardOptionGallery = view.findViewById(R.id.cardOptionGallery);
+        MaterialButton btnCancel = view.findViewById(R.id.btnCancelPhotoDialog);
+
+        AlertDialog dialog = new MaterialAlertDialogBuilder(this)
+                .setView(view)
+                .setCancelable(true)
+                .create();
+
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+
+        cardOptionCamera.setOnClickListener(v -> {
+            dialog.dismiss();
+            checkCameraPermissionAndLaunch();
+        });
+
+        cardOptionGallery.setOnClickListener(v -> {
+            dialog.dismiss();
+            pickImageLauncher.launch("image/*");
+        });
+
+        btnCancel.setOnClickListener(v -> dialog.dismiss());
+
+        dialog.show();
+    }
+
+    private void checkCameraPermissionAndLaunch() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            launchCameraCapture();
+        } else {
+            requestCameraPermissionLauncher.launch(Manifest.permission.CAMERA);
+        }
+    }
+
+    private void launchCameraCapture() {
+        try {
+            File photoDir = new File(getFilesDir(), "profile_photos");
+            if (!photoDir.exists()) {
+                photoDir.mkdirs();
+            }
+            tempCameraFile = new File(photoDir, "temp_selfie_" + System.currentTimeMillis() + ".jpg");
+            Uri cameraUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", tempCameraFile);
+            takePictureLauncher.launch(cameraUri);
+        } catch (Exception e) {
+            Toast.makeText(this, "Failed to start camera: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void processCapturedPhoto(File sourceFile) {
+        executor.execute(() -> {
+            try {
+                long userId = sessionManager.getUserId();
+                File photoDir = new File(getFilesDir(), "profile_photos");
+                if (!photoDir.exists()) {
+                    photoDir.mkdirs();
+                }
+                File destFile = new File(photoDir, "user_photo_" + userId + ".jpg");
+
+                try (InputStream in = new FileInputStream(sourceFile);
+                     OutputStream out = new FileOutputStream(destFile)) {
+                    byte[] buffer = new byte[8192];
+                    int len;
+                    while ((len = in.read(buffer)) > 0) {
+                        out.write(buffer, 0, len);
+                    }
+                    out.flush();
+                }
+
+                if (sourceFile.exists()) {
+                    sourceFile.delete();
+                }
+
+                String savedPath = destFile.getAbsolutePath();
+                userRepository.updateProfileImage(userId, savedPath);
+                sessionManager.updateProfileImage(savedPath);
+
+                runOnUiThread(() -> {
+                    loadAvatar(savedPath);
+                    Toast.makeText(ProfileActivity.this, "Profile photo updated!", Toast.LENGTH_SHORT).show();
+                });
+            } catch (Exception e) {
+                runOnUiThread(() -> Toast.makeText(ProfileActivity.this, "Error saving photo: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+            }
+        });
+    }
+
+    private void processGalleryPhoto(Uri sourceUri) {
+        executor.execute(() -> {
+            try {
+                long userId = sessionManager.getUserId();
+                File photoDir = new File(getFilesDir(), "profile_photos");
+                if (!photoDir.exists()) {
+                    photoDir.mkdirs();
+                }
+                File destFile = new File(photoDir, "user_photo_" + userId + ".jpg");
+
+                try (InputStream in = getContentResolver().openInputStream(sourceUri);
+                     OutputStream out = new FileOutputStream(destFile)) {
+                    if (in == null) throw new Exception("Unable to open selected image");
+                    byte[] buffer = new byte[8192];
+                    int len;
+                    while ((len = in.read(buffer)) > 0) {
+                        out.write(buffer, 0, len);
+                    }
+                    out.flush();
+                }
+
+                String savedPath = destFile.getAbsolutePath();
+                userRepository.updateProfileImage(userId, savedPath);
+                sessionManager.updateProfileImage(savedPath);
+
+                runOnUiThread(() -> {
+                    loadAvatar(savedPath);
+                    Toast.makeText(ProfileActivity.this, "Profile photo updated!", Toast.LENGTH_SHORT).show();
+                });
+            } catch (Exception e) {
+                runOnUiThread(() -> Toast.makeText(ProfileActivity.this, "Error loading image: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+            }
+        });
+    }
+
+    private void loadAvatar(String path) {
+        if (path != null && !path.trim().isEmpty()) {
+            File file = new File(path);
+            if (file.exists()) {
+                Glide.with(this)
+                        .load(file)
+                        .circleCrop()
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .skipMemoryCache(true)
+                        .placeholder(R.drawable.ic_profile)
+                        .error(R.drawable.ic_profile)
+                        .into(ivProfileAvatar);
+                return;
+            }
+        }
+        ivProfileAvatar.setImageResource(R.drawable.ic_profile);
     }
 
     private void saveDisplayName() {
@@ -159,16 +387,11 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void confirmLogout() {
-        new AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Are you sure you want to log out of CodeQuiz?")
-                .setPositiveButton("Logout", (dialog, which) -> {
-                    sessionManager.logoutUser();
-                    Toast.makeText(ProfileActivity.this, "Logged out successfully", Toast.LENGTH_SHORT).show();
-                    redirectToLogin();
-                })
-                .setNegativeButton("Cancel", null)
-                .show();
+        DialogHelper.showLogoutDialog(this, () -> {
+            sessionManager.logoutUser();
+            Toast.makeText(ProfileActivity.this, "Logged out successfully", Toast.LENGTH_SHORT).show();
+            redirectToLogin();
+        });
     }
 
     @Override

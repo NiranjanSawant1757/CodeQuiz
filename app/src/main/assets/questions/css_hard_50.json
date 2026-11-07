@@ -1,0 +1,761 @@
+{
+  "subject": "CSS",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 50
+  },
+  "questions": [
+    {
+      "id": 101,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Positioning and stacking context",
+      "question": "Which combination of CSS properties creates a NEW Stacking Context for descendant z-index positioning?",
+      "options": {
+        "A": "opacity less than 1, transform not none, or filter not none",
+        "B": "margin: auto",
+        "C": "display: block",
+        "D": "border-radius: 50%"
+      },
+      "correctAnswer": "A",
+      "explanation": "Non-1 opacity, 2D/3D transforms, filters, containment, or isolation properties create new stacking contexts."
+    },
+    {
+      "id": 102,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Positioning and stacking context",
+      "question": "If element A has `z-index: 9999;` inside stacking context X (which has `z-index: 1;`), and element B has `z-index: 2;` inside root context, which renders on top?",
+      "options": {
+        "A": "Element B, because parent context X (z-index 1) is lower than B's parent context (z-index 2)",
+        "B": "Element A, because 9999 > 2",
+        "C": "Both blend equally",
+        "D": "Depends on font-size"
+      },
+      "correctAnswer": "A",
+      "explanation": "Child z-indexes are local to their parent stacking context; parent context comparison overrides child values."
+    },
+    {
+      "id": 103,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Specificity and the cascade",
+      "question": "What is the specificity weight of the `:is(h1, .title, #header)` pseudo-class selector?",
+      "options": {
+        "A": "Takes specificity of its most specific argument (`#header` -> 1, 0, 0)",
+        "B": "Zero specificity",
+        "C": "Sums all arguments together",
+        "D": "Fixed class weight (0,1,0)"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `:is()` pseudo-class takes the specificity of its single most specific argument inside the parameter list."
+    },
+    {
+      "id": 104,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Specificity and the cascade",
+      "question": "What is the specificity weight of the `:where(h1, .title, #header)` pseudo-class selector?",
+      "options": {
+        "A": "Always exactly (0, 0, 0)",
+        "B": "Takes weight of #header",
+        "C": "Sums all arguments",
+        "D": "Class weight (0,1,0)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Unlike `:is()`, `:where()` replaced specificity is always strictly zero (0, 0, 0)."
+    },
+    {
+      "id": 105,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "CSS Grid",
+      "question": "What does `grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));` do?",
+      "options": {
+        "A": "Creates responsive grid columns that collapse empty tracks and stretch filled columns to fit container",
+        "B": "Limits grid to exactly 200px columns",
+        "C": "Fails if container is under 200px",
+        "D": "Generates fixed 1fr columns"
+      },
+      "correctAnswer": "A",
+      "explanation": "auto-fit drops empty tracks and stretches filled tracks; minmax guarantees column responsiveness without media queries."
+    },
+    {
+      "id": 106,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "CSS Grid",
+      "question": "What is the difference between `auto-fill` and `auto-fit` in CSS Grid `minmax()` track repeaters?",
+      "options": {
+        "A": "`auto-fill` keeps empty track gaps in layout; `auto-fit` collapses empty tracks to 0px allowing filled tracks to expand",
+        "B": "`auto-fit` keeps empty gaps",
+        "C": "`auto-fill` only works on rows",
+        "D": "There is no difference"
+      },
+      "correctAnswer": "A",
+      "explanation": "auto-fill retains empty tracks taking space; auto-fit collapses empty tracks so remaining items stretch across container."
+    },
+    {
+      "id": 107,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Flexbox",
+      "question": "In Flexbox, what does `flex-shrink: 0;` prevent a flex item from doing when container overflows?",
+      "options": {
+        "A": "Prevents the flex item from shrinking below its flex-basis size",
+        "B": "Prevents the flex item from growing",
+        "C": "Prevents item from wrapping",
+        "D": "Hides the flex item"
+      },
+      "correctAnswer": "A",
+      "explanation": "flex-shrink: 0 disables item compression, enforcing item initial basis dimensions."
+    },
+    {
+      "id": 108,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Flexbox",
+      "question": "How is extra remaining free space distributed among flex items with `flex-grow: 1` and `flex-grow: 2`?",
+      "options": {
+        "A": "Item with flex-grow: 2 gets twice as much OF THE REMAINING FREE SPACE as item with flex-grow: 1",
+        "B": "Item 2 is twice as wide total as Item 1",
+        "C": "Item 1 gets no space",
+        "D": "Space is split 50/50"
+      },
+      "correctAnswer": "A",
+      "explanation": "flex-grow ratio dictates proportion distribution of remaining free container space, not total absolute width."
+    },
+    {
+      "id": 109,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "CSS custom properties",
+      "question": "Can CSS custom properties (variables) be inherited down the DOM tree?",
+      "options": {
+        "A": "Yes, custom properties inherit by default like font-family or color",
+        "B": "No, variables are scoped strictly to declaring selector",
+        "C": "Only if marked !important",
+        "D": "Only in root element"
+      },
+      "correctAnswer": "A",
+      "explanation": "CSS custom properties are standard cascading inherited properties."
+    },
+    {
+      "id": 110,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "CSS custom properties",
+      "question": "What is the fallback mechanism syntax for `var()` if a custom property is undefined?",
+      "options": {
+        "A": "var(--main-color, #333)",
+        "B": "var(--main-color || #333)",
+        "C": "var(--main-color default #333)",
+        "D": "var(--main-color): #333"
+      },
+      "correctAnswer": "A",
+      "explanation": "The second parameter in var(--name, fallback) serves as fallback value if custom property is invalid/undefined."
+    },
+    {
+      "id": 111,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Inheritance and the CSS box model",
+      "question": "Which CSS property controls container query styling based on ancestor box size instead of viewport size?",
+      "options": {
+        "A": "container-type: inline-size;",
+        "B": "element-query: true;",
+        "C": "box-query: width;",
+        "D": "container: viewport;"
+      },
+      "correctAnswer": "A",
+      "explanation": "container-type: inline-size (or normal/size) establishes a container context for `@container` media queries."
+    },
+    {
+      "id": 112,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Functions such as calc(), min(), max(), and clamp()",
+      "question": "What happens if mathematical expression inside `calc()` lacks spaces around `+` or `-` operators (e.g. `calc(100%-10px)`)?",
+      "options": {
+        "A": "Expression is invalid and property declaration is ignored",
+        "B": "Evaluates normally",
+        "C": "Treats -10px as negative number",
+        "D": "Renders black background"
+      },
+      "correctAnswer": "A",
+      "explanation": "CSS calc() strictly requires whitespace around `+` and `-` operators to differentiate from signed unit tokens."
+    },
+    {
+      "id": 113,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "Which modern pseudo-class matches parent elements that contain specific descendant elements?",
+      "options": {
+        "A": ":has()",
+        "B": ":contains()",
+        "C": ":parent-of()",
+        "D": ":matches()"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `:has()` relational pseudo-class tests if parent contains descendants matching selector parameter."
+    },
+    {
+      "id": 114,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "What does `p:not(.featured)` select?",
+      "options": {
+        "A": "All paragraph elements that do NOT have the class 'featured'",
+        "B": "All elements inside .featured",
+        "C": "Paragraphs with class .featured",
+        "D": "Non-paragraph elements"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `:not()` negation pseudo-class selects elements that fail to match parameter selector."
+    },
+    {
+      "id": 115,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Transitions and transforms",
+      "question": "Which CSS property prevents unwanted flickers and enforces hardware GPU acceleration layer creation during 3D transforms?",
+      "options": {
+        "A": "will-change: transform;",
+        "B": "gpu-accelerate: true;",
+        "C": "render-layer: hardware;",
+        "D": "transform-speed: fast;"
+      },
+      "correctAnswer": "A",
+      "explanation": "will-change hints browser ahead of time to allocate dedicated GPU compositor layers."
+    },
+    {
+      "id": 116,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Transitions and transforms",
+      "question": "What does `backface-visibility: hidden;` do during 3D card flipping transforms?",
+      "options": {
+        "A": "Hides reverse mirror side of element box when rotated away from viewer facing",
+        "B": "Hides background color",
+        "C": "Removes box shadow",
+        "D": "Hides element borders"
+      },
+      "correctAnswer": "A",
+      "explanation": "backface-visibility: hidden prevents displaying reverse side mirror image when element is rotated in 3D space."
+    },
+    {
+      "id": 117,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Animations and keyframes",
+      "question": "What happens when `animation-direction: alternate;` is applied to an repeating keyframe animation?",
+      "options": {
+        "A": "Animation cycles forward on odd iterations and reverses backward on even iterations",
+        "B": "Animation plays backwards always",
+        "C": "Animation jumps randomly",
+        "D": "Animation pauses at end"
+      },
+      "correctAnswer": "A",
+      "explanation": "alternate reverses playback direction every subsequent cycle iteration."
+    },
+    {
+      "id": 118,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Overflow and scrolling",
+      "question": "Which CSS property enforces smooth snap points when scrolling through horizontal card carousels?",
+      "options": {
+        "A": "scroll-snap-type: x mandatory;",
+        "B": "scroll-lock: horizontal;",
+        "C": "carousel-snap: true;",
+        "D": "scroll-behavior: snap;"
+      },
+      "correctAnswer": "A",
+      "explanation": "scroll-snap-type (on container) and scroll-snap-align (on children) enforce touch carousel scroll snapping."
+    },
+    {
+      "id": 119,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Accessibility and reduced-motion preferences",
+      "question": "Which property visually hides content on screen while keeping it accessible to screen reader voice synthesisers?",
+      "options": {
+        "A": "Clip-path / sr-only CSS pattern (position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);)",
+        "B": "display: none;",
+        "C": "visibility: hidden;",
+        "D": "opacity: 0; pointer-events: none;"
+      },
+      "correctAnswer": "A",
+      "explanation": "The sr-only/visually-hidden utility pattern clips rendering bounds without removing node from accessibility tree."
+    },
+    {
+      "id": 120,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Display and visibility",
+      "question": "What is the CSS `subgrid` feature in CSS Grid layout level 2?",
+      "options": {
+        "A": "Allows nested grid items to inherit track definition lines and alignment directly from parent grid",
+        "B": "Creates a sub-element inside flexbox",
+        "C": "Compiles grid to table",
+        "D": "Generates 3D grid layout"
+      },
+      "correctAnswer": "A",
+      "explanation": "grid-template-columns: subgrid allows nested child grids to participate in parent track alignment."
+    },
+    {
+      "id": 121,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Attribute selectors and advanced selectors",
+      "question": "What does `:focus-within` match?",
+      "options": {
+        "A": "An element if the element itself or ANY of its descendants currently has focus",
+        "B": "Element with mouse hover",
+        "C": "Active link",
+        "D": "Element inside iframe"
+      },
+      "correctAnswer": "A",
+      "explanation": ":focus-within matches container elements whenever any nested child element receives focus."
+    },
+    {
+      "id": 122,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Attribute selectors and advanced selectors",
+      "question": "What does `:focus-visible` match compared to standard `:focus`?",
+      "options": {
+        "A": "Matches focus indicator state ONLY when browser heuristics determine focus should be visibly indicated (e.g., keyboard tab navigation)",
+        "B": "Matches all mouse clicks",
+        "C": "Matches hidden inputs",
+        "D": "Matches hover states"
+      },
+      "correctAnswer": "A",
+      "explanation": ":focus-visible avoids drawing focus rings on mouse clicks while displaying them for keyboard tab users."
+    },
+    {
+      "id": 123,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Browser rendering and debugging",
+      "question": "Which CSS declaration forces an element onto its own hardware-accelerated GPU Compositor layer?",
+      "options": {
+        "A": "transform: translateZ(0);",
+        "B": "position: absolute;",
+        "C": "display: flex;",
+        "D": "border: 1px solid transparent;"
+      },
+      "correctAnswer": "A",
+      "explanation": "translateZ(0) or translate3d(0,0,0) triggers GPU layer promotion in browser rendering engine."
+    },
+    {
+      "id": 124,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Common layout problems",
+      "question": "How do you prevent flex items from shrinking smaller than their inner content size?",
+      "options": {
+        "A": "Set `min-width: 0;` or `flex-shrink: 0;` depending on desired container behavior",
+        "B": "Add margin: auto",
+        "C": "Set display: block",
+        "D": "Use word-break: keep-all"
+      },
+      "correctAnswer": "A",
+      "explanation": "Flex items have `min-width: auto` default; setting min-width: 0 allows flex shrinking below content size when clipping."
+    },
+    {
+      "id": 125,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Units: px, em, rem, %, vw, and vh",
+      "question": "What is the difference between `ch` and `ex` units in CSS?",
+      "options": {
+        "A": "`ch` is width of character '0'; `ex` is x-height of current font font-size",
+        "B": "`ch` is column height; `ex` is exact pixels",
+        "C": "They are identical",
+        "D": "`ex` is extra large"
+      },
+      "correctAnswer": "A",
+      "explanation": "ch equals width of character '0', ex equals x-height of lowercase 'x' in active font."
+    },
+    {
+      "id": 126,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Margins, padding, borders, and dimensions",
+      "question": "What is the result of `margin-top` applied on an inline element like `<span>` without altering display property?",
+      "options": {
+        "A": "Top and bottom margins have NO effect on inline non-replaced elements",
+        "B": "Pushes content down by margin height",
+        "C": "Causes line break",
+        "D": "Hides text"
+      },
+      "correctAnswer": "A",
+      "explanation": "Vertical margins (top/bottom) have no layout effect on non-replaced inline elements."
+    },
+    {
+      "id": 127,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Positioning and stacking context",
+      "question": "What does `isolation: isolate;` do in CSS?",
+      "options": {
+        "A": "Creates a new stacking context explicitly without requiring transforms or opacity changes",
+        "B": "Hides element from DOM",
+        "C": "Prevents CSS inheritance",
+        "D": "Isolates element from grid"
+      },
+      "correctAnswer": "A",
+      "explanation": "isolation: isolate creates a new stacking context safely without visual side effects."
+    },
+    {
+      "id": 128,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Flexbox",
+      "question": "What does `align-content` do in Flexbox?",
+      "options": {
+        "A": "Aligns multi-line flex tracks along cross axis when extra space exists",
+        "B": "Aligns single items inside flex row",
+        "C": "Aligns text horizontally",
+        "D": "Sets flex row height"
+      },
+      "correctAnswer": "A",
+      "explanation": "align-content controls spacing between multiple line tracks in wrapped flex containers."
+    },
+    {
+      "id": 129,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "CSS Grid",
+      "question": "What is the effect of `grid-auto-flow: dense;` in a grid layout?",
+      "options": {
+        "A": "Attempts to fill in visual grid gaps earlier in layout if smaller items fit later",
+        "B": "Increases font density",
+        "C": "Disables grid gaps",
+        "D": "Forces single column"
+      },
+      "correctAnswer": "A",
+      "explanation": "dense packing algorithm backfills empty grid gaps with smaller out-of-order items."
+    },
+    {
+      "id": 130,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Colors, backgrounds, and gradients",
+      "question": "Which CSS property controls how background image colors mix with element background colors?",
+      "options": {
+        "A": "background-blend-mode",
+        "B": "mix-blend-mode",
+        "C": "color-interpolation",
+        "D": "filter-blend"
+      },
+      "correctAnswer": "A",
+      "explanation": "background-blend-mode blends background images and colors of a single element box."
+    },
+    {
+      "id": 131,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Colors, backgrounds, and gradients",
+      "question": "Which property controls how an element's content blends with layers behind it across DOM elements?",
+      "options": {
+        "A": "mix-blend-mode",
+        "B": "background-blend-mode",
+        "C": "composite-mode",
+        "D": "opacity-blend"
+      },
+      "correctAnswer": "A",
+      "explanation": "mix-blend-mode defines blending between an element and its underlying parent DOM elements."
+    },
+    {
+      "id": 132,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Transitions and transforms",
+      "question": "What is cubic-bezier timing function `transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);`?",
+      "options": {
+        "A": "Mathematical Bézier curve defining transition velocity speed rate acceleration profile over time",
+        "B": "3D rotation matrix",
+        "C": "Color interpolation formula",
+        "D": "Keyframe loop step"
+      },
+      "correctAnswer": "A",
+      "explanation": "cubic-bezier defines custom acceleration easing curves for transitions/animations."
+    },
+    {
+      "id": 133,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Responsive design and media queries",
+      "question": "What is the aspect-ratio property introduced in modern CSS?",
+      "options": {
+        "A": "Explicitly sets preferred width-to-height ratio for box sizing (`aspect-ratio: 16 / 9;`)",
+        "B": "Scales viewport width",
+        "C": "Resizes screen resolution",
+        "D": "Rotates images"
+      },
+      "correctAnswer": "A",
+      "explanation": "aspect-ratio sets a target dimensional aspect ratio for box sizing calculations."
+    },
+    {
+      "id": 134,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "CSS custom properties",
+      "question": "What does `@property` at-rule in modern CSS allow developers to do?",
+      "options": {
+        "A": "Explicitly define custom property types, initial values, and inheritance behavior for CSS variable animation",
+        "B": "Create new HTML attributes",
+        "C": "Define JavaScript object types",
+        "D": "Override browser settings"
+      },
+      "correctAnswer": "A",
+      "explanation": "@property registers CSS custom properties with strict type syntax checking and animatable data types."
+    },
+    {
+      "id": 135,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Inheritance and the CSS box model",
+      "question": "What does `all: unset;` do on an element?",
+      "options": {
+        "A": "Resets all CSS properties to inherited values if inherited, or initial values if non-inherited",
+        "B": "Deletes element",
+        "C": "Hides text content",
+        "D": "Removes CSS class"
+      },
+      "correctAnswer": "A",
+      "explanation": "all: unset resets all element CSS declarations to inherit/initial default behavior."
+    },
+    {
+      "id": 136,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Inheritance and the CSS box model",
+      "question": "What does `all: revert;` do?",
+      "options": {
+        "A": "Rolls back all property values to default browser user-agent stylesheet origin values",
+        "B": "Reverses animation order",
+        "C": "Undoes last JS mutation",
+        "D": "Resets to initial spec"
+      },
+      "correctAnswer": "A",
+      "explanation": "revert rolls back properties to user-agent default browser styles."
+    },
+    {
+      "id": 137,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Browser rendering and debugging",
+      "question": "What causes Layout Thrashing in JavaScript DOM interactions?",
+      "options": {
+        "A": "Interleaving repetitive DOM writes followed immediately by synchronous DOM layout reads forcing recalculations",
+        "B": "Downloading large images",
+        "C": "Using flexbox",
+        "D": "Executing keyframe loops"
+      },
+      "correctAnswer": "A",
+      "explanation": "Repeated write-then-read cycles force browsers to perform forced synchronous layout recalculations."
+    },
+    {
+      "id": 138,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Common layout problems",
+      "question": "How do you prevent text wrapping on line breaks inside a flex or block container?",
+      "options": {
+        "A": "white-space: nowrap;",
+        "B": "text-wrap: no-break;",
+        "C": "overflow: fixed;",
+        "D": "word-break: stop;"
+      },
+      "correctAnswer": "A",
+      "explanation": "white-space: nowrap prevents text content from wrapping onto new lines."
+    },
+    {
+      "id": 139,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "What does `::marker` pseudo-element style?",
+      "options": {
+        "A": "The bullet point or number indicator box of list items (`<li>`)",
+        "B": "Text selections",
+        "C": "First letter",
+        "D": "Form input highlight"
+      },
+      "correctAnswer": "A",
+      "explanation": "::marker targets bullet points or numbers of list items."
+    },
+    {
+      "id": 140,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "What does `::selection` style?",
+      "options": {
+        "A": "The visual portion of document highlighted/selected by user pointer cursor",
+        "B": "Selected dropdown option",
+        "C": "Focused input",
+        "D": "Active button"
+      },
+      "correctAnswer": "A",
+      "explanation": "::selection customizes background and color of text selected by user pointer."
+    },
+    {
+      "id": 141,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Animations and keyframes",
+      "question": "Which value of `animation-play-state` pauses an ongoing CSS keyframe animation?",
+      "options": {
+        "A": "animation-play-state: paused;",
+        "B": "animation-state: stop;",
+        "C": "animation-status: frozen;",
+        "D": "animation-loop: pause;"
+      },
+      "correctAnswer": "A",
+      "explanation": "animation-play-state: paused halts animation keyframe execution at current timestamp."
+    },
+    {
+      "id": 142,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "CSS Grid",
+      "question": "Which property specifies alignment of ENTIRE grid columns tracks within container along inline axis?",
+      "options": {
+        "A": "justify-content",
+        "B": "align-items",
+        "C": "justify-items",
+        "D": "align-self"
+      },
+      "correctAnswer": "A",
+      "explanation": "justify-content aligns entire grid track layout within grid container horizontally."
+    },
+    {
+      "id": 143,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "CSS Grid",
+      "question": "Which property specifies alignment of content INSIDE individual grid cells horizontally?",
+      "options": {
+        "A": "justify-items",
+        "B": "justify-content",
+        "C": "align-content",
+        "D": "grid-align"
+      },
+      "correctAnswer": "A",
+      "explanation": "justify-items aligns item elements inside their assigned grid area cells along inline axis."
+    },
+    {
+      "id": 144,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Overflow and scrolling",
+      "question": "What does `overscroll-behavior: contain;` prevent?",
+      "options": {
+        "A": "Prevents scroll chaining overflow from passing to parent body scroll container when edge is reached",
+        "B": "Disables scrolling",
+        "C": "Hides scrollbars",
+        "D": "Locks horizontal scrolling"
+      },
+      "correctAnswer": "A",
+      "explanation": "overscroll-behavior: contain prevents scroll boundary propagation (scroll chaining) to parent scrollports."
+    },
+    {
+      "id": 145,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Fonts and typography",
+      "question": "Which CSS property controls optical kerning and ligatures in advanced font rendering?",
+      "options": {
+        "A": "font-feature-settings",
+        "B": "font-kerning",
+        "C": "both font-feature-settings and font-kerning",
+        "D": "text-rendering"
+      },
+      "correctAnswer": "C",
+      "explanation": "font-feature-settings and font-kerning configure OpenType font ligatures and kerning features."
+    },
+    {
+      "id": 146,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Fonts and typography",
+      "question": "Which value of `font-display` minimizes Flash of Unstyled Text (FOUT) by rendering invisible text briefly during web font load?",
+      "options": {
+        "A": "font-display: swap;",
+        "B": "font-display: block;",
+        "C": "font-display: fallback;",
+        "D": "font-display: auto;"
+      },
+      "correctAnswer": "A",
+      "explanation": "font-display: swap uses fallback system font immediately, swapping custom font when loaded."
+    },
+    {
+      "id": 147,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Specificty and the cascade",
+      "question": "What happens when two CSS selectors have IDENTICAL specificity weight and apply to same element?",
+      "options": {
+        "A": "The selector declared LATER in CSS document order wins and applies styles",
+        "B": "The first selector wins",
+        "C": "Neither applies",
+        "D": "Styles merge randomly"
+      },
+      "correctAnswer": "A",
+      "explanation": "When specificity is tied, the rule appearing last in document source order takes precedence."
+    },
+    {
+      "id": 148,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Functions such as calc(), min(), max(), and clamp()",
+      "question": "What does `min(50vw, 500px)` return for element width?",
+      "options": {
+        "A": "Returns whichever value is SMALLER between 50vw and 500px",
+        "B": "Returns 50vw always",
+        "C": "Returns 500px always",
+        "D": "Returns average"
+      },
+      "correctAnswer": "A",
+      "explanation": "min() selects the minimum calculated value among parameters."
+    },
+    {
+      "id": 149,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Functions such as calc(), min(), max(), and clamp()",
+      "question": "What does `max(10vw, 300px)` return for element width?",
+      "options": {
+        "A": "Returns whichever value is LARGER between 10vw and 300px",
+        "B": "Returns 10vw always",
+        "C": "Returns 300px always",
+        "D": "Returns sum"
+      },
+      "correctAnswer": "A",
+      "explanation": "max() selects the maximum calculated value among parameters."
+    },
+    {
+      "id": 150,
+      "subject": "CSS",
+      "difficulty": "Hard",
+      "topic": "Display and visibility",
+      "question": "What does `writing-mode: vertical-rl;` do to text flow layout?",
+      "options": {
+        "A": "Changes inline text flow orientation to vertical running top-to-bottom, right-to-left",
+        "B": "Rotates text 180 degrees",
+        "C": "Flips text upside down",
+        "D": "Renders text backwards"
+      },
+      "correctAnswer": "A",
+      "explanation": "writing-mode configures text line orientation (e.g. vertical-rl for East Asian layout)."
+    }
+  ]
+}

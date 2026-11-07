@@ -1,0 +1,761 @@
+{
+  "subject": "Java",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 50,
+    "medium": 0,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 1,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Java Syntax",
+      "question": "Which keyword is used to define a class in Java?",
+      "options": {
+        "A": "class",
+        "B": "struct",
+        "C": "define",
+        "D": "object"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'class' keyword is used to declare a class in Java."
+    },
+    {
+      "id": 2,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Java Syntax",
+      "question": "What is the correct entry point method signature for a standard Java console application?",
+      "options": {
+        "A": "public void main(String[] args)",
+        "B": "public static void main(String[] args)",
+        "C": "public static int main(String[] args)",
+        "D": "static void main(String[] args)"
+      },
+      "correctAnswer": "B",
+      "explanation": "The standard entry point is 'public static void main(String[] args)'."
+    },
+    {
+      "id": 3,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "Which of the following is NOT a primitive data type in Java?",
+      "options": {
+        "A": "int",
+        "B": "boolean",
+        "C": "String",
+        "D": "double"
+      },
+      "correctAnswer": "C",
+      "explanation": "String is an object/class type, not a primitive type in Java."
+    },
+    {
+      "id": 4,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "What is the size of an int variable in Java?",
+      "options": {
+        "A": "16 bits",
+        "B": "32 bits",
+        "C": "64 bits",
+        "D": "Varies by operating system"
+      },
+      "correctAnswer": "B",
+      "explanation": "In Java, an int is always 32 bits signed integer regardless of the underlying OS."
+    },
+    {
+      "id": 5,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "What is the default value of a boolean instance variable in Java?",
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "0",
+        "D": "null"
+      },
+      "correctAnswer": "B",
+      "explanation": "The default value for boolean instance variables is false."
+    },
+    {
+      "id": 6,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "What is the correct way to declare a constant variable in Java?",
+      "options": {
+        "A": "const int MAX = 100;",
+        "B": "final int MAX = 100;",
+        "C": "static int MAX = 100;",
+        "D": "immutable int MAX = 100;"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'final' keyword is used in Java to make a variable unmodifiable."
+    },
+    {
+      "id": 7,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Operators",
+      "question": "What is the result of 10 % 3 in Java?",
+      "options": {
+        "A": "3",
+        "B": "1",
+        "C": "3.33",
+        "D": "0"
+      },
+      "correctAnswer": "B",
+      "explanation": "The '%' operator computes the remainder of integer division, so 10 % 3 = 1."
+    },
+    {
+      "id": 8,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Operators",
+      "question": "What is the value of result after executing: int a = 5; int result = a++ + ++a;",
+      "options": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "13"
+      },
+      "correctAnswer": "C",
+      "explanation": "a++ evaluates to 5 (a becomes 6), ++a increments a to 7 and evaluates to 7. 5 + 7 = 12."
+    },
+    {
+      "id": 9,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Operators",
+      "question": "Which operator is used for string concatenation in Java?",
+      "options": {
+        "A": "&",
+        "B": "+",
+        "C": ".",
+        "D": "concat"
+      },
+      "correctAnswer": "B",
+      "explanation": "The '+' operator is overloaded for string concatenation in Java."
+    },
+    {
+      "id": 10,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Conditions",
+      "question": "Which conditional statement executes code based on multiple possible values of a single primitive variable?",
+      "options": {
+        "A": "switch",
+        "B": "if-else",
+        "C": "while",
+        "D": "for"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'switch' statement allows multi-way branching based on discrete values."
+    },
+    {
+      "id": 11,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Conditions",
+      "question": "What is the output of:\nboolean x = true;\nif (x = false) {\n    System.out.println(\"A\");\n} else {\n    System.out.println(\"B\");\n}",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "Compilation error",
+        "D": "Runtime error"
+      },
+      "correctAnswer": "B",
+      "explanation": "'x = false' assigns false to x and evaluates to false, so the else branch prints 'B'."
+    },
+    {
+      "id": 12,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Loops",
+      "question": "Which loop is guaranteed to execute its body at least once?",
+      "options": {
+        "A": "for loop",
+        "B": "while loop",
+        "C": "do-while loop",
+        "D": "for-each loop"
+      },
+      "correctAnswer": "C",
+      "explanation": "The do-while loop evaluates its condition after executing the loop body."
+    },
+    {
+      "id": 13,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Loops",
+      "question": "What is the output of the following code?\nfor (int i = 0; i < 3; i++) {\n    System.out.print(i + \" \");\n}",
+      "options": {
+        "A": "0 1 2 ",
+        "B": "1 2 3 ",
+        "C": "0 1 2 3 ",
+        "D": "0 1 "
+      },
+      "correctAnswer": "A",
+      "explanation": "The loop runs for i = 0, 1, 2. When i reaches 3, i < 3 becomes false."
+    },
+    {
+      "id": 14,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Loops",
+      "question": "Which keyword is used to immediately exit a loop in Java?",
+      "options": {
+        "A": "continue",
+        "B": "break",
+        "C": "return",
+        "D": "exit"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'break' statement terminates the execution of the nearest enclosing loop."
+    },
+    {
+      "id": 15,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Loops",
+      "question": "Which keyword skips the rest of the current loop iteration and proceeds to the next iteration?",
+      "options": {
+        "A": "skip",
+        "B": "break",
+        "C": "continue",
+        "D": "next"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'continue' statement skips the remaining statements in the current iteration."
+    },
+    {
+      "id": 16,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Arrays",
+      "question": "How do you obtain the number of elements in an array named 'arr'?",
+      "options": {
+        "A": "arr.length()",
+        "B": "arr.length",
+        "C": "arr.size()",
+        "D": "arr.size"
+      },
+      "correctAnswer": "B",
+      "explanation": "In Java, array length is accessed via the 'length' field, not a method call."
+    },
+    {
+      "id": 17,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Arrays",
+      "question": "What is the valid syntax to initialize an array of integers with 3 elements?",
+      "options": {
+        "A": "int[] arr = {1, 2, 3};",
+        "B": "int arr = new int(3);",
+        "C": "Array arr = [1, 2, 3];",
+        "D": "int arr[] = (1, 2, 3);"
+      },
+      "correctAnswer": "A",
+      "explanation": "'int[] arr = {1, 2, 3};' is a valid array literal initialization."
+    },
+    {
+      "id": 18,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Arrays",
+      "question": "What happens if you access an array index out of bounds, such as arr[5] on an array of length 5?",
+      "options": {
+        "A": "Returns null",
+        "B": "Returns 0",
+        "C": "Throws ArrayIndexOutOfBoundsException",
+        "D": "Compilation error"
+      },
+      "correctAnswer": "C",
+      "explanation": "Accessing index 5 on array of size 5 throws an ArrayIndexOutOfBoundsException at runtime."
+    },
+    {
+      "id": 19,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Strings",
+      "question": "Strings in Java are immutable. What does this mean?",
+      "options": {
+        "A": "String objects cannot be inherited.",
+        "B": "String objects cannot be changed once created.",
+        "C": "String references cannot be reassigned.",
+        "D": "String objects cannot be printed."
+      },
+      "correctAnswer": "B",
+      "explanation": "Immutability means once a String object is instantiated, its contents cannot be altered."
+    },
+    {
+      "id": 20,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Strings",
+      "question": "What is the result of string equality check: \"hello\".equals(\"HELLO\")?",
+      "options": {
+        "A": "true",
+        "B": "false",
+        "C": "Compilation error",
+        "D": "NullPointerException"
+      },
+      "correctAnswer": "B",
+      "explanation": "equals() is case-sensitive, so \"hello\" does not equal \"HELLO\"."
+    },
+    {
+      "id": 21,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Strings",
+      "question": "Which String method returns the character at a specific index?",
+      "options": {
+        "A": "getChar(int index)",
+        "B": "charAt(int index)",
+        "C": "indexOf(int index)",
+        "D": "substring(int index)"
+      },
+      "correctAnswer": "B",
+      "explanation": "charAt(int index) returns the char value at the specified index."
+    },
+    {
+      "id": 22,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Strings",
+      "question": "What is the output of \"Java\".length()?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "0"
+      },
+      "correctAnswer": "B",
+      "explanation": "The length() method of String returns the count of characters, which is 4 for \"Java\"."
+    },
+    {
+      "id": 23,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Methods",
+      "question": "What keyword is used when a method does not return any value?",
+      "options": {
+        "A": "null",
+        "B": "empty",
+        "C": "void",
+        "D": "static"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'void' return type specifies that a method returns no value."
+    },
+    {
+      "id": 24,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Methods",
+      "question": "What is method overloading in Java?",
+      "options": {
+        "A": "Methods in child class having same signature as parent class",
+        "B": "Multiple methods in the same class with the same name but different parameters",
+        "C": "A method calling itself recursively",
+        "D": "A method declared as private"
+      },
+      "correctAnswer": "B",
+      "explanation": "Overloading occurs when multiple methods in a class share the same name but have different parameter lists."
+    },
+    {
+      "id": 25,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Classes and Objects",
+      "question": "Which keyword is used to create an instance of a class?",
+      "options": {
+        "A": "create",
+        "B": "new",
+        "C": "alloc",
+        "D": "instance"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'new' operator allocates memory for a new object."
+    },
+    {
+      "id": 26,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Classes and Objects",
+      "question": "What is the purpose of a constructor in Java?",
+      "options": {
+        "A": "To destroy objects",
+        "B": "To initialize new objects",
+        "C": "To inherit from a class",
+        "D": "To handle runtime exceptions"
+      },
+      "correctAnswer": "B",
+      "explanation": "Constructors are special methods called when an object is instantiated to initialize its state."
+    },
+    {
+      "id": 27,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Classes and Objects",
+      "question": "Does a class constructor in Java have a return type?",
+      "options": {
+        "A": "Yes, void",
+        "B": "Yes, int",
+        "C": "No, not even void",
+        "D": "Yes, Object"
+      },
+      "correctAnswer": "C",
+      "explanation": "Constructors do not specify any return type, not even void."
+    },
+    {
+      "id": 28,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Constructors",
+      "question": "If no constructor is defined in a Java class, what happens?",
+      "options": {
+        "A": "Compilation fails",
+        "B": "Java provides a default no-argument constructor",
+        "C": "Runtime error occurs",
+        "D": "The class becomes abstract"
+      },
+      "correctAnswer": "B",
+      "explanation": "The compiler automatically provides a default no-arg constructor if no constructors are explicitly declared."
+    },
+    {
+      "id": 29,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Basic Exception Handling",
+      "question": "Which block is used to catch and handle exceptions in Java?",
+      "options": {
+        "A": "try-catch",
+        "B": "try-finally",
+        "C": "throw-catch",
+        "D": "catch-finally"
+      },
+      "correctAnswer": "A",
+      "explanation": "The 'try-catch' structure is used to enclose exception-prone code and handle caught exceptions."
+    },
+    {
+      "id": 30,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Basic Exception Handling",
+      "question": "Which block always executes regardless of whether an exception is thrown or caught?",
+      "options": {
+        "A": "catch",
+        "B": "finally",
+        "C": "try",
+        "D": "throws"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'finally' block is executed after try/catch blocks, whether an exception occurred or not."
+    },
+    {
+      "id": 31,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Java Syntax",
+      "question": "Which extension is used for compiled Java bytecode files?",
+      "options": {
+        "A": ".java",
+        "B": ".class",
+        "C": ".jar",
+        "D": ".exe"
+      },
+      "correctAnswer": "B",
+      "explanation": "Java source code file compiles into '.class' bytecode files."
+    },
+    {
+      "id": 32,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Java Syntax",
+      "question": "Which single-line comment syntax is valid in Java?",
+      "options": {
+        "A": "# comment",
+        "B": "// comment",
+        "C": "<!-- comment -->",
+        "D": "% comment"
+      },
+      "correctAnswer": "B",
+      "explanation": "'//' is used for single-line comments in Java."
+    },
+    {
+      "id": 33,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "Which primitive data type is used to store fractional numbers up to 15-17 decimal digits precision?",
+      "options": {
+        "A": "float",
+        "B": "double",
+        "C": "long",
+        "D": "int"
+      },
+      "correctAnswer": "B",
+      "explanation": "double is a 64-bit IEEE 754 double precision floating-point number."
+    },
+    {
+      "id": 34,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "What is the output of System.out.println(5 / 2);?",
+      "options": {
+        "A": "2.5",
+        "B": "2",
+        "C": "2.0",
+        "D": "3"
+      },
+      "correctAnswer": "B",
+      "explanation": "Integer division in Java truncates the fractional part, yielding 2."
+    },
+    {
+      "id": 35,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Operators",
+      "question": "Which operator is used to check for logical AND without evaluating the second condition if the first is false?",
+      "options": {
+        "A": "&",
+        "B": "&&",
+        "C": "|",
+        "D": "||"
+      },
+      "correctAnswer": "B",
+      "explanation": "'&&' is the short-circuit logical AND operator."
+    },
+    {
+      "id": 36,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Conditions",
+      "question": "What is the output of: System.out.println(10 > 5 ? \"Yes\" : \"No\");?",
+      "options": {
+        "A": "Yes",
+        "B": "No",
+        "C": "true",
+        "D": "false"
+      },
+      "correctAnswer": "A",
+      "explanation": "The ternary operator evaluates 10 > 5 (true), returning \"Yes\"."
+    },
+    {
+      "id": 37,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Loops",
+      "question": "How many times will the following loop run?\nint i = 5;\nwhile (i > 0) {\n    i--;\n}",
+      "options": {
+        "A": "4 times",
+        "B": "5 times",
+        "C": "6 times",
+        "D": "Infinite times"
+      },
+      "correctAnswer": "B",
+      "explanation": "i starts at 5 and decrements until i reaches 0 (values: 5, 4, 3, 2, 1), running 5 times."
+    },
+    {
+      "id": 38,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Arrays",
+      "question": "What is the index of the first element in a Java array?",
+      "options": {
+        "A": "1",
+        "B": "0",
+        "C": "-1",
+        "D": "Depends on the array type"
+      },
+      "correctAnswer": "B",
+      "explanation": "Java arrays are zero-indexed, starting at 0."
+    },
+    {
+      "id": 39,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Strings",
+      "question": "What does the trim() method do on a String?",
+      "options": {
+        "A": "Removes spaces between words",
+        "B": "Removes leading and trailing white spaces",
+        "C": "Converts string to lowercase",
+        "D": "Truncates string to 10 characters"
+      },
+      "correctAnswer": "B",
+      "explanation": "trim() removes leading and trailing white space characters."
+    },
+    {
+      "id": 40,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Classes and Objects",
+      "question": "Which keyword is used by an object to refer to itself?",
+      "options": {
+        "A": "super",
+        "B": "this",
+        "C": "self",
+        "D": "me"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'this' keyword refers to the current object instance."
+    },
+    {
+      "id": 41,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Basic Exception Handling",
+      "question": "Which keyword is used to explicitly throw an exception object in Java?",
+      "options": {
+        "A": "throws",
+        "B": "throw",
+        "C": "raise",
+        "D": "catch"
+      },
+      "correctAnswer": "B",
+      "explanation": "'throw' is used to explicitly throw an exception object."
+    },
+    {
+      "id": 42,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Basic Exception Handling",
+      "question": "Which keyword is used in a method signature to declare exceptions that might be thrown?",
+      "options": {
+        "A": "throw",
+        "B": "throws",
+        "C": "catch",
+        "D": "try"
+      },
+      "correctAnswer": "B",
+      "explanation": "'throws' is declared in method signatures for checked exceptions."
+    },
+    {
+      "id": 43,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Methods",
+      "question": "Can a method in Java return multiple values directly without wrapping them in an object or array?",
+      "options": {
+        "A": "Yes, using commas",
+        "B": "No",
+        "C": "Yes, using tuples",
+        "D": "Yes, using pointers"
+      },
+      "correctAnswer": "B",
+      "explanation": "Java methods can return only a single value or object/array reference."
+    },
+    {
+      "id": 44,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Variables and Data Types",
+      "question": "What is the wrapper class for the primitive type 'int'?",
+      "options": {
+        "A": "Int",
+        "B": "Integer",
+        "C": "Number",
+        "D": "Long"
+      },
+      "correctAnswer": "B",
+      "explanation": "java.lang.Integer is the wrapper class for the primitive type int."
+    },
+    {
+      "id": 45,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Classes and Objects",
+      "question": "Which access modifier makes a class member visible only within its own class?",
+      "options": {
+        "A": "public",
+        "B": "protected",
+        "C": "private",
+        "D": "default"
+      },
+      "correctAnswer": "C",
+      "explanation": "'private' restricts visibility strictly to within the enclosing class."
+    },
+    {
+      "id": 46,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Classes and Objects",
+      "question": "Which access modifier makes a class member accessible within the same package and subclasses?",
+      "options": {
+        "A": "private",
+        "B": "protected",
+        "C": "public",
+        "D": "package-private"
+      },
+      "correctAnswer": "B",
+      "explanation": "'protected' allows access within the same package and by child classes."
+    },
+    {
+      "id": 47,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Operators",
+      "question": "What is the result of expression: true || false && false?",
+      "options": {
+        "A": "false",
+        "B": "true",
+        "C": "Compilation error",
+        "D": "Undefined"
+      },
+      "correctAnswer": "B",
+      "explanation": "&& has higher precedence than ||. false && false is false. true || false is true."
+    },
+    {
+      "id": 48,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Strings",
+      "question": "What is the result of \"Java\".toUpperCase()?",
+      "options": {
+        "A": "java",
+        "B": "JAVA",
+        "C": "Java",
+        "D": "J"
+      },
+      "correctAnswer": "B",
+      "explanation": "toUpperCase() converts all characters in the string to uppercase."
+    },
+    {
+      "id": 49,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Arrays",
+      "question": "How do you declare a 2D array of integers in Java?",
+      "options": {
+        "A": "int[][] arr;",
+        "B": "int arr[2][2];",
+        "C": "Array2D arr;",
+        "D": "int[] arr[];"
+      },
+      "correctAnswer": "A",
+      "explanation": "'int[][] arr;' is the standard syntax to declare a 2D array."
+    },
+    {
+      "id": 50,
+      "subject": "Java",
+      "difficulty": "Easy",
+      "topic": "Java Syntax",
+      "question": "Which package is automatically imported in every Java program?",
+      "options": {
+        "A": "java.util",
+        "B": "java.io",
+        "C": "java.lang",
+        "D": "java.net"
+      },
+      "correctAnswer": "C",
+      "explanation": "java.lang package is automatically imported by default in Java."
+    }
+  ]
+}

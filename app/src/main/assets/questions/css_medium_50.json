@@ -1,0 +1,761 @@
+{
+  "subject": "CSS",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 0,
+    "medium": 50,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 51,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Specificity and the cascade",
+      "question": "Which selector has the HIGHEST specificity weight among the following?",
+      "options": {
+        "A": "Element selector (`p`)",
+        "B": "Class selector (`.highlight`)",
+        "C": "ID selector (`#header`)",
+        "D": "Universal selector (`*`)"
+      },
+      "correctAnswer": "C",
+      "explanation": "ID selectors (#id) have specificity weight (1,0,0), higher than classes (0,1,0) or elements (0,0,1)."
+    },
+    {
+      "id": 52,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Specificity and the cascade",
+      "question": "What is the specificity calculation tuple (Inline, ID, Class, Element) for `.nav ul li.active a`?",
+      "options": {
+        "A": "(0, 0, 2, 3)",
+        "B": "(0, 1, 1, 2)",
+        "C": "(0, 0, 3, 2)",
+        "D": "(0, 2, 0, 3)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Two classes (`.nav`, `.active`) and three elements (`ul`, `li`, `a`) yield specificity (0, 0, 2, 3)."
+    },
+    {
+      "id": 53,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Specificity and the cascade",
+      "question": "What does the `!important` keyword do when added to a CSS declaration?",
+      "options": {
+        "A": "Makes property read-only",
+        "B": "Overrides standard cascade specificity rules for that declaration",
+        "C": "Applies property to all child elements",
+        "D": "Causes animation compile error"
+      },
+      "correctAnswer": "B",
+      "explanation": "!important overrides normal declaration cascade rules regardless of selector specificity."
+    },
+    {
+      "id": 54,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Box model and box-sizing",
+      "question": "If an element has `width: 200px; padding: 20px; border: 5px solid black; box-sizing: content-box;`, what is its total rendered physical width?",
+      "options": {
+        "A": "200px",
+        "B": "250px",
+        "C": "240px",
+        "D": "220px"
+      },
+      "correctAnswer": "B",
+      "explanation": "With content-box: Total width = width (200) + left/right padding (40) + left/right border (10) = 250px."
+    },
+    {
+      "id": 55,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Box model and box-sizing",
+      "question": "If an element has `width: 200px; padding: 20px; border: 5px solid black; box-sizing: border-box;`, what is its total rendered physical width?",
+      "options": {
+        "A": "200px",
+        "B": "250px",
+        "C": "240px",
+        "D": "150px"
+      },
+      "correctAnswer": "A",
+      "explanation": "With border-box: Total width is fixed to 200px; padding and border are absorbed inside the 200px width."
+    },
+    {
+      "id": 56,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Margins, padding, borders, and dimensions",
+      "question": "What is margin collapsing in CSS?",
+      "options": {
+        "A": "Margins of adjacent block elements collapse into a single margin equal to the largest margin size",
+        "B": "Margins disappear on small screens",
+        "C": "Padding and margin merge together",
+        "D": "Negative margins cancel out positive margins"
+      },
+      "correctAnswer": "A",
+      "explanation": "Top and bottom margins of adjacent block boxes combine into a single margin equal to max(margin1, margin2)."
+    },
+    {
+      "id": 57,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Positioning and stacking context",
+      "question": "Which property specifies the z-order/stacking order of overlapping positioned elements?",
+      "options": {
+        "A": "z-index",
+        "B": "layer-order",
+        "C": "stack-level",
+        "D": "depth-index"
+      },
+      "correctAnswer": "A",
+      "explanation": "z-index sets the z-order axis position for positioned elements (position != static)."
+    },
+    {
+      "id": 58,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Positioning and stacking context",
+      "question": "How does `position: sticky;` behave during scrolling?",
+      "options": {
+        "A": "Remains static until a scroll threshold relative to container/viewport is met, then behaves as fixed",
+        "B": "Always stays fixed",
+        "C": "Behaves like absolute position",
+        "D": "Remains hidden until hover"
+      },
+      "correctAnswer": "A",
+      "explanation": "position: sticky toggles between relative and fixed depending on scroll offset relative to viewport/container bounds."
+    },
+    {
+      "id": 59,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Flexbox",
+      "question": "Which flex property determines if flex items wrap onto multiple lines when space runs out?",
+      "options": {
+        "A": "flex-wrap",
+        "B": "flex-flow",
+        "C": "flex-shrink",
+        "D": "flex-grow"
+      },
+      "correctAnswer": "A",
+      "explanation": "flex-wrap (values: nowrap, wrap, wrap-reverse) controls whether flex container wraps items."
+    },
+    {
+      "id": 60,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Flexbox",
+      "question": "What is the shorthand `flex: 1;` equivalent to?",
+      "options": {
+        "A": "flex-grow: 1; flex-shrink: 1; flex-basis: 0%;",
+        "B": "flex-grow: 1; flex-shrink: 0; flex-basis: auto;",
+        "C": "flex-direction: row;",
+        "D": "flex-width: 1px;"
+      },
+      "correctAnswer": "A",
+      "explanation": "Single number unitless value `flex: 1;` expands to `flex-grow: 1; flex-shrink: 1; flex-basis: 0%;`."
+    },
+    {
+      "id": 61,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Flexbox",
+      "question": "Which flex item property defines the initial size of an item before remaining space is distributed?",
+      "options": {
+        "A": "flex-basis",
+        "B": "flex-grow",
+        "C": "flex-shrink",
+        "D": "flex-start"
+      },
+      "correctAnswer": "A",
+      "explanation": "flex-basis sets initial default sizing of a flex item before free space distribution."
+    },
+    {
+      "id": 62,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "CSS Grid",
+      "question": "Which property sets grid row and column gaps simultaneously in modern CSS?",
+      "options": {
+        "A": "gap",
+        "B": "grid-spacing",
+        "C": "grid-margin",
+        "D": "track-gap"
+      },
+      "correctAnswer": "B",
+      "explanation": "The shorthand `gap` property (formerly grid-gap) sets gutters between rows and columns."
+    },
+    {
+      "id": 63,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "CSS Grid",
+      "question": "What does `grid-template-columns: repeat(3, 1fr);` create?",
+      "options": {
+        "A": "3 equal-width flexible columns spanning total available grid width",
+        "B": "3 rows of 1px height",
+        "C": "1 column repeated 3 times",
+        "D": "3 columns of fixed 100px width"
+      },
+      "correctAnswer": "A",
+      "explanation": "repeat(3, 1fr) creates three tracks each taking an equal fraction (1fr) of free space."
+    },
+    {
+      "id": 64,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "CSS Grid",
+      "question": "Which property specifies explicit named areas in a grid container layout?",
+      "options": {
+        "A": "grid-template-areas",
+        "B": "grid-area-names",
+        "C": "grid-regions",
+        "D": "grid-named-layout"
+      },
+      "correctAnswer": "A",
+      "explanation": "grid-template-areas defines named grid cell layout areas using string templates."
+    },
+    {
+      "id": 65,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "What is the key difference between pseudo-classes (`:hover`) and pseudo-elements (`::before`) in CSS syntax?",
+      "options": {
+        "A": "Pseudo-classes select state/condition of existing elements; pseudo-elements style dynamic sub-parts or injected content",
+        "B": "Pseudo-classes use double colons; pseudo-elements single",
+        "C": "Pseudo-elements apply only to links",
+        "D": "There is no difference"
+      },
+      "correctAnswer": "A",
+      "explanation": "Pseudo-classes (single colon) target states; pseudo-elements (double colon) style dynamic structural parts/content."
+    },
+    {
+      "id": 66,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "Which pseudo-element requires the `content: \"\";` property to render inserted content before an element?",
+      "options": {
+        "A": "::before",
+        "B": "::first-letter",
+        "C": "::selection",
+        "D": "::marker"
+      },
+      "correctAnswer": "A",
+      "explanation": "::before (and ::after) pseudo-elements require content property to generate rendering boxes."
+    },
+    {
+      "id": 67,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "Which pseudo-class targets every element that is the N-th child of its parent?",
+      "options": {
+        "A": ":nth-child(n)",
+        "B": ":nth-of-type(n)",
+        "C": ":child(n)",
+        "D": ":eq(n)"
+      },
+      "correctAnswer": "A",
+      "explanation": ":nth-child(n) matches elements based on their numeric position index in parent children list."
+    },
+    {
+      "id": 68,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "What is the difference between `:nth-child(2)` and `:nth-of-type(2)`?",
+      "options": {
+        "A": ":nth-child(2) selects second child regardless of tag type; :nth-of-type(2) selects second child matching that specific tag type",
+        "B": ":nth-of-type(2) counts backwards",
+        "C": ":nth-child applies to classes only",
+        "D": "They are identical"
+      },
+      "correctAnswer": "A",
+      "explanation": ":nth-child counts all sibling elements; :nth-of-type counts only siblings matching element tag filter."
+    },
+    {
+      "id": 69,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Functions such as calc(), min(), max(), and clamp()",
+      "question": "What does `width: calc(100% - 50px);` calculate in CSS?",
+      "options": {
+        "A": "Subtracts 50px from 100% parent container width dynamically at runtime",
+        "B": "Sets width to 50px always",
+        "C": "Sets width to 50%",
+        "D": "Causes invalid syntax error"
+      },
+      "correctAnswer": "A",
+      "explanation": "calc() performs runtime mathematical calculations mixing different CSS length units."
+    },
+    {
+      "id": 70,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Functions such as calc(), min(), max(), and clamp()",
+      "question": "How does `font-size: clamp(1rem, 2.5vw, 2rem);` restrict font sizing?",
+      "options": {
+        "A": "Sets font-size to preferred 2.5vw, clamped between minimum 1rem and maximum 2rem bounds",
+        "B": "Sets font size to 2.5vw always",
+        "C": "Sets font-size randomly between 1rem and 2rem",
+        "D": "Disables font scaling"
+      },
+      "correctAnswer": "A",
+      "explanation": "clamp(MIN, VAL, MAX) clamps a value between lower and upper defined threshold limits."
+    },
+    {
+      "id": 71,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Attribute selectors and advanced selectors",
+      "question": "Which CSS attribute selector targets elements whose `href` attribute ENDS with `.pdf`?",
+      "options": {
+        "A": "a[href$=\".pdf\"]",
+        "B": "a[href^=\".pdf\"]",
+        "C": "a[href*=\".pdf\"]",
+        "D": "a[href~=\".pdf\"]"
+      },
+      "correctAnswer": "A",
+      "explanation": "The $= attribute selector matches string endings."
+    },
+    {
+      "id": 72,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Attribute selectors and advanced selectors",
+      "question": "Which attribute selector matches elements whose `href` attribute STARTS with `https`?",
+      "options": {
+        "A": "a[href^=\"https\"]",
+        "B": "a[href$=\"https\"]",
+        "C": "a[href*=\"https\"]",
+        "D": "a[href|=\"https\"]"
+      },
+      "correctAnswer": "A",
+      "explanation": "The ^= attribute selector matches string prefix beginnings."
+    },
+    {
+      "id": 73,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Attribute selectors and advanced selectors",
+      "question": "Which attribute selector matches elements whose attribute contains a substring anywhere inside it?",
+      "options": {
+        "A": "[attr*=\"val\"]",
+        "B": "[attr^=\"val\"]",
+        "C": "[attr$=\"val\"]",
+        "D": "[attr~=\"val\"]"
+      },
+      "correctAnswer": "A",
+      "explanation": "The *= attribute selector matches substring occurrences anywhere within the value."
+    },
+    {
+      "id": 74,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Selectors and combinators",
+      "question": "What does the direct child combinator selector `div > p` select?",
+      "options": {
+        "A": "Paragraphs that are immediate direct children of a div",
+        "B": "All paragraphs inside a div regardless of nesting depth",
+        "C": "Paragraphs placed directly after a div sibling",
+        "D": "Divs containing a paragraph"
+      },
+      "correctAnswer": "A",
+      "explanation": "The > combinator selects elements that are direct immediate children of the specified parent."
+    },
+    {
+      "id": 75,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Selectors and combinators",
+      "question": "What does the adjacent sibling combinator `h1 + p` select?",
+      "options": {
+        "A": "The paragraph immediately following the h1 element at same parent level",
+        "B": "All paragraphs following an h1",
+        "C": "Paragraphs inside an h1",
+        "D": "h1 elements containing paragraphs"
+      },
+      "correctAnswer": "A",
+      "explanation": "The + combinator selects the single sibling element immediately following the first element."
+    },
+    {
+      "id": 76,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Selectors and combinators",
+      "question": "What does general sibling combinator `h1 ~ p` select?",
+      "options": {
+        "A": "All paragraph siblings following an h1 at same parent depth",
+        "B": "Only immediate sibling paragraph",
+        "C": "Paragraphs nested inside h1",
+        "D": "Child paragraphs"
+      },
+      "correctAnswer": "A",
+      "explanation": "The ~ combinator matches all sibling elements following the initial element sharing parent."
+    },
+    {
+      "id": 77,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Responsive design and media queries",
+      "question": "What screen width orientation does `@media (min-width: 768px)` target?",
+      "options": {
+        "A": "Screens with width of 768px or wider (desktops/tablets)",
+        "B": "Screens narrower than 768px",
+        "C": "Screens strictly equal to 768px",
+        "D": "Print media only"
+      },
+      "correctAnswer": "A",
+      "explanation": "min-width: 768px applies styles when viewport width is greater than or equal to 768px (mobile-first)."
+    },
+    {
+      "id": 78,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Transitions and transforms",
+      "question": "Which transform property specifies the pivot point for element rotation or scaling?",
+      "options": {
+        "A": "transform-origin",
+        "B": "transform-center",
+        "C": "pivot-point",
+        "D": "transform-anchor"
+      },
+      "correctAnswer": "A",
+      "explanation": "transform-origin sets the origin location for an element's transformations (default: 50% 50%)."
+    },
+    {
+      "id": 79,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Animations and keyframes",
+      "question": "Which @-rule is used to define keyframe steps for CSS animations?",
+      "options": {
+        "A": "@keyframes",
+        "B": "@animation",
+        "C": "@frames",
+        "D": "@transition"
+      },
+      "correctAnswer": "A",
+      "explanation": "The @keyframes at-rule defines animation sequence keyframe stages."
+    },
+    {
+      "id": 80,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Animations and keyframes",
+      "question": "Which property makes a CSS animation repeat indefinitely?",
+      "options": {
+        "A": "animation-iteration-count: infinite;",
+        "B": "animation-repeat: true;",
+        "C": "animation-loop: infinite;",
+        "D": "animation-cycle: endless;"
+      },
+      "correctAnswer": "A",
+      "explanation": "animation-iteration-count: infinite specifies non-stopping animation loop cycles."
+    },
+    {
+      "id": 81,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Animations and keyframes",
+      "question": "Which `animation-fill-mode` value retains styles applied by the last keyframe after animation ends?",
+      "options": {
+        "A": "forwards",
+        "B": "backwards",
+        "C": "both",
+        "D": "retain"
+      },
+      "correctAnswer": "A",
+      "explanation": "forwards retains computed values from the final keyframe after animation completion."
+    },
+    {
+      "id": 82,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Overflow and scrolling",
+      "question": "Which property specifies how to handle content that overflows an element's box bounds horizontally and vertically?",
+      "options": {
+        "A": "overflow",
+        "B": "scroll-behavior",
+        "C": "clip-bounds",
+        "D": "wrap-content"
+      },
+      "correctAnswer": "A",
+      "explanation": "overflow (values: visible, hidden, scroll, auto) controls clipped or scrollable container overflow."
+    },
+    {
+      "id": 83,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Overflow and scrolling",
+      "question": "Which CSS property enables smooth scrolling animations when navigating via internal anchor links?",
+      "options": {
+        "A": "scroll-behavior: smooth;",
+        "B": "smooth-scroll: enabled;",
+        "C": "scroll-animation: linear;",
+        "D": "transition: scroll;"
+      },
+      "correctAnswer": "A",
+      "explanation": "scroll-behavior: smooth enables smooth animated scrolling behavior for viewport scrolling."
+    },
+    {
+      "id": 84,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Responsive images and layout techniques",
+      "question": "Which property ensures an `<img>` fills its container box while preserving aspect ratio by clipping excess?",
+      "options": {
+        "A": "object-fit: cover;",
+        "B": "object-fit: contain;",
+        "C": "image-size: cover;",
+        "D": "aspect-ratio: fill;"
+      },
+      "correctAnswer": "A",
+      "explanation": "object-fit: cover scales image to maintain aspect ratio while filling container box, clipping if necessary."
+    },
+    {
+      "id": 85,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Responsive images and layout techniques",
+      "question": "Which property scales an image to fit entirely inside its container without clipping, preserving aspect ratio?",
+      "options": {
+        "A": "object-fit: contain;",
+        "B": "object-fit: cover;",
+        "C": "object-fit: fill;",
+        "D": "image-scale: contain;"
+      },
+      "correctAnswer": "A",
+      "explanation": "object-fit: contain letterboxes/scales image so entire asset is visible without cropping."
+    },
+    {
+      "id": 86,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Inheritance and the CSS box model",
+      "question": "Which CSS keyword explicitly forces an element to inherit a property value from its parent element?",
+      "options": {
+        "A": "inherit",
+        "B": "initial",
+        "C": "unset",
+        "D": "revert"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `inherit` keyword causes element to adopt computed property value of parent."
+    },
+    {
+      "id": 87,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Inheritance and the CSS box model",
+      "question": "Which CSS keyword resets a property to its default initial browser specification value?",
+      "options": {
+        "A": "initial",
+        "B": "inherit",
+        "C": "unset",
+        "D": "default"
+      },
+      "correctAnswer": "A",
+      "explanation": "The `initial` keyword sets property to official CSS specification default value."
+    },
+    {
+      "id": 88,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "CSS architecture and maintainability",
+      "question": "What does BEM stand for in CSS methodology naming conventions?",
+      "options": {
+        "A": "Block Element Modifier",
+        "B": "Base Element Module",
+        "C": "Browser Element Model",
+        "D": "Build Extension Management"
+      },
+      "correctAnswer": "A",
+      "explanation": "BEM (Block Element Modifier) is a component-based class naming methodology for clean CSS."
+    },
+    {
+      "id": 89,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Accessibility and reduced-motion preferences",
+      "question": "Which media query detects if user requested OS-level reduced motion/animation settings?",
+      "options": {
+        "A": "@media (prefers-reduced-motion: reduce)",
+        "B": "@media (motion: disabled)",
+        "C": "@media (animation: false)",
+        "D": "@media (reduced-animation: true)"
+      },
+      "correctAnswer": "A",
+      "explanation": "prefers-reduced-motion detects system preferences for minimizing unnecessary non-essential animations."
+    },
+    {
+      "id": 90,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Display and visibility",
+      "question": "How does `display: inline-block;` differ from standard `display: inline;`?",
+      "options": {
+        "A": "inline-block respects width, height, top/bottom padding and margins while flowing inline with text",
+        "B": "inline-block forces line break",
+        "C": "inline-block hides element",
+        "D": "There is no difference"
+      },
+      "correctAnswer": "A",
+      "explanation": "inline-block behaves inline in document flow but allows width/height and block box dimensions."
+    },
+    {
+      "id": 91,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Positioning and stacking context",
+      "question": "What establishes an absolute positioning reference container for an element with `position: absolute;`?",
+      "options": {
+        "A": "The nearest ancestor element with position other than static",
+        "B": "The body tag always",
+        "C": "Direct parent div only",
+        "D": "Viewport window always"
+      },
+      "correctAnswer": "A",
+      "explanation": "position: absolute positions relative to nearest ancestor whose position is relative, absolute, fixed, or sticky."
+    },
+    {
+      "id": 92,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Flexbox",
+      "question": "Which flex property controls individual child item alignment overriding container `align-items`?",
+      "options": {
+        "A": "align-self",
+        "B": "justify-self",
+        "C": "flex-align",
+        "D": "item-align"
+      },
+      "correctAnswer": "A",
+      "explanation": "align-self allows individual flex items to override container align-items alignment."
+    },
+    {
+      "id": 93,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "CSS Grid",
+      "question": "What is the shorthand property for setting both `grid-row-start` and `grid-row-end`?",
+      "options": {
+        "A": "grid-row",
+        "B": "grid-span-row",
+        "C": "grid-row-template",
+        "D": "row-range"
+      },
+      "correctAnswer": "A",
+      "explanation": "grid-row (e.g., `grid-row: 1 / 3;`) sets grid item starting and ending track lines."
+    },
+    {
+      "id": 94,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Colors, backgrounds, and gradients",
+      "question": "Which property creates CSS linear gradient backgrounds?",
+      "options": {
+        "A": "background-image: linear-gradient(...);",
+        "B": "color-gradient: linear(...);",
+        "C": "background-color: gradient(...);",
+        "D": "border-gradient: linear(...);"
+      },
+      "correctAnswer": "A",
+      "explanation": "linear-gradient() function is applied as a value on background-image property."
+    },
+    {
+      "id": 95,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Fonts and typography",
+      "question": "Which CSS property alters character horizontal letter spacing?",
+      "options": {
+        "A": "letter-spacing",
+        "B": "word-spacing",
+        "C": "character-spacing",
+        "D": "text-indent"
+      },
+      "correctAnswer": "A",
+      "explanation": "letter-spacing controls tracking/space between individual text characters."
+    },
+    {
+      "id": 96,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Browser rendering and debugging",
+      "question": "What is a Reflow (Layout phase) in browser rendering pipeline?",
+      "options": {
+        "A": "Browser process calculating geometry and position layout coordinates for DOM elements",
+        "B": "Painting pixels onto screen",
+        "C": "Downloading CSS files",
+        "D": "Parsing JS scripts"
+      },
+      "correctAnswer": "A",
+      "explanation": "Reflow computes layout positions and geometry for elements when structural dimensions change."
+    },
+    {
+      "id": 97,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Browser rendering and debugging",
+      "question": "What is Repaint in browser rendering?",
+      "options": {
+        "A": "Redrawing pixels on screen when visual elements change (like color) without affecting geometry layout dimensions",
+        "B": "Rebuilding DOM tree",
+        "C": "Calculating container widths",
+        "D": "Executing keyframe loops"
+      },
+      "correctAnswer": "A",
+      "explanation": "Repaint occurs when visual appearances (e.g., color, outline) change without altering box dimensions/layout."
+    },
+    {
+      "id": 98,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Common layout problems",
+      "question": "How do you fix element overflow causing unexpected horizontal scrollbars on mobile viewports?",
+      "options": {
+        "A": "Apply `max-width: 100%;` on images/containers and check bounds",
+        "B": "Add width: 2000px;",
+        "C": "Set display: flex on body",
+        "D": "Remove doctype"
+      },
+      "correctAnswer": "A",
+      "explanation": "Preventing fixed-pixel widths and setting max-width: 100% on media prevents viewport overflow."
+    },
+    {
+      "id": 99,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Flexbox",
+      "question": "What does `justify-content: space-between;` do in a flex container?",
+      "options": {
+        "A": "Distributes items evenly; first item at start edge, last item at end edge",
+        "B": "Centers items together",
+        "C": "Puts equal space around all items including ends",
+        "D": "Pushes all items right"
+      },
+      "correctAnswer": "A",
+      "explanation": "space-between places equal gaps between items, locking edge items flush against container boundaries."
+    },
+    {
+      "id": 100,
+      "subject": "CSS",
+      "difficulty": "Medium",
+      "topic": "Flexbox",
+      "question": "What does `justify-content: space-around;` do?",
+      "options": {
+        "A": "Distributes items evenly with equal space on both sides of every item (half-size spaces at ends)",
+        "B": "Puts zero space on ends",
+        "C": "Centers items flush",
+        "D": "Stacks items vertically"
+      },
+      "correctAnswer": "A",
+      "explanation": "space-around surrounds items with equal padding space, producing half-size gaps at outer edges."
+    }
+  ]
+}

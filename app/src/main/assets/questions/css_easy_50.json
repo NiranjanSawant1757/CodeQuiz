@@ -1,0 +1,761 @@
+{
+  "subject": "CSS",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 50,
+    "medium": 0,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 1,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS introduction and syntax",
+      "question": "What does CSS stand for?",
+      "options": {
+        "A": "Cascading Style Sheets",
+        "B": "Computer Style Sheets",
+        "C": "Creative Style System",
+        "D": "Colorful Style Sheets"
+      },
+      "correctAnswer": "A",
+      "explanation": "CSS stands for Cascading Style Sheets, used to style and lay out HTML elements."
+    },
+    {
+      "id": 2,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS introduction and syntax",
+      "question": "Which HTML tag is used to embed internal CSS styles within an HTML document?",
+      "options": {
+        "A": "<css>",
+        "B": "<style>",
+        "C": "<script>",
+        "D": "<link>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The <style> element is used to define internal CSS rules in HTML."
+    },
+    {
+      "id": 3,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS introduction and syntax",
+      "question": "Which HTML tag is used to link an external CSS stylesheet file?",
+      "options": {
+        "A": "<style>",
+        "B": "<link>",
+        "C": "<css>",
+        "D": "<stylesheet>"
+      },
+      "correctAnswer": "B",
+      "explanation": "<link rel=\"stylesheet\" href=\"styles.css\"> is used to attach an external stylesheet."
+    },
+    {
+      "id": 4,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Colors, backgrounds, and gradients",
+      "question": "Which CSS property is used to change the background color of an element?",
+      "options": {
+        "A": "color",
+        "B": "background-color",
+        "C": "bgcolor",
+        "D": "background-image"
+      },
+      "correctAnswer": "B",
+      "explanation": "The background-color property sets the background color of an element."
+    },
+    {
+      "id": 5,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Colors, backgrounds, and gradients",
+      "question": "Which property changes the text color of an HTML element in CSS?",
+      "options": {
+        "A": "text-color",
+        "B": "font-color",
+        "C": "color",
+        "D": "text-style"
+      },
+      "correctAnswer": "C",
+      "explanation": "The color property sets the foreground/text color of an element."
+    },
+    {
+      "id": 6,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Fonts and typography",
+      "question": "Which CSS property specifies the font family/typeface of text?",
+      "options": {
+        "A": "font-style",
+        "B": "font-family",
+        "C": "font-weight",
+        "D": "font-type"
+      },
+      "correctAnswer": "B",
+      "explanation": "font-family specifies a prioritized list of font family names for the selected element."
+    },
+    {
+      "id": 7,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Fonts and typography",
+      "question": "Which CSS property changes the font size of text?",
+      "options": {
+        "A": "text-size",
+        "B": "font-size",
+        "C": "font-height",
+        "D": "text-style"
+      },
+      "correctAnswer": "B",
+      "explanation": "The font-size property sets the size of the font."
+    },
+    {
+      "id": 8,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Fonts and typography",
+      "question": "Which CSS property makes text bold?",
+      "options": {
+        "A": "font-weight: bold;",
+        "B": "text-style: bold;",
+        "C": "font-style: bold;",
+        "D": "text-weight: bold;"
+      },
+      "correctAnswer": "A",
+      "explanation": "font-weight: bold; (or numeric values like 700) sets the thickness of characters."
+    },
+    {
+      "id": 9,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Fonts and typography",
+      "question": "Which CSS property renders text in italics?",
+      "options": {
+        "A": "font-weight: italic;",
+        "B": "font-style: italic;",
+        "C": "text-decoration: italic;",
+        "D": "font-italic: true;"
+      },
+      "correctAnswer": "B",
+      "explanation": "font-style: italic; sets font glyphs to italic style."
+    },
+    {
+      "id": 10,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Fonts and typography",
+      "question": "Which CSS property adds an underline or strikethrough to text?",
+      "options": {
+        "A": "text-decoration",
+        "B": "text-style",
+        "C": "font-line",
+        "D": "text-align"
+      },
+      "correctAnswer": "A",
+      "explanation": "text-decoration (e.g., text-decoration: underline;) decorates text with lines."
+    },
+    {
+      "id": 11,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Margins, padding, borders, and dimensions",
+      "question": "Which property controls the space INSIDE an element's border?",
+      "options": {
+        "A": "margin",
+        "B": "padding",
+        "C": "border",
+        "D": "spacing"
+      },
+      "correctAnswer": "B",
+      "explanation": "Padding generates space around an element's content inside any defined borders."
+    },
+    {
+      "id": 12,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Margins, padding, borders, and dimensions",
+      "question": "Which property controls the space OUTSIDE an element's border?",
+      "options": {
+        "A": "padding",
+        "B": "margin",
+        "C": "outline",
+        "D": "border-spacing"
+      },
+      "correctAnswer": "B",
+      "explanation": "Margin creates space around elements, outside of any defined borders."
+    },
+    {
+      "id": 13,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Margins, padding, borders, and dimensions",
+      "question": "What is the correct syntax to define a solid red border of 2px width?",
+      "options": {
+        "A": "border: 2px solid red;",
+        "B": "border-style: 2px red solid;",
+        "C": "border: solid 2px line red;",
+        "D": "border-color: 2px red;"
+      },
+      "correctAnswer": "A",
+      "explanation": "The shorthand 'border: 2px solid red;' sets border-width, border-style, and border-color."
+    },
+    {
+      "id": 14,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Margins, padding, borders, and dimensions",
+      "question": "Which CSS property rounded corners of an element's border?",
+      "options": {
+        "A": "corner-radius",
+        "B": "border-radius",
+        "C": "border-corner",
+        "D": "box-radius"
+      },
+      "correctAnswer": "B",
+      "explanation": "border-radius rounds the corners of an element's outer border edge."
+    },
+    {
+      "id": 15,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Selectors and combinators",
+      "question": "How do you select an element with `id=\"header\"` in CSS?",
+      "options": {
+        "A": ".header",
+        "B": "#header",
+        "C": "*header",
+        "D": "header"
+      },
+      "correctAnswer": "B",
+      "explanation": "The hash sign # is used as the ID selector in CSS."
+    },
+    {
+      "id": 16,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Selectors and combinators",
+      "question": "How do you select all elements with `class=\"card\"` in CSS?",
+      "options": {
+        "A": "#card",
+        "B": ".card",
+        "C": "*card",
+        "D": "card"
+      },
+      "correctAnswer": "B",
+      "explanation": "The period . is used as the class selector in CSS."
+    },
+    {
+      "id": 17,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Selectors and combinators",
+      "question": "Which selector matches ALL elements on a webpage?",
+      "options": {
+        "A": "#",
+        "B": ".",
+        "C": "*",
+        "D": "all"
+      },
+      "correctAnswer": "C",
+      "explanation": "The universal selector * matches all elements of any type."
+    },
+    {
+      "id": 18,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS introduction and syntax",
+      "question": "How do you add a comment in a CSS stylesheet?",
+      "options": {
+        "A": "// This is a comment",
+        "B": "<!-- This is a comment -->",
+        "C": "/* This is a comment */",
+        "D": "' This is a comment"
+      },
+      "correctAnswer": "C",
+      "explanation": "CSS comments start with /* and end with */."
+    },
+    {
+      "id": 19,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Fonts and typography",
+      "question": "Which property sets text horizontal alignment (left, right, center, justify)?",
+      "options": {
+        "A": "align-text",
+        "B": "text-align",
+        "C": "horizontal-align",
+        "D": "text-position"
+      },
+      "correctAnswer": "B",
+      "explanation": "text-align sets horizontal alignment of inline/text content within block elements."
+    },
+    {
+      "id": 20,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Display and visibility",
+      "question": "Which display value causes an element NOT to be displayed and removes it from layout flow?",
+      "options": {
+        "A": "display: hidden;",
+        "B": "display: none;",
+        "C": "visibility: hidden;",
+        "D": "display: invisible;"
+      },
+      "correctAnswer": "B",
+      "explanation": "display: none; hides an element completely and removes its layout space."
+    },
+    {
+      "id": 21,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Display and visibility",
+      "question": "What is the key difference between `display: none;` and `visibility: hidden;`?",
+      "options": {
+        "A": "display: none; hides element but keeps space; visibility: hidden; removes space",
+        "B": "display: none; removes element from document flow entirely; visibility: hidden; hides element visually but leaves layout space",
+        "C": "There is no difference",
+        "D": "visibility: hidden; only works on images"
+      },
+      "correctAnswer": "B",
+      "explanation": "display: none removes the box from layout; visibility: hidden hides the element visually while reserving its space."
+    },
+    {
+      "id": 22,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Units: px, em, rem, %, vw, and vh",
+      "question": "Which CSS unit represents a percentage of the viewport width?",
+      "options": {
+        "A": "vh",
+        "B": "vw",
+        "C": "rem",
+        "D": "em"
+      },
+      "correctAnswer": "B",
+      "explanation": "1vw equals 1% of the total viewport width."
+    },
+    {
+      "id": 23,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Units: px, em, rem, %, vw, and vh",
+      "question": "Which CSS unit represents a percentage of the viewport height?",
+      "options": {
+        "A": "vw",
+        "B": "vh",
+        "C": "vh%",
+        "D": "px"
+      },
+      "correctAnswer": "B",
+      "explanation": "1vh equals 1% of the total viewport height."
+    },
+    {
+      "id": 24,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Units: px, em, rem, %, vw, and vh",
+      "question": "What does 'rem' unit stand for in CSS?",
+      "options": {
+        "A": "Relative Element Margin",
+        "B": "Root EM (relative to root <html> font-size)",
+        "C": "Real Element Size",
+        "D": "Responsive EM"
+      },
+      "correctAnswer": "B",
+      "explanation": "rem units are calculated relative to the font-size of the root <html> element."
+    },
+    {
+      "id": 25,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Margins, padding, borders, and dimensions",
+      "question": "What is the shorthand order for four margin values: `margin: 10px 20px 30px 40px;`?",
+      "options": {
+        "A": "Top, Right, Bottom, Left",
+        "B": "Top, Left, Bottom, Right",
+        "C": "Left, Right, Top, Bottom",
+        "D": "Top, Bottom, Left, Right"
+      },
+      "correctAnswer": "A",
+      "explanation": "Shorthand box values follow clockwise order: Top, Right, Bottom, Left (TRBL)."
+    },
+    {
+      "id": 26,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Margins, padding, borders, and dimensions",
+      "question": "What does `margin: 10px 20px;` specify?",
+      "options": {
+        "A": "Top/Bottom 10px, Right/Left 20px",
+        "B": "Top/Right 10px, Bottom/Left 20px",
+        "C": "Top 10px, Right 20px, Bottom 10px, Left 20px",
+        "D": "Left/Right 10px, Top/Bottom 20px"
+      },
+      "correctAnswer": "A",
+      "explanation": "Two-value shorthand specifies vertical (Top/Bottom) then horizontal (Left/Right) margins."
+    },
+    {
+      "id": 27,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Box model and box-sizing",
+      "question": "Which property specifies how the total width and height of an element are calculated (content-box vs border-box)?",
+      "options": {
+        "A": "box-model",
+        "B": "box-sizing",
+        "C": "box-layout",
+        "D": "sizing-mode"
+      },
+      "correctAnswer": "B",
+      "explanation": "box-sizing defines whether padding and border are included in element width/height."
+    },
+    {
+      "id": 28,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Box model and box-sizing",
+      "question": "What is the default value of the `box-sizing` property in standard CSS?",
+      "options": {
+        "A": "border-box",
+        "B": "content-box",
+        "C": "padding-box",
+        "D": "margin-box"
+      },
+      "correctAnswer": "B",
+      "explanation": "The default value is content-box, where width/height apply only to content."
+    },
+    {
+      "id": 29,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Colors, backgrounds, and gradients",
+      "question": "Which color format allows defining opacity/transparency along with RGB in CSS?",
+      "options": {
+        "A": "rgb()",
+        "B": "rgba()",
+        "C": "hex",
+        "D": "hsl()"
+      },
+      "correctAnswer": "B",
+      "explanation": "rgba() accepts Red, Green, Blue, and an Alpha value (0.0 to 1.0) for transparency."
+    },
+    {
+      "id": 30,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Colors, backgrounds, and gradients",
+      "question": "Which property specifies an image to be used as a background?",
+      "options": {
+        "A": "background-src",
+        "B": "background-image",
+        "C": "bg-img",
+        "D": "background-file"
+      },
+      "correctAnswer": "B",
+      "explanation": "background-image specifies image sources (e.g., background-image: url('pic.png');)."
+    },
+    {
+      "id": 31,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Positioning and stacking context",
+      "question": "What is the default `position` property value for HTML elements?",
+      "options": {
+        "A": "relative",
+        "B": "static",
+        "C": "absolute",
+        "D": "fixed"
+      },
+      "correctAnswer": "B",
+      "explanation": "Elements are positioned static by default, following normal document flow."
+    },
+    {
+      "id": 32,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Positioning and stacking context",
+      "question": "Which position value positions an element relative to its normal position in document flow?",
+      "options": {
+        "A": "static",
+        "B": "relative",
+        "C": "absolute",
+        "D": "fixed"
+      },
+      "correctAnswer": "B",
+      "explanation": "position: relative offsets an element relative to where it would normally be placed."
+    },
+    {
+      "id": 33,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Positioning and stacking context",
+      "question": "Which position value locks an element relative to the browser viewport so it stays fixed during scrolling?",
+      "options": {
+        "A": "absolute",
+        "B": "fixed",
+        "C": "sticky",
+        "D": "relative"
+      },
+      "correctAnswer": "B",
+      "explanation": "position: fixed anchors an element relative to the viewport window."
+    },
+    {
+      "id": 34,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Fonts and typography",
+      "question": "Which CSS property controls letter capitalization (uppercase, lowercase, capitalize)?",
+      "options": {
+        "A": "text-transform",
+        "B": "text-style",
+        "C": "font-case",
+        "D": "text-case"
+      },
+      "correctAnswer": "A",
+      "explanation": "text-transform controls capitalization of text (e.g., uppercase, capitalize)."
+    },
+    {
+      "id": 35,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Flexbox",
+      "question": "Which display property value initializes a flexible flex container layout in CSS?",
+      "options": {
+        "A": "display: flex;",
+        "B": "display: flexbox;",
+        "C": "display: flexible;",
+        "D": "box-layout: flex;"
+      },
+      "correctAnswer": "A",
+      "explanation": "display: flex activates the Flexbox layout context for an element's children."
+    },
+    {
+      "id": 36,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Flexbox",
+      "question": "Which flex property specifies the direction of flex items along the main axis (row vs column)?",
+      "options": {
+        "A": "flex-direction",
+        "B": "flex-wrap",
+        "C": "flex-flow",
+        "D": "justify-content"
+      },
+      "correctAnswer": "A",
+      "explanation": "flex-direction establishes main axis direction (row, row-reverse, column, column-reverse)."
+    },
+    {
+      "id": 37,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Flexbox",
+      "question": "Which property aligns flex items along the MAIN axis of a flex container?",
+      "options": {
+        "A": "align-items",
+        "B": "justify-content",
+        "C": "align-content",
+        "D": "flex-align"
+      },
+      "correctAnswer": "B",
+      "explanation": "justify-content aligns items along the main axis of a flex container."
+    },
+    {
+      "id": 38,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Flexbox",
+      "question": "Which property aligns flex items along the CROSS axis in a single-line flex container?",
+      "options": {
+        "A": "justify-content",
+        "B": "align-items",
+        "C": "text-align",
+        "D": "align-self"
+      },
+      "correctAnswer": "B",
+      "explanation": "align-items aligns items along the cross axis perpendicular to main axis."
+    },
+    {
+      "id": 39,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS Grid",
+      "question": "Which display property value initializes a CSS Grid container?",
+      "options": {
+        "A": "display: grid;",
+        "B": "display: css-grid;",
+        "C": "grid-layout: true;",
+        "D": "display: table-grid;"
+      },
+      "correctAnswer": "A",
+      "explanation": "display: grid initializes a grid formatting context."
+    },
+    {
+      "id": 40,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS Grid",
+      "question": "Which CSS Grid property defines the column track sizes in a grid container?",
+      "options": {
+        "A": "grid-template-columns",
+        "B": "grid-columns-size",
+        "C": "grid-track-columns",
+        "D": "grid-width"
+      },
+      "correctAnswer": "A",
+      "explanation": "grid-template-columns defines column line names and track sizing functions."
+    },
+    {
+      "id": 41,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS Grid",
+      "question": "Which CSS Grid unit represents a fraction of free available space in grid containers?",
+      "options": {
+        "A": "fr",
+        "B": "frx",
+        "C": "%",
+        "D": "flex"
+      },
+      "correctAnswer": "A",
+      "explanation": "The fr unit represents a fraction of available free space in grid layouts."
+    },
+    {
+      "id": 42,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "Which pseudo-class applies styles when a user hovers over an element with a pointer?",
+      "options": {
+        "A": ":active",
+        "B": ":hover",
+        "C": ":focus",
+        "D": ":visited"
+      },
+      "correctAnswer": "B",
+      "explanation": "The :hover pseudo-class matches when the user interacts with an element with a pointing device."
+    },
+    {
+      "id": 43,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "Which pseudo-class targets links that have already been clicked/visited by the user?",
+      "options": {
+        "A": ":active",
+        "B": ":visited",
+        "C": ":hover",
+        "D": ":link"
+      },
+      "correctAnswer": "B",
+      "explanation": "The :visited pseudo-class selects links that the user has previously navigated to."
+    },
+    {
+      "id": 44,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Pseudo-classes and pseudo-elements",
+      "question": "Which pseudo-class targets an element when it receives keyboard or click focus (e.g., input field)?",
+      "options": {
+        "A": ":focus",
+        "B": ":active",
+        "C": ":target",
+        "D": ":hover"
+      },
+      "correctAnswer": "A",
+      "explanation": "The :focus pseudo-class applies when an element receives focus (e.g. form fields)."
+    },
+    {
+      "id": 45,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Transitions and transforms",
+      "question": "Which CSS property controls smooth property changes over a specified duration?",
+      "options": {
+        "A": "animation",
+        "B": "transition",
+        "C": "transform",
+        "D": "keyframe"
+      },
+      "correctAnswer": "B",
+      "explanation": "transition allows property changes in CSS values to occur smoothly over time."
+    },
+    {
+      "id": 46,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Transitions and transforms",
+      "question": "Which transform function moves an element horizontally and/or vertically on screen?",
+      "options": {
+        "A": "rotate()",
+        "B": "translate()",
+        "C": "scale()",
+        "D": "skew()"
+      },
+      "correctAnswer": "B",
+      "explanation": "translate(x, y) repositions an element on the 2D plane."
+    },
+    {
+      "id": 47,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Responsive design and media queries",
+      "question": "Which CSS rule is used to apply different styles conditionally based on media device features like screen width?",
+      "options": {
+        "A": "@media",
+        "B": "@responsive",
+        "C": "@device",
+        "D": "@screen"
+      },
+      "correctAnswer": "A",
+      "explanation": "@media queries apply CSS rules based on media type and feature conditions (e.g. screen width)."
+    },
+    {
+      "id": 48,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS custom properties",
+      "question": "How are custom properties (CSS variables) defined in CSS?",
+      "options": {
+        "A": "$var-name: value;",
+        "B": "--var-name: value;",
+        "C": "@var-name: value;",
+        "D": "var-name = value;"
+      },
+      "correctAnswer": "B",
+      "explanation": "Custom properties are declared with a double hyphen prefix `--custom-name: value;`."
+    },
+    {
+      "id": 49,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "CSS custom properties",
+      "question": "How do you access the value of a custom property `--main-color` in CSS?",
+      "options": {
+        "A": "get(--main-color)",
+        "B": "var(--main-color)",
+        "C": "$--main-color",
+        "D": "val(--main-color)"
+      },
+      "correctAnswer": "B",
+      "explanation": "The `var(--property-name)` function inserts the custom property value."
+    },
+    {
+      "id": 50,
+      "subject": "CSS",
+      "difficulty": "Easy",
+      "topic": "Fonts and typography",
+      "question": "Which property specifies line height/spacing between lines of text?",
+      "options": {
+        "A": "line-height",
+        "B": "letter-spacing",
+        "C": "word-spacing",
+        "D": "text-indent"
+      },
+      "correctAnswer": "A",
+      "explanation": "line-height sets the vertical distance between lines of text."
+    }
+  ]
+}

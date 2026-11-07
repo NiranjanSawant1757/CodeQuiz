@@ -12,12 +12,12 @@ public class SessionManager {
     private static final String KEY_USERNAME = "username";
     private static final String KEY_EMAIL = "email";
     private static final String KEY_FULL_NAME = "full_name";
+    private static final String KEY_PROFILE_IMAGE = "profile_image";
 
     // Settings Keys
     private static final String KEY_TIMER_ENABLED = "pref_timer_enabled";
     private static final String KEY_TIMER_SECONDS = "pref_timer_seconds";
     private static final String KEY_THEME_MODE = "pref_theme_mode";
-    private static final String KEY_BACKEND_URL = "pref_backend_url";
 
     private final SharedPreferences prefs;
     private final SharedPreferences.Editor editor;
@@ -37,11 +37,20 @@ public class SessionManager {
     }
 
     public void createLoginSession(long userId, String username, String email, String fullName) {
+        createLoginSession(userId, username, email, fullName, null);
+    }
+
+    public void createLoginSession(long userId, String username, String email, String fullName, String profileImage) {
         editor.putBoolean(KEY_IS_LOGGED_IN, true);
         editor.putLong(KEY_USER_ID, userId);
         editor.putString(KEY_USERNAME, username);
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_FULL_NAME, fullName);
+        if (profileImage != null) {
+            editor.putString(KEY_PROFILE_IMAGE, profileImage);
+        } else {
+            editor.remove(KEY_PROFILE_IMAGE);
+        }
         editor.apply();
     }
 
@@ -65,8 +74,21 @@ public class SessionManager {
         return prefs.getString(KEY_FULL_NAME, "");
     }
 
+    public String getProfileImage() {
+        return prefs.getString(KEY_PROFILE_IMAGE, null);
+    }
+
     public void updateFullName(String fullName) {
         editor.putString(KEY_FULL_NAME, fullName);
+        editor.apply();
+    }
+
+    public void updateProfileImage(String profileImagePath) {
+        if (profileImagePath != null) {
+            editor.putString(KEY_PROFILE_IMAGE, profileImagePath);
+        } else {
+            editor.remove(KEY_PROFILE_IMAGE);
+        }
         editor.apply();
     }
 
@@ -76,6 +98,7 @@ public class SessionManager {
         editor.remove(KEY_USERNAME);
         editor.remove(KEY_EMAIL);
         editor.remove(KEY_FULL_NAME);
+        editor.remove(KEY_PROFILE_IMAGE);
         editor.apply();
     }
 
@@ -112,14 +135,5 @@ public class SessionManager {
     public void applyStoredTheme() {
         int mode = getThemeMode();
         AppCompatDelegate.setDefaultNightMode(mode);
-    }
-
-    public String getBackendUrl() {
-        return prefs.getString(KEY_BACKEND_URL, AppConstants.DEFAULT_BACKEND_URL);
-    }
-
-    public void setBackendUrl(String url) {
-        editor.putString(KEY_BACKEND_URL, url != null ? url.trim() : AppConstants.DEFAULT_BACKEND_URL);
-        editor.apply();
     }
 }

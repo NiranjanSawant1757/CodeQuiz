@@ -1,14 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme for Dark mode. -->
+    <!-- Base Modern Minimal Application Theme for Dark Mode -->
     <style name="Base.Theme.CodeQuiz" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Brand Colors -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/on_primary</item>
         <item name="colorPrimaryContainer">@color/primary_container</item>
         <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorOnSecondary">@color/on_secondary</item>
+
+        <!-- Background & Surface -->
         <item name="android:windowBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- System Bars -->
         <item name="android:statusBarColor">@color/background</item>
         <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+
+        <!-- Component Styles -->
+        <item name="materialButtonStyle">@style/Widget.CodeQuiz.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.CodeQuiz.Card</item>
+        <item name="textInputStyle">@style/Widget.CodeQuiz.TextInputLayout</item>
+
+        <!-- Dialog Theming -->
+        <item name="alertDialogTheme">@style/ThemeOverlay.CodeQuiz.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.CodeQuiz.Dialog</item>
+
+        <!-- Smooth Window Animations -->
+        <item name="android:windowAnimationStyle">@style/Animation.CodeQuiz.Activity</item>
     </style>
 </resources>

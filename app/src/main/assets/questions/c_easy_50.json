@@ -1,0 +1,761 @@
+{
+  "subject": "C",
+  "totalQuestions": 50,
+  "difficultyLevels": {
+    "easy": 50,
+    "medium": 0,
+    "hard": 0
+  },
+  "questions": [
+    {
+      "id": 1,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Introduction to C and program structure",
+      "question": "Which function is the mandatory entry point for a standard C program?",
+      "options": {
+        "A": "start()",
+        "B": "main()",
+        "C": "init()",
+        "D": "run()"
+      },
+      "correctAnswer": "B",
+      "explanation": "Every standard C program must have a main() function which serves as the execution entry point."
+    },
+    {
+      "id": 2,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Header files and compilation process",
+      "question": "Which preprocessor directive is used to include standard input-output header file in C?",
+      "options": {
+        "A": "#import <stdio.h>",
+        "B": "#include <stdio.h>",
+        "C": "#use <stdio.h>",
+        "D": "#include <iostream>"
+      },
+      "correctAnswer": "B",
+      "explanation": "The '#include <stdio.h>' directive tells the preprocessor to insert the contents of stdio.h header file."
+    },
+    {
+      "id": 3,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Variables, constants, and data types",
+      "question": "What is the correct format specifier for printing a double value using printf?",
+      "options": {
+        "A": "%d",
+        "B": "%c",
+        "C": "%lf",
+        "D": "%s"
+      },
+      "correctAnswer": "C",
+      "explanation": "%lf (or %f in C99+) is used as the format specifier for double floating-point numbers in printf/scanf."
+    },
+    {
+      "id": 4,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Keywords and identifiers",
+      "question": "Which of the following is a valid C identifier name?",
+      "options": {
+        "A": "2total",
+        "B": "total_sum",
+        "C": "int",
+        "D": "total-sum"
+      },
+      "correctAnswer": "B",
+      "explanation": "Identifiers in C can contain letters, digits, and underscores, but cannot start with a digit or use reserved keywords/hyphens."
+    },
+    {
+      "id": 5,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Keywords and identifiers",
+      "question": "How many keywords are reserved in standard C89/C90?",
+      "options": {
+        "A": "32",
+        "B": "48",
+        "C": "64",
+        "D": "25"
+      },
+      "correctAnswer": "A",
+      "explanation": "Standard ANSI C (C89) defines 32 reserved keywords."
+    },
+    {
+      "id": 6,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Variables, constants, and data types",
+      "question": "What is the typical size of a 'char' data type in standard C?",
+      "options": {
+        "A": "1 byte",
+        "B": "2 bytes",
+        "C": "4 bytes",
+        "D": "8 bytes"
+      },
+      "correctAnswer": "A",
+      "explanation": "In C standard, sizeof(char) is strictly defined to be 1 byte."
+    },
+    {
+      "id": 7,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What is the result of the integer division expression 7 / 2 in C?",
+      "options": {
+        "A": "3.5",
+        "B": "3",
+        "C": "4",
+        "D": "3.0"
+      },
+      "correctAnswer": "B",
+      "explanation": "Integer division in C truncates the fractional part towards zero, yielding 3."
+    },
+    {
+      "id": 8,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "Which operator is used to find the remainder of integer division in C?",
+      "options": {
+        "A": "/",
+        "B": "\\",
+        "C": "%",
+        "D": "#"
+      },
+      "correctAnswer": "C",
+      "explanation": "The modulus operator '%' computes the remainder after integer division."
+    },
+    {
+      "id": 9,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What is the value of x after evaluating: int x = 5; x += 3 * 2;",
+      "options": {
+        "A": "16",
+        "B": "11",
+        "C": "13",
+        "D": "10"
+      },
+      "correctAnswer": "B",
+      "explanation": "Multiplication has higher precedence than addition. 3 * 2 = 6, and x += 6 results in 5 + 6 = 11."
+    },
+    {
+      "id": 10,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Conditional statements (if, else, switch)",
+      "question": "Which statement is true regarding the condition evaluation in an 'if' statement in C?",
+      "options": {
+        "A": "Only 1 is true",
+        "B": "Any non-zero value is treated as true",
+        "C": "Only positive numbers are true",
+        "D": "Only true keyword is supported"
+      },
+      "correctAnswer": "B",
+      "explanation": "In C, any non-zero numeric value evaluates to logical true, while zero evaluates to false."
+    },
+    {
+      "id": 11,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Conditional statements (if, else, switch)",
+      "question": "What is the output of the following C code snippet?\n\n#include <stdio.h>\nint main(void) {\n    int a = 0;\n    if (a = 5)\n        printf(\"True\");\n    else\n        printf(\"False\");\n    return 0;\n}",
+      "options": {
+        "A": "False",
+        "B": "True",
+        "C": "Compilation Error",
+        "D": "Nothing is printed"
+      },
+      "correctAnswer": "B",
+      "explanation": "The expression (a = 5) assigns 5 to 'a' and evaluates to 5, which is non-zero (true). Thus 'True' is printed."
+    },
+    {
+      "id": 12,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Loops (for, while, do-while)",
+      "question": "Which loop guarantees that its loop body will execute at least once?",
+      "options": {
+        "A": "for loop",
+        "B": "while loop",
+        "C": "do-while loop",
+        "D": "foreach loop"
+      },
+      "correctAnswer": "C",
+      "explanation": "A do-while loop evaluates its condition at the end of the loop body, guaranteeing at least one execution."
+    },
+    {
+      "id": 13,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Loops (for, while, do-while)",
+      "question": "What is the output of this loop?\n\nfor (int i = 0; i < 3; i++) {\n    printf(\"%d \", i);\n}",
+      "options": {
+        "A": "0 1 2 ",
+        "B": "1 2 3 ",
+        "C": "0 1 2 3 ",
+        "D": "0 1 "
+      },
+      "correctAnswer": "A",
+      "explanation": "The loop initializes i to 0 and iterates while i < 3 (i = 0, 1, 2), printing '0 1 2 '."
+    },
+    {
+      "id": 14,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "break, continue, and goto",
+      "question": "What is the function of the 'continue' statement in a loop?",
+      "options": {
+        "A": "Terminates the loop entirely",
+        "B": "Skips the rest of current iteration and jumps to next iteration",
+        "C": "Exits the current function",
+        "D": "Restarts program execution"
+      },
+      "correctAnswer": "B",
+      "explanation": "The continue statement skips remaining statements in current iteration and moves execution to loop condition test/increment."
+    },
+    {
+      "id": 15,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "break, continue, and goto",
+      "question": "Which keyword is used to exit immediately from a switch statement or loop in C?",
+      "options": {
+        "A": "exit",
+        "B": "return",
+        "C": "break",
+        "D": "stop"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'break' keyword forces immediate termination of the innermost enclosing loop or switch statement."
+    },
+    {
+      "id": 16,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Arrays and multidimensional arrays",
+      "question": "How is an array indexed in C?",
+      "options": {
+        "A": "1-based indexing (1 to N)",
+        "B": "0-based indexing (0 to N-1)",
+        "C": "-1-based indexing",
+        "D": "Implementation dependent"
+      },
+      "correctAnswer": "B",
+      "explanation": "Arrays in C use zero-based indexing, where the first element is at index 0."
+    },
+    {
+      "id": 17,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Arrays and multidimensional arrays",
+      "question": "What is the correct declaration of an array of 10 integers in C?",
+      "options": {
+        "A": "int arr[10];",
+        "B": "array int arr[10];",
+        "C": "int arr(10);",
+        "D": "integer arr[10];"
+      },
+      "correctAnswer": "A",
+      "explanation": "In C, 'int arr[10];' declares an array named arr storing 10 contiguous integers."
+    },
+    {
+      "id": 18,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Strings and string-handling functions",
+      "question": "In C, how are strings terminated in memory?",
+      "options": {
+        "A": "With a space character ' '",
+        "B": "With a newline character '\\n'",
+        "C": "With a null terminator '\\0'",
+        "D": "With EOF"
+      },
+      "correctAnswer": "C",
+      "explanation": "C strings are arrays of characters terminated by the null character '\\0' (ASCII 0)."
+    },
+    {
+      "id": 19,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Strings and string-handling functions",
+      "question": "Which standard header file declares functions like strlen(), strcpy(), and strcat()?",
+      "options": {
+        "A": "<stdio.h>",
+        "B": "<stdlib.h>",
+        "C": "<string.h>",
+        "D": "<ctype.h>"
+      },
+      "correctAnswer": "C",
+      "explanation": "The <string.h> header file contains prototypes for C string manipulation functions."
+    },
+    {
+      "id": 20,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Strings and string-handling functions",
+      "question": "What does the strlen() function return for string \"Hello\"?",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "4",
+        "D": "Indeterminate value"
+      },
+      "correctAnswer": "A",
+      "explanation": "strlen() counts characters excluding the null terminator '\\0'. 'Hello' contains 5 characters."
+    },
+    {
+      "id": 21,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Functions, parameters, and return values",
+      "question": "What keyword is used to specify that a function does not return any value?",
+      "options": {
+        "A": "null",
+        "B": "empty",
+        "C": "void",
+        "D": "static"
+      },
+      "correctAnswer": "C",
+      "explanation": "The 'void' return type specifies that a function returns no value to the caller."
+    },
+    {
+      "id": 22,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Functions, parameters, and return values",
+      "question": "What parameter passing mechanism is used by default for primitive types in C?",
+      "options": {
+        "A": "Pass by reference",
+        "B": "Pass by value",
+        "C": "Pass by name",
+        "D": "Pass by pointer reference"
+      },
+      "correctAnswer": "B",
+      "explanation": "C exclusively uses pass-by-value for function arguments (copying values)."
+    },
+    {
+      "id": 23,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Recursion",
+      "question": "What is recursion in C programming?",
+      "options": {
+        "A": "A function calling another function",
+        "B": "A function calling itself directly or indirectly",
+        "C": "A loop executing infinitely",
+        "D": "A macro calling a function"
+      },
+      "correctAnswer": "B",
+      "explanation": "Recursion occurs when a function calls itself until reaching a defined base termination condition."
+    },
+    {
+      "id": 24,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Pointers and pointer arithmetic",
+      "question": "Which operator is used to obtain the memory address of a variable in C?",
+      "options": {
+        "A": "*",
+        "B": "&",
+        "C": "->",
+        "D": "%"
+      },
+      "correctAnswer": "B",
+      "explanation": "The address-of operator '&' returns the memory address of a variable."
+    },
+    {
+      "id": 25,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Pointers and pointer arithmetic",
+      "question": "Which operator is used to dereference a pointer (access value at address) in C?",
+      "options": {
+        "A": "&",
+        "B": "*",
+        "C": "->",
+        "D": "."
+      },
+      "correctAnswer": "B",
+      "explanation": "The dereference operator '*' accesses the value stored at the memory address held by a pointer."
+    },
+    {
+      "id": 26,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Pointers and pointer arithmetic",
+      "question": "What is a NULL pointer in C?",
+      "options": {
+        "A": "A pointer pointing to garbage memory location",
+        "B": "A pointer initialized to point to no valid memory location (0)",
+        "C": "A pointer pointing to main function",
+        "D": "An uninitialized pointer"
+      },
+      "correctAnswer": "B",
+      "explanation": "A NULL pointer is a pointer value reserved to indicate that it does not point to any valid object or memory location."
+    },
+    {
+      "id": 27,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Structures and unions",
+      "question": "Which keyword is used to define a user-defined composite data type containing multiple named members in C?",
+      "options": {
+        "A": "union",
+        "B": "struct",
+        "C": "class",
+        "D": "typedef"
+      },
+      "correctAnswer": "B",
+      "explanation": "The 'struct' keyword defines a structure type grouping variables under one name."
+    },
+    {
+      "id": 28,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Structures and unions",
+      "question": "Which operator is used to access a structure member through a structure variable instance?",
+      "options": {
+        "A": "->",
+        "B": ".",
+        "C": "*",
+        "D": "::"
+      },
+      "correctAnswer": "B",
+      "explanation": "The dot operator '.' is used to access members directly from a structure variable."
+    },
+    {
+      "id": 29,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Structures and unions",
+      "question": "Which operator is used to access a structure member through a pointer to that structure?",
+      "options": {
+        "A": ".",
+        "B": "->",
+        "C": "*",
+        "D": "&"
+      },
+      "correctAnswer": "B",
+      "explanation": "The arrow operator '->' dereferences a structure pointer and accesses its member."
+    },
+    {
+      "id": 30,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Enumerations (enum)",
+      "question": "What is the default integer value assigned to the first identifier in an enum in C if not explicitly set?",
+      "options": {
+        "A": "1",
+        "B": "0",
+        "C": "-1",
+        "D": "Null"
+      },
+      "correctAnswer": "B",
+      "explanation": "In C enumerations, the first constant defaults to integer value 0 unless explicitly initialized."
+    },
+    {
+      "id": 31,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Type conversion and type casting",
+      "question": "What is explicit type casting in C?",
+      "options": {
+        "A": "Automatic conversion by the compiler",
+        "B": "Manual conversion forced by placing (type_name) before an expression",
+        "C": "Conversion happening during link time",
+        "D": "Conversion from string to float only"
+      },
+      "correctAnswer": "B",
+      "explanation": "Explicit type casting uses cast operators like (int)var to manually convert expressions between types."
+    },
+    {
+      "id": 32,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Storage classes and variable scope",
+      "question": "Which storage class keyword makes a local variable retain its value across multiple function calls?",
+      "options": {
+        "A": "auto",
+        "B": "register",
+        "C": "static",
+        "D": "extern"
+      },
+      "correctAnswer": "C",
+      "explanation": "A local variable declared as 'static' retains its value between function invocations for program lifetime."
+    },
+    {
+      "id": 33,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Storage classes and variable scope",
+      "question": "What is the default storage class for local variables declared inside a function in C?",
+      "options": {
+        "A": "auto",
+        "B": "static",
+        "C": "extern",
+        "D": "register"
+      },
+      "correctAnswer": "A",
+      "explanation": "Variables declared inside functions default to the 'auto' storage class with block scope and automatic duration."
+    },
+    {
+      "id": 34,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Preprocessor directives and macros",
+      "question": "Which preprocessor directive is used to define a symbolic constant or macro in C?",
+      "options": {
+        "A": "#define",
+        "B": "#macro",
+        "C": "#constant",
+        "D": "#include"
+      },
+      "correctAnswer": "A",
+      "explanation": "The '#define' directive creates macro substitutions and symbolic constants in C."
+    },
+    {
+      "id": 35,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Header files and compilation process",
+      "question": "What file extension is traditionally used for C source files?",
+      "options": {
+        "A": ".h",
+        "B": ".c",
+        "C": ".cpp",
+        "D": ".obj"
+      },
+      "correctAnswer": "B",
+      "explanation": "C source code files use the '.c' file extension."
+    },
+    {
+      "id": 36,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Dynamic memory allocation (malloc, calloc, realloc, free)",
+      "question": "Which standard library header file contains declarations for malloc(), calloc(), realloc(), and free()?",
+      "options": {
+        "A": "<stdio.h>",
+        "B": "<string.h>",
+        "C": "<stdlib.h>",
+        "D": "<memory.h>"
+      },
+      "correctAnswer": "C",
+      "explanation": "The <stdlib.h> header file contains dynamic memory management functions in C."
+    },
+    {
+      "id": 37,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Dynamic memory allocation (malloc, calloc, realloc, free)",
+      "question": "What does malloc() return if memory allocation fails?",
+      "options": {
+        "A": "-1",
+        "B": "0",
+        "C": "NULL",
+        "D": "Void"
+      },
+      "correctAnswer": "C",
+      "explanation": "When dynamic allocation fails, malloc() returns a NULL pointer."
+    },
+    {
+      "id": 38,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Dynamic memory allocation (malloc, calloc, realloc, free)",
+      "question": "Which memory allocation function initializes all allocated bytes to zero?",
+      "options": {
+        "A": "malloc()",
+        "B": "calloc()",
+        "C": "realloc()",
+        "D": "alloc()"
+      },
+      "correctAnswer": "B",
+      "explanation": "calloc() allocates memory and clears all bytes to zero, unlike malloc()."
+    },
+    {
+      "id": 39,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "File handling (fopen, fclose, fread, fwrite, fprintf, fscanf)",
+      "question": "Which mode string is passed to fopen() to open a text file for reading?",
+      "options": {
+        "A": "\"w\"",
+        "B": "\"a\"",
+        "C": "\"r\"",
+        "D": "\"r+\""
+      },
+      "correctAnswer": "C",
+      "explanation": "Mode \"r\" opens an existing file for reading in text mode."
+    },
+    {
+      "id": 40,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "File handling (fopen, fclose, fread, fwrite, fprintf, fscanf)",
+      "question": "What value does fopen() return if the specified file cannot be opened?",
+      "options": {
+        "A": "EOF",
+        "B": "NULL",
+        "C": "-1",
+        "D": "0"
+      },
+      "correctAnswer": "B",
+      "explanation": "If fopen() fails to open a file (e.g. file not found), it returns NULL."
+    },
+    {
+      "id": 41,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Bitwise operators",
+      "question": "Which bitwise operator performs logical bitwise AND in C?",
+      "options": {
+        "A": "&&",
+        "B": "&",
+        "C": "|",
+        "D": "^"
+      },
+      "correctAnswer": "B",
+      "explanation": "The single ampersand '&' is the bitwise AND operator in C."
+    },
+    {
+      "id": 42,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Bitwise operators",
+      "question": "What is the result of expression (5 & 3) in binary C arithmetic?",
+      "options": {
+        "A": "1",
+        "B": "7",
+        "C": "2",
+        "D": "0"
+      },
+      "correctAnswer": "A",
+      "explanation": "5 is binary 0101, 3 is 0011. Bitwise AND (0101 & 0011) yields 0001 (decimal 1)."
+    },
+    {
+      "id": 43,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Bitwise operators",
+      "question": "Which operator shifts bits to the left in C?",
+      "options": {
+        "A": ">>",
+        "B": "<<",
+        "C": "<=",
+        "D": "<-"
+      },
+      "correctAnswer": "B",
+      "explanation": "The '<<' operator performs left bit-shifting."
+    },
+    {
+      "id": 44,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Command-line arguments",
+      "question": "In main(int argc, char *argv[]), what does argc represent?",
+      "options": {
+        "A": "Array of command line strings",
+        "B": "Count of command line arguments including program name",
+        "C": "Size of program memory",
+        "D": "Execution return code"
+      },
+      "correctAnswer": "B",
+      "explanation": "argc (argument count) holds the total number of command-line arguments passed to the program."
+    },
+    {
+      "id": 45,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Time and space complexity",
+      "question": "What is the time complexity of accessing an element in an array by index?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(N)",
+        "C": "O(log N)",
+        "D": "O(N^2)"
+      },
+      "correctAnswer": "A",
+      "explanation": "Array indexing takes O(1) constant time because array elements are stored contiguously."
+    },
+    {
+      "id": 46,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Searching and sorting algorithms",
+      "question": "What is the average time complexity of Linear Search on an array of size N?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(N)",
+        "C": "O(log N)",
+        "D": "O(N log N)"
+      },
+      "correctAnswer": "B",
+      "explanation": "Linear search checks elements sequentially, taking O(N) average time."
+    },
+    {
+      "id": 47,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Undefined behavior and common programming errors",
+      "question": "What happens if an application accesses an array index out of bounds in C?",
+      "options": {
+        "A": "Throws ArrayIndexOutOfBoundsException",
+        "B": "Produces Undefined Behavior",
+        "C": "Returns 0 automatically",
+        "D": "Compiler prevents execution"
+      },
+      "correctAnswer": "B",
+      "explanation": "C does not perform array bound checking; out-of-bound access results in undefined behavior."
+    },
+    {
+      "id": 48,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Memory management and debugging",
+      "question": "What is a memory leak in C?",
+      "options": {
+        "A": "Accessing NULL pointer",
+        "B": "Failing to deallocate dynamically allocated memory with free() before losing reference",
+        "C": "Stack overflow error",
+        "D": "Reading uninitialized variable"
+      },
+      "correctAnswer": "B",
+      "explanation": "A memory leak occurs when heap memory allocated via malloc/calloc is no longer freed, wasting available RAM."
+    },
+    {
+      "id": 49,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Operators and expressions",
+      "question": "What is the value of x after: int a = 10; int x = a++;",
+      "options": {
+        "A": "11",
+        "B": "10",
+        "C": "9",
+        "D": "Compilation Error"
+      },
+      "correctAnswer": "B",
+      "explanation": "Post-increment 'a++' yields the current value 10 to 'x' before incrementing 'a' to 11."
+    },
+    {
+      "id": 50,
+      "subject": "C",
+      "difficulty": "Easy",
+      "topic": "Standard input and output",
+      "question": "Which function is used to read a single character from standard input in C?",
+      "options": {
+        "A": "putchar()",
+        "B": "getchar()",
+        "C": "puts()",
+        "D": "printf()"
+      },
+      "correctAnswer": "B",
+      "explanation": "getchar() reads an unsigned char from standard input (stdin) and returns it as an int."
+    }
+  ]
+}

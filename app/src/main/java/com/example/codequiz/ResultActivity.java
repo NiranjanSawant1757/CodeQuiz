@@ -1,15 +1,20 @@
 package com.example.codequiz;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
 import com.example.codequiz.database.QuizAttemptRepository;
+import com.example.codequiz.model.AchievementLevel;
 import com.example.codequiz.model.QuizAttempt;
 import com.example.codequiz.util.AppConstants;
 import com.example.codequiz.util.SessionManager;
@@ -24,8 +29,8 @@ public class ResultActivity extends AppCompatActivity {
     private long attemptId = -1;
     private QuizAttempt attempt;
 
-    private ImageView ivResultIcon;
-    private TextView tvPerformanceLevel, tvResultSubtitle;
+    private ImageView ivResultIcon, ivAchievementGif;
+    private TextView tvAchievementBadge, tvPerformanceLevel, tvResultSubtitle;
     private TextView tvResultCategory, tvScorePercentage, tvScoreFraction, tvDurationTaken;
     private TextView tvStatCorrectCount, tvStatIncorrectCount, tvStatUnansweredCount;
 
@@ -55,11 +60,14 @@ public class ResultActivity extends AppCompatActivity {
 
         initViews();
         setupListeners();
+        setupBackNavigation();
         loadAttemptResult();
     }
 
     private void initViews() {
         ivResultIcon = findViewById(R.id.ivResultIcon);
+        ivAchievementGif = findViewById(R.id.ivAchievementGif);
+        tvAchievementBadge = findViewById(R.id.tvAchievementBadge);
         tvPerformanceLevel = findViewById(R.id.tvPerformanceLevel);
         tvResultSubtitle = findViewById(R.id.tvResultSubtitle);
 
@@ -95,12 +103,7 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-        btnGoDashboard.setOnClickListener(v -> {
-            Intent intent = new Intent(ResultActivity.this, DashboardActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
-            finish();
-        });
+        btnGoDashboard.setOnClickListener(v -> navigateToHome());
     }
 
     private void loadAttemptResult() {
@@ -123,9 +126,14 @@ public class ResultActivity extends AppCompatActivity {
                 }
 
                 tvResultCategory.setText(attempt.getCategory() + " • " + attempt.getDifficulty());
-                int pct = (int) Math.round(attempt.getPercentage());
+
+                int correctAnswers = attempt.getCorrectAnswers();
+                int totalQuestions = attempt.getTotalQuestions();
+                double accuracy = AchievementLevel.calculateAccuracy(correctAnswers, totalQuestions);
+                int pct = (int) Math.round(accuracy);
+
                 tvScorePercentage.setText(pct + "%");
-                tvScoreFraction.setText("Marks: " + attempt.getScore() + " / " + attempt.getTotalQuestions());
+                tvScoreFraction.setText("Correct: " + correctAnswers + " / " + totalQuestions);
 
                 int durationSecs = attempt.getDurationSeconds();
                 int mins = durationSecs / 60;
@@ -136,30 +144,52 @@ public class ResultActivity extends AppCompatActivity {
                 tvStatIncorrectCount.setText(String.valueOf(attempt.getIncorrectAnswers()));
                 tvStatUnansweredCount.setText(String.valueOf(attempt.getUnanswered()));
 
-                // Performance feedback according to specification
-                if (pct >= 90) {
-                    tvPerformanceLevel.setText("Excellent! 🏆");
-                    tvPerformanceLevel.setTextColor(ContextCompat.getColor(ResultActivity.this, R.color.correct_green));
-                    tvResultSubtitle.setText("Mastery level achievement! You have a commanding grasp of this subject.");
-                } else if (pct >= 75) {
-                    tvPerformanceLevel.setText("Very Good! 🌟");
-                    tvPerformanceLevel.setTextColor(ContextCompat.getColor(ResultActivity.this, R.color.primary));
-                    tvResultSubtitle.setText("Great performance! Keep sharpening your skills to achieve top tier score.");
-                } else if (pct >= 50) {
-                    tvPerformanceLevel.setText("Good 👍");
-                    tvPerformanceLevel.setTextColor(ContextCompat.getColor(ResultActivity.this, R.color.warning_amber));
-                    tvResultSubtitle.setText("Solid foundation, but there's room to revise concepts and improve.");
+                // 3-Level Quiz Achievement Evaluation
+                AchievementLevel level = AchievementLevel.classify(accuracy);
+
+                // Badge Setup
+                tvAchievementBadge.setText(level.getBadgeText());
+                int badgeColor = ContextCompat.getColor(ResultActivity.this, level.getBadgeColorResId());
+                int badgeBgColor = ContextCompat.getColor(ResultActivity.this, level.getBadgeBgColorResId());
+                tvAchievementBadge.setTextColor(badgeColor);
+                tvAchievementBadge.setBackgroundTintList(ColorStateList.valueOf(badgeBgColor));
+
+                // Title & Message Setup
+                tvPerformanceLevel.setText(level.getTitle());
+                tvPerformanceLevel.setTextColor(badgeColor);
+                tvResultSubtitle.setText(level.getMessage());
+
+                // GIF Celebration vs Static Failure Icon
+                if (level.hasAchievementGif() && !isFinishing() && !isDestroyed()) {
+                    ivResultIcon.setVisibility(View.GONE);
+                    ivAchievementGif.setVisibility(View.VISIBLE);
+                    Glide.with(ResultActivity.this)
+                            .asGif()
+                            .load(level.getGifResId())
+                            .into(ivAchievementGif);
                 } else {
-                    tvPerformanceLevel.setText("Needs Improvement 📚");
-                    tvPerformanceLevel.setTextColor(ContextCompat.getColor(ResultActivity.this, R.color.incorrect_red));
-                    tvResultSubtitle.setText("Review the detailed answers below and study the explanations to master these topics.");
+                    if (ivAchievementGif != null) {
+                        Glide.with(ResultActivity.this).clear(ivAchievementGif);
+                        ivAchievementGif.setVisibility(View.GONE);
+                    }
+                    ivResultIcon.setVisibility(View.VISIBLE);
+                    ivResultIcon.setImageResource(R.drawable.ic_trophy);
+                    ivResultIcon.setImageTintList(ColorStateList.valueOf(badgeColor));
                 }
             });
         });
     }
 
-    @Override
-    public void onBackPressed() {
+    private void setupBackNavigation() {
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                navigateToHome();
+            }
+        });
+    }
+
+    private void navigateToHome() {
         Intent intent = new Intent(this, DashboardActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
@@ -169,6 +199,9 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (ivAchievementGif != null) {
+            Glide.with(getApplicationContext()).clear(ivAchievementGif);
+        }
         executor.shutdown();
     }
 }

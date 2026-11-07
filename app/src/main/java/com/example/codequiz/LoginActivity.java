@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                 btnLogin.setText("Login");
 
                 if (user != null) {
-                    sessionManager.createLoginSession(user.getId(), user.getUsername(), user.getEmail(), user.getFullName());
+                    sessionManager.createLoginSession(user.getId(), user.getUsername(), user.getEmail(), user.getFullName(), user.getProfileImage());
                     Toast.makeText(LoginActivity.this, "Welcome, " + user.getFullName() + "!", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
